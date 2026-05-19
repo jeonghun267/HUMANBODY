@@ -1,0 +1,2 @@
+C:\Users\admin_14\Downloads\HUMANBODY (2) (1)\HUMANBODY\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\admin_14\Downloads\HUMANBODY (2) (1)\HUMANBODY\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

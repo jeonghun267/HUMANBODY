@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 73ed32143a8d4cb489b352cdecec4aca
+timeCreated: 1662082456
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232949
+  packageName: KoreanTyper
+  packageVersion: 1.0.0
+  assetPath: Assets/KoreanTyper/DemoScene/KoreanTyperDemo_SimpleScene.unity
+  uploadId: 526281

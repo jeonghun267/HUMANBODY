@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 03a2363ee7e1bd54ebe57061fd117fb6
+timeCreated: 1662082441
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232949
+  packageName: KoreanTyper
+  packageVersion: 1.0.0
+  assetPath: Assets/KoreanTyper/DemoScene/KoreanTyperDemo_Auto.cs
+  uploadId: 526281

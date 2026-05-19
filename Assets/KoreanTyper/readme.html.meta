@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 25559c0d3402b4541a5e9fd0b77bb29a
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232949
+  packageName: KoreanTyper
+  packageVersion: 1.0.0
+  assetPath: Assets/KoreanTyper/readme.html
+  uploadId: 526281

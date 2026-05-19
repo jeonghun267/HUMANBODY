@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87afa110b0b1dbf4981526e812b0d1d4
+timeCreated: 1662082456
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232949
+  packageName: KoreanTyper
+  packageVersion: 1.0.0
+  assetPath: Assets/KoreanTyper/DemoScene/KoreanTyperDemo_CursorScene.unity
+  uploadId: 526281
