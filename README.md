@@ -162,6 +162,11 @@ HUMANBODY/
 
 ---
 
+## 개발 흐름
+
+- `jeonghun` 브랜치에서 작업하고, 빌드·실행으로 에러가 없는지 확인한 뒤 `main`에 머지합니다.
+- `main`은 항상 실행 가능한 상태로 유지합니다.
+
 ## 개발자
 
 - **오정훈** ([@jeonghun267](https://github.com/jeonghun267))
