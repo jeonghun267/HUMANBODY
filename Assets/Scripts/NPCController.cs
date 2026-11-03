@@ -1,48 +1,49 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì•ˆë‚´ ìºë¦­í„° ì œì–´") ]
 public class NPCController : MonoBehaviour
 {
-    // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º
+    // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
     public static NPCController Instance;
 
-    [Header("NPC Follow Settings")]
-    [Tooltip("NPC°¡ µû¶ó°¥ ´ë»ó Transform (¿¹: VR Ä«¸Ş¶ó)")]
+    [Header("ì•ˆë‚´ ìºë¦­í„° ë”°ë¼ì˜¤ê¸°")]
+    [Tooltip("ì•ˆë‚´ ìºë¦­í„°ê°€ ë”°ë¼ê°ˆ ëŒ€ìƒ ìœ„ì¹˜ ê¸°ì¤€ (ì˜ˆ: ê°€ìƒí˜„ì‹¤ ì¹´ë©”ë¼)")]
     [SerializeField]
     private Transform target;
 
-    [Tooltip("ÀÌµ¿ ¼Óµµ")]
+    [Tooltip("ì´ë™ ì†ë„")]
     [SerializeField]
     private float moveSpeed = 3.0f;
 
-    [Tooltip("NPC°¡ ´ë»óÀÇ '¾Õ'¿¡ À§Ä¡ÇÒ °Å¸®")]
+    [Tooltip("ì•ˆë‚´ ìºë¦­í„°ê°€ ëŒ€ìƒì˜ 'ì•'ì— ìœ„ì¹˜í•  ê±°ë¦¬")]
     [SerializeField]
     private float forwardOffset = 1.0f;
 
-    [Tooltip("NPC°¡ ´ë»óÀÇ '¿À¸¥ÂÊ'¿¡ À§Ä¡ÇÒ °Å¸® (¾ç¼ö: ¿À¸¥ÂÊ, À½¼ö: ¿ŞÂÊ)")]
+    [Tooltip("ì•ˆë‚´ ìºë¦­í„°ê°€ ëŒ€ìƒì˜ 'ì˜¤ë¥¸ìª½'ì— ìœ„ì¹˜í•  ê±°ë¦¬ (ì–‘ìˆ˜: ì˜¤ë¥¸ìª½, ìŒìˆ˜: ì™¼ìª½)")]
     [SerializeField]
     private float rightOffset = 0.75f;
 
-    // ¡Ú [Ãß°¡µÊ] ÃÖ¼Ò °Å¸® À¯Áö (ÀÌ °Å¸® ¾ÈÀ¸·Î µé¾î¿À¸é ¸ØÃã)
-    [Header("°Å¸® Á¦ÇÑ (³Ê¹« °¡±õÁö ¾Ê°Ô)")]
-    [Tooltip("ÇÃ·¹ÀÌ¾î¿Í ÀÌ °Å¸®º¸´Ù °¡±î¿öÁö¸é ÀÌµ¿À» ¸ØÃä´Ï´Ù.")]
+    // â˜… [ì¶”ê°€ë¨] ìµœì†Œ ê±°ë¦¬ ìœ ì§€ (ì´ ê±°ë¦¬ ì•ˆìœ¼ë¡œ ë“¤ì–´ì˜¤ë©´ ë©ˆì¶¤)
+    [Header("ê±°ë¦¬ ì œí•œ (ë„ˆë¬´ ê°€ê¹ì§€ ì•Šê²Œ)")]
+    [Tooltip("í”Œë ˆì´ì–´ì™€ ì´ ê±°ë¦¬ë³´ë‹¤ ê°€ê¹Œì›Œì§€ë©´ ì´ë™ì„ ë©ˆì¶¥ë‹ˆë‹¤.")]
     [SerializeField]
     private float stopDistance = 1.5f;
 
-    // ¡Ú [Ãß°¡µÊ] ÀÚ¼¼ ±³Á¤ (¸ğµ¨ÀÌ ´©¿öÀÖÀ» ¶§ »ç¿ë)
-    [Header("ÀÚ¼¼ ±³Á¤ (´¯´Â ¹®Á¦ ÇØ°á)")]
-    [Tooltip("¸ğµ¨ÀÌ ´©¿öÀÖ´Ù¸é X¿¡ -90 ¶Ç´Â 90À» ÀÔ·ÂÇÏ¼¼¿ä.")]
+    // â˜… [ì¶”ê°€ë¨] ìì„¸ êµì • (ëª¨ë¸ì´ ëˆ„ì›Œìˆì„ ë•Œ ì‚¬ìš©)
+    [Header("ìì„¸ êµì • (ëˆ•ëŠ” ë¬¸ì œ í•´ê²°)")]
+    [Tooltip("ëª¨ë¸ì´ ëˆ„ì›Œìˆë‹¤ë©´ ê°€ë¡œ ì¶•ì— -90 ë˜ëŠ” 90ì„ ì…ë ¥í•˜ì„¸ìš”.")]
     [SerializeField]
     private Vector3 rotationOffset = new Vector3(-90, 0, 0);
 
-    // NPCÀÇ ¿òÁ÷ÀÓ »óÅÂ¸¦ Á¦¾îÇÏ´Â º¯¼ö
+    // NPCì˜ ì›€ì§ì„ ìƒíƒœë¥¼ ì œì–´í•˜ëŠ” ë³€ìˆ˜
     private bool isMoving = true;
 
-    // NPC°¡ ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸´ÂÁö ¿©ºÎ¸¦ Á¦¾îÇÏ´Â º¯¼ö
+    // NPCê°€ í”Œë ˆì´ì–´ë¥¼ ë°”ë¼ë³´ëŠ”ì§€ ì—¬ë¶€ë¥¼ ì œì–´í•˜ëŠ” ë³€ìˆ˜
     private bool isInteracting = false;
 
     void Awake()
     {
-        // ½Ì±ÛÅæ ·ÎÁ÷
+        // ì‹±ê¸€í†¤ ë¡œì§
         if (Instance == null)
         {
             Instance = this;
@@ -59,7 +60,7 @@ public class NPCController : MonoBehaviour
         GameObject playerCam = GameObject.FindGameObjectWithTag("VRCamera");
         if (playerCam == null)
         {
-            // VRCamera ÅÂ±×¸¦ ¸ø Ã£À¸¸é ¸ŞÀÎ Ä«¸Ş¶ó¶óµµ Ã£À½
+            // VRCamera íƒœê·¸ë¥¼ ëª» ì°¾ìœ¼ë©´ ë©”ì¸ ì¹´ë©”ë¼ë¼ë„ ì°¾ìŒ
             if (Camera.main != null)
             {
                 playerCam = Camera.main.gameObject;
@@ -77,28 +78,28 @@ public class NPCController : MonoBehaviour
         target = newTarget;
     }
 
-    // ¿òÁ÷ÀÓ Åä±Û
+    // ì›€ì§ì„ í† ê¸€
     public void ToggleMovement()
     {
         isMoving = !isMoving;
         Debug.Log($"NPC Movement Toggled: {isMoving}");
     }
 
-    // »óÈ£ÀÛ¿ë ½ÃÀÛ
+    // ìƒí˜¸ì‘ìš© ì‹œì‘
     public void StartInteraction()
     {
         if (target != null)
         {
             isInteracting = true;
-            Debug.Log("NPC: Player¸¦ ¹Ù¶óº¾´Ï´Ù.");
+            Debug.Log("NPC: Playerë¥¼ ë°”ë¼ë´…ë‹ˆë‹¤.");
         }
     }
 
-    // »óÈ£ÀÛ¿ë Á¾·á
+    // ìƒí˜¸ì‘ìš© ì¢…ë£Œ
     public void StopInteraction()
     {
         isInteracting = false;
-        Debug.Log("NPC: ¿ø·¡ÀÇ ÃßÀû È¸ÀüÀ¸·Î µ¹¾Æ°©´Ï´Ù.");
+        Debug.Log("NPC: ì›ë˜ì˜ ì¶”ì  íšŒì „ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
     }
 
     void Update()
@@ -106,13 +107,13 @@ public class NPCController : MonoBehaviour
         if (target == null || !isMoving) return;
 
         // =======================================================
-        // 1. NPC ÀÌµ¿ ·ÎÁ÷
+        // 1. NPC ì´ë™ ë¡œì§
         // =======================================================
 
-        // ¡Ú [°Å¸® Ã¼Å© Ãß°¡] ÇöÀç ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®¸¦ Àì´Ï´Ù.
+        // â˜… [ê±°ë¦¬ ì²´í¬ ì¶”ê°€] í˜„ì¬ í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ë¥¼ ì½ë‹ˆë‹¤.
         float currentDistance = Vector3.Distance(transform.position, target.position);
 
-        // ÁöÁ¤µÈ stopDistanceº¸´Ù ¸Ö¸® ÀÖÀ» ¶§¸¸ ÀÌµ¿ °è»êÀ» ÇÕ´Ï´Ù. (³Ê¹« °¡±î¿ì¸é ÀÌµ¿ ¾È ÇÔ)
+        // ì§€ì •ëœ stopDistanceë³´ë‹¤ ë©€ë¦¬ ìˆì„ ë•Œë§Œ ì´ë™ ê³„ì‚°ì„ í•©ë‹ˆë‹¤. (ë„ˆë¬´ ê°€ê¹Œìš°ë©´ ì´ë™ ì•ˆ í•¨)
         if (currentDistance > stopDistance)
         {
             Vector3 offsetForward = target.forward * forwardOffset;
@@ -120,7 +121,7 @@ public class NPCController : MonoBehaviour
 
             Vector3 targetPosition = target.position + offsetForward + offsetRight;
 
-            // ¸ñÇ¥ ÁöÁ¡°úÀÇ ¹Ì¼¼ °Å¸® Ã¼Å© (¶³¸² ¹æÁö)
+            // ëª©í‘œ ì§€ì ê³¼ì˜ ë¯¸ì„¸ ê±°ë¦¬ ì²´í¬ (ë–¨ë¦¼ ë°©ì§€)
             if (Vector3.Distance(transform.position, targetPosition) > 0.05f)
             {
                 transform.position = Vector3.Lerp(
@@ -132,23 +133,23 @@ public class NPCController : MonoBehaviour
         }
 
         // =======================================================
-        // 2. NPC È¸Àü ·ÎÁ÷
+        // 2. NPC íšŒì „ ë¡œì§
         // =======================================================
 
         Quaternion targetRotation;
 
         if (isInteracting)
         {
-            // ¡Ú A. »óÈ£ÀÛ¿ë ¸ğµå: ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¾´Ï´Ù.
+            // â˜… A. ìƒí˜¸ì‘ìš© ëª¨ë“œ: í”Œë ˆì´ì–´ë¥¼ ë°”ë¼ë´…ë‹ˆë‹¤.
             Vector3 lookDirection = target.position - transform.position;
-            lookDirection.y = 0; // °í°³ ¼÷ÀÓ ¹æÁö
+            lookDirection.y = 0; // ê³ ê°œ ìˆ™ì„ ë°©ì§€
 
             if (lookDirection != Vector3.zero)
             {
-                // ±âº»ÀûÀ¸·Î ¹Ù¶óº¸´Â È¸Àü
+                // ê¸°ë³¸ì ìœ¼ë¡œ ë°”ë¼ë³´ëŠ” íšŒì „
                 targetRotation = Quaternion.LookRotation(lookDirection);
 
-                // ¡Ú [±³Á¤ Àû¿ë] º¯¼ö(rotationOffset)¸¦ ´õÇØ¼­ °­Á¦·Î ÀÏÀ¸ÄÑ ¼¼¿ò
+                // â˜… [êµì • ì ìš©] ë³€ìˆ˜(rotationOffset)ë¥¼ ë”í•´ì„œ ê°•ì œë¡œ ì¼ìœ¼ì¼œ ì„¸ì›€
                 targetRotation *= Quaternion.Euler(rotationOffset);
             }
             else
@@ -158,18 +159,18 @@ public class NPCController : MonoBehaviour
         }
         else
         {
-            // ¡Ú B. ¿ø·¡ ¸ğµå: ÇÃ·¹ÀÌ¾î¿Í °°Àº ¹æÇâÀ» ¹Ù¶óº¾´Ï´Ù.
+            // â˜… B. ì›ë˜ ëª¨ë“œ: í”Œë ˆì´ì–´ì™€ ê°™ì€ ë°©í–¥ì„ ë°”ë¼ë´…ë‹ˆë‹¤.
             Vector3 playerEuler = target.rotation.eulerAngles;
 
-            // ¡Ú [±³Á¤ Àû¿ë] ÇÏµåÄÚµù(-90)À» Áö¿ì°í º¯¼ö(rotationOffset) »ç¿ë
+            // â˜… [êµì • ì ìš©] í•˜ë“œì½”ë”©(-90)ì„ ì§€ìš°ê³  ë³€ìˆ˜(rotationOffset) ì‚¬ìš©
             targetRotation = Quaternion.Euler(
-                rotationOffset.x,   // XÃà ±³Á¤ (´¯´Â ¹®Á¦ ÇØ°á)
-                playerEuler.y,      // YÃàÀº ÇÃ·¹ÀÌ¾î µû¶ó°¡±â
-                rotationOffset.z    // ZÃà ±³Á¤
+                rotationOffset.x,   // Xì¶• êµì • (ëˆ•ëŠ” ë¬¸ì œ í•´ê²°)
+                playerEuler.y,      // Yì¶•ì€ í”Œë ˆì´ì–´ ë”°ë¼ê°€ê¸°
+                rotationOffset.z    // Zì¶• êµì •
             );
         }
 
-        // È¸Àü Àû¿ë (ºÎµå·´°Ô)
+        // íšŒì „ ì ìš© (ë¶€ë“œëŸ½ê²Œ)
         transform.rotation = Quaternion.Slerp(
             transform.rotation,
             targetRotation,

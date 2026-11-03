@@ -1,0 +1,10 @@
+[
+  {"name": "Env_MouthCutaway", "polycount": 45000,
+   "prompt": "sagittal cross-section cutaway of a human head showing the inside of the mouth: tongue on the floor, upper and lower teeth rows, hard palate ceiling, uvula and throat opening at the back, sliced flat on one side, hollow oral cavity visible, semi-realistic anatomical educational model, clean pink and white"},
+  {"name": "Env_LargeIntestineTube", "polycount": 45000,
+   "prompt": "hollow straight colon tube segment, open at both ends showing the sliced ring cross-section, inner wall with rounded haustra pouch bulges and smooth wet pink-brown mucosa, slightly curved, semi-realistic anatomical educational tunnel model, same style as a small intestine tube segment"},
+  {"name": "Lobby_Pedestal", "polycount": 10000,
+   "prompt": "simple empty museum display plinth, white cylindrical pedestal with a flat top and a thin glowing blue light ring at the base, no glass, no objects on top, clean modern medical museum style"},
+  {"name": "Lobby_MouthArch", "polycount": 20000,
+   "prompt": "large walk-through archway shaped like a wide open cartoon mouth, thick pink lips forming a ring around a big open hole, white teeth along the top and bottom of the opening, tongue as a ramp at the bottom, freestanding museum attraction entrance, semi-realistic"}
+]

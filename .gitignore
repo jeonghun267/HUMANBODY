@@ -78,3 +78,6 @@ _Recovery/
 # OS files
 .DS_Store
 Thumbs.db
+
+# 로컬 작업 백업 (git 기록이 대신한다)
+Tools/backup/

@@ -1,5 +1,6 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ìžë™ ë¬¸") ]
 public class AutoDoor : MonoBehaviour
 {
     private Animator anim;
@@ -11,20 +12,20 @@ public class AutoDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // "VRCamera" -> "Player"·Î º¯°æ
+        // "VRCamera" -> "Player"ë¡œ ë³€ê²½
         if (other.CompareTag("Player"))
         {
-            // isOpen ´ë½Å character_nearby »ç¿ë!
+            // isOpen ëŒ€ì‹  character_nearby ì‚¬ìš©!
             anim.SetBool("character_nearby", true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // "VRCamera" -> "Player"·Î º¯°æ
+        // "VRCamera" -> "Player"ë¡œ ë³€ê²½
         if (other.CompareTag("Player"))
         {
-            // ³ª°¡¸é false·Î ²¨ÁÜ
+            // ë‚˜ê°€ë©´ falseë¡œ êº¼ì¤Œ
             anim.SetBool("character_nearby", false);
         }
     }

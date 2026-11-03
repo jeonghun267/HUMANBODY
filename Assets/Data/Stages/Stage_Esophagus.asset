@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1aa7e2a222a6da4ea51d68c0ab9aa66, type: 3}
+  m_Name: Stage_Esophagus
+  m_EditorClassIdentifier: Assembly-CSharp::OrganStage
+  stageId: Esophagus
+  displayName: "\uC2DD\uB3C4"
+  sceneName: 02_Esophagus
+  introLines:
+  - text: "\uC2DD\uB3C4\uB294 \uC785\uACFC \uC704\uB97C \uC787\uB294 \uC57D 25\uC13C\uD2F0\uBBF8\uD130
+      \uAE38\uC774\uC758 \uADFC\uC721 \uAD00\uC774\uC57C. \uD0D0\uD5D8 \uCEA1\uC290\uC744
+      \uD0C0\uACE0 \uC74C\uC2DD\uC774 \uB0B4\uB824\uAC00\uB294 \uAE38\uC744 \uAD00\uCC30\uD574
+      \uBCF4\uC790!"
+    voice: {fileID: 8300000, guid: de44d0763d1c0f4418fe535a1e4dfe30, type: 3}
+    holdSeconds: 8.19
+  - text: "\uBCBD\uC774 \uD30C\uB3C4\uCC98\uB7FC \uCC28\uB840\uB85C \uC870\uC5EC\uC9C0\uB294
+      '\uC5F0\uB3D9 \uC6B4\uB3D9'\uC73C\uB85C \uC74C\uC2DD\uC744 \uC544\uB798\uB85C
+      \uBC00\uC5B4\uB0B4. \uADF8\uB798\uC11C \uAC70\uAFB8\uB85C \uC11C\uC11C \uBA39\uC5B4\uB3C4
+      \uC74C\uC2DD\uC740 \uC704\uB85C \uAC00!"
+    voice: {fileID: 8300000, guid: bd8a33608ac3fdb4aa919c6da27f508f, type: 3}
+    holdSeconds: 8.32
+  outroLines:
+  - text: "\uC800 \uC544\uB798 \uC785\uAD6C\uAC00 \uC704\uB85C \uB4E4\uC5B4\uAC00\uB294
+      \uBB38, '\uBD84\uBB38'\uC774\uC57C. \uD3C9\uC18C\uC5D4 \uAF49 \uB2EB\uD600
+      \uC788\uC5B4\uC11C \uC704\uC0B0\uC774 \uAC70\uAFB8\uB85C \uC62C\uB77C\uC624\uC9C0
+      \uC54A\uAC8C \uB9C9\uC544 \uC918."
+    voice: {fileID: 8300000, guid: a86d1ecd962b0bd4788d2443b0cc43b9, type: 3}
+    holdSeconds: 8.059999
+  summary: "\uC2DD\uB3C4\uB294 \uC74C\uC2DD\uC744 \uC704\uB85C \uBCF4\uB0B4\uB294
+    \uD1B5\uB85C\uC608\uC694. \uADFC\uC721\uC774 \uCC28\uB840\uB85C \uC218\uCD95\uD558\uB294
+    \uC5F0\uB3D9 \uC6B4\uB3D9\uC73C\uB85C \uC74C\uC2DD\uC744 \uBC00\uC5B4\uB0B4\uC694."
+  funFacts:
+  - "\uC74C\uC2DD\uC774 \uC2DD\uB3C4\uB97C \uC9C0\uB098\uB294 \uB370 6~8\uCD08\uBC16\uC5D0
+    \uC548 \uAC78\uB824\uC694."
+  - "\uC6B0\uC8FC\uC5D0\uC11C\uB3C4 \uC5F0\uB3D9 \uC6B4\uB3D9 \uB355\uBD84\uC5D0
+    \uC74C\uC2DD\uC744 \uC0BC\uD0AC \uC218 \uC788\uC5B4\uC694."
+  - "\uBD84\uBB38\uC774 \uC798 \uC548 \uB2EB\uD788\uBA74 \uC704\uC0B0\uC774 \uC62C\uB77C\uC640
+    \uC18D\uC774 \uC4F0\uB824\uC694(\uC5ED\uB958\uC131 \uC2DD\uB3C4\uC5FC)."
+  fadeColor: {r: 0.16470589, g: 0.039215688, b: 0.05490196, a: 1}
+  ridesCapsule: 1

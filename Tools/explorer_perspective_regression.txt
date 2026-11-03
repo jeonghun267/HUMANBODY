@@ -1,0 +1,20 @@
+Mode: regression
+UTC: 2026-09-21T22:38:20.0430788Z
+PASS Boarding keeps the persistent root outside the capsule
+PASS Only the guide boards the guide seat
+PASS Guide following pauses while riding
+PASS Player movement is locked while riding
+PASS Disembarking restores player and guide parents
+PASS Disembarking preserves previously disabled components
+PASS Boarding cancels an in-flight teleport
+NOT TESTED Fade completion/visibility: requires Game view or a headset (WaitForEndOfFrame).
+PASS Replacing prior speech does not finish the new zone early
+PASS Zone completes exactly once after its own speech
+PASS Disabled zones cannot receive stale speech completion
+PASS Empty zone narration still completes once
+PASS 입장 안내 중에는 최소 대기 시간이 지나도 자동 출발하지 않음
+PASS 입장 안내가 끝난 뒤 자동 탑승 재개
+PASS Teleport marker survives scene changes with the persistent player
+PASS Player and narrator remain alive after unloading the scene
+Failures: 0
+Limit: accelerated desktop logic checks; no headset/input/audio/visual performance verification.

@@ -1,0 +1,1684 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.1f1 (55300504c302) revision 5582853'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-admin_14 doesn't exist
+OS: 'Windows 11  (10.0.26200) 64bit Enterprise' Language: 'ko' Physical Memory: 65459 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-09-21T20:05:15Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 28532)
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:/Users/admin_14/HUMANBODY
+-executeMethod
+JourneyValidation.Run
+-journeyMode
+journey
+-journeyReport
+C:\Users\admin_14\HUMANBODY\Tools\validation_journey.txt
+-logFile
+C:\Users\admin_14\HUMANBODY\Tools\validation_journey.log
+Successfully changed project path to: C:/Users/admin_14/HUMANBODY
+C:/Users/admin_14/HUMANBODY
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [5212]  Target information:
+
+Player connection [5212]  * "[IP] 172.16.42.14 [Port] 55504 [Flags] 2 [Guid] 3312588309 [EditorId] 3312588309 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [5212]  * "[IP] 192.168.95.1 [Port] 55504 [Flags] 2 [Guid] 3312588309 [EditorId] 3312588309 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [5212]  * "[IP] 192.168.111.1 [Port] 55504 [Flags] 2 [Guid] 3312588309 [EditorId] 3312588309 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [5212] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5212] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-29744" after 0.2 seconds.
+Library Redirect Path: Library/
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14" at "2026-09-21T20:05:16.1631115Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 28532, path: "C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.2+ff71f16
+  Session Id:              bd5020292eaf41279e5ef389610d6552
+  Correlation Id:          ee14d1dc85305d4099f02e58b747aac7
+  External correlation Id: 7634542644616312495
+  Machine Id:              sZiFEiLtuJXVTSby0EaVHmUV8j0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-admin_14" (connect: 0.37s, validation: 0.04s, handshake: 0.04s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14-notifications" at "2026-09-21T20:05:16.2484005Z"
+[Licensing::Module] Connected to LicensingClient (PId: 28532, launch time: 0.00, total connection time: 0.46s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14569622076545-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.50s
+[Licensing::Client] Successfully resolved entitlement details
+Refreshing native plugins compatible for Editor in 6.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.2.1f1 (55300504c302)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Vendor:   NVIDIA
+    VRAM:     10053 MB
+    Driver:   32.0.15.9186
+Shader 'Meta/MRUK/Scene/HighlightsAndShadows': fallback shader 'Off' not found
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.004750 seconds.
+- Loaded All Assemblies, in  0.356 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2199 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.490 seconds
+Domain Reload Profiling: 2842ms
+	BeginReloadAssembly (118ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (146ms)
+		LoadAssemblies (114ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (142ms)
+			TypeCache.Refresh (141ms)
+				TypeCache.ScanAssembly (130ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (2491ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2462ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2280ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (48ms)
+			ProcessInitializeOnLoadAttributes (87ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 89 packages:
+  Packages from [https://packages.unity.com]:
+    com.meta.xr.sdk.all@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.all@883c474f681a)
+    com.unity.ai.inference@2.3.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.inference@4ac711cab9a3)
+    com.unity.ai.navigation@2.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.navigation@eb5635ad590d)
+    com.unity.cinemachine@3.1.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cinemachine@5342685532bb)
+    com.unity.cloud.gltfast@6.14.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cloud.gltfast@0847aee0f6da)
+    com.unity.collab-proxy@2.10.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collab-proxy@1e5e48aff19d)
+    com.unity.ide.rider@3.0.36 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.inputsystem@1.14.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5)
+    com.unity.mobile.android-logcat@1.4.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mobile.android-logcat@1552651bf770)
+    com.unity.netcode.gameobjects@2.7.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.netcode.gameobjects@bd2a018756ed)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0)
+    com.unity.probuilder@6.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.probuilder@2e7e30b1490d)
+    com.unity.timeline@1.8.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.timeline@6b9e48457ddb)
+    com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602)
+    com.unity.visualscripting@1.9.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualscripting@6279e2b7c485)
+    com.unity.xr.interaction.toolkit@3.2.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.interaction.toolkit@7faefd988174)
+    com.unity.xr.management@4.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.management@f589c7ba49ff)
+    com.unity.xr.openxr@1.15.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1)
+    com.unity.xr.core-utils@2.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.core-utils@5b282bc7378d)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+    com.unity.mathematics@1.3.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mathematics@8017b507cc74)
+    com.unity.sysroot@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot@7bbbb9339c14)
+    com.unity.sysroot.linux-x86_64@2.0.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot.linux-x86_64@1998d1c7730e)
+    com.unity.settings-manager@2.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.settings-manager@41738c275190)
+    com.unity.transport@2.6.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.transport@6e74a0e6481d)
+    com.unity.nuget.mono-cecil@1.11.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb)
+    com.unity.burst@1.8.24 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.burst@f7a407abf4d5)
+    com.unity.collections@2.5.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collections@d49facba0036)
+    com.unity.splines@2.8.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.splines@b909627b5095)
+    com.unity.dt.app-ui@1.3.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.dt.app-ui@7b87c8225c06)
+    com.meta.xr.sdk.core@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.core@af732d25d6c8)
+    com.meta.xr.sdk.audio@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.audio@58b82318d501)
+    com.meta.xr.sdk.voice@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.voice@9dd3073fdc91)
+    com.meta.xr.sdk.haptics@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.haptics@21986bccc9cf)
+    com.meta.xr.mrutilitykit@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.mrutilitykit@671a38697dfa)
+    com.meta.xr.sdk.platform@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.platform@93335bcbfd8a)
+    com.meta.xr.sdk.interaction@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction@cfebb22563eb)
+    com.meta.xr.sdk.interaction.ovr@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction.ovr@88f940ca47bd)
+    com.unity.searcher@4.9.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.searcher@1e17ce91558d)
+    com.unity.test-framework.performance@3.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework.performance@92d1d09a72ed)
+  Packages from [https://registry.npmjs.com]:
+    jp.keijiro.klak.ndi@2.1.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.klak.ndi@512c9805903e)
+    jp.keijiro.osc-jack@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.osc-jack@fcb7d07b8a9b)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.2d.sprite@4ac596689b15)
+    com.unity.multiplayer.center@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.render-pipelines.universal@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal@facf525283ae)
+    com.unity.test-framework@1.5.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework@a6f5be5f149c)
+    com.unity.ugui@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ugui@80da3b035d6b)
+    com.unity.visualeffectgraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualeffectgraph@892d901f7a66)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore)
+    com.unity.shadergraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.shadergraph@844e9247af82)
+    com.unity.render-pipelines.core@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.core@609b19816fd2)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ext.nunit@031a54704bff)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+    com.unity.rendering.light-transport@1.0.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.rendering.light-transport@2c9279f90d7c)
+    com.unity.textmeshpro@5.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.textmeshpro@53f43edfd2e0)
+[Subsystems] Looking for new subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] Novel subsystem found at Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+[Subsystems] Discovering subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] No descriptors matched for  examples in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Package Manager] Done registering packages in 0.04 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Starting: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/admin_14/HUMANBODY
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s557ms
+[1830/2482  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.53 seconds), 1 items updated, 2482 evaluated
+AssetDatabase: script compilation time: 0.997071s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.244 seconds
+Script 'CharacterController' has the same name as built-in Unity component.
+AddComponent and GetComponent will not work with this script.
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowCollectionsPageExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowDetailsExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindow.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 25.58 ms, found 18 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Refreshing native plugins compatible for Editor in 25.33 ms, found 18 plugins.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HUMANBODY
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.376 seconds
+Domain Reload Profiling: 6603ms
+	BeginReloadAssembly (267ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (133ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (888ms)
+		LoadAssemblies (593ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (392ms)
+			TypeCache.Refresh (272ms)
+				TypeCache.ScanAssembly (253ms)
+			BuildScriptInfoCaches (97ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (5376ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (5121ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (254ms)
+			ProcessInitializeOnLoadAttributes (4385ms)
+			ProcessInitializeOnLoadMethodAttributes (430ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Asset Pipeline Refresh (id=a23587bb62258b24390feabc9050718a): Total: 10.034 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=6314 ms
+		Asset DB Callback time: managed=1278 ms, native=41 ms
+		Scripting: domain reloads=1, domain reload time=1244 ms, compile time=998 ms, other=155 ms
+		Project Asset Count: scripts=3522, non-scripts=6671
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 44.183ms
+	ApplyChangesToAssetFolders: 0.821ms
+	Scan: 200.622ms
+	OnSourceAssetsModified: 0.003ms
+	CategorizeAssetsWithTransientArtifact: 92.330ms
+	ProcessAssetsWithTransientArtifactChanges: 158.474ms
+	CategorizeAssets: 130.660ms
+	ImportOutOfDateAssets: 5454.548ms (4452.761ms without children)
+		CompileScripts: 998.336ms
+		ReloadNativeAssets: 0.031ms
+		UnloadImportedAssets: 0.917ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.960ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.542ms
+	PostProcessAllAssets: 1278.251ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 3.390ms
+	PersistCurrentRevisions: 0.266ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 14.992ms
+	Untracked: 2670.488ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 5.156ms
+Initializing Unity extensions:
+Unloading 281 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13258 unused Assets / (23.6 MB). Loaded Objects now: 16826.
+Memory consumption went from 395.7 MB to 372.1 MB.
+Total: 22.675900 ms (FindLiveObjects: 1.403100 ms CreateObjectMapping: 0.739900 ms MarkObjects: 14.610500 ms  DeleteObjects: 5.921400 ms)
+
+Opening scene 'Assets/Scenes/Journey/00_Lobby.unity'
+Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/00_Lobby.unity'
+	Deserialize:            146.676 ms
+	Integration:            426.418 ms
+	Integration of assets:  6.281 ms
+	Thread Wait Time:       0.066 ms
+	Total Operation Time:   579.441 ms
+Unloading 2 unused Assets / (1.1 KB). Loaded Objects now: 17240.
+Memory consumption went from 359.0 MB to 359.0 MB.
+Total: 15.662700 ms (FindLiveObjects: 0.858300 ms CreateObjectMapping: 0.345000 ms MarkObjects: 14.429400 ms  DeleteObjects: 0.029500 ms)
+
+[Project] Loading completed in 18.016 seconds
+	Project init time: 				14.695 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.240 seconds
+		Asset Database init time: 		0.202 seconds
+		Global illumination init time: 	0.006 seconds
+		Assemblies load time: 			2.869 seconds
+		Unity extensions init time: 	0.017 seconds
+		Asset Database refresh time: 	10.034 seconds
+	Scene opening time: 			3.241 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1790021133785,"processId":29744,"projectLoad":18.0162708,"projectInit":14.6947442,"templateInit":0.0,"packageManagerInit":0.2401457,"assetDatabaseInit":0.2023827,"globalIlluminationInit":0.0056958,"assembliesLoad":2.8690385,"unityExtensionsInit":0.0172797,"assetDatabaseRefresh":10.0341765,"sceneOpening":3.2405631}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1790021133785,"processId":29744,"editorVersion":"6000.2.1f1 (55300504c302)","branch":"6000.2/staging","buildType":"Release","platform":"Windows"}
+Reloading assemblies for play mode.
+Reloading assemblies after forced synchronous recompile.
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.067 seconds
+Refreshing native plugins compatible for Editor in 26.51 ms, found 18 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Refreshing native plugins compatible for Editor in 26.63 ms, found 18 plugins.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.913 seconds
+Domain Reload Profiling: 2969ms
+	BeginReloadAssembly (598ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (23ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (422ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (387ms)
+		LoadAssemblies (200ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (271ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (241ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (1914ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1518ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (32ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (260ms)
+			ProcessInitializeOnLoadAttributes (918ms)
+			ProcessInitializeOnLoadMethodAttributes (292ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (35ms)
+Asset Pipeline Refresh (id=1d505f2322612db45881d6d1c8a680f7): Total: 3.304 seconds - Initiated by StopAssetImportingV2(ForceSynchronousImport | ForceDomainReload)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=2147 ms
+		Asset DB Callback time: managed=61 ms, native=0 ms
+		Scripting: domain reloads=1, domain reload time=1093 ms, compile time=1 ms, other=0 ms
+		Project Asset Count: scripts=3522, non-scripts=6671
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 3.141ms
+	ApplyChangesToAssetFolders: 0.429ms
+	Scan: 0.001ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 8.303ms
+	CategorizeAssets: 112.398ms
+	ImportOutOfDateAssets: 1986.145ms (1980.382ms without children)
+		CompileScripts: 1.125ms
+		CollectScriptTypesHashes: 1.688ms
+		ReloadNativeAssets: 1.375ms
+		UnloadImportedAssets: 0.015ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.199ms
+		InitializingProgressBar: 0.000ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.359ms
+	PostProcessAllAssets: 61.723ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.289ms
+	UnloadStreamsBegin: 0.206ms
+	PersistCurrentRevisions: 0.225ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 12.149ms
+	Untracked: 1131.245ms
+
+[XR] Time interace not found - delta time prediction disabled.
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Input
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[MetaXRFeature] HookGetInstanceProcAddr: 140736322820974
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:HookGetInstanceProcAddr (intptr) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs:181)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:HookGetInstanceProcAddr () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/Features/OpenXRFeature.cs:738)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:InitializeInternal () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:246)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Initialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:203)
+UnityEngine.XR.Management.XRManagerSettings:InitializeLoaderSync () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRManagerSettings.cs:186)
+UnityEngine.XR.Management.XRGeneralSettings:InitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:172)
+UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:145)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 181)
+
+[MetaXRFeature] SetClientVersion
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:HookGetInstanceProcAddr (intptr) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs:183)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:HookGetInstanceProcAddr () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/Features/OpenXRFeature.cs:738)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:InitializeInternal () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:246)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Initialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:203)
+UnityEngine.XR.Management.XRManagerSettings:InitializeLoaderSync () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRManagerSettings.cs:186)
+UnityEngine.XR.Management.XRGeneralSettings:InitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:172)
+UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:145)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 183)
+
+[XR] [5212] [05:05:37.476][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.478][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.480][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.482][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.484][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.486][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.489][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.491][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.493][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.495][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.497][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.499][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.501][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.503][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.506][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.508][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.510][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.512][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.514][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.516][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.518][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.520][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.522][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.525][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.527][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.529][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.531][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.533][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.535][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.537][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.539][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.541][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.544][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.546][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.548][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.550][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.553][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.555][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.557][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.559][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.561][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.563][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.566][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.568][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.570][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.572][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.574][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.576][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.578][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.580][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.583][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.585][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.587][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.589][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.592][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.594][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.597][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.599][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.601][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.603][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.605][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.608][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.610][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.612][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.614][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.616][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.618][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.620][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.622][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.624][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.626][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.629][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.631][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.634][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.636][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.639][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.641][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.643][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.644][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.646][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.649][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.651][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.652][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.654][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.656][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.658][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.660][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.662][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.664][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.666][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.668][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.670][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.672][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.674][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.676][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.678][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.680][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.682][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[Subsystems] Loading plugin UnityOpenXR for subsystem OpenXR Display...
+[XR] [5212] [05:05:37.688][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.691][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.693][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.695][Error  ] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE
+[XR] [5212] [05:05:37.695][Info   ] Available Layers: (0)
+[XR] [5212] [05:05:37.704][Error  ] xrCreateInstance: XR_ERROR_RUNTIME_UNAVAILABLE
+[Subsystems] Failed to initialize subsystem OpenXR Display [error: 1]
+[XR] [5212] [05:05:37.705][Error  ] xrPollEvent: XR_ERROR_FUNCTION_UNSUPPORTED
+[XR] [5212] [05:05:37.705][Info   ] 
+
+==== Start Unity OpenXR Diagnostic Report ====
+
+
+[XR] [5212] [05:05:37.705][Info   ] ==== Report Reason: System Shutdown ====
+
+
+[XR] [5212] [05:05:37.705][Info   ] ==== OpenXR Init Info ====
+[XR] [5212] [05:05:37.706][Info   ] 
+[XR] [5212] [05:05:37.706][Info   ] Stage 1 Missing Entry Points: (1)
+[XR] [5212] [05:05:37.706][Info   ]   xrInitializeLoaderKHR
+[XR] [5212] [05:05:37.706][Info   ] 
+[XR] [5212] [05:05:37.706][Info   ] ==== OpenXR Runtime Info ====
+[XR] [5212] [05:05:37.706][Info   ] 
+[XR] [5212] [05:05:37.706][Info   ] Available Layers: (0)
+[XR] [5212] [05:05:37.706][Info   ] 
+[XR] [5212] [05:05:37.706][Info   ] ==== Last 20 non-XR_SUCCESS returns ====
+[XR] [5212] [05:05:37.706][Info   ] [FAILURE] xrEnumerateInstanceExtensionProperties: XR_ERROR_RUNTIME_UNAVAILABLE (102x)
+[XR] [5212] [05:05:37.706][Info   ] [FAILURE] xrCreateInstance: XR_ERROR_RUNTIME_UNAVAILABLE (1x)
+[XR] [5212] [05:05:37.706][Info   ] [FAILURE] xrPollEvent: XR_ERROR_FUNCTION_UNSUPPORTED (1x)
+[XR] [5212] [05:05:37.706][Info   ] 
+[XR] [5212] [05:05:37.706][Info   ] ==== Last 20 Events ====
+[XR] [5212] [05:05:37.706][Info   ] 
+
+==== End Unity OpenXR Diagnostic Report ====
+
+
+[MetaXRFeature] OnSessionDestroy: 0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:OnSessionDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs:296)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/Features/OpenXRFeature.cs:695)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:682)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:475)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Initialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:211)
+UnityEngine.XR.Management.XRManagerSettings:InitializeLoaderSync () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRManagerSettings.cs:186)
+UnityEngine.XR.Management.XRGeneralSettings:InitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:172)
+UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:145)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 296)
+
+[MetaXRFeature] OnInstanceDestroy: 0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs:239)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/Features/OpenXRFeature.cs:698)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:682)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:475)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Initialize () (at ./Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/OpenXRLoader.cs:211)
+UnityEngine.XR.Management.XRManagerSettings:InitializeLoaderSync () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRManagerSettings.cs:186)
+UnityEngine.XR.Management.XRGeneralSettings:InitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:172)
+UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad () (at ./Library/PackageCache/com.unity.xr.management@f589c7ba49ff/Runtime/XRGeneralSettings.cs:145)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 239)
+
+Applying Acoustic Propagation Settings: [acoustic model = Automatic], [diffraction = True], 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MetaXRAcousticSettings:ApplyAllSettings () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:102)
+MetaXRAcousticSettings:OnBeforeSceneLoadRuntimeMethod () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:38)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs Line: 102)
+
+Unity memory allocator detected: MetaXRAudio native memory allocations will be tracked.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+MetaXRAcousticNativeInterface:FindInterface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs:289)
+MetaXRAcousticNativeInterface:get_Interface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs:248)
+MetaXRAcousticSettings:ApplyAllSettings () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:105)
+MetaXRAcousticSettings:OnBeforeSceneLoadRuntimeMethod () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:38)
+
+[./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs line 289]
+
+Meta XR Audio Native Interface initialized with Unity plugin
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MetaXRAcousticNativeInterface:FindInterface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs:296)
+MetaXRAcousticNativeInterface:get_Interface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs:248)
+MetaXRAcousticSettings:ApplyAllSettings () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:105)
+MetaXRAcousticSettings:OnBeforeSceneLoadRuntimeMethod () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticSettings.cs:38)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAcousticNativeInterface.cs Line: 296)
+
+Setting spatial voice limit: 64
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MetaXRAudioSource:OnBeforeSceneLoadRuntimeMethod () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioSource.cs:51)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioSource.cs Line: 51)
+
+[OVRManager] OnApplicationPause(false)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OnApplicationPause (bool) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs:3464)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs Line: 3464)
+
+[OVRManager] OnApplicationFocus(false)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OnApplicationFocus (bool) (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs:3476)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs Line: 3476)
+
+No Meta XR Audio Room found, setting default room
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MetaXRAudioRoomAcousticProperties:CheckSceneHasRoom () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioRoomAcousticProperties.cs:162)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioRoomAcousticProperties.cs Line: 162)
+
+Meta XR Audio Native Interface initialized with Unity plugin
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MetaXRAudioNativeInterface:FindInterface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioNativeInterface.cs:107)
+MetaXRAudioNativeInterface:get_Interface () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioNativeInterface.cs:81)
+MetaXRAudioRoomAcousticProperties:Update () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioRoomAcousticProperties.cs:184)
+MetaXRAudioRoomAcousticProperties:CheckSceneHasRoom () (at ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioRoomAcousticProperties.cs:165)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.audio@58b82318d501/Runtime/scripts/MetaXRAudioNativeInterface.cs Line: 107)
+
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            114.272 ms
+	Integration:            906.880 ms
+	Integration of assets:  177.581 ms
+	Thread Wait Time:       -0.004 ms
+	Total Operation Time:   1198.728 ms
+Unable to process a controller whose SampleRateHz is 0 now.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRHaptics/OVRHapticsOutput:Process () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs:176)
+OVRHaptics:Process () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs:393)
+OVRManager:LateUpdate () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs:3403)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs Line: 176)
+
+Unable to process a controller whose SampleRateHz is 0 now.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRHaptics/OVRHapticsOutput:Process () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs:176)
+OVRHaptics:Process () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs:393)
+OVRManager:LateUpdate () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs:3403)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRHaptics.cs Line: 176)
+
+Asset Pipeline Refresh (id=dc8b04d1b4889324aa005eeed12fab09): Total: 0.101 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Shader 'Meta/MRUK/Scene/HighlightsAndShadows': fallback shader 'Off' not found
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Created GICache directory at C:/Users/admin_14/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.012s, timestamps: [22.810 - 22.822]
+[JourneyValidation] PASS Lobby bootstrap
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:230)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 75 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.512800 ms
+Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
+	Deserialize:            85.915 ms
+	Integration:            386.135 ms
+	Integration of assets:  78.430 ms
+	Thread Wait Time:       12.916 ms
+	Total Operation Time:   563.397 ms
+Unloading 342 unused Assets / (16.1 MB). Loaded Objects now: 17475.
+Memory consumption went from 1.17 GB to 1.16 GB.
+Total: 20.806300 ms (FindLiveObjects: 0.880900 ms CreateObjectMapping: 0.970200 ms MarkObjects: 17.675600 ms  DeleteObjects: 1.279200 ms)
+
+[JourneyValidation] PASS 01_Mouth keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 01_Mouth keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 01_Mouth has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 20 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.582400 ms
+Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
+	Deserialize:            51.357 ms
+	Integration:            364.735 ms
+	Integration of assets:  51.423 ms
+	Thread Wait Time:       8.564 ms
+	Total Operation Time:   476.079 ms
+Unloading 96 unused Assets / (95.5 KB). Loaded Objects now: 17401.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 19.010400 ms (FindLiveObjects: 0.818200 ms CreateObjectMapping: 0.468100 ms MarkObjects: 17.273300 ms  DeleteObjects: 0.450200 ms)
+
+[JourneyValidation] PASS 02_Esophagus keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 02_Esophagus keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 02_Esophagus has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Mouth zone -> chewing -> swallowing -> esophagus
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:243)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Persistent root remains independent while riding toward 03_Stomach
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<RideTo>d__23:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:300)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.249500 ms
+Loaded scene 'Assets/Scenes/Journey/03_Stomach.unity'
+	Deserialize:            95.917 ms
+	Integration:            392.999 ms
+	Integration of assets:  95.954 ms
+	Thread Wait Time:       16.996 ms
+	Total Operation Time:   601.866 ms
+Unloading 98 unused Assets / (74.9 KB). Loaded Objects now: 17567.
+Memory consumption went from 0.97 GB to 0.97 GB.
+Total: 20.078100 ms (FindLiveObjects: 0.871600 ms CreateObjectMapping: 0.440300 ms MarkObjects: 18.375500 ms  DeleteObjects: 0.389800 ms)
+
+[JourneyValidation] PASS 03_Stomach keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 03_Stomach keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 03_Stomach has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Stomach digestion opens pylorus
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:253)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 37 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.477900 ms
+Loaded scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
+	Deserialize:            112.502 ms
+	Integration:            397.535 ms
+	Integration of assets:  196.762 ms
+	Thread Wait Time:       21.788 ms
+	Total Operation Time:   728.587 ms
+Unloading 131 unused Assets / (16.2 MB). Loaded Objects now: 17799.
+Memory consumption went from 1.26 GB to 1.25 GB.
+Total: 21.222000 ms (FindLiveObjects: 0.866200 ms CreateObjectMapping: 0.420200 ms MarkObjects: 19.287700 ms  DeleteObjects: 0.647400 ms)
+
+[JourneyValidation] PASS 04_SmallIntestine keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 04_SmallIntestine keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 04_SmallIntestine has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS All nutrients absorb and completion event fires
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:263)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Persistent root remains independent while riding toward 05_LargeIntestine
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<RideTo>d__23:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:300)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.780400 ms
+Loaded scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
+	Deserialize:            116.210 ms
+	Integration:            379.752 ms
+	Integration of assets:  202.290 ms
+	Thread Wait Time:       22.573 ms
+	Total Operation Time:   720.824 ms
+Unloading 174 unused Assets / (1.3 MB). Loaded Objects now: 18130.
+Memory consumption went from 1.36 GB to 1.36 GB.
+Total: 21.781900 ms (FindLiveObjects: 0.860300 ms CreateObjectMapping: 0.369700 ms MarkObjects: 19.727500 ms  DeleteObjects: 0.823800 ms)
+
+[JourneyValidation] PASS 05_LargeIntestine keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 05_LargeIntestine keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 05_LargeIntestine has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Persistent root remains independent while riding toward 06_Theater
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<RideTo>d__23:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:300)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.813800 ms
+Loaded scene 'Assets/Scenes/Journey/06_Theater.unity'
+	Deserialize:            35.126 ms
+	Integration:            376.939 ms
+	Integration of assets:  38.012 ms
+	Thread Wait Time:       8.978 ms
+	Total Operation Time:   459.055 ms
+Unloading 207 unused Assets / (414.4 KB). Loaded Objects now: 17307.
+Memory consumption went from 1.07 GB to 1.07 GB.
+Total: 19.489100 ms (FindLiveObjects: 0.797700 ms CreateObjectMapping: 0.348700 ms MarkObjects: 17.449100 ms  DeleteObjects: 0.892900 ms)
+
+[JourneyValidation] PASS 06_Theater keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 06_Theater keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 06_Theater has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.301100 ms
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            100.165 ms
+	Integration:            399.322 ms
+	Integration of assets:  214.098 ms
+	Thread Wait Time:       18.998 ms
+	Total Operation Time:   732.583 ms
+Unloading 93 unused Assets / (55.7 KB). Loaded Objects now: 17444.
+Memory consumption went from 0.93 GB to 0.93 GB.
+Total: 20.535700 ms (FindLiveObjects: 0.883900 ms CreateObjectMapping: 0.344300 ms MarkObjects: 19.019800 ms  DeleteObjects: 0.286800 ms)
+
+[JourneyValidation] PASS 00_Lobby keeps the original player
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:286)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 00_Lobby keeps the original persistent root
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:287)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS 00_Lobby has a narrator
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Stage>d__22:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:289)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS Theater fallback and outro return to lobby
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:275)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+[JourneyValidation] PASS One persistent manager after the complete round trip
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyValidation:Check (bool,string) (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:101)
+JourneyValidation/<Journey>d__21:MoveNext () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:276)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:87)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyValidation.cs Line: 101)
+
+Killing ADB server in 0.0352454 seconds.
+Start importing Assets/XR/Settings/OpenXRPackageSettings.asset using Guid(ca586be06fd8d8346964cee5f0429239) (NativeFormatImporter) -> (artifact id: '602eed2368080f9ed7960d1f2eb9049b') in 0.0068085 seconds
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'AvatarSDK') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'AvatarSDK') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'AvatarSDK') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'AvatarSDK') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'LipSyncInput') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'LipSyncInput') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script (Unknown) on this Behaviour is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+The referenced script on this Behaviour (Game Object 'ShaderManager') is missing!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:LoadAssetAtPath (string,System.Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Netcode.NetworkPrefabsList> (string)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:GetOrCreateNetworkPrefabs (string,bool&,bool) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:148)
+Unity.Netcode.Editor.Configuration.NetworkPrefabProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at ./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs:117)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+[./Library/PackageCache/com.unity.netcode.gameobjects@bd2a018756ed/Editor/Configuration/NetworkPrefabProcessor.cs line 148]
+
+Refreshing native plugins compatible for Editor in 25.33 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.91 ms.
+Asset Pipeline Refresh (id=a2b98b3ac562aa1418432756321cb2f9): Total: 0.402 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=107 ms
+		Asset DB Callback time: managed=224 ms, native=68 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=3522, non-scripts=6671
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.269ms
+	Scan: 24.468ms
+	OnSourceAssetsModified: 0.001ms
+	CategorizeAssetsWithTransientArtifact: 0.009ms
+	ProcessAssetsWithTransientArtifactChanges: 0.217ms
+	CategorizeAssets: 63.996ms
+	ImportOutOfDateAssets: 11.607ms (0.715ms without children)
+		ImportManagerImport: 8.049ms (0.926ms without children)
+			ImportInProcess: 7.124ms
+		ReloadNativeAssets: 0.340ms
+		UnloadImportedAssets: 0.565ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.538ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.394ms
+	PostProcessAllAssets: 264.990ms
+	Hotreload: 27.197ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.287ms
+	UnloadStreamsBegin: 0.061ms
+	PersistCurrentRevisions: 0.213ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 8.769ms
+
+[OVRManager] OnDestroy
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OnDestroy () (at ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs:3449)
+JourneyValidation:Finish () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:317)
+JourneyValidation:Tick () (at Assets/Scripts/Journey/Editor/JourneyValidation.cs:85)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@af732d25d6c8/Scripts/OVRManager.cs Line: 3449)
+
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-admin_14-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-admin_14 channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790021170730,"processId":29744,"allocatedMemory":24285586,"memoryLabels":[{"Default":26073},{"Permanent":15468},{"NewDelete":67401},{"Thread":4230344},{"Manager":35354},{"VertexData":8},{"Geometry":816},{"VFX":-192},{"Texture":296},{"Shader":78821},{"Material":24},{"GfxDevice":55208},{"Animation":392},{"Audio":4040},{"FontEngine":256},{"Physics":1210},{"Serialization":1968},{"Input":14824},{"JobScheduler":60728},{"TextLib":160},{"Mono":32},{"MonoCode":256},{"ScriptingNativeRuntime":155060},{"BaseObject":1620272},{"Resource":1304},{"Renderer":2928},{"Transform":4646},{"File":21499},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":16771},{"DynamicArray":235417},{"HashMap":4121302},{"Utility":2661590},{"Curl":48},{"PoolAlloc":2728},{"AI":40},{"TypeTree":5005},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7824},{"Director":8240},{"CloudService":9080},{"WebRequest":808},{"VR":51330},{"SceneManager":496},{"Video":208},{"LazyScriptCache":32},{"Camera":17},{"Secure":2113},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":-4880},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"NativePlugin":341842},{"Analytics":384},{"Hierarchy":272},{"CoreStats":12424},{"Identifiers":12384},{"Gui":80},{"EditorUtility":177790},{"VersionControl":4},{"Undo":947},{"AssetDatabase":9807944},{"EditorGi":328},{"UnityConnect":24552},{"Upm":1896},{"DrivenProperties":72},{"LocalIPC":214},{"ProfilerEditor":9746},{"CoreBusinessMetrics":14940},{"Licensing":1232},{"AssetReference":32},{"IPCStream":32}]}

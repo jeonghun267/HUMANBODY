@@ -1,0 +1,1003 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.1f1 (55300504c302) revision 5582853'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14" at "2026-11-03T17:10:27.4272447Z"
+OS: 'Windows 11  (10.0.26200) 64bit Enterprise' Language: 'ko' Physical Memory: 65459 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-11-03T17:10:27Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:/Users/admin_14/HUMANBODY
+-executeMethod
+JourneyCapture.CaptureAll
+-quit
+-logFile
+Tools/unity_capture_1104.log
+Successfully changed project path to: C:/Users/admin_14/HUMANBODY
+C:/Users/admin_14/HUMANBODY
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [36460]  Target information:
+
+Player connection [36460]  * "[IP] 172.16.42.14 [Port] 55505 [Flags] 2 [Guid] 680464135 [EditorId] 680464135 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36460]  * "[IP] 192.168.95.1 [Port] 55505 [Flags] 2 [Guid] 680464135 [EditorId] 680464135 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36460]  * "[IP] 192.168.111.1 [Port] 55505 [Flags] 2 [Guid] 680464135 [EditorId] 680464135 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36460] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36460] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 68336, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              b8a67e1303ee429b8034c0768c21eb48
+  Correlation Id:          40e1ed7cff7546fd44422dcd98e3fcae
+  External correlation Id: 5108901543144941901
+  Machine Id:              sZiFEiLtuJXVTSby0EaVHmUV8j0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-admin_14" (connect: 0.00s, validation: 0.00s, handshake: 0.09s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14-notifications" at "2026-11-03T17:10:27.5240366Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14569622076545-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+Input System module state changed to: Initialized.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.11s
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-71252" after 0.5 seconds.
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Successfully resolved entitlement details
+Refreshing native plugins compatible for Editor in 8.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.2.1f1 (55300504c302)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Vendor:   NVIDIA
+    VRAM:     10053 MB
+    Driver:   32.0.16.1088
+Shader 'Meta/MRUK/Scene/HighlightsAndShadows': fallback shader 'Off' not found
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.009007 seconds.
+- Loaded All Assemblies, in  0.539 seconds
+Native extension for Android target not found
+Multiple ADB server instances found, the following ADB server instance have been terminated due to being run from another SDK. Process paths: 
+C:\Program Files\Unity\Hub\Editor\6000.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools\adb.exe
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.Android.AndroidDeploymentTargetsExtension:GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext,UnityEditor.ProgressHandler) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/DeploymentTargets/AndroidDeploymentTargetsExtension.cs:382)
+UnityEditor.Android.TargetScanWorker:ScanSync () (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/TargetScanWorker.cs:164)
+UnityEditor.Android.TargetExtension:OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[]) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:114)
+UnityEditor.Android.TargetExtension:OnLoad () (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:75)
+UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules ()
+
+(Filename: /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/DeploymentTargets/AndroidDeploymentTargetsExtension.cs Line: 382)
+
+Android Extension - Scanning For ADB Devices 2535 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.909 seconds
+Domain Reload Profiling: 3442ms
+	BeginReloadAssembly (237ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (227ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (171ms)
+			TypeCache.Refresh (170ms)
+				TypeCache.ScanAssembly (155ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (2909ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2876ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2635ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (117ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 89 packages:
+  Packages from [https://packages.unity.com]:
+    com.meta.xr.sdk.all@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.all@883c474f681a)
+    com.unity.ai.inference@2.3.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.inference@4ac711cab9a3)
+    com.unity.ai.navigation@2.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.navigation@eb5635ad590d)
+    com.unity.cinemachine@3.1.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cinemachine@5342685532bb)
+    com.unity.cloud.gltfast@6.14.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cloud.gltfast@0847aee0f6da)
+    com.unity.collab-proxy@2.10.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collab-proxy@1e5e48aff19d)
+    com.unity.ide.rider@3.0.36 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.inputsystem@1.14.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5)
+    com.unity.mobile.android-logcat@1.4.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mobile.android-logcat@1552651bf770)
+    com.unity.netcode.gameobjects@2.7.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.netcode.gameobjects@bd2a018756ed)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0)
+    com.unity.probuilder@6.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.probuilder@2e7e30b1490d)
+    com.unity.timeline@1.8.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.timeline@6b9e48457ddb)
+    com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602)
+    com.unity.visualscripting@1.9.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualscripting@6279e2b7c485)
+    com.unity.xr.interaction.toolkit@3.2.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.interaction.toolkit@7faefd988174)
+    com.unity.xr.management@4.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.management@f589c7ba49ff)
+    com.unity.xr.openxr@1.15.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1)
+    com.unity.xr.core-utils@2.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.core-utils@5b282bc7378d)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+    com.unity.mathematics@1.3.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mathematics@8017b507cc74)
+    com.unity.sysroot@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot@7bbbb9339c14)
+    com.unity.sysroot.linux-x86_64@2.0.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot.linux-x86_64@1998d1c7730e)
+    com.unity.settings-manager@2.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.settings-manager@41738c275190)
+    com.unity.transport@2.6.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.transport@6e74a0e6481d)
+    com.unity.nuget.mono-cecil@1.11.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb)
+    com.unity.burst@1.8.24 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.burst@f7a407abf4d5)
+    com.unity.collections@2.5.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collections@d49facba0036)
+    com.unity.splines@2.8.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.splines@b909627b5095)
+    com.unity.dt.app-ui@1.3.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.dt.app-ui@7b87c8225c06)
+    com.meta.xr.sdk.core@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.core@af732d25d6c8)
+    com.meta.xr.sdk.audio@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.audio@58b82318d501)
+    com.meta.xr.sdk.voice@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.voice@9dd3073fdc91)
+    com.meta.xr.sdk.haptics@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.haptics@21986bccc9cf)
+    com.meta.xr.mrutilitykit@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.mrutilitykit@671a38697dfa)
+    com.meta.xr.sdk.platform@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.platform@93335bcbfd8a)
+    com.meta.xr.sdk.interaction@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction@cfebb22563eb)
+    com.meta.xr.sdk.interaction.ovr@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction.ovr@88f940ca47bd)
+    com.unity.searcher@4.9.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.searcher@1e17ce91558d)
+    com.unity.test-framework.performance@3.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework.performance@92d1d09a72ed)
+  Packages from [https://registry.npmjs.com]:
+    jp.keijiro.klak.ndi@2.1.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.klak.ndi@512c9805903e)
+    jp.keijiro.osc-jack@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.osc-jack@fcb7d07b8a9b)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.2d.sprite@4ac596689b15)
+    com.unity.multiplayer.center@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.render-pipelines.universal@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal@facf525283ae)
+    com.unity.test-framework@1.5.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework@a6f5be5f149c)
+    com.unity.ugui@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ugui@80da3b035d6b)
+    com.unity.visualeffectgraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualeffectgraph@892d901f7a66)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore)
+    com.unity.shadergraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.shadergraph@844e9247af82)
+    com.unity.render-pipelines.core@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.core@609b19816fd2)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ext.nunit@031a54704bff)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+    com.unity.rendering.light-transport@1.0.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.rendering.light-transport@2c9279f90d7c)
+    com.unity.textmeshpro@5.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.textmeshpro@53f43edfd2e0)
+[Subsystems] Looking for new subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] Novel subsystem found at Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+[Subsystems] Discovering subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] No descriptors matched for  examples in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Package Manager] Done registering packages in 0.05 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\admin_14\HUMANBODY\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 56.5294ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/admin_14/HUMANBODY
+DisplayProgressbar: Compiling Scripts
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@f7a407abf4d5\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb\Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 81.2756ms
+ExitCode: 0 Duration: 12s
+[1672/2482  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (12.41 seconds), 1 items updated, 2482 evaluated
+AssetDatabase: script compilation time: 13.290216s
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  5.578 seconds
+Script 'CharacterController' has the same name as built-in Unity component.
+AddComponent and GetComponent will not work with this script.
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowCollectionsPageExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowDetailsExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindow.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 132.99 ms, found 18 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Refreshing native plugins compatible for Editor in 26.13 ms, found 18 plugins.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HUMANBODY
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  6.634 seconds
+Domain Reload Profiling: 12190ms
+	BeginReloadAssembly (315ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (144ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (5154ms)
+		LoadAssemblies (4831ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (446ms)
+			TypeCache.Refresh (316ms)
+				TypeCache.ScanAssembly (296ms)
+			BuildScriptInfoCaches (103ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (6635ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (6243ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (37ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (279ms)
+			ProcessInitializeOnLoadAttributes (5264ms)
+			ProcessInitializeOnLoadMethodAttributes (634ms)
+			AfterProcessingInitializeOnLoad (22ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Asset Pipeline Refresh (id=49eac96399d375548bc784a0c87bb445): Total: 29.642 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=9356 ms
+		Asset DB Callback time: managed=1143 ms, native=56 ms
+		Scripting: domain reloads=1, domain reload time=5579 ms, compile time=13292 ms, other=213 ms
+		Project Asset Count: scripts=3528, non-scripts=6725
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 59.743ms
+	ApplyChangesToAssetFolders: 1.028ms
+	Scan: 1199.783ms
+	OnSourceAssetsModified: 0.003ms
+	CategorizeAssetsWithTransientArtifact: 237.207ms
+	ProcessAssetsWithTransientArtifactChanges: 176.276ms
+	CategorizeAssets: 178.292ms
+	ImportOutOfDateAssets: 6906.156ms (-6390.859ms without children)
+		CompileScripts: 13292.083ms
+		ReloadNativeAssets: 0.048ms
+		UnloadImportedAssets: 1.388ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.844ms
+		InitializingProgressBar: 0.002ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.648ms
+	PostProcessAllAssets: 1143.714ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 4.477ms
+	PersistCurrentRevisions: 0.277ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 20.685ms
+	Untracked: 19735.350ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Scanning for USB devices : 5.428ms
+Initializing Unity extensions:
+Unloading 74 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13275 unused Assets / (24.3 MB). Loaded Objects now: 14171.
+Memory consumption went from 309.8 MB to 285.4 MB.
+Total: 29.848400 ms (FindLiveObjects: 2.164600 ms CreateObjectMapping: 2.098500 ms MarkObjects: 17.055500 ms  DeleteObjects: 8.528300 ms)
+
+Opening scene 'Assets/Scenes/Journey/00_Lobby.unity'
+Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/00_Lobby.unity'
+	Deserialize:            194.008 ms
+	Integration:            498.580 ms
+	Integration of assets:  22.108 ms
+	Thread Wait Time:       0.003 ms
+	Total Operation Time:   714.699 ms
+Unloading 3 unused Assets / (1.8 KB). Loaded Objects now: 14609.
+Memory consumption went from 303.7 MB to 303.7 MB.
+Total: 14.918800 ms (FindLiveObjects: 0.736200 ms CreateObjectMapping: 0.366900 ms MarkObjects: 13.776800 ms  DeleteObjects: 0.038400 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
+	Deserialize:            22.649 ms
+	Integration:            427.903 ms
+	Integration of assets:  0.105 ms
+	Thread Wait Time:       0.006 ms
+	Total Operation Time:   450.664 ms
+Unloading 113 unused Assets / (84.2 KB). Loaded Objects now: 14774.
+Memory consumption went from 0.81 GB to 0.81 GB.
+Total: 15.949500 ms (FindLiveObjects: 0.757900 ms CreateObjectMapping: 0.278100 ms MarkObjects: 14.573500 ms  DeleteObjects: 0.339400 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/02_Esophagus.unity'
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
+	Deserialize:            16.650 ms
+	Integration:            403.862 ms
+	Integration of assets:  1.181 ms
+	Thread Wait Time:       0.036 ms
+	Total Operation Time:   421.729 ms
+Unloading 57 unused Assets / (30.6 KB). Loaded Objects now: 14678.
+Memory consumption went from 469.3 MB to 469.3 MB.
+Total: 17.524300 ms (FindLiveObjects: 0.763400 ms CreateObjectMapping: 0.360400 ms MarkObjects: 16.148000 ms  DeleteObjects: 0.251800 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/03_Stomach.unity'
+Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/03_Stomach.unity'
+	Deserialize:            25.729 ms
+	Integration:            410.423 ms
+	Integration of assets:  6.541 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   442.706 ms
+Unloading 38 unused Assets / (38.6 KB). Loaded Objects now: 14897.
+Memory consumption went from 344.0 MB to 344.0 MB.
+Total: 16.536100 ms (FindLiveObjects: 0.807300 ms CreateObjectMapping: 0.340700 ms MarkObjects: 15.208500 ms  DeleteObjects: 0.178800 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
+Unloading 41 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
+	Deserialize:            26.538 ms
+	Integration:            515.888 ms
+	Integration of assets:  7.480 ms
+	Thread Wait Time:       0.092 ms
+	Total Operation Time:   549.998 ms
+Unloading 133 unused Assets / (183.2 KB). Loaded Objects now: 14890.
+Memory consumption went from 0.52 GB to 0.52 GB.
+Total: 18.927700 ms (FindLiveObjects: 0.845400 ms CreateObjectMapping: 0.322700 ms MarkObjects: 17.298000 ms  DeleteObjects: 0.460600 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
+Unloading 47 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
+	Deserialize:            21.426 ms
+	Integration:            439.889 ms
+	Integration of assets:  19.671 ms
+	Thread Wait Time:       0.038 ms
+	Total Operation Time:   481.024 ms
+Unloading 111 unused Assets / (242.2 KB). Loaded Objects now: 14927.
+Memory consumption went from 504.9 MB to 504.7 MB.
+Total: 21.405100 ms (FindLiveObjects: 1.334400 ms CreateObjectMapping: 1.080200 ms MarkObjects: 18.490800 ms  DeleteObjects: 0.498500 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+Opening scene 'Assets/Scenes/Journey/06_Theater.unity'
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/06_Theater.unity'
+	Deserialize:            5.194 ms
+	Integration:            423.383 ms
+	Integration of assets:  0.130 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   428.721 ms
+Unloading 153 unused Assets / (74.6 KB). Loaded Objects now: 14579.
+Memory consumption went from 0.53 GB to 0.53 GB.
+Total: 17.280800 ms (FindLiveObjects: 0.758000 ms CreateObjectMapping: 0.379300 ms MarkObjects: 15.729500 ms  DeleteObjects: 0.413400 ms)
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:29)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 29]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:30)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 30]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:31)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 31]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:32)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 32]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:33)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 33]
+
+Releasing render texture that is set as Camera.targetTexture!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object,bool)
+UnityEngine.Object:DestroyImmediate (UnityEngine.Object)
+JourneyCapture:Shoot (string,string,UnityEngine.Vector3,UnityEngine.Quaternion,single) (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:60)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:34)
+
+[Assets/Scripts/Journey/Editor/JourneyCapture.cs line 34]
+
+[JourneyCapture] 캡처 완료 → Tools/captures
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyCapture:CaptureAll () (at Assets/Scripts/Journey/Editor/JourneyCapture.cs:36)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyCapture.cs Line: 36)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 2.10271 seconds.
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'b9da6e05ece687db4da188f1c0178ddb') in 0.0094403 seconds
+Refreshing native plugins compatible for Editor in 25.87 ms, found 18 plugins.
+Unity memory allocator detected: MetaXRAudio native memory allocations will be tracked.
+Preloading 3 native plugins for Editor in 3.69 ms.
+Asset Pipeline Refresh (id=a46ca07605f2ed04ab5312d1d8cc9857): Total: 0.451 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=113 ms
+		Asset DB Callback time: managed=259 ms, native=75 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=3528, non-scripts=6725
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.164ms
+	Scan: 23.384ms
+	OnSourceAssetsModified: 0.001ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.225ms
+	CategorizeAssets: 67.785ms
+	ImportOutOfDateAssets: 14.185ms (0.500ms without children)
+		ImportManagerImport: 11.212ms (1.414ms without children)
+			ImportInProcess: 9.769ms
+			UpdateCategorizedAssets: 0.029ms
+		ReloadNativeAssets: 0.220ms
+		UnloadImportedAssets: 0.290ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.510ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.451ms
+	PostProcessAllAssets: 305.099ms
+	Hotreload: 30.312ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.316ms
+	UnloadStreamsBegin: 1.646ms
+	PersistCurrentRevisions: 0.221ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 7.619ms
+
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-admin_14-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-admin_14 channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 000000000000865C, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 000000000000F810, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 000000000000865C, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 000000000000F810, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 4332
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

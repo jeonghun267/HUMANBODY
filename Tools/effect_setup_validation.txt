@@ -1,0 +1,5 @@
+통과: 03_Stomach 효과 연결 및 저장
+통과: 04_SmallIntestine 효과 연결 및 저장
+통과: 05_LargeIntestine 효과 연결 및 저장
+통과: 입자 셰이더 컴파일
+실패 수: 0

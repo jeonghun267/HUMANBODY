@@ -1,35 +1,36 @@
-using UnityEngine;
-using UnityEngine.InputSystem; // [ÇÊ¼ö] New Input System »ç¿ë
+ï»¿using UnityEngine;
+using UnityEngine.InputSystem; // [í•„ìˆ˜] New Input System ì‚¬ìš©
 using System.Collections;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/í•˜ê°• ì—°ì¶œ") ]
 public class DescentController : MonoBehaviour
 {
-    [Header("1. ¿¬°áÇÒ ¿ÀºêÁ§Æ®µé")]
-    public GameObject floorPlane;       // »ç¶óÁú ¹Ù´Ú (Plane)
-    public GameObject intestineBackground; // À§·Î ¿òÁ÷ÀÏ ¹è°æ (Sphere)
+    [Header("1. ì—°ê²°í•  ì˜¤ë¸Œì íŠ¸ë“¤")]
+    public GameObject floorPlane;       // ì‚¬ë¼ì§ˆ ë°”ë‹¥ (Plane)
+    public GameObject intestineBackground; // ìœ„ë¡œ ì›€ì§ì¼ ë°°ê²½ (Sphere)
 
-    [Header("2. ¿¬Ãâ ¼³Á¤")]
-    public float fadeDuration = 2.0f;   // ¹Ù´ÚÀÌ Åõ¸íÇØÁö´Â ½Ã°£
-    public float fallSpeed = 5.0f;      // ¶³¾îÁö´Â ¼Óµµ
-    public float fallDistance = 20.0f;  // ¶³¾îÁö´Â °Å¸®
+    [Header("2. ì—°ì¶œ ì„¤ì •")]
+    public float fadeDuration = 2.0f;   // ë°”ë‹¥ì´ íˆ¬ëª…í•´ì§€ëŠ” ì‹œê°„
+    public float fallSpeed = 5.0f;      // ë–¨ì–´ì§€ëŠ” ì†ë„
+    public float fallDistance = 20.0f;  // ë–¨ì–´ì§€ëŠ” ê±°ë¦¬
 
-    [Header("3. »ç¿îµå ¼³Á¤")]
-    public AudioSource audioSource;     // È¿°úÀ½À» ³¾ Audio Source ÄÄÆ÷³ÍÆ®
+    [Header("3. ì‚¬ìš´ë“œ ì„¤ì •")]
+    public AudioSource audioSource;     // íš¨ê³¼ìŒì„ ë‚¼ Audio Source ì»´í¬ë„ŒíŠ¸
 
-    private bool isFalling = false;     // Áßº¹ ½ÇÇà ¹æÁö
-    private InputAction inputAction;    // ½ºÆäÀÌ½º¹Ù ÀÔ·ÂÀ» À§ÇÑ º¯¼ö
+    private bool isFalling = false;     // ì¤‘ë³µ ì‹¤í–‰ ë°©ì§€
+    private InputAction inputAction;    // ìŠ¤í˜ì´ìŠ¤ë°” ì…ë ¥ì„ ìœ„í•œ ë³€ìˆ˜
 
     void Awake()
     {
-        // ½ºÆäÀÌ½º¹Ù ÀÔ·Â ¼³Á¤ (New Input System)
+        // ìŠ¤í˜ì´ìŠ¤ë°” ì…ë ¥ ì„¤ì • (New Input System)
         inputAction = new InputAction(binding: "<Keyboard>/space");
-        inputAction.performed += ctx => StartDescent(); // Å° ´©¸£¸é ÇÔ¼ö ½ÇÇà
+        inputAction.performed += ctx => StartDescent(); // í‚¤ ëˆ„ë¥´ë©´ í•¨ìˆ˜ ì‹¤í–‰
         inputAction.Enable();
     }
 
     void OnDestroy()
     {
-        // Á¾·á ½Ã ÀÔ·Â °¨Áö ÇØÁ¦ (¸Ş¸ğ¸® ´©¼ö ¹æÁö)
+        // ì¢…ë£Œ ì‹œ ì…ë ¥ ê°ì§€ í•´ì œ (ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ ë°©ì§€)
         if (inputAction != null)
         {
             inputAction.Disable();
@@ -37,36 +38,36 @@ public class DescentController : MonoBehaviour
         }
     }
 
-    // ¿ÜºÎ¿¡¼­ È£ÃâÇÏ°Å³ª Å° ÀÔ·Â ½Ã ½ÇÇàµÇ´Â ÇÔ¼ö
+    // ì™¸ë¶€ì—ì„œ í˜¸ì¶œí•˜ê±°ë‚˜ í‚¤ ì…ë ¥ ì‹œ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜
     public void StartDescent()
     {
         if (isFalling) return;
 
-        Debug.Log("ÇÏ°­ ½ÃÄö½º ½ÃÀÛ! (»ç¿îµå Àç»ı Æ÷ÇÔ)");
+        Debug.Log("í•˜ê°• ì‹œí€€ìŠ¤ ì‹œì‘! (ì‚¬ìš´ë“œ ì¬ìƒ í¬í•¨)");
         isFalling = true;
         StartCoroutine(ProcessDescent());
     }
 
     IEnumerator ProcessDescent()
     {
-        // 1. »ç¿îµå Àç»ı (¿Àµğ¿À ¼Ò½º°¡ ¿¬°áµÇ¾î ÀÖ´Ù¸é)
+        // 1. ì‚¬ìš´ë“œ ì¬ìƒ (ì˜¤ë””ì˜¤ ì†ŒìŠ¤ê°€ ì—°ê²°ë˜ì–´ ìˆë‹¤ë©´)
         if (audioSource != null && audioSource.clip != null)
         {
             audioSource.Play();
         }
         else if (audioSource == null)
         {
-            Debug.LogWarning("ÁÖÀÇ: AudioSource°¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù!");
+            Debug.LogWarning("ì£¼ì˜: AudioSourceê°€ ì—°ê²°ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!");
         }
 
-        // 2. ¹Ù´Ú Åõ¸íÇÏ°Ô ¸¸µé±â (URP È£È¯)
+        // 2. ë°”ë‹¥ íˆ¬ëª…í•˜ê²Œ ë§Œë“¤ê¸° (URP í˜¸í™˜)
         Renderer rend = null;
         if (floorPlane != null) rend = floorPlane.GetComponent<Renderer>();
 
         if (rend != null)
         {
             Material mat = rend.material;
-            // URP ½¦ÀÌ´õ »ö»ó ÇÁ·ÎÆÛÆ¼ ÀÌ¸§ Ã£±â (_BaseColor È¤Àº _Color)
+            // URP ì‰ì´ë” ìƒ‰ìƒ í”„ë¡œí¼í‹° ì´ë¦„ ì°¾ê¸° (_BaseColor í˜¹ì€ _Color)
             string colorProperty = mat.HasProperty("_BaseColor") ? "_BaseColor" : "_Color";
             Color startColor = mat.GetColor(colorProperty);
 
@@ -82,10 +83,10 @@ public class DescentController : MonoBehaviour
             }
         }
 
-        // ¹Ù´Ú ¿ÏÀüÈ÷ ²ô±â
+        // ë°”ë‹¥ ì™„ì „íˆ ë„ê¸°
         if (floorPlane != null) floorPlane.SetActive(false);
 
-        // 3. ¹è°æÀ» À§·Î ¿Ã·Á¼­ ¶³¾îÁö´Â ´À³¦ ÁÖ±â
+        // 3. ë°°ê²½ì„ ìœ„ë¡œ ì˜¬ë ¤ì„œ ë–¨ì–´ì§€ëŠ” ëŠë‚Œ ì£¼ê¸°
         if (intestineBackground != null)
         {
             Vector3 startPos = intestineBackground.transform.position;
@@ -102,7 +103,7 @@ public class DescentController : MonoBehaviour
             }
         }
 
-        // 4. »ç¿îµå ¼­¼­È÷ ²ô±â (¶Ò ²÷±âÁö ¾Ê°Ô)
+        // 4. ì‚¬ìš´ë“œ ì„œì„œíˆ ë„ê¸° (ëš ëŠê¸°ì§€ ì•Šê²Œ)
         if (audioSource != null && audioSource.isPlaying)
         {
             float startVolume = audioSource.volume;
@@ -116,10 +117,10 @@ public class DescentController : MonoBehaviour
                 yield return null;
             }
             audioSource.Stop();
-            audioSource.volume = startVolume; // ´ÙÀ½À» À§ÇØ º¼·ı ¿ø»óº¹±¸
+            audioSource.volume = startVolume; // ë‹¤ìŒì„ ìœ„í•´ ë³¼ë¥¨ ì›ìƒë³µêµ¬
         }
 
-        Debug.Log("ÇÏ°­ ¿Ï·á! (´ëÀå µµÂø)");
-        isFalling = false; // (ÇÊ¿ä½Ã Àç»ç¿ëÀ» À§ÇØ)
+        Debug.Log("í•˜ê°• ì™„ë£Œ! (ëŒ€ì¥ ë„ì°©)");
+        isFalling = false; // (í•„ìš”ì‹œ ì¬ì‚¬ìš©ì„ ìœ„í•´)
     }
 }

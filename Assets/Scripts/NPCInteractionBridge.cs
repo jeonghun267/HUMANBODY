@@ -1,10 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-// ÀÌ ½ºÅ©¸³Æ®°¡ NPC ¿ÀºêÁ§Æ®¿¡ ºÙ¾îÀÖ¾î¾ß ÇÕ´Ï´Ù.
+// ì´ ìŠ¤í¬ë¦½íŠ¸ê°€ NPC ì˜¤ë¸Œì íŠ¸ì— ë¶™ì–´ìˆì–´ì•¼ í•©ë‹ˆë‹¤.
 [RequireComponent(typeof(NPCController))]
 [RequireComponent(typeof(XRSimpleInteractable))]
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì•ˆë‚´ ìºë¦­í„° ìƒí˜¸ì‘ìš© ì—°ê²°") ]
 public class NPCInteractionBridge : MonoBehaviour
 {
     private NPCController npcController;
@@ -12,23 +13,23 @@ public class NPCInteractionBridge : MonoBehaviour
 
     void Start()
     {
-        // ÇÊ¿äÇÑ ÄÄÆ÷³ÍÆ®µéÀ» °¡Á®¿É´Ï´Ù.
+        // í•„ìš”í•œ ì»´í¬ë„ŒíŠ¸ë“¤ì„ ê°€ì ¸ì˜µë‹ˆë‹¤.
         npcController = GetComponent<NPCController>();
         interactable = GetComponent<XRSimpleInteractable>();
 
         if (interactable != null)
         {
-            // NPC¸¦ ¹Ù¶óº¸±â ½ÃÀÛÇßÀ» ¶§ (Hover Enter)
+            // NPCë¥¼ ë°”ë¼ë³´ê¸° ì‹œì‘í–ˆì„ ë•Œ (Hover Enter)
             interactable.firstHoverEntered.AddListener(OnHoverEnter);
 
-            // NPC¿¡¼­ ½Ã¼±À» µ¹·ÈÀ» ¶§ (Hover Exit)
+            // NPCì—ì„œ ì‹œì„ ì„ ëŒë ¸ì„ ë•Œ (Hover Exit)
             interactable.lastHoverExited.AddListener(OnHoverExit);
         }
     }
 
     private void OnHoverEnter(HoverEnterEventArgs args)
     {
-        // NPCController¿¡°Ô ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸¶ó°í ¸í·É
+        // NPCControllerì—ê²Œ í”Œë ˆì´ì–´ë¥¼ ë°”ë¼ë³´ë¼ê³  ëª…ë ¹
         if (npcController != null)
         {
             npcController.StartInteraction();
@@ -37,7 +38,7 @@ public class NPCInteractionBridge : MonoBehaviour
 
     private void OnHoverExit(HoverExitEventArgs args)
     {
-        // NPCController¿¡°Ô ¿ø·¡ ÃßÀû ¸ğµå·Î µ¹¾Æ°¡¶ó°í ¸í·É
+        // NPCControllerì—ê²Œ ì›ë˜ ì¶”ì  ëª¨ë“œë¡œ ëŒì•„ê°€ë¼ê³  ëª…ë ¹
         if (npcController != null)
         {
             npcController.StopInteraction();

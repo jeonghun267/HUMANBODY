@@ -1,0 +1,10 @@
+[
+  {"name": "Part_UpperTeethArch", "polycount": 25000,
+   "prompt": "only the upper dental arch (maxillary teeth) with pink gum, a single U-shaped row of 16 teeth, no lower jaw, no lower teeth, seen from below showing the chewing surfaces, semi-realistic dental model, isolated"},
+  {"name": "Part_Palate", "polycount": 12000,
+   "prompt": "roof of the mouth, hard palate, a curved dome-shaped pink tissue plate with transverse ridges (rugae) on its underside, isolated, semi-realistic anatomical model"},
+  {"name": "Env_ColonPipe", "polycount": 45000,
+   "prompt": "a single short straight hollow pipe segment, both ends cut open showing a thick ring cross-section, the inner surface lined with rounded colon haustra bulges, wet pink-brown mucosa, it is a tunnel to look through, NOT a whole intestine, semi-realistic"},
+  {"name": "Part_VillusCrossSection", "polycount": 30000,
+   "prompt": "one single tall finger-shaped intestinal villus cut in half lengthwise, longitudinal section, the cut face shows a red and blue capillary loop network and one central pale green lacteal lymph vessel, pink epithelium on the outside, isolated on nothing, semi-realistic educational model"}
+]

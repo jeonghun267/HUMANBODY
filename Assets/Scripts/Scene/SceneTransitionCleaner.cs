@@ -1,14 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì¥ë©´ ì „í™˜ ì •ë¦¬") ]
 public class SceneTransitionCleaner : MonoBehaviour
 {
-    [Header("´ÙÀ½À¸·Î ³Ñ¾î°¥ ¾À ÀÌ¸§")]
-    public string nextSceneName; // ÀÎ½ºÆåÅÍ¿¡¼­ Scene2, Scene3 µî Á÷Á¢ ÀÔ·Â
+    [Header("ë‹¤ìŒìœ¼ë¡œ ë„˜ì–´ê°ˆ ì”¬ ì´ë¦„")]
+    public string nextSceneName; // ì¸ìŠ¤í™í„°ì—ì„œ Scene2, Scene3 ë“± ì§ì ‘ ì…ë ¥
 
-    // È¤½Ã ÀÚµ¿À¸·Î ¸ø Ã£À»±î ºÁ ºÒ¾ÈÇÏ¸é ¿©±â¿¡ Á÷Á¢ ³Ö¾îµµ µË´Ï´Ù (ºñ¿öµÎ¸é ÀÚµ¿ Å½»ö)
-    [Header("¼öµ¿ ¼³Á¤ (ºñ¿öµÎ¸é ÀÚµ¿ °¨Áö)")]
+    // í˜¹ì‹œ ìë™ìœ¼ë¡œ ëª» ì°¾ì„ê¹Œ ë´ ë¶ˆì•ˆí•˜ë©´ ì—¬ê¸°ì— ì§ì ‘ ë„£ì–´ë„ ë©ë‹ˆë‹¤ (ë¹„ì›Œë‘ë©´ ìë™ íƒìƒ‰)
+    [Header("ìˆ˜ë™ ì„¤ì • (ë¹„ì›Œë‘ë©´ ìë™ ê°ì§€)")]
     public GameObject specificNdiSender;
 
     public void GoToNextScene()
@@ -18,27 +19,27 @@ public class SceneTransitionCleaner : MonoBehaviour
 
     IEnumerator CleanAndLoad()
     {
-        Debug.Log(" [Scene: {SceneManager.GetActiveScene().name}] NDI Á¤¸® ¹× ¸Ş¸ğ¸® Ã»¼Ò ½ÃÀÛ...");
+        Debug.Log(" [Scene: {SceneManager.GetActiveScene().name}] NDI ì •ë¦¬ ë° ë©”ëª¨ë¦¬ ì²­ì†Œ ì‹œì‘...");
 
         // ---------------------------------------------------------
-        // 1. NDI Sender °­Á¦ Á¾·á (¼öµ¿ + ÀÚµ¿ °¨Áö)
+        // 1. NDI Sender ê°•ì œ ì¢…ë£Œ (ìˆ˜ë™ + ìë™ ê°ì§€)
         // ---------------------------------------------------------
 
-        // A. Á÷Á¢ ³Ö¾îÁØ °Ô ÀÖ´Ù¸é ±×°ÍºÎÅÍ ²û
+        // A. ì§ì ‘ ë„£ì–´ì¤€ ê²Œ ìˆë‹¤ë©´ ê·¸ê²ƒë¶€í„° ë”
         if (specificNdiSender != null)
         {
             specificNdiSender.SetActive(false);
         }
 
-        // B. ÀÌ¸§À¸·Î Ã£¾Æ¼­ ²ô±â (NDI ¿¡¼ÂµéÀº º¸Åë ¿ÀºêÁ§Æ® ÀÌ¸§¿¡ NDI³ª Sender°¡ µé¾î°¨)
-        // Unity 6 ÃÖÀûÈ­µÈ °Ë»ö ¹æ½Ä
+        // B. ì´ë¦„ìœ¼ë¡œ ì°¾ì•„ì„œ ë„ê¸° (NDI ì—ì…‹ë“¤ì€ ë³´í†µ ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì— NDIë‚˜ Senderê°€ ë“¤ì–´ê°)
+        // Unity 6 ìµœì í™”ëœ ê²€ìƒ‰ ë°©ì‹
         var allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (var obj in allObjects)
         {
-            // ¿ÀºêÁ§Æ® ÀÌ¸§¿¡ "NDI" È¤Àº "Sender"°¡ Æ÷ÇÔµÇ¾î ÀÖ°í, È°¼ºÈ­µÈ »óÅÂ¶ó¸é
+            // ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì— "NDI" í˜¹ì€ "Sender"ê°€ í¬í•¨ë˜ì–´ ìˆê³ , í™œì„±í™”ëœ ìƒíƒœë¼ë©´
             if (obj.activeInHierarchy && (obj.name.Contains("NDI") || obj.name.Contains("Sender")))
             {
-                // È¤½Ã ¸ğ¸£´Ï ÀÚ±â ÀÚ½Å(½ºÅ©¸³Æ®°¡ ºÙÀº ¹öÆ°)Àº ²ô¸é ¾È µÊ
+                // í˜¹ì‹œ ëª¨ë¥´ë‹ˆ ìê¸° ìì‹ (ìŠ¤í¬ë¦½íŠ¸ê°€ ë¶™ì€ ë²„íŠ¼)ì€ ë„ë©´ ì•ˆ ë¨
                 if (obj != this.gameObject)
                 {
                     obj.SetActive(false);
@@ -47,7 +48,7 @@ public class SceneTransitionCleaner : MonoBehaviour
         }
 
         // ---------------------------------------------------------
-        // 2. ±×·¡ÇÈ ±úÁüÀÇ ÁÖ¹ü(GPU ÅØ½ºÃ³) ÃÊ±âÈ­
+        // 2. ê·¸ë˜í”½ ê¹¨ì§ì˜ ì£¼ë²”(GPU í…ìŠ¤ì²˜) ì´ˆê¸°í™”
         // ---------------------------------------------------------
         if (RenderTexture.active != null)
         {
@@ -60,17 +61,17 @@ public class SceneTransitionCleaner : MonoBehaviour
             Camera.main.targetTexture = null;
         }
 
-        // 3. GPU°¡ Á¤¸®ÇÒ ½Ã°£ 1ÇÁ·¹ÀÓ ´ë±â
+        // 3. GPUê°€ ì •ë¦¬í•  ì‹œê°„ 1í”„ë ˆì„ ëŒ€ê¸°
         yield return new WaitForEndOfFrame();
 
-        // 4. ¸Ş¸ğ¸®(RAM) ´ëÃ»¼Ò
+        // 4. ë©”ëª¨ë¦¬(RAM) ëŒ€ì²­ì†Œ
         Resources.UnloadUnusedAssets();
         System.GC.Collect();
 
-        // 5. ¾ÈÁ¤¼ºÀ» À§ÇØ 0.1ÃÊ µô·¹ÀÌ ÈÄ ÀÌµ¿
+        // 5. ì•ˆì •ì„±ì„ ìœ„í•´ 0.1ì´ˆ ë”œë ˆì´ í›„ ì´ë™
         yield return new WaitForSeconds(0.1f);
 
-        Debug.Log($" {nextSceneName} ·Îµå!");
+        Debug.Log($" {nextSceneName} ë¡œë“œ!");
         SceneManager.LoadScene(nextSceneName);
     }
 }

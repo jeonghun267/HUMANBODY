@@ -1,13 +1,14 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì•ˆë‚´ í™”ë©´ ë”°ë¼ì˜¤ê¸°") ]
 public class NPCUI : MonoBehaviour
 {
     public RectTransform targetB;          // UI (World Space Canvas)
-    public Camera mainCamera;              // Ä«¸Ş¶ó
+    public Camera mainCamera;              // ì¹´ë©”ë¼
 
-    public float yOffset = 1.5f;           // UI Y ¿ÀÇÁ¼Â
-    public float moveSmoothSpeed = 5f;     // UI ÀÌµ¿ º¸°£ ¼Óµµ
-    public float rotateSmoothSpeed = 5f;   // UI È¸Àü º¸°£ ¼Óµµ
+    public float yOffset = 1.5f;           // UI Y ì˜¤í”„ì…‹
+    public float moveSmoothSpeed = 5f;     // UI ì´ë™ ë³´ê°„ ì†ë„
+    public float rotateSmoothSpeed = 5f;   // UI íšŒì „ ë³´ê°„ ì†ë„
 
     private Vector3 targetPos;
     private Quaternion targetRot;
@@ -16,15 +17,15 @@ public class NPCUI : MonoBehaviour
     {
         if (targetB != null && mainCamera != null)
         {
-            // UIÀÇ À§Ä¡´Â °íÁ¤ (¾Æ¹«°Íµµ ÇÏÁö ¾ÊÀ½)
+            // UIì˜ ìœ„ì¹˜ëŠ” ê³ ì • (ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•ŠìŒ)
 
-            // UI°¡ Ç×»ó Ä«¸Ş¶ó(ÇÃ·¹ÀÌ¾î)¸¦ ¹Ù¶óº¸°Ô È¸Àü
+            // UIê°€ í•­ìƒ ì¹´ë©”ë¼(í”Œë ˆì´ì–´)ë¥¼ ë°”ë¼ë³´ê²Œ íšŒì „
             Vector3 dirToCamera = mainCamera.transform.position - targetB.position;
 
             if (dirToCamera != Vector3.zero)
             {
-                // [¼öÁ¤µÊ] ¸¶ÀÌ³Ê½º(-)¸¦ Á¦°ÅÇß½À´Ï´Ù. 
-                // ÀÌÁ¦ UIÀÇ Á¤¸éÀÌ Ä«¸Ş¶ó¸¦ ÇâÇÏ°Ô µË´Ï´Ù.
+                // [ìˆ˜ì •ë¨] ë§ˆì´ë„ˆìŠ¤(-)ë¥¼ ì œê±°í–ˆìŠµë‹ˆë‹¤. 
+                // ì´ì œ UIì˜ ì •ë©´ì´ ì¹´ë©”ë¼ë¥¼ í–¥í•˜ê²Œ ë©ë‹ˆë‹¤.
                 targetRot = Quaternion.LookRotation(dirToCamera.normalized);
 
                 targetB.rotation = Quaternion.Slerp(targetB.rotation, targetRot, Time.deltaTime * rotateSmoothSpeed);

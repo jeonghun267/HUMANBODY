@@ -1,0 +1,800 @@
+시작 시 저장된 편집기 언어: Korean
+통과: 유니티 편집기 한국어 선택
+통과: 유니티 편집기 번역 활성화
+통과: 편집기 한국어 설정 저장
+통과: 설정 항목 한글 이름: BoatInteraction/player
+통과: 한글 설정 분류: 필수 연결 (자동으로 못 찾을 경우를 대비해 놔두지만, 비워도 됨)
+통과: 설정 항목 한글 이름: BoatInteraction/chickNPC
+통과: 설정 항목 한글 이름: BoatInteraction/seatPoint
+통과: 한글 설정 분류: 위치 설정 (이건 꼭 연결해야 함!)
+통과: 설정 항목 한글 이름: BoatInteraction/getOffPoint
+통과: 설정 항목 한글 이름: BoatInteraction/chickSeatPoint
+통과: 설정 항목 한글 이름: BoatInteraction/splineCart
+통과: 한글 설정 분류: 이동 경로
+통과: 설정 항목 한글 이름: BoatInteraction/interactionDistance
+통과: 한글 설정 분류: 설정
+통과: 설정 항목 한글 이름: BoatInteraction/boatSpeed
+통과: 설정 항목 한글 이름: BoatInteraction/DebugStart
+통과: 구성 요소 한글 메뉴: 보트 탑승
+통과: 설정 항목 한글 이름: SimpleTrainMover/cart
+통과: 설정 항목 한글 이름: SimpleTrainMover/speed
+통과: 구성 요소 한글 메뉴: 경로 이동
+통과: 설정 항목 한글 이름: DisplayInfo/infoPanelObject
+통과: 한글 설정 분류: 설명 화면
+통과: 한글 도움말: DisplayInfo/infoPanelObject
+통과: 설정 항목 한글 이름: DisplayInfo/explanationTextComponent
+통과: 한글 도움말: DisplayInfo/explanationTextComponent
+통과: 설정 항목 한글 이름: DisplayInfo/organExplanation
+통과: 한글 도움말: DisplayInfo/organExplanation
+통과: 설정 항목 한글 이름: DisplayInfo/remoteHighlightObject
+통과: 한글 설정 분류: 원격 강조 표시
+통과: 한글 도움말: DisplayInfo/remoteHighlightObject
+통과: 구성 요소 한글 메뉴: 설명 표시
+통과: 구성 요소 한글 메뉴: 자동 문
+통과: 설정 항목 한글 이름: AutoRotate/duration
+통과: 한글 설정 분류: 한 바퀴 도는 데 걸리는 시간 (초)
+통과: 구성 요소 한글 메뉴: 자동 회전
+통과: 설정 항목 한글 이름: FluidBobber/bobSpeed
+통과: 한글 설정 분류: 움직임 설정
+통과: 한글 도움말: FluidBobber/bobSpeed
+통과: 설정 항목 한글 이름: FluidBobber/bobHeight
+통과: 한글 도움말: FluidBobber/bobHeight
+통과: 설정 항목 한글 이름: FluidBobber/flowSpeed
+통과: 한글 설정 분류: 흐름 설정
+통과: 한글 도움말: FluidBobber/flowSpeed
+통과: 구성 요소 한글 메뉴: 소화액 움직임
+통과: 설정 항목 한글 이름: DescentController/floorPlane
+통과: 한글 설정 분류: 1. 연결할 오브젝트들
+통과: 설정 항목 한글 이름: DescentController/intestineBackground
+통과: 설정 항목 한글 이름: DescentController/fadeDuration
+통과: 한글 설정 분류: 2. 연출 설정
+통과: 설정 항목 한글 이름: DescentController/fallSpeed
+통과: 설정 항목 한글 이름: DescentController/fallDistance
+통과: 설정 항목 한글 이름: DescentController/audioSource
+통과: 한글 설정 분류: 3. 사운드 설정
+통과: 구성 요소 한글 메뉴: 하강 연출
+통과: 설정 항목 한글 이름: Billboard/smooth
+통과: 설정 항목 한글 이름: Billboard/yawOnly
+통과: 한글 도움말: Billboard/yawOnly
+통과: 구성 요소 한글 메뉴: 시선 방향 표시판
+통과: 설정 항목 한글 이름: CapsuleRide/cart
+통과: 한글 설정 분류: 경로
+통과: 설정 항목 한글 이름: CapsuleRide/speed
+통과: 한글 도움말: CapsuleRide/speed
+통과: 설정 항목 한글 이름: CapsuleRide/easeSeconds
+통과: 한글 도움말: CapsuleRide/easeSeconds
+통과: 설정 항목 한글 이름: CapsuleRide/stops
+통과: 설정 항목 한글 이름: RideStop/normalizedPosition
+통과: 한글 도움말: RideStop/normalizedPosition
+통과: 설정 항목 한글 이름: RideStop/lines
+통과: 설정 항목 한글 이름: NarrationLine/text
+통과: 설정 항목 한글 이름: NarrationLine/voice
+통과: 설정 항목 한글 이름: NarrationLine/holdSeconds
+통과: 한글 도움말: NarrationLine/holdSeconds
+통과: 설정 항목 한글 이름: RideStop/waitSeconds
+통과: 한글 도움말: RideStop/waitSeconds
+통과: 설정 항목 한글 이름: RideStop/onReached
+통과: 한글 도움말: RideStop/onReached
+통과: 설정 항목 한글 이름: CapsuleRide/seatPoint
+통과: 한글 설정 분류: 탑승 위치
+통과: 설정 항목 한글 이름: CapsuleRide/guideSeatPoint
+통과: 설정 항목 한글 이름: CapsuleRide/getOffPoint
+통과: 설정 항목 한글 이름: CapsuleRide/interactionDistance
+통과: 한글 설정 분류: 탑승 조건
+통과: 한글 도움말: CapsuleRide/interactionDistance
+통과: 설정 항목 한글 이름: CapsuleRide/autoBoard
+통과: 한글 도움말: CapsuleRide/autoBoard
+통과: 설정 항목 한글 이름: CapsuleRide/autoBoardDelay
+통과: 설정 항목 한글 이름: CapsuleRide/keepUpright
+통과: 한글 설정 분류: 멀미 완화
+통과: 한글 도움말: CapsuleRide/keepUpright
+통과: 설정 항목 한글 이름: CapsuleRide/advanceOnArrive
+통과: 한글 설정 분류: 도착 처리
+통과: 한글 도움말: CapsuleRide/advanceOnArrive
+통과: 설정 항목 한글 이름: CapsuleRide/getOffOnArrive
+통과: 한글 도움말: CapsuleRide/getOffOnArrive
+통과: 구성 요소 한글 메뉴: 탐험 캡슐
+통과: 설정 항목 한글 이름: ChewingSequence/upperJaw
+통과: 한글 설정 분류: 턱
+통과: 설정 항목 한글 이름: ChewingSequence/jawOpenAngle
+통과: 한글 도움말: ChewingSequence/jawOpenAngle
+통과: 설정 항목 한글 이름: ChewingSequence/chewsPerSecond
+통과: 설정 항목 한글 이름: ChewingSequence/foodBolus
+통과: 한글 설정 분류: 음식
+통과: 설정 항목 한글 이름: ChewingSequence/finalScale
+통과: 한글 도움말: ChewingSequence/finalScale
+통과: 설정 항목 한글 이름: ChewingSequence/chewCount
+통과: 설정 항목 한글 이름: ChewingSequence/salivaVfx
+통과: 한글 설정 분류: 침
+통과: 설정 항목 한글 이름: ChewingSequence/chewAudio
+통과: 설정 항목 한글 이름: ChewingSequence/chewClip
+통과: 설정 항목 한글 이름: ChewingSequence/onChewingFinished
+통과: 한글 설정 분류: 완료
+통과: 구성 요소 한글 메뉴: 씹기 연출
+통과: 설정 항목 한글 이름: ComfortLocomotion/teleportEnabled
+통과: 한글 설정 분류: 텔레포트
+통과: 설정 항목 한글 이름: ComfortLocomotion/maxDistance
+통과: 설정 항목 한글 이름: ComfortLocomotion/groundMask
+통과: 설정 항목 한글 이름: ComfortLocomotion/arcColor
+통과: 설정 항목 한글 이름: ComfortLocomotion/fadeSeconds
+통과: 한글 도움말: ComfortLocomotion/fadeSeconds
+통과: 설정 항목 한글 이름: ComfortLocomotion/snapTurnEnabled
+통과: 한글 설정 분류: 스냅턴
+통과: 설정 항목 한글 이름: ComfortLocomotion/snapAngle
+통과: 설정 항목 한글 이름: ComfortLocomotion/snapDeadzone
+통과: 설정 항목 한글 이름: ComfortLocomotion/disableSmoothOnDevice
+통과: 한글 설정 분류: 가상현실 에서 부드러운 이동 끄기
+통과: 구성 요소 한글 메뉴: 편안한 이동
+통과: 설정 항목 한글 이름: ComfortVignette/restIntensity
+통과: 한글 도움말: ComfortVignette/restIntensity
+통과: 설정 항목 한글 이름: ComfortVignette/movingIntensity
+통과: 한글 도움말: ComfortVignette/movingIntensity
+통과: 설정 항목 한글 이름: ComfortVignette/fullSpeed
+통과: 한글 도움말: ComfortVignette/fullSpeed
+통과: 설정 항목 한글 이름: ComfortVignette/fullTurn
+통과: 한글 도움말: ComfortVignette/fullTurn
+통과: 설정 항목 한글 이름: ComfortVignette/smooth
+통과: 설정 항목 한글 이름: ComfortVignette/motionSource
+통과: 한글 도움말: ComfortVignette/motionSource
+통과: 구성 요소 한글 메뉴: 멀미 완화 화면
+통과: 설정 항목 한글 이름: EnzymeCutSequence/enzyme
+통과: 한글 설정 분류: 파츠
+통과: 설정 항목 한글 이름: EnzymeCutSequence/proteinChains
+통과: 설정 항목 한글 이름: EnzymeCutSequence/fragmentPrefab
+통과: 설정 항목 한글 이름: EnzymeCutSequence/fragmentsPerChain
+통과: 설정 항목 한글 이름: EnzymeCutSequence/approachSeconds
+통과: 한글 설정 분류: 타이밍
+통과: 설정 항목 한글 이름: EnzymeCutSequence/cutSeconds
+통과: 설정 항목 한글 이름: EnzymeCutSequence/betweenChains
+통과: 설정 항목 한글 이름: EnzymeCutSequence/fragmentSpread
+통과: 설정 항목 한글 이름: EnzymeCutSequence/fragmentLife
+통과: 설정 항목 한글 이름: EnzymeCutSequence/audioSource
+통과: 한글 설정 분류: 사운드
+통과: 설정 항목 한글 이름: EnzymeCutSequence/cutClip
+통과: 설정 항목 한글 이름: EnzymeCutSequence/onAllCut
+통과: 구성 요소 한글 메뉴: 효소 절단 연출
+통과: 설정 항목 한글 이름: ExhibitStation/stage
+통과: 한글 설정 분류: 데이터
+통과: 설정 항목 한글 이름: ExhibitStation/overrideTitle
+통과: 한글 도움말: ExhibitStation/overrideTitle
+통과: 설정 항목 한글 이름: ExhibitStation/overrideBody
+통과: 설정 항목 한글 이름: ExhibitStation/voiceLine
+통과: 한글 도움말: ExhibitStation/voiceLine
+통과: 설정 항목 한글 이름: ExhibitStation/panel
+통과: 한글 설정 분류: 화면
+통과: 설정 항목 한글 이름: ExhibitStation/titleText
+통과: 설정 항목 한글 이름: ExhibitStation/bodyText
+통과: 설정 항목 한글 이름: ExhibitStation/charsPerSecond
+통과: 설정 항목 한글 이름: ExhibitStation/highlightRenderers
+통과: 한글 설정 분류: 하이라이트
+통과: 설정 항목 한글 이름: ExhibitStation/highlightColor
+통과: 설정 항목 한글 이름: ExhibitStation/highlightStrength
+통과: 설정 항목 한글 이름: ExhibitStation/remoteMarker
+통과: 한글 설정 분류: 원격 사용자 표시 (원격 통신)
+통과: 구성 요소 한글 메뉴: 전시물 안내
+통과: 설정 항목 한글 이름: FloatingSwarm/prefabs
+통과: 한글 설정 분류: 생성
+통과: 설정 항목 한글 이름: FloatingSwarm/count
+통과: 설정 항목 한글 이름: FloatingSwarm/spawnExtents
+통과: 한글 도움말: FloatingSwarm/spawnExtents
+통과: 설정 항목 한글 이름: FloatingSwarm/scaleRange
+통과: 설정 항목 한글 이름: FloatingSwarm/includeExistingChildren
+통과: 한글 도움말: FloatingSwarm/includeExistingChildren
+통과: 설정 항목 한글 이름: FloatingSwarm/labelTemplate
+통과: 한글 도움말: FloatingSwarm/labelTemplate
+통과: 설정 항목 한글 이름: FloatingSwarm/driftRange
+통과: 한글 설정 분류: 움직임
+통과: 설정 항목 한글 이름: FloatingSwarm/driftSpeed
+통과: 설정 항목 한글 이름: FloatingSwarm/rotateSpeed
+통과: 설정 항목 한글 이름: FloatingSwarm/flowVelocity
+통과: 한글 도움말: FloatingSwarm/flowVelocity
+통과: 설정 항목 한글 이름: FloatingSwarm/wrapAround
+통과: 한글 도움말: FloatingSwarm/wrapAround
+통과: 구성 요소 한글 메뉴: 부유 개체 무리
+통과: 설정 항목 한글 이름: GazeSelector/maxDistance
+통과: 설정 항목 한글 이름: GazeSelector/frequency
+통과: 한글 도움말: GazeSelector/frequency
+통과: 설정 항목 한글 이름: GazeSelector/closeDelay
+통과: 한글 도움말: GazeSelector/closeDelay
+통과: 설정 항목 한글 이름: GazeSelector/layers
+통과: 구성 요소 한글 메뉴: 시선 선택
+통과: 설정 항목 한글 이름: GuideNarrator/speechBubble
+통과: 한글 설정 분류: 자막 화면 (안내 캐릭터 머리 위 공간 화면)
+통과: 설정 항목 한글 이름: GuideNarrator/subtitleText
+통과: 설정 항목 한글 이름: GuideNarrator/charsPerSecond
+통과: 한글 설정 분류: 타이핑 연출
+통과: 한글 도움말: GuideNarrator/charsPerSecond
+통과: 설정 항목 한글 이름: GuideNarrator/fitTypingToVoice
+통과: 한글 도움말: GuideNarrator/fitTypingToVoice
+통과: 설정 항목 한글 이름: GuideNarrator/gapBetweenLines
+통과: 한글 도움말: GuideNarrator/gapBetweenLines
+통과: 설정 항목 한글 이름: GuideNarrator/holdAfterLast
+통과: 한글 도움말: GuideNarrator/holdAfterLast
+통과: 설정 항목 한글 이름: GuideNarrator/animator
+통과: 한글 설정 분류: 애니메이션 (선택)
+통과: 설정 항목 한글 이름: GuideNarrator/talkingBool
+통과: 설정 항목 한글 이름: GuideNarrator/allowSkip
+통과: 한글 설정 분류: 스킵
+통과: 한글 도움말: GuideNarrator/allowSkip
+통과: 구성 요소 한글 메뉴: 안내 음성 및 자막
+통과: 구성 요소 한글 메뉴: 진동 효과
+통과: 설정 항목 한글 이름: JourneyManager/stages
+통과: 한글 설정 분류: 여정 순서 (빌드 설정 순서와 동일하게)
+통과: 설정 항목 한글 이름: JourneyManager/fadeDuration
+통과: 한글 설정 분류: 전환 연출
+통과: 설정 항목 한글 이름: JourneyManager/introDelay
+통과: 한글 도움말: JourneyManager/introDelay
+통과: 구성 요소 한글 메뉴: 탐험 진행 관리
+통과: 설정 항목 한글 이름: NarrationZone/lines
+통과: 한글 설정 분류: 내레이션
+통과: 설정 항목 한글 이름: NarrationZone/oneShot
+통과: 한글 설정 분류: 동작
+통과: 설정 항목 한글 이름: NarrationZone/advanceOnFinish
+통과: 설정 항목 한글 이름: NarrationZone/stopOnExit
+통과: 설정 항목 한글 이름: NarrationZone/oscOrganId
+통과: 설정 항목 한글 이름: NarrationZone/onEnter
+통과: 한글 설정 분류: 이벤트
+통과: 설정 항목 한글 이름: NarrationZone/onFinished
+통과: 구성 요소 한글 메뉴: 구역 안내
+통과: 구성 요소 한글 메뉴: 영양소
+통과: 설정 항목 한글 이름: NutrientAbsorption/kinds
+통과: 한글 설정 분류: 영양소
+통과: 설정 항목 한글 이름: NutrientKind/id
+통과: 설정 항목 한글 이름: NutrientKind/displayName
+통과: 설정 항목 한글 이름: NutrientKind/prefab
+통과: 설정 항목 한글 이름: NutrientKind/count
+통과: 설정 항목 한글 이름: NutrientKind/absorbedLine
+통과: 설정 항목 한글 이름: NutrientKind/absorbedVoice
+통과: 설정 항목 한글 이름: NutrientAbsorption/swarm
+통과: 설정 항목 한글 이름: NutrientAbsorption/gazeOrigin
+통과: 한글 설정 분류: 흡수 방법
+통과: 설정 항목 한글 이름: NutrientAbsorption/gazeDistance
+통과: 설정 항목 한글 이름: NutrientAbsorption/gazeDwellSeconds
+통과: 한글 도움말: NutrientAbsorption/gazeDwellSeconds
+통과: 설정 항목 한글 이름: NutrientAbsorption/nutrientLayer
+통과: 설정 항목 한글 이름: NutrientAbsorption/absorbTarget
+통과: 한글 설정 분류: 흡수 연출
+통과: 설정 항목 한글 이름: NutrientAbsorption/absorbDuration
+통과: 설정 항목 한글 이름: NutrientAbsorption/absorbVfx
+통과: 설정 항목 한글 이름: NutrientAbsorption/absorbSfx
+통과: 설정 항목 한글 이름: NutrientAbsorption/progressText
+통과: 한글 설정 분류: 화면
+통과: 설정 항목 한글 이름: NutrientAbsorption/progressFormat
+통과: 설정 항목 한글 이름: NutrientAbsorption/completeLines
+통과: 한글 설정 분류: 완료
+통과: 설정 항목 한글 이름: NutrientAbsorption/advanceOnComplete
+통과: 설정 항목 한글 이름: NutrientAbsorption/onComplete
+통과: 구성 요소 한글 메뉴: 영양소 흡수 체험
+통과: 설정 항목 한글 이름: OrganStage/stageId
+통과: 한글 설정 분류: 식별
+통과: 한글 도움말: OrganStage/stageId
+통과: 설정 항목 한글 이름: OrganStage/displayName
+통과: 한글 도움말: OrganStage/displayName
+통과: 설정 항목 한글 이름: OrganStage/sceneName
+통과: 한글 도움말: OrganStage/sceneName
+통과: 설정 항목 한글 이름: OrganStage/introLines
+통과: 한글 설정 분류: 입장 내레이션 (씬 로드 직후 자동 재생)
+통과: 설정 항목 한글 이름: OrganStage/outroLines
+통과: 한글 설정 분류: 퇴장 내레이션 (다음 단계로 넘어가기 전)
+통과: 설정 항목 한글 이름: OrganStage/summary
+통과: 한글 설정 분류: 정보 패널
+통과: 설정 항목 한글 이름: OrganStage/funFacts
+통과: 한글 도움말: OrganStage/funFacts
+통과: 설정 항목 한글 이름: OrganStage/fadeColor
+통과: 한글 설정 분류: 연출
+통과: 설정 항목 한글 이름: OrganStage/ridesCapsule
+통과: 한글 도움말: OrganStage/ridesCapsule
+통과: 설정 항목 한글 이름: PartLabel/partId
+통과: 한글 설정 분류: 내용
+통과: 설정 항목 한글 이름: PartLabel/displayName
+통과: 설정 항목 한글 이름: PartLabel/line
+통과: 설정 항목 한글 이름: PartLabel/explainOnce
+통과: 한글 설정 분류: 동작
+통과: 한글 도움말: PartLabel/explainOnce
+통과: 설정 항목 한글 이름: PartLabel/repeatCooldown
+통과: 한글 도움말: PartLabel/repeatCooldown
+통과: 설정 항목 한글 이름: PartLabel/dontInterrupt
+통과: 한글 도움말: PartLabel/dontInterrupt
+통과: 설정 항목 한글 이름: PartLabel/labelRoot
+통과: 한글 설정 분류: 표시
+통과: 설정 항목 한글 이름: PartLabel/labelText
+통과: 설정 항목 한글 이름: PartLabel/highlightColor
+통과: 설정 항목 한글 이름: PartLabel/highlightStrength
+통과: 구성 요소 한글 메뉴: 부위 이름표
+통과: 설정 항목 한글 이름: PeristalsisPulse/period
+통과: 한글 설정 분류: 수축 파형
+통과: 한글 도움말: PeristalsisPulse/period
+통과: 설정 항목 한글 이름: PeristalsisPulse/amplitude
+통과: 한글 도움말: PeristalsisPulse/amplitude
+통과: 설정 항목 한글 이름: PeristalsisPulse/axisWeight
+통과: 한글 도움말: PeristalsisPulse/axisWeight
+통과: 설정 항목 한글 이름: PeristalsisPulse/phaseOffset
+통과: 한글 도움말: PeristalsisPulse/phaseOffset
+통과: 설정 항목 한글 이름: PeristalsisPulse/emissiveRenderer
+통과: 한글 설정 분류: 이미션 맥동 (선택)
+통과: 설정 항목 한글 이름: PeristalsisPulse/emissionColor
+통과: 설정 항목 한글 이름: PeristalsisPulse/emissionStrength
+통과: 구성 요소 한글 메뉴: 기관 수축
+통과: 설정 항목 한글 이름: PeristalsisWave/ringPrefab
+통과: 한글 설정 분류: 링
+통과: 설정 항목 한글 이름: PeristalsisWave/ringCount
+통과: 설정 항목 한글 이름: PeristalsisWave/ringScale
+통과: 설정 항목 한글 이름: PeristalsisWave/ringDiameter
+통과: 한글 도움말: PeristalsisWave/ringDiameter
+통과: 설정 항목 한글 이름: PeristalsisWave/squeezeScale
+통과: 한글 도움말: PeristalsisWave/squeezeScale
+통과: 설정 항목 한글 이름: PeristalsisWave/startLocal
+통과: 한글 설정 분류: 경로 (로컬)
+통과: 설정 항목 한글 이름: PeristalsisWave/endLocal
+통과: 설정 항목 한글 이름: PeristalsisWave/travelSeconds
+통과: 한글 도움말: PeristalsisWave/travelSeconds
+통과: 설정 항목 한글 이름: PeristalsisWave/ringEuler
+통과: 한글 도움말: PeristalsisWave/ringEuler
+통과: 설정 항목 한글 이름: PeristalsisWave/labelTemplate
+통과: 한글 설정 분류: 파츠 설명 (선택)
+통과: 구성 요소 한글 메뉴: 연동 운동
+통과: 설정 항목 한글 이름: PersistentBootstrap/persistentPrefab
+통과: 구성 요소 한글 메뉴: 공통 개체 불러오기
+통과: 설정 항목 한글 이름: QuestSettings/disableBloomOnDevice
+통과: 설정 항목 한글 이름: QuestSettings/disableShadowsOnDevice
+통과: 설정 항목 한글 이름: QuestSettings/foveation
+통과: 구성 요소 한글 메뉴: 가상현실 기기 최적화
+통과: 설정 항목 한글 이름: RideProgressSwitcher/ride
+통과: 설정 항목 한글 이름: RideProgressSwitcher/stages
+통과: 설정 항목 한글 이름: RideProgressSwitcher/thresholds
+통과: 한글 도움말: RideProgressSwitcher/thresholds
+통과: 설정 항목 한글 이름: RideProgressSwitcher/blendSeconds
+통과: 한글 도움말: RideProgressSwitcher/blendSeconds
+통과: 구성 요소 한글 메뉴: 탑승 구간 전환
+통과: 설정 항목 한글 이름: Rotator/degreesPerSecond
+통과: 설정 항목 한글 이름: Rotator/bobAmplitude
+통과: 설정 항목 한글 이름: Rotator/bobSpeed
+통과: 구성 요소 한글 메뉴: 회전 및 부유
+통과: 설정 항목 한글 이름: SceneAmbience/clipName
+통과: 한글 도움말: SceneAmbience/clipName
+통과: 설정 항목 한글 이름: SceneAmbience/volume
+통과: 설정 항목 한글 이름: SceneAmbience/spatial
+통과: 설정 항목 한글 이름: SceneAmbience/pitch
+통과: 구성 요소 한글 메뉴: 환경 소리
+통과: 설정 항목 한글 이름: SphincterGate/openScale
+통과: 한글 설정 분류: 개폐
+통과: 한글 도움말: SphincterGate/openScale
+통과: 설정 항목 한글 이름: SphincterGate/openSeconds
+통과: 설정 항목 한글 이름: SphincterGate/autoCloseAfter
+통과: 한글 도움말: SphincterGate/autoCloseAfter
+통과: 설정 항목 한글 이름: SphincterGate/blocker
+통과: 설정 항목 한글 이름: SphincterGate/pulseAmplitude
+통과: 한글 설정 분류: 맥동
+통과: 설정 항목 한글 이름: SphincterGate/pulseSpeed
+통과: 설정 항목 한글 이름: SphincterGate/onOpened
+통과: 한글 설정 분류: 이벤트
+통과: 설정 항목 한글 이름: SphincterGate/onClosed
+통과: 구성 요소 한글 메뉴: 괄약근 문
+통과: 설정 항목 한글 이름: SplineFlow/spline
+통과: 설정 항목 한글 이름: SplineFlow/prefabs
+통과: 설정 항목 한글 이름: SplineFlow/count
+통과: 설정 항목 한글 이름: SplineFlow/loopSeconds
+통과: 한글 도움말: SplineFlow/loopSeconds
+통과: 설정 항목 한글 이름: SplineFlow/speedJitter
+통과: 설정 항목 한글 이름: SplineFlow/scaleRange
+통과: 설정 항목 한글 이름: SplineFlow/wobbleRadius
+통과: 한글 도움말: SplineFlow/wobbleRadius
+통과: 설정 항목 한글 이름: SplineFlow/wobbleSpeed
+통과: 설정 항목 한글 이름: SplineFlow/alignToPath
+통과: 한글 도움말: SplineFlow/alignToPath
+통과: 설정 항목 한글 이름: SplineFlow/spinSpeed
+통과: 설정 항목 한글 이름: SplineFlow/labelTemplate
+통과: 한글 도움말: SplineFlow/labelTemplate
+통과: 설정 항목 한글 이름: SplineFlow/startHidden
+통과: 한글 도움말: SplineFlow/startHidden
+통과: 구성 요소 한글 메뉴: 곡선을 따라 흐르기
+통과: 설정 항목 한글 이름: StageExitPortal/playOutro
+통과: 한글 도움말: StageExitPortal/playOutro
+통과: 설정 항목 한글 이름: StageExitPortal/overrideStageId
+통과: 한글 도움말: StageExitPortal/overrideStageId
+통과: 구성 요소 한글 메뉴: 다음 단계 입구
+통과: 설정 항목 한글 이름: StomachChurn/foodBoluses
+통과: 한글 설정 분류: 음식 → 미즙
+통과: 설정 항목 한글 이름: StomachChurn/chymeBlobs
+통과: 설정 항목 한글 이름: StomachChurn/digestDuration
+통과: 한글 도움말: StomachChurn/digestDuration
+통과: 설정 항목 한글 이름: StomachChurn/acidVfx
+통과: 한글 설정 분류: 위산 / 벽
+통과: 설정 항목 한글 이름: StomachChurn/walls
+통과: 설정 항목 한글 이름: StomachChurn/churnAmplitudeMultiplier
+통과: 한글 도움말: StomachChurn/churnAmplitudeMultiplier
+통과: 설정 항목 한글 이름: StomachChurn/churnAudio
+통과: 설정 항목 한글 이름: StomachChurn/onDigested
+통과: 한글 설정 분류: 완료
+통과: 구성 요소 한글 메뉴: 위 소화 연출
+통과: 설정 항목 한글 이름: SwallowSequence/tongue
+통과: 한글 설정 분류: 파츠
+통과: 설정 항목 한글 이름: SwallowSequence/bolus
+통과: 설정 항목 한글 이름: SwallowSequence/uvula
+통과: 설정 항목 한글 이름: SwallowSequence/epiglottis
+통과: 설정 항목 한글 이름: SwallowSequence/throatPoint
+통과: 한글 도움말: SwallowSequence/throatPoint
+통과: 설정 항목 한글 이름: SwallowSequence/tongueLiftSeconds
+통과: 한글 설정 분류: 타이밍
+통과: 설정 항목 한글 이름: SwallowSequence/pushSeconds
+통과: 설정 항목 한글 이름: SwallowSequence/playerPullSeconds
+통과: 설정 항목 한글 이름: SwallowSequence/tongueLiftAngle
+통과: 한글 도움말: SwallowSequence/tongueLiftAngle
+통과: 설정 항목 한글 이름: SwallowSequence/uvulaLiftAngle
+통과: 설정 항목 한글 이름: SwallowSequence/epiglottisCloseAngle
+통과: 설정 항목 한글 이름: SwallowSequence/audioSource
+통과: 한글 설정 분류: 사운드
+통과: 설정 항목 한글 이름: SwallowSequence/gulpClip
+통과: 설정 항목 한글 이름: SwallowSequence/pullPlayer
+통과: 한글 설정 분류: 완료
+통과: 설정 항목 한글 이름: SwallowSequence/advanceOnFinish
+통과: 설정 항목 한글 이름: SwallowSequence/onSwallowed
+통과: 구성 요소 한글 메뉴: 삼키기 연출
+통과: 설정 항목 한글 이름: Sway/angle
+통과: 설정 항목 한글 이름: Sway/speed
+통과: 설정 항목 한글 이름: Sway/axis
+통과: 설정 항목 한글 이름: Sway/randomPhase
+통과: 한글 도움말: Sway/randomPhase
+통과: 구성 요소 한글 메뉴: 흔들림
+통과: 설정 항목 한글 이름: TheaterEnding/player
+통과: 설정 항목 한글 이름: TheaterEnding/playAfterIntro
+통과: 한글 도움말: TheaterEnding/playAfterIntro
+통과: 설정 항목 한글 이름: TheaterEnding/introWait
+통과: 한글 도움말: TheaterEnding/introWait
+통과: 설정 항목 한글 이름: TheaterEnding/delayAfterVideo
+통과: 한글 도움말: TheaterEnding/delayAfterVideo
+통과: 설정 항목 한글 이름: TheaterEnding/fallbackSeconds
+통과: 한글 도움말: TheaterEnding/fallbackSeconds
+통과: 구성 요소 한글 메뉴: 상영관 마무리
+통과: 설정 항목 한글 이름: WallAbsorption/prefabs
+통과: 설정 항목 한글 이름: WallAbsorption/count
+통과: 설정 항목 한글 이름: WallAbsorption/tubeRadius
+통과: 한글 도움말: WallAbsorption/tubeRadius
+통과: 설정 항목 한글 이름: WallAbsorption/tubeLength
+통과: 한글 도움말: WallAbsorption/tubeLength
+통과: 설정 항목 한글 이름: WallAbsorption/driftSpeed
+통과: 설정 항목 한글 이름: WallAbsorption/shrinkSeconds
+통과: 설정 항목 한글 이름: WallAbsorption/scaleRange
+통과: 설정 항목 한글 이름: WallAbsorption/absorbVfx
+통과: 한글 도움말: WallAbsorption/absorbVfx
+통과: 설정 항목 한글 이름: WallAbsorption/labelTemplate
+통과: 한글 도움말: WallAbsorption/labelTemplate
+통과: 구성 요소 한글 메뉴: 장벽 수분 흡수
+통과: 설정 항목 한글 이름: FloatingFollower/player
+통과: 한글 설정 분류: 타겟 설정
+통과: 설정 항목 한글 이름: FloatingFollower/distance
+통과: 한글 설정 분류: 위치 설정
+통과: 설정 항목 한글 이름: FloatingFollower/height
+통과: 설정 항목 한글 이름: FloatingFollower/angleBias
+통과: 설정 항목 한글 이름: FloatingFollower/followSpeed
+통과: 한글 설정 분류: 움직임 설정
+통과: 설정 항목 한글 이름: FloatingFollower/rotateSpeed
+통과: 설정 항목 한글 이름: FloatingFollower/floatAmplitude
+통과: 한글 설정 분류: 둥둥 뜨는 효과
+통과: 설정 항목 한글 이름: FloatingFollower/floatFrequency
+통과: 설정 항목 한글 이름: FloatingFollower/rotationOffset
+통과: 한글 설정 분류: 회전 보정
+통과: 구성 요소 한글 메뉴: 떠다니며 따라오기
+통과: 설정 항목 한글 이름: NPCUI/targetB
+통과: 설정 항목 한글 이름: NPCUI/mainCamera
+통과: 설정 항목 한글 이름: NPCUI/yOffset
+통과: 설정 항목 한글 이름: NPCUI/moveSmoothSpeed
+통과: 설정 항목 한글 이름: NPCUI/rotateSmoothSpeed
+통과: 구성 요소 한글 메뉴: 안내 화면 따라오기
+통과: 설정 항목 한글 이름: NPCUILook/NPC_UI
+통과: 설정 항목 한글 이름: NPCUILook/player
+통과: 설정 항목 한글 이름: NPCUILook/activeDistance
+통과: 구성 요소 한글 메뉴: 거리별 안내 화면
+통과: 구성 요소 한글 메뉴: 장면 이동
+통과: 설정 항목 한글 이름: VirusGroupController/virusModels
+통과: 한글 설정 분류: 바이러스 리스트
+통과: 설정 항목 한글 이름: VirusData/transform
+통과: 설정 항목 한글 이름: VirusGroupController/baseMoveRange
+통과: 한글 설정 분류: 전체적인 기준 설정
+통과: 설정 항목 한글 이름: VirusGroupController/baseMoveSpeed
+통과: 설정 항목 한글 이름: VirusGroupController/baseRotateSpeed
+통과: 구성 요소 한글 메뉴: 미생물 무리 제어
+통과: 구성 요소 한글 메뉴: 가상현실 플레이어 관리
+통과: 설정 항목 한글 이름: NPCController/target
+통과: 한글 설정 분류: 안내 캐릭터 따라오기
+통과: 한글 도움말: NPCController/target
+통과: 설정 항목 한글 이름: NPCController/moveSpeed
+통과: 한글 도움말: NPCController/moveSpeed
+통과: 설정 항목 한글 이름: NPCController/forwardOffset
+통과: 한글 도움말: NPCController/forwardOffset
+통과: 설정 항목 한글 이름: NPCController/rightOffset
+통과: 한글 도움말: NPCController/rightOffset
+통과: 설정 항목 한글 이름: NPCController/stopDistance
+통과: 한글 설정 분류: 거리 제한 (너무 가깝지 않게)
+통과: 한글 도움말: NPCController/stopDistance
+통과: 설정 항목 한글 이름: NPCController/rotationOffset
+통과: 한글 설정 분류: 자세 교정 (눕는 문제 해결)
+통과: 한글 도움말: NPCController/rotationOffset
+통과: 구성 요소 한글 메뉴: 안내 캐릭터 제어
+통과: 구성 요소 한글 메뉴: 안내 캐릭터 상호작용 연결
+통과: 설정 항목 한글 이름: OSCBodyManager/targetIP
+통과: 한글 설정 분류: 네트워크 설정
+통과: 한글 도움말: OSCBodyManager/targetIP
+통과: 설정 항목 한글 이름: OSCBodyManager/sendPort
+통과: 설정 항목 한글 이름: OSCBodyManager/receivePort
+통과: 설정 항목 한글 이름: OSCBodyManager/onRemotePressA
+통과: 한글 설정 분류: 원격 버튼 동작 (수신 전용)
+통과: 설정 항목 한글 이름: OSCBodyManager/onRemotePressB
+통과: 구성 요소 한글 메뉴: 원격 몸동작 통신
+통과: 설정 항목 한글 이름: OSCManager/remoteIP
+통과: 한글 설정 분류: 원격 통신 설정
+통과: 한글 도움말: OSCManager/remoteIP
+통과: 설정 항목 한글 이름: OSCManager/sendPort
+통과: 한글 도움말: OSCManager/sendPort
+통과: 설정 항목 한글 이름: OSCManager/receivePort
+통과: 한글 도움말: OSCManager/receivePort
+통과: 구성 요소 한글 메뉴: 원격 상호작용 통신
+통과: 설정 항목 한글 이름: RaycastInteractor/maxDistance
+통과: 한글 도움말: RaycastInteractor/maxDistance
+통과: 설정 항목 한글 이름: RaycastInteractor/raycastFrequency
+통과: 한글 도움말: RaycastInteractor/raycastFrequency
+통과: 설정 항목 한글 이름: RaycastInteractor/interactableTag
+통과: 한글 도움말: RaycastInteractor/interactableTag
+통과: 구성 요소 한글 메뉴: 시선 상호작용
+통과: 설정 항목 한글 이름: SceneChanger/nextSceneName
+통과: 한글 설정 분류: 1. 이동 설정
+통과: 설정 항목 한글 이름: SceneChanger/targetTags
+통과: 설정 항목 한글 이름: SceneChanger/useFade
+통과: 한글 설정 분류: 2. 페이드 설정
+통과: 설정 항목 한글 이름: SceneChanger/fadeDuration
+통과: 설정 항목 한글 이름: SceneChanger/fadeColor
+통과: 설정 항목 한글 이름: SceneChanger/uiFadePanel
+통과: 구성 요소 한글 메뉴: 장면 전환
+통과: 설정 항목 한글 이름: SceneLoader/loadDelayTime
+통과: 한글 도움말: SceneLoader/loadDelayTime
+통과: 구성 요소 한글 메뉴: 장면 불러오기
+통과: 설정 항목 한글 이름: SceneTransitionCleaner/nextSceneName
+통과: 한글 설정 분류: 다음으로 넘어갈 씬 이름
+통과: 설정 항목 한글 이름: SceneTransitionCleaner/specificNdiSender
+통과: 한글 설정 분류: 수동 설정 (비워두면 자동 감지)
+통과: 구성 요소 한글 메뉴: 장면 전환 정리
+통과: 설정 항목 한글 이름: AutoGuideTrigger/targetOrgan
+통과: 한글 도움말: AutoGuideTrigger/targetOrgan
+통과: 구성 요소 한글 메뉴: 장기 설명 시작 구역
+통과: 설정 항목 한글 이름: ChickSpeechTrigger/chickAudioSource
+통과: 한글 설정 분류: 설정
+통과: 설정 항목 한글 이름: ChickSpeechTrigger/ttsClip
+통과: 구성 요소 한글 메뉴: 병아리 음성 시작 구역
+통과: 구성 요소 한글 메뉴: 박사 설명 제어
+통과: 설정 항목 한글 이름: LocationTrigger/canvasRoot
+통과: 설정 항목 한글 이름: LocationTrigger/dialogueTexts
+통과: 설정 항목 한글 이름: LocationTrigger/timePerText
+통과: 구성 요소 한글 메뉴: 장소별 안내
+통과: 설정 항목 한글 이름: VRGazeInteractor/maxGazeDistance
+통과: 한글 도움말: VRGazeInteractor/maxGazeDistance
+통과: 구성 요소 한글 메뉴: 가상현실 시선 상호작용
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/introLines.Array.data[1].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 한글 안내: OrganStage/funFacts.Array.data[2]
+통과: 한글 안내: OrganStage/displayName
+통과: 한글 안내: OrganStage/introLines.Array.data[0].text
+통과: 한글 안내: OrganStage/outroLines.Array.data[0].text
+통과: 한글 안내: OrganStage/summary
+통과: 한글 안내: OrganStage/funFacts.Array.data[0]
+통과: 한글 안내: OrganStage/funFacts.Array.data[1]
+통과: 플레이어 카메라가 환경 배경을 표시함: LeftEyeAnchor
+통과: 플레이어 카메라가 환경 배경을 표시함: CenterEyeAnchor
+통과: 플레이어 카메라가 환경 배경을 표시함: RightEyeAnchor
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 한글 안내: ExhibitStation/voiceLine.text
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 한글 안내: ExhibitStation/voiceLine.text
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 한글 안내: ExhibitStation/overrideTitle
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Title
+통과: 인체 탐험관 로비 이름표 한글 글꼴 연결: Body
+통과: 인체 탐험관 로비 전용 환경 배경 연결
+통과: 인체 탐험관 로비 배경 셰이더 오류 없음
+통과: 인체 탐험관 로비 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 01_Mouth/Text
+통과: 입 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: NarrationZone/lines.Array.data[0].text
+통과: 입 전용 환경 배경 연결
+통과: 입 배경 셰이더 오류 없음
+통과: 입 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 02_Esophagus/Text
+통과: 식도 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 02_Esophagus/Text
+통과: 식도 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: CapsuleRide/stops.Array.data[0].lines.Array.data[0].text
+통과: 한글 안내: CapsuleRide/stops.Array.data[1].lines.Array.data[0].text
+통과: 식도 전용 환경 배경 연결
+통과: 식도 배경 셰이더 오류 없음
+통과: 식도 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 03_Stomach/Text
+통과: 위 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 03_Stomach/Text
+통과: 위 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 03_Stomach/Text
+통과: 위 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 03_Stomach/Text
+통과: 위 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 03_Stomach/Text
+통과: 위 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: NarrationZone/lines.Array.data[0].text
+통과: 위 전용 환경 배경 연결
+통과: 위 배경 셰이더 오류 없음
+통과: 위 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 04_SmallIntestine/Text
+통과: 소장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 04_SmallIntestine/Text
+통과: 소장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 04_SmallIntestine/Text
+통과: 소장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 04_SmallIntestine/Text
+통과: 소장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[0].displayName
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[0].absorbedLine
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[1].displayName
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[1].absorbedLine
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[2].displayName
+통과: 한글 안내: NutrientAbsorption/kinds.Array.data[2].absorbedLine
+통과: 한글 안내: NutrientAbsorption/progressFormat
+통과: 한글 안내: NutrientAbsorption/completeLines.Array.data[0].text
+통과: 한글 안내: CapsuleRide/stops.Array.data[0].lines.Array.data[0].text
+통과: 한글 안내: CapsuleRide/stops.Array.data[1].lines.Array.data[0].text
+통과: 소장 이름표 한글 글꼴 연결: Text
+통과: 소장 전용 환경 배경 연결
+통과: 소장 배경 셰이더 오류 없음
+통과: 소장 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 05_LargeIntestine/Text
+통과: 대장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: CapsuleRide/stops.Array.data[0].lines.Array.data[0].text
+통과: 한글 안내: CapsuleRide/stops.Array.data[1].lines.Array.data[0].text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 05_LargeIntestine/Text
+통과: 대장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 05_LargeIntestine/Text
+통과: 대장 이름표 한글 글꼴 연결: Text
+통과: 한글 안내: 05_LargeIntestine/Text
+통과: 대장 이름표 한글 글꼴 연결: Text
+통과: 대장 전용 환경 배경 연결
+통과: 대장 배경 셰이더 오류 없음
+통과: 대장 기존 개체와 배치 보존
+통과: 한글 안내: PartLabel/displayName
+통과: 한글 안내: PartLabel/line.text
+통과: 한글 안내: 06_Theater/Text
+통과: 정리 상영관 이름표 한글 글꼴 연결: Text
+통과: 정리 상영관 전용 환경 배경 연결
+통과: 정리 상영관 배경 셰이더 오류 없음
+통과: 정리 상영관 기존 개체와 배치 보존
+변경한 기존 안내 연결: 0
+배경 7종 / 장면별 7방향 촬영 / 기존 기관 모형과 이벤트 연결 유지
+기술 식별자, 파일명 및 외부 플러그인의 고유 항목은 연결 호환성을 위해 유지함.
+실제 가상현실 기기의 양안 표시와 입력은 별도 확인이 필요함.
+실패 수: 0

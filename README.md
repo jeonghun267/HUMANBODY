@@ -1,5 +1,7 @@
 # 인체탐험 VR 프로젝트 (HUMANBODY)
 
+플레이어는 병아리 의사 삐약이와 함께 음식의 이동 경로를 따라가는 작은 탐험가다. 입과 위에서는 주변을 둘러보고, 식도·소장·대장에서는 탐험 캡슐을 타며 소화와 흡수를 관찰한다. [설정과 대사 기준](Tools/EXPLORER_PERSPECTIVE.md)
+
 > AI × VR 인체 탐험관 — 사용자가 직접 소화기관 내부를 체험하며 인체 구조를 배우는 Meta Quest VR 콘텐츠
 
 ![Unity](https://img.shields.io/badge/Unity-6000.2.1f1-black?logo=unity)
@@ -32,37 +34,37 @@
 
 ---
 
-## 주요 기능
+## 주요 기능 (2026-09 리뉴얼)
 
-### 1. 가이드 NPC (병아리 의사)
-- `NPCController` — 플레이어 시선 옆에 일정 거리(`forwardOffset`, `rightOffset`)로 따라오는 싱글톤 NPC
-- `FloatingFollower` — 부드러운 부유/회전(`Lerp`), VR `CenterEyeAnchor` 자동 추적
-- `NPCUI` / `NPCUILook` — World Space UI 캔버스가 항상 카메라를 향하도록 회전
-- `DoctorController` — 기관별 음성 클립(`Resources/Explain_{OrganName}.mp3`)을 spatial audio로 재생
+### 여정 구조 — 소화 경로 풀코스
+```
+00_Lobby → 01_Mouth → 02_Esophagus → 03_Stomach → 04_SmallIntestine → 05_LargeIntestine → 06_Theater
+```
+- `JourneyManager` — `OrganStage`(ScriptableObject) 순서만 보고 다음 씬으로 전환. 페이드/스폰/입장·퇴장 내레이션 자동 처리
+- `PersistentBootstrap` — 매니저·플레이어·병아리 가이드를 담은 영속 프리팹을 어느 씬에서 시작해도 생성
 
-### 2. 씬 전환 시스템
-- `SceneChanger` — 트리거 진입 시 OVRScreenFade + UI 패널 페이드 → 비동기 씬 로드
-- `SceneLoader` / `SceneTransitionCleaner` — 씬 간 자원 정리
-- `VRPlayerManager` — `DontDestroyOnLoad` 싱글톤 플레이어가 씬 전환 시 `SpawnPoint`로 자동 위치 보정
+### 가이드 & 설명
+- `GuideNarrator` — 병아리 의사의 음성(edge-tts ko-KR) + 말풍선 자막(KoreanTyper 타이핑) 동기 재생
+- `PartLabel` — 씬 안의 모든 파츠(혀, 윗니, 융털, 적혈구…)에 이름표 + 한 줄 설명. `GazeSelector`(시선)로 활성화
+- `NarrationZone` / `StageExitPortal` — 구역 진입 내레이션, 출구 포털
+- `ExhibitStation` — 로비 전시대 정보 패널(요약 + 알아두기)
 
-### 3. 보트 이동 (소화기관 내부 여행)
-- `BoatInteraction` — VR A/X 버튼(또는 PC `E`)으로 탑승/하차, 플레이어·NPC 동시 SetParent
-- `SimpleTrainMover` + Cinemachine `SplineCart` — 식도→위→장 경로를 따라 자동 이동
-- 거리 기반 상호작용(`interactionDistance`)으로 자연스러운 탑승 트리거
+### 씬별 연출
+| 씬 | 파츠 | 애니메이션 |
+|---|---|---|
+| 입 | 혀·윗니·아랫니·목젖·후두덮개·침샘 3쌍·식괴 | `ChewingSequence`(턱 씹기, 침 분비) → `SwallowSequence`(혀가 식괴를 보내는 모습을 관찰한 뒤 탐험가는 화면 전환으로 식도에 이동) |
+| 식도 | 근육 터널·연동파 링·분문 | `PeristalsisWave`(수축 링 하강), `SphincterGate`(분문 개폐), `CapsuleRide` 정차 설명 |
+| 위 | 위벽 주름·위샘 3종·점액층·펩신·단백질 사슬·유문 | `StomachChurn`(음식→미즙), `EnzymeCutSequence`(펩신 절단), 유문 열림 → `SplineFlow` 미즙 배출 |
+| 소장 | 십이지장 합류부·융털 타일·**융털 단면(모세혈관+적혈구 흐름, 유미관+지방산)**·영양소 3종 | `SplineFlow` 혈류, `NutrientAbsorption` 응시 흡수 미니게임 |
+| 대장 | 팽대 벽·유익균/유해균·식이섬유·물방울·찌꺼기 3단계·충수 | `FloatingSwarm`, `WallAbsorption`(수분 흡수), `RideProgressSwitcher`(묽음→고형) |
+| 상영관 | 소화계 홀로그램 | 경로 따라 흐르는 빛 + 영상 → `TheaterEnding` → 로비 복귀 |
 
-### 4. 환경 인터랙션
-- `AutoDoor` / `AutoRotate` — 트리거 기반 자동 문, 회전 오브젝트
-- `FluidBobber` — 위액(GastricFluid) 표면 위 부유 효과
-- `DescentTransition` — 식도 하강 연출
-- `VirusGroupController` — 다수 바이러스 오브젝트의 개별 속도·축·범위 무작위화로 자연스러운 군집 움직임
+### 에셋 파이프라인
+- **3D 모델**: Meshy text-to-3D (`Tools/meshy.py`, 매니페스트 `Tools/meshy_manifest*.json`) → `Assets/Models/Meshy/*.glb` (glTFast 임포트)
+- **내레이션**: `Assets/Data/journey_content.json` 대본 → `Tools/make_narration.py`(edge-tts) → `Assets/Sounds/Narration/*.mp3`
+- **씬 자동 조립**: Unity 메뉴 `HumanBody/전체 빌드` (`JourneyBuilder`) — 데이터 임포트 → 7개 씬 생성 → Build Settings 등록. 모델 크기는 바운즈 기준으로 자동 정렬(Fit/Ground/AlignLongest)
 
-### 5. 가이드 트리거 / 위치 기반 설명
-- `AutoGuideTrigger` — `VRCamera` 태그가 콜라이더 진입 시 해당 기관(`targetOrgan`) 설명 자동 재생
-- `LocationTrigger` / `ChickSpeechTrigger` — 위치별 NPC 대사·SFX 트리거
-- `RaycastInteractor` / `VRGazeInteractor` — 시선/광선 기반 전시품 선택
-- `DisplayInfo` — 선택된 기관의 정보 패널 표출
-
-### 6. 외부 연동 (OSC / NDI)
+### 외부 연동 (OSC / NDI)
 - `OSCManager` — `/interaction/{organID}` 주소로 다른 사용자/시연 컨트롤러와 관람 상태 동기화
 - `OSCBodyManager` — 외부 모션캡처/바디 트래킹 데이터 수신용 인터페이스
 
@@ -71,14 +73,16 @@
 ## 씬 구성
 
 ```
-Assets/Scenes/
-├── MouseScene.unity      입 / 식도 진입
-├── OrganScene.unity      위장 (로비, 메인 전시관)
-├── SmallIntestine.unity  소장
-└── Toilet.unity          종착점 / 마무리 연출
+Assets/Scenes/Journey/
+├── 00_Lobby.unity           전시관 로비 (전시대 6개, 홀로그램, 입 모양 입구)
+├── 01_Mouth.unity           입 (씹기 → 삼킴)
+├── 02_Esophagus.unity       식도 (캡슐 하강 라이드)
+├── 03_Stomach.unity         위 (휘젓기, 효소 절단, 유문)
+├── 04_SmallIntestine.unity  소장 (라이드 + 융털 확대 + 흡수 게임)
+├── 05_LargeIntestine.unity  대장 (세균, 수분 흡수, 찌꺼기)
+└── 06_Theater.unity         정리 상영관
+Assets/Scenes/                (구 버전: MouseScene / OrganScene / SmallIntestine / Toilet)
 ```
-
-진행 순서: `MouseScene` → `OrganScene` → `SmallIntestine` → `Toilet`
 
 ---
 
@@ -87,61 +91,54 @@ Assets/Scenes/
 ```
 HUMANBODY/
 ├── Assets/
-│   ├── Scenes/            메인 씬 4종
-│   ├── Scripts/           게임 로직 (NPC, Scene, Boat, Door, OSC 등)
-│   ├── Prefabs/           재사용 오브젝트
-│   ├── Character/         캐릭터 모델/애니메이션
-│   ├── Enviroment/        배경 환경 에셋
-│   ├── Boats/             보트/스플라인 에셋
-│   ├── NamuFX/            VFX 라이브러리
-│   ├── Sounds/            BGM / SFX / 내레이션
-│   ├── KoreanTyper/       한글 타이핑 UI 효과
-│   ├── XR / XRI /         Meta XR / Unity XRI 설정
-│   ├── MetaXR / Oculus/   Meta Quest 통합
-│   ├── NDI/               영상 송출
-│   ├── Settings/          URP 렌더러/볼륨 프로파일
-│   └── Resources/         런타임 로딩용 (음성 클립 등)
+│   ├── Scenes/Journey/    새 여정 씬 7종 (자동 생성)
+│   ├── Scripts/Journey/   여정 로직 (JourneyManager, GuideNarrator, PartLabel, 연출 스크립트, Editor/JourneyBuilder)
+│   ├── Scripts/           구 버전 스크립트 (구 씬 호환용)
+│   ├── Data/              journey_content.json, Stages/(OrganStage), Volumes/, Generated/(프리팹·머티리얼)
+│   ├── Models/Meshy/      Meshy 생성 GLB 모델
+│   ├── Sounds/Narration/  TTS 내레이션
+│   ├── Character/ Enviroment/  구 Sketchfab 모델 (구 씬용)
+│   ├── XR / XRI / MetaXR / Oculus   Meta Quest 통합
+│   └── Resources/         런타임 로딩용
+├── Tools/                 meshy.py, make_narration.py, 매니페스트
 ├── Packages/              UPM 의존성
-├── ProjectSettings/       Unity 프로젝트 세팅
-└── README.md
+└── ProjectSettings/
 ```
 
 ---
 
 ## 빌드 방법
 
+### 씬 생성 (최초 1회 / 대본·모델 변경 시)
+1. Unity 메뉴 **HumanBody → 전체 빌드**
+2. `Assets/Scenes/Journey/00_Lobby` 열고 Play (중간 씬에서 Play 해도 동작)
+
 ### Meta Quest (Android)
 1. Unity Hub에서 `6000.2.1f1` 에디터 + **Android Build Support** 설치
-2. 프로젝트 열기 → `File > Build Profiles` → **Android** 선택
-3. `XR Plug-in Management` → **Oculus** 체크
-4. Quest를 USB로 연결 (개발자 모드 활성화)
-5. `Build And Run` → `.apk` 자동 설치
+2. `File > Build Profiles` → **Android** 선택, `XR Plug-in Management` → **Oculus** 체크
+3. Quest를 USB로 연결 (개발자 모드) → `Build And Run`
 
-### PC (Windows / Link 모드)
-1. Build Profile을 **Windows / Mac / Linux** 로 전환
-2. Quest를 PC에 Quest Link 또는 Air Link로 연결
-3. `Build And Run`
+### PC (Quest Link)
+1. Build Profile을 **Windows** 로 전환, Quest Link/Air Link 연결 후 `Build And Run`
 
 ---
 
 ## 콘텐츠 진행 흐름
 
 ```
-[VR 기기 접속]
-        ↓
-[로비 입장] → 병아리 가이드 등장 / 안내판 표시
-        ↓
-[입(MouseScene) 진입] → 소화 시작 설명 / 보트 탑승
-        ↓
-[위(OrganScene)] → 위액 표면 효과 / 가스 / 음식 분해 시연
-        ↓
-[소장(SmallIntestine)] → 영양소 흡수 / 바이러스 인터랙션
-        ↓
-[대장 / Toilet] → 마무리 연출
-        ↓
-[360 영상 상영관] → AI 생성 내레이션 영상 재생
-        ↓
-[종료 / 로비 복귀]
+[로비] 전시대 응시 → 정보 패널 / 병아리 인트로 → 입 모양 입구
+   ↓
+[입] 혀 위에 서서 치아·침샘 관찰 → 음식 씹기·삼킴 관찰 → 안내 후 화면 전환으로 식도에 이동
+   ↓
+[식도] 캡슐 하강, 연동파 링 관찰, 분문 열림
+   ↓
+[위] 위산·위샘·점액층, 펩신이 단백질 절단, 음식 → 미즙, 유문 열림
+   ↓
+[소장] 캡슐 라이드, 십이지장 분비, 융털 확대(적혈구 흐름), 영양소 흡수 게임
+   ↓
+[대장] 유익균/유해균, 수분 흡수, 찌꺼기 굳어짐
+   ↓
+[상영관] 홀로그램 경로 복습 → 영상 → 로비 복귀
 ```
 
 ---

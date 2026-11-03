@@ -1,14 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì‹œì„  ìƒí˜¸ì‘ìš©") ]
 public class RaycastInteractor : MonoBehaviour
 {
     private Transform raycastOrigin;
 
-    [Tooltip("·¹ÀÌÄ³½ºÆ® ÃÖ´ë °Å¸®")]
+    [Tooltip("ë ˆì´ìºìŠ¤íŠ¸ ìµœëŒ€ ê±°ë¦¬")]
     [SerializeField]
     private float maxDistance = 10f;
 
-    [Tooltip("·¹ÀÌÄ³½ºÆ® ºóµµ (Hz)")]
+    [Tooltip("ë ˆì´ìºìŠ¤íŠ¸ ë¹ˆë„ (ì´ˆë‹¹ íšŸìˆ˜)")]
     [SerializeField]
     private float raycastFrequency = 10f;
 
@@ -17,7 +18,7 @@ public class RaycastInteractor : MonoBehaviour
     private GameObject currentLookTarget = null;
     private GameObject previousLookTarget = null;
 
-    [Tooltip("»óÈ£ÀÛ¿ë ´ë»ó ÅÂ±×")]
+    [Tooltip("ìƒí˜¸ì‘ìš© ëŒ€ìƒ íƒœê·¸")]
     [SerializeField]
     private string interactableTag = "InteractableOrgan";
 
@@ -49,12 +50,12 @@ public class RaycastInteractor : MonoBehaviour
                     if (previousLookTarget != null)
                     {
                         previousLookTarget.GetComponent<DisplayInfo>()?.HideInfo();
-                        // OSC Àü¼Û ¿¹½Ã:
+                        // OSC ì „ì†¡ ì˜ˆì‹œ:
                         // OSCManager.Instance?.SendInteractionStatus(previousLookTarget.name, false);
                     }
 
                     currentLookTarget.GetComponent<DisplayInfo>()?.ShowInfo();
-                    // OSC Àü¼Û ¿¹½Ã:
+                    // OSC ì „ì†¡ ì˜ˆì‹œ:
                     // OSCManager.Instance?.SendInteractionStatus(currentLookTarget.name, true);
 
                     previousLookTarget = currentLookTarget;
@@ -76,7 +77,7 @@ public class RaycastInteractor : MonoBehaviour
         if (previousLookTarget != null)
         {
             previousLookTarget.GetComponent<DisplayInfo>()?.HideInfo();
-            // OSC Àü¼Û ¿¹½Ã:
+            // OSC ì „ì†¡ ì˜ˆì‹œ:
             // OSCManager.Instance?.SendInteractionStatus(previousLookTarget.name, false);
 
             previousLookTarget = null;

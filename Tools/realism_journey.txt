@@ -1,0 +1,37 @@
+Mode: journey
+UTC: 2026-11-03T18:38:03.6181941Z
+PASS Lobby bootstrap
+PASS 01_Mouth keeps the original player
+PASS 01_Mouth keeps the original persistent root
+PASS 01_Mouth has a narrator
+PASS 02_Esophagus keeps the original player
+PASS 02_Esophagus keeps the original persistent root
+PASS 02_Esophagus has a narrator
+PASS Mouth zone -> chewing -> swallowing -> esophagus
+PASS Persistent root remains independent while riding toward 03_Stomach
+PASS 03_Stomach keeps the original player
+PASS 03_Stomach keeps the original persistent root
+PASS 03_Stomach has a narrator
+PASS Stomach digestion opens pylorus
+PASS Persistent root remains independent while riding toward 04_SmallIntestine
+PASS 04_SmallIntestine keeps the original player
+PASS 04_SmallIntestine keeps the original persistent root
+PASS 04_SmallIntestine has a narrator
+PASS Stomach submarine waits for the pylorus and continues to the small intestine
+PASS All nutrients absorb and completion event fires
+PASS Persistent root remains independent while riding toward 05_LargeIntestine
+PASS 05_LargeIntestine keeps the original player
+PASS 05_LargeIntestine keeps the original persistent root
+PASS 05_LargeIntestine has a narrator
+PASS Harmful germs appear in front of the submarine
+PASS 06_Theater keeps the original player
+PASS 06_Theater keeps the original persistent root
+PASS 06_Theater has a narrator
+PASS Clearing harmful germs releases the submarine to the theater
+PASS 00_Lobby keeps the original player
+PASS 00_Lobby keeps the original persistent root
+PASS 00_Lobby has a narrator
+PASS Theater fallback and outro return to lobby
+PASS One persistent manager after the complete round trip
+Failures: 0
+Limit: accelerated desktop logic checks; no headset/input/audio/visual performance verification.

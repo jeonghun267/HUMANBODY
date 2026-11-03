@@ -1,16 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ìë™ íšŒì „") ]
 public class AutoRotate : MonoBehaviour
 {
-    [Header("ÇÑ ¹ÙÄû µµ´Â µ¥ °É¸®´Â ½Ã°£ (ÃÊ)")]
-    public float duration = 5.0f; // ±âº» 5ÃÊ
+    [Header("í•œ ë°”í€´ ë„ëŠ” ë° ê±¸ë¦¬ëŠ” ì‹œê°„ (ì´ˆ)")]
+    public float duration = 5.0f; // ê¸°ë³¸ 5ì´ˆ
 
     void Update()
     {
-        // 360µµ¸¦ ½Ã°£À¸·Î ³ª´©¸é ÃÊ´ç È¸Àü ¼Óµµ°¡ ³ª¿È
+        // 360ë„ë¥¼ ì‹œê°„ìœ¼ë¡œ ë‚˜ëˆ„ë©´ ì´ˆë‹¹ íšŒì „ ì†ë„ê°€ ë‚˜ì˜´
         float speed = 360f / duration;
 
-        // YÃà(À§ÂÊ)À» ±âÁØÀ¸·Î È¸Àü (Space.World¸¦ ½á¾ß ºñ½ºµëÈ÷ ¾È µ¹°í ¶È¹Ù·Î µ¼!)
+        // Yì¶•(ìœ„ìª½)ì„ ê¸°ì¤€ìœ¼ë¡œ íšŒì „ (Space.Worldë¥¼ ì¨ì•¼ ë¹„ìŠ¤ë“¬íˆ ì•ˆ ëŒê³  ë˜‘ë°”ë¡œ ë”!)
         transform.Rotate(Vector3.up * speed * Time.deltaTime, Space.World);
     }
 }

@@ -1,23 +1,24 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ê°€ìƒí˜„ì‹¤ í”Œë ˆì´ì–´ ê´€ë¦¬") ]
 public class VRPlayerManager : MonoBehaviour
 {
-    // ½Ì±ÛÅæ: ÇÃ·¹ÀÌ¾î´Â °ÔÀÓ ÀüÃ¼¿¡ ´Ü ÇÏ³ª¸¸ Á¸ÀçÇØ¾ß ÇÔ
+    // ì‹±ê¸€í†¤: í”Œë ˆì´ì–´ëŠ” ê²Œì„ ì „ì²´ì— ë‹¨ í•˜ë‚˜ë§Œ ì¡´ì¬í•´ì•¼ í•¨
     public static VRPlayerManager instance;
 
     void Awake()
     {
-        // 1. Áßº¹ ¹æÁö ·ÎÁ÷
+        // 1. ì¤‘ë³µ ë°©ì§€ ë¡œì§
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // ¾ÀÀÌ ¹Ù²¸µµ ÆÄ±«µÇÁö ¾ÊÀ½
+            DontDestroyOnLoad(gameObject); // ì”¬ì´ ë°”ê»´ë„ íŒŒê´´ë˜ì§€ ì•ŠìŒ
         }
         else
         {
-            // ¸¸¾à ÀÌ¹Ì ³Ñ¾î¿Â ÇÃ·¹ÀÌ¾î°¡ ÀÖ´Âµ¥, ¾À¿¡ ¶Ç ´Ù¸¥ ÇÃ·¹ÀÌ¾î°¡ ÀÖ´Ù¸é?
-            // (º¸Åë ºñÈ°¼ºÈ­ÇÏ¶ó°í ÇßÁö¸¸, ¸¸¾à ÄÑÁ® ÀÖ¾îµµ Ãæµ¹ ¾È ³ª°Ô ÆÄ±«ÇÔ)
+            // ë§Œì•½ ì´ë¯¸ ë„˜ì–´ì˜¨ í”Œë ˆì´ì–´ê°€ ìˆëŠ”ë°, ì”¬ì— ë˜ ë‹¤ë¥¸ í”Œë ˆì´ì–´ê°€ ìˆë‹¤ë©´?
+            // (ë³´í†µ ë¹„í™œì„±í™”í•˜ë¼ê³  í–ˆì§€ë§Œ, ë§Œì•½ ì¼œì ¸ ìˆì–´ë„ ì¶©ëŒ ì•ˆ ë‚˜ê²Œ íŒŒê´´í•¨)
             Destroy(gameObject);
             return;
         }
@@ -25,41 +26,41 @@ public class VRPlayerManager : MonoBehaviour
 
     void OnEnable()
     {
-        // ¾À ·Îµù ¿Ï·á ÀÌº¥Æ®¸¦ ±¸µ¶
+        // ì”¬ ë¡œë”© ì™„ë£Œ ì´ë²¤íŠ¸ë¥¼ êµ¬ë…
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnDisable()
     {
-        // ÀÌº¥Æ® ±¸µ¶ ÇØÁ¦ (¸Ş¸ğ¸® ´©¼ö ¹æÁö)
+        // ì´ë²¤íŠ¸ êµ¬ë… í•´ì œ (ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ ë°©ì§€)
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // ¾À ·ÎµùÀÌ ³¡³ª¸é ÀÚµ¿À¸·Î ½ÇÇàµÇ´Â ÇÔ¼ö
+    // ì”¬ ë¡œë”©ì´ ëë‚˜ë©´ ìë™ìœ¼ë¡œ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 2. »õ ¾À¿¡¼­ 'SpawnPoint'¶ó´Â ÀÌ¸§ÀÇ ¿ÀºêÁ§Æ® Ã£±â
+        // 2. ìƒˆ ì”¬ì—ì„œ 'SpawnPoint'ë¼ëŠ” ì´ë¦„ì˜ ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
         GameObject spawnPoint = GameObject.Find("SpawnPoint");
 
         if (spawnPoint != null)
         {
-            // OVRPlayerController ÀÌµ¿ ½Ã ¹°¸® Ãæµ¹ ¿À·ù ¹æÁö¸¦ À§ÇØ Àá½Ã CC ²û
+            // OVRPlayerController ì´ë™ ì‹œ ë¬¼ë¦¬ ì¶©ëŒ ì˜¤ë¥˜ ë°©ì§€ë¥¼ ìœ„í•´ ì ì‹œ CC ë”
             CharacterController cc = GetComponent<CharacterController>();
             if (cc != null) cc.enabled = false;
 
-            // À§Ä¡¿Í È¸ÀüÀ» SpawnPoint·Î °­Á¦ ÀÌµ¿
+            // ìœ„ì¹˜ì™€ íšŒì „ì„ SpawnPointë¡œ ê°•ì œ ì´ë™
             transform.position = spawnPoint.transform.position;
             transform.rotation = spawnPoint.transform.rotation;
 
-            Debug.Log($"[VRPlayerManager] '{scene.name}' ¾ÀÀÇ SpawnPoint·Î ÀÌµ¿Çß½À´Ï´Ù.");
+            Debug.Log($"[VRPlayerManager] '{scene.name}' ì”¬ì˜ SpawnPointë¡œ ì´ë™í–ˆìŠµë‹ˆë‹¤.");
 
-            // ÀÌµ¿ ÈÄ ´Ù½Ã ÄÔ
+            // ì´ë™ í›„ ë‹¤ì‹œ ì¼¬
             if (cc != null) cc.enabled = true;
         }
         else
         {
-            // SpawnPoint°¡ ¾øÀ¸¸é ±×³É ±× ÀÚ¸®¿¡ ÀÖÀ½ (·Î±×¸¸ ³²±è)
-            Debug.Log($"[VRPlayerManager] '{scene.name}' ¾À¿¡ 'SpawnPoint'°¡ ¾ø½À´Ï´Ù. ÇöÀç À§Ä¡ À¯Áö.");
+            // SpawnPointê°€ ì—†ìœ¼ë©´ ê·¸ëƒ¥ ê·¸ ìë¦¬ì— ìˆìŒ (ë¡œê·¸ë§Œ ë‚¨ê¹€)
+            Debug.Log($"[VRPlayerManager] '{scene.name}' ì”¬ì— 'SpawnPoint'ê°€ ì—†ìŠµë‹ˆë‹¤. í˜„ì¬ ìœ„ì¹˜ ìœ ì§€.");
         }
     }
 }

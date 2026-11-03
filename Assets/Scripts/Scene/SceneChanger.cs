@@ -1,19 +1,20 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì¥ë©´ ì „í™˜") ]
 public class SceneChanger : MonoBehaviour
 {
-    [Header("1. ÀÌµ¿ ¼³Á¤")]
+    [Header("1. ì´ë™ ì„¤ì •")]
     public string nextSceneName;
     public List<string> targetTags = new List<string> { "Player", "VRCamera", "Boat" };
 
-    [Header("2. ÆäÀÌµå ¼³Á¤")]
+    [Header("2. í˜ì´ë“œ ì„¤ì •")]
     public bool useFade = true;
-    public float fadeDuration = 1.0f; // ¶Ò ²÷±â´Â °Ô ½ÈÀ¸¸é ÃÖ¼Ò 0.5~1ÃÊ´Â Áà¾ß ÇÔ
-    public Color fadeColor = Color.black; // ¿©±â¼­ Ç÷°ü »ö»ó(»¡°­ µî)À¸·Î º¯°æ °¡´É!
+    public float fadeDuration = 1.0f; // ëš ëŠê¸°ëŠ” ê²Œ ì‹«ìœ¼ë©´ ìµœì†Œ 0.5~1ì´ˆëŠ” ì¤˜ì•¼ í•¨
+    public Color fadeColor = Color.black; // ì—¬ê¸°ì„œ í˜ˆê´€ ìƒ‰ìƒ(ë¹¨ê°• ë“±)ìœ¼ë¡œ ë³€ê²½ ê°€ëŠ¥!
     public Image uiFadePanel;
 
     private bool isTriggered = false;
@@ -42,16 +43,16 @@ public class SceneChanger : MonoBehaviour
     {
         if (useFade)
         {
-            // OVR ÆäÀÌµå (VR ·»Áî)
+            // OVR í˜ì´ë“œ (VR ë Œì¦ˆ)
             var ovrFade = FindAnyObjectByType<OVRScreenFade>();
             if (ovrFade != null)
             {
-                ovrFade.fadeColor = fadeColor; // OVR ÆäÀÌµå »ö»óµµ ¸ÂÃçÁÜ
+                ovrFade.fadeColor = fadeColor; // OVR í˜ì´ë“œ ìƒ‰ìƒë„ ë§ì¶°ì¤Œ
                 ovrFade.fadeTime = fadeDuration;
                 ovrFade.FadeOut();
             }
 
-            // UI ÆĞ³Î ÆäÀÌµå (³×°¡ ³ÖÀº PANEL)
+            // UI íŒ¨ë„ í˜ì´ë“œ (ë„¤ê°€ ë„£ì€ PANEL)
             if (uiFadePanel != null)
             {
                 float timer = 0f;
@@ -59,7 +60,7 @@ public class SceneChanger : MonoBehaviour
                 {
                     timer += Time.deltaTime;
                     float alpha = Mathf.Clamp01(timer / fadeDuration);
-                    // °ËÀº»ö(0,0,0) °íÁ¤ÀÌ ¾Æ´Ï¶ó ¼³Á¤ÇÑ fadeColor·Î º¯ÇÏ°Ô ¼öÁ¤!
+                    // ê²€ì€ìƒ‰(0,0,0) ê³ ì •ì´ ì•„ë‹ˆë¼ ì„¤ì •í•œ fadeColorë¡œ ë³€í•˜ê²Œ ìˆ˜ì •!
                     uiFadePanel.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha);
                     yield return null;
                 }
@@ -67,10 +68,10 @@ public class SceneChanger : MonoBehaviour
             else yield return new WaitForSeconds(fadeDuration);
         }
 
-        // ºñµ¿±â ·Îµù ½ÃÀÛ
+        // ë¹„ë™ê¸° ë¡œë”© ì‹œì‘
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
 
-        // ·Îµù Áß¿¡ È­¸éÀÌ ¸ØÃß´Â °É ¹æÁöÇÏ±â À§ÇØ ³¡±îÁö ´ë±â
+        // ë¡œë”© ì¤‘ì— í™”ë©´ì´ ë©ˆì¶”ëŠ” ê±¸ ë°©ì§€í•˜ê¸° ìœ„í•´ ëê¹Œì§€ ëŒ€ê¸°
         while (!asyncLoad.isDone)
         {
             yield return null;

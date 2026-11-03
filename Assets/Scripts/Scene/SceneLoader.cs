@@ -1,11 +1,12 @@
-using UnityEngine;
-using UnityEngine.SceneManagement; // ¾À ÀüÈ¯¿¡ »ç¿ë
+ï»¿using UnityEngine;
+using UnityEngine.SceneManagement; // ì”¬ ì „í™˜ì— ì‚¬ìš©
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì¥ë©´ ë¶ˆëŸ¬ì˜¤ê¸°") ]
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    [Tooltip("¾À ÀüÈ¯ Áö¿¬ ½Ã°£ (ÃÊ)")]
+    [Tooltip("ì”¬ ì „í™˜ ì§€ì—° ì‹œê°„ (ì´ˆ)")]
     [SerializeField]
     private float loadDelayTime = 1.5f;
 
@@ -23,9 +24,9 @@ public class SceneLoader : MonoBehaviour
     }
 
     /// <summary>
-    /// ÁöÁ¤ÇÑ ¾ÀÀ¸·Î ÀüÈ¯ÇÕ´Ï´Ù.
+    /// ì§€ì •í•œ ì”¬ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤.
     /// </summary>
-    /// <param name="sceneName">ÀüÈ¯ÇÒ ¾À ÀÌ¸§ (Build Settings¿¡ µî·ÏµÈ ÀÌ¸§)</param>
+    /// <param name="sceneName">ì „í™˜í•  ì”¬ ì´ë¦„ (Build Settingsì— ë“±ë¡ëœ ì´ë¦„)</param>
     public void LoadNewScene(string sceneName)
     {
         StartCoroutine(LoadSceneAsync(sceneName));
@@ -33,7 +34,7 @@ public class SceneLoader : MonoBehaviour
 
     private System.Collections.IEnumerator LoadSceneAsync(string sceneName)
     {
-        Debug.Log($"¾À ÀüÈ¯: {sceneName}");
+        Debug.Log($"ì”¬ ì „í™˜: {sceneName}");
 
         yield return new WaitForSeconds(loadDelayTime);
 
@@ -44,6 +45,6 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log($"¾À ÀüÈ¯ ¿Ï·á: {sceneName}");
+        Debug.Log($"ì”¬ ì „í™˜ ì™„ë£Œ: {sceneName}");
     }
 }

@@ -1,15 +1,16 @@
-using UnityEngine;
-using Unity.Cinemachine; // ¹öÀü¿¡ µû¶ó namespace°¡ ´Ù¸¦ ¼ö ÀÖÀ½ (Cinemachine È¤Àº Unity.Cinemachine)
+ï»¿using UnityEngine;
+using Unity.Cinemachine; // ë²„ì „ì— ë”°ë¼ namespaceê°€ ë‹¤ë¥¼ ìˆ˜ ìˆìŒ (Cinemachine í˜¹ì€ Unity.Cinemachine)
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ê²½ë¡œ ì´ë™") ]
 public class SimpleTrainMover : MonoBehaviour
 {
-    // ³×°¡ ½ºÅ©¸°¼¦¿¡ ¶ç¿ö³õÀº ±× ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿Ã º¯¼ö
+    // ë„¤ê°€ ìŠ¤í¬ë¦°ìƒ·ì— ë„ì›Œë†“ì€ ê·¸ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¬ ë³€ìˆ˜
     public CinemachineSplineCart cart;
-    public float speed = 0.5f; // ±âÂ÷ ¼Óµµ
+    public float speed = 0.5f; // ê¸°ì°¨ ì†ë„
 
     void Update()
     {
-        // ¸Å ÇÁ·¹ÀÓ¸¶´Ù ¼Óµµ¸¸Å­ °Å¸®¸¦ Áõ°¡½ÃÅ´ (¾ÕÀ¸·Î ÀÌµ¿)
+        // ë§¤ í”„ë ˆì„ë§ˆë‹¤ ì†ë„ë§Œí¼ ê±°ë¦¬ë¥¼ ì¦ê°€ì‹œí‚´ (ì•ìœ¼ë¡œ ì´ë™)
         if (cart != null)
         {
             cart.SplinePosition += speed * Time.deltaTime;

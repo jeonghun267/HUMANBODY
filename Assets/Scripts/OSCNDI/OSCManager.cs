@@ -1,27 +1,28 @@
-using System.Net;
+ï»¿using System.Net;
 using UnityEngine;
 using System.Collections.Generic;
-// using [OSC Library Namespace]; // ½ÇÁ¦ »ç¿ëÇÏ´Â OSC ¿¡¼ÂÀÇ namespace¸¦ ¿©±â¿¡ Ãß°¡ÇÏ¼¼¿ä (¿¹: using UnityOSC;)
+// using [OSC Library Namespace]; // ì‹¤ì œ ì‚¬ìš©í•˜ëŠ” OSC ì—ì…‹ì˜ namespaceë¥¼ ì—¬ê¸°ì— ì¶”ê°€í•˜ì„¸ìš” (ì˜ˆ: using UnityOSC;)
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì›ê²© ìƒí˜¸ì‘ìš© í†µì‹ ") ]
 public class OSCManager : MonoBehaviour
 {
-    // ½Ì±ÛÅæ ÆĞÅÏ
+    // ì‹±ê¸€í†¤ íŒ¨í„´
     public static OSCManager Instance;
 
-    [Header("OSC ¼³Á¤")]
-    [Tooltip("OSC ¸Ş½ÃÁö¸¦ º¸³¾ ¿ø°İ IP ÁÖ¼Ò")]
+    [Header("ì›ê²© í†µì‹  ì„¤ì •")]
+    [Tooltip("ì›ê²© í†µì‹  ë©”ì‹œì§€ë¥¼ ë³´ë‚¼ ì›ê²© ë„¤íŠ¸ì›Œí¬ ì£¼ì†Œ")]
     [SerializeField]
     private string remoteIP = "127.0.0.1";
 
-    [Tooltip("OSC ¸Ş½ÃÁö¸¦ º¸³¾ Æ÷Æ® ¹øÈ£")]
+    [Tooltip("ì›ê²© í†µì‹  ë©”ì‹œì§€ë¥¼ ë³´ë‚¼ í¬íŠ¸ ë²ˆí˜¸")]
     [SerializeField]
     private int sendPort = 8000;
 
-    [Tooltip("OSC ¸Ş½ÃÁö¸¦ ¹ŞÀ» Æ÷Æ® ¹øÈ£")]
+    [Tooltip("ì›ê²© í†µì‹  ë©”ì‹œì§€ë¥¼ ë°›ì„ í¬íŠ¸ ë²ˆí˜¸")]
     [SerializeField]
     private int receivePort = 9000;
 
-    // ½ÇÁ¦ ¶óÀÌºê·¯¸® °´Ã¼ (»ç¿ëÇÏ´Â ¿¡¼Â¿¡ ¸ÂÃç ÁÖ¼® ÇØÁ¦)
+    // ì‹¤ì œ ë¼ì´ë¸ŒëŸ¬ë¦¬ ê°ì²´ (ì‚¬ìš©í•˜ëŠ” ì—ì…‹ì— ë§ì¶° ì£¼ì„ í•´ì œ)
     // private OscSender oscSender;
     // private OscReceiver oscReceiver;
 
@@ -41,59 +42,59 @@ public class OSCManager : MonoBehaviour
 
     private void InitializeOSC()
     {
-        // 1. ¶óÀÌºê·¯¸® ÃÊ±âÈ­ (»ç¿ëÇÏ´Â ¿¡¼Â¿¡ ¸ÂÃç ÄÚµå Ãß°¡)
+        // 1. ë¼ì´ë¸ŒëŸ¬ë¦¬ ì´ˆê¸°í™” (ì‚¬ìš©í•˜ëŠ” ì—ì…‹ì— ë§ì¶° ì½”ë“œ ì¶”ê°€)
         // oscSender = new OscSender(remoteIP, sendPort);
         // oscReceiver = new OscReceiver(receivePort);
 
-        // 2. ¼ö½Å ¸®½º³Ê µî·Ï
+        // 2. ìˆ˜ì‹  ë¦¬ìŠ¤ë„ˆ ë“±ë¡
         // oscReceiver.OnMessageReceived += OnOscMessageReceived;
 
-        Debug.Log($"OSC Manager ÃÊ±âÈ­ ¿Ï·á. ¼Û½Å:{remoteIP}:{sendPort}, ¼ö½Å:{receivePort}");
+        Debug.Log($"OSC Manager ì´ˆê¸°í™” ì™„ë£Œ. ì†¡ì‹ :{remoteIP}:{sendPort}, ìˆ˜ì‹ :{receivePort}");
     }
 
     void Update()
     {
-        // »ç¿ëÇÏ´Â ¶óÀÌºê·¯¸®°¡ Update¿¡¼­ Æú¸µÀÌ ÇÊ¿äÇÏ´Ù¸é ¿©±â¿¡ ÀÛ¼º
+        // ì‚¬ìš©í•˜ëŠ” ë¼ì´ë¸ŒëŸ¬ë¦¬ê°€ Updateì—ì„œ í´ë§ì´ í•„ìš”í•˜ë‹¤ë©´ ì—¬ê¸°ì— ì‘ì„±
         // if (oscReceiver.hasMessages) { ... }
     }
 
     /// <summary>
-    /// ´Ù¸¥ »ç¿ëÀÚ¿¡°Ô »óÈ£ÀÛ¿ë »óÅÂ Àü¼Û
+    /// ë‹¤ë¥¸ ì‚¬ìš©ìì—ê²Œ ìƒí˜¸ì‘ìš© ìƒíƒœ ì „ì†¡
     /// </summary>
     public void SendInteractionStatus(string organID, bool isViewing)
     {
         string address = $"/interaction/{organID}";
         string status = isViewing ? "start" : "stop";
 
-        // ¸Ş½ÃÁö Àü¼Û ·ÎÁ÷ (ÁÖ¼® ÇØÁ¦ ÈÄ »ç¿ë)
+        // ë©”ì‹œì§€ ì „ì†¡ ë¡œì§ (ì£¼ì„ í•´ì œ í›„ ì‚¬ìš©)
         // oscSender.Send(address, status);
 
-        Debug.Log($"[OSC Send] ÁÖ¼Ò: {address}, »óÅÂ: {status}");
+        Debug.Log($"[OSC Send] ì£¼ì†Œ: {address}, ìƒíƒœ: {status}");
     }
 
     /// <summary>
-    /// ¼ö½ÅµÈ OSC ¸Ş½ÃÁö Ã³¸®
+    /// ìˆ˜ì‹ ëœ OSC ë©”ì‹œì§€ ì²˜ë¦¬
     /// </summary>
     private void OnOscMessageReceived(/* OscMessage message */)
     {
-        // 1. ¸Ş½ÃÁö ÆÄ½Ì (¶óÀÌºê·¯¸®¿¡ ¸ÂÃç ¼öÁ¤)
+        // 1. ë©”ì‹œì§€ íŒŒì‹± (ë¼ì´ë¸ŒëŸ¬ë¦¬ì— ë§ì¶° ìˆ˜ì •)
         string address = ""; // message.address;
         string status = "";  // message.data[0].ToString();
 
-        // 2. ÁÖ¼Ò °ËÁõ (/interaction/Pancreas ÇüÅÂÀÎÁö È®ÀÎ)
+        // 2. ì£¼ì†Œ ê²€ì¦ (/interaction/Pancreas í˜•íƒœì¸ì§€ í™•ì¸)
         string[] addressParts = address.Split('/');
         if (addressParts.Length < 3 || addressParts[1] != "interaction") return;
 
         string remoteOrganID = addressParts[2];
         bool isRemoteViewing = (status == "start");
 
-        // 3. ´ë»ó °´Ã¼ Ã£¾Æ¼­ »óÅÂ µ¿±âÈ­ (ÃÖ½Å API Àû¿ëµÊ: FindObjectsByType)
-        // FindObjectsSortMode.NoneÀ» »ç¿ëÇÏ¸é ÀÌÀü FindObjectsOfTypeº¸´Ù ÈÎ¾À ºü¸§
+        // 3. ëŒ€ìƒ ê°ì²´ ì°¾ì•„ì„œ ìƒíƒœ ë™ê¸°í™” (ìµœì‹  API ì ìš©ë¨: FindObjectsByType)
+        // FindObjectsSortMode.Noneì„ ì‚¬ìš©í•˜ë©´ ì´ì „ FindObjectsOfTypeë³´ë‹¤ í›¨ì”¬ ë¹ ë¦„
         DisplayInfo[] allInfos = FindObjectsByType<DisplayInfo>(FindObjectsSortMode.None);
 
         foreach (DisplayInfo info in allInfos)
         {
-            // DisplayInfo¿¡ OrganID¶ó´Â º¯¼ö°¡ ÀÖ´Ù°í °¡Á¤
+            // DisplayInfoì— OrganIDë¼ëŠ” ë³€ìˆ˜ê°€ ìˆë‹¤ê³  ê°€ì •
             // if (info.OrganID == remoteOrganID)
             // {
             //     if (isRemoteViewing) info.ShowRemoteStatus();

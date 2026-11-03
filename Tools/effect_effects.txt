@@ -1,0 +1,38 @@
+Mode: effects
+UTC: 2026-09-21T22:17:29.6100242Z
+PASS 위산 방출기 세 개 연결
+PASS 소화 전 위산 자동 재생 없음
+PASS 기존 위산 그래프의 중복 자동 재생 차단
+PASS 소화 효과음 준비
+PASS 소화 시작 시 위산 방출
+PASS 소화 중 위벽 수축 강화
+PASS 위산_분비 실행 중 셰이더 오류 없음
+PASS 중복 시작 호출에도 소화 완료 이벤트 한 번
+PASS 소화 완료 시 위산 방출 정지
+PASS 소화 완료 후 위벽 수축 복구
+PASS 남은 위산 입자가 자연스럽게 소멸
+PASS 중단 시 위산 입자 즉시 정리
+PASS 중단 시 소화 소리 정지
+PASS 중단 시 위벽 수축 복구
+PASS 중단 시 음식 크기와 표시 상태 복구
+PASS 중단 시 미즙 표시 상태 복구
+PASS 중단된 소화는 완료 이벤트를 발생시키지 않음
+PASS 중단 후 소화를 다시 시작하여 정상 완료
+PASS 영양소 효과의 공간 기준 입자 연결
+PASS 흡수 전 빛 입자 자동 재생 없음
+PASS 실제 장면의 영양소 열여덟 개 생성
+PASS 같은 영양소를 중복 선택해도 빛 입자는 한 번 발생
+PASS 연속 흡수에서도 새 빛 입자가 추가됨
+PASS 앞선 흡수 입자가 새 흡수 위치로 이동하지 않음
+PASS 영양소_흡수 실행 중 셰이더 오류 없음
+PASS 모든 영양소 흡수와 완료 이벤트 유지
+PASS 영양소 흡수 후 입자 잔류 없음
+PASS 수분 파문 공간 기준 연결
+PASS 서로 다른 물방울의 파문 동시 생성
+PASS 수분 파문이 장벽 흡수 경계에 위치
+PASS 수분 파문이 장벽 면의 방향과 일치
+PASS 수분_흡수_파문 실행 중 셰이더 오류 없음
+PASS 수분 흡수 정지 후 파문이 자연스럽게 소멸
+PASS 장면을 나가면 효과 개체가 남지 않음
+Failures: 0
+Limit: accelerated desktop logic checks; no headset/input/audio/visual performance verification.
