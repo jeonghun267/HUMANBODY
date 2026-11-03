@@ -37,6 +37,13 @@ public class ChewingSequence : MonoBehaviour
     public AudioClip chewClip;
     [Header("완료")]
     public UnityEvent onChewingFinished = new UnityEvent();
+    [Header("직접 씹기")]
+    [Tooltip("켜면 방아쇠나 그립을 누를 때마다 한 번씩 씹는다 (가만히 기다리지 않고 직접)")]
+    public bool manualChew;
+    [Tooltip("직접 씹기에서 이 시간 안에 안 누르면 저절로 씹는다 (막히지 않게)")]
+    public float manualTimeout = 4f;
+    /// <summary>직접 씹기에서 지금까지 씹은 횟수 / 전체.</summary>
+    public int ChewsDone { get; private set; }
     bool running;
     Coroutine routine;
     Quaternion jawClosed;
@@ -107,6 +114,15 @@ public class ChewingSequence : MonoBehaviour
         int count = Mathf.Max(1, chewCount);
         for (int i = 0; i < count; i++)
         {
+            ChewsDone = i;
+            if (manualChew)
+            {
+                if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus($"꼭꼭 씹기 {i} / {count}");
+                float waitUntil = Time.time + manualTimeout;
+                yield return null;
+                while (Time.time < waitUntil && !ChewPressed()) yield return null;
+                Haptics.Pulse(.5f, .08f);
+            }
             if (chewAudio != null && chewClip != null) chewAudio.PlayOneShot(chewClip);
             else if (foodBolus != null) Sfx.Play("crunch", foodBolus.position, .8f, Random.Range(.9f, 1.1f));
             float t = 0;
@@ -131,12 +147,19 @@ public class ChewingSequence : MonoBehaviour
         }
         if (upperJaw != null) upperJaw.localRotation = jawClosed;
         if (foodBolus != null) foodBolus.localScale = bolusStart * finalScale;
+        ChewsDone = count;
+        if (manualChew && JourneyHud.Instance != null) JourneyHud.Instance.SetStatus($"꼭꼭 씹기 {count} / {count}");
         // 다 씹은 음식을 혀 가운데로 모아 삼킬 준비를 한다.
         if (gatherPoint != null) yield return Move(gatherPoint, .4f);
         StopSaliva(false);
         running = false; routine = null;
         onChewingFinished?.Invoke();
     }
+    static bool ChewPressed() =>
+        JourneyAim.TriggerDown() ||
+        OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.All) ||
+        OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.All);
+
     void StopSaliva(bool clear)
     {
         foreach (var p in systems) if (p != null)

@@ -1,9 +1,9 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.2/staging' branch; Version is '6000.2.1f1 (55300504c302) revision 5582853'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14" at "2026-11-03T18:36:22.865609Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14" at "2026-11-03T20:39:14.2244254Z"
 OS: 'Windows 11  (10.0.26200) 64bit Enterprise' Language: 'ko' Physical Memory: 65459 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2026-11-03T18:36:22Z
+Date: 2026-11-03T20:39:14Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Unity.exe
@@ -54,14 +54,22 @@ C:/Users/admin_14/HUMANBODY
     "memorysetup-temp-allocator-size-gfx=262144"
 [Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 68336, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
+Player connection [91028]  Target information:
+
+Player connection [91028]  * "[IP] 172.16.42.14 [Port] 55504 [Flags] 2 [Guid] 1508103038 [EditorId] 1508103038 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [91028]  * "[IP] 192.168.95.1 [Port] 55504 [Flags] 2 [Guid] 1508103038 [EditorId] 1508103038 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [91028]  * "[IP] 192.168.111.1 [Port] 55504 [Flags] 2 [Guid] 1508103038 [EditorId] 1508103038 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              0678ec8da44946f2a00809528b5970b0
+  Session Id:              a82be0dcd45f4edd8e2dddeeb861fafe
   Correlation Id:          40e1ed7cff7546fd44422dcd98e3fcae
-  External correlation Id: 8061592639017696275
+  External correlation Id: 2187838220849697622
   Machine Id:              sZiFEiLtuJXVTSby0EaVHmUV8j0=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-admin_14" (connect: 0.00s, validation: 0.00s, handshake: 0.04s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14-notifications" at "2026-11-03T18:36:22.9102804Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-admin_14" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14-notifications" at "2026-11-03T20:39:14.2767405Z"
 [Licensing::Module] Error: Access token is unavailable; failed to update
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -69,23 +77,15 @@ C:/Users/admin_14/HUMANBODY
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
+Player connection [91028] Host joined multi-casting on [225.0.0.222:54997]...
 [Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
-Player connection [39448]  Target information:
-
-Player connection [39448]  * "[IP] 172.16.42.14 [Port] 55504 [Flags] 2 [Guid] 292105001 [EditorId] 292105001 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [39448]  * "[IP] 192.168.95.1 [Port] 55504 [Flags] 2 [Guid] 292105001 [EditorId] 292105001 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [39448]  * "[IP] 192.168.111.1 [Port] 55504 [Flags] 2 [Guid] 292105001 [EditorId] 292105001 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
+Player connection [91028] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] Licensing Background thread has ended after 0.05s
-Player connection [39448] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [39448] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Licensing::Module] Licensing Background thread has ended after 0.06s
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Package Manager] Connected to IPC stream "Upm-29120" after 0.3 seconds.
+[Package Manager] Connected to IPC stream "Upm-59184" after 0.2 seconds.
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -93,9 +93,8 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Artifact Garbage Collection - Removed 3 unused hashed content files
 [Licensing::Client] Successfully resolved entitlement details
-Refreshing native plugins compatible for Editor in 8.59 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 7.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.1f1 (55300504c302)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -113,7 +112,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56184
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 ImportWorker Server TCP listen port: 0
@@ -123,42 +122,42 @@ Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.005017 seconds.
-- Loaded All Assemblies, in  0.373 seconds
+Registered in 0.006546 seconds.
+- Loaded All Assemblies, in  0.400 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 2294 ms
+Android Extension - Scanning For ADB Devices 3072 ms
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.613 seconds
-Domain Reload Profiling: 2981ms
-	BeginReloadAssembly (123ms)
+- Finished resetting the current domain, in  3.389 seconds
+Domain Reload Profiling: 3784ms
+	BeginReloadAssembly (134ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (32ms)
+	RebuildCommonClasses (36ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (152ms)
-		LoadAssemblies (119ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (159ms)
+		LoadAssemblies (128ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (148ms)
-			TypeCache.Refresh (147ms)
-				TypeCache.ScanAssembly (135ms)
+		AnalyzeDomain (155ms)
+			TypeCache.Refresh (154ms)
+				TypeCache.ScanAssembly (142ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (2613ms)
+	FinalizeReload (3390ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2583ms)
+		SetupLoadedEditorAssemblies (3358ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2381ms)
+			InitializePlatformSupportModulesInManaged (3161ms)
 			SetLoadedEditorAssemblies (3ms)
 			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (94ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			ProcessInitializeOnLoadAttributes (92ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -271,7 +270,7 @@ Package Manager log level set to [2]
 [Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
 [Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
 [Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
-[Package Manager] Done registering packages in 0.03 seconds
+[Package Manager] Done registering packages in 0.04 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 [ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
@@ -290,7 +289,7 @@ info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 31.3250ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 33.4872ms
 Starting: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
 WorkingDir: C:/Users/admin_14/HUMANBODY
 DisplayProgressbar: Compiling Scripts
@@ -309,13 +308,13 @@ info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 51.5212ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 51.2727ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
       Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
 info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll, with 147 defines and 442 references
+      Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll, with 145 defines and 465 references
 info: Unity.ILPP.Runner.PostProcessingPipeline[0]
       processors: Unity.Jobs.CodeGen.JobsILPostProcessor, Unity.Netcode.Editor.CodeGen.INetworkMessageILPP, Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP, Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP, Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP, zzzUnity.Burst.CodeGen.BurstILPostProcessor
 info: Unity.ILPP.Runner.PostProcessingPipeline[0]
@@ -343,63 +342,15 @@ info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc - - 200 - application/grpc 615.1340ms
-info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
-      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc -
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
-      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll, with 145 defines and 465 references
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      processors: Unity.Jobs.CodeGen.JobsILPostProcessor, Unity.Netcode.Editor.CodeGen.INetworkMessageILPP, Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP, Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP, Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP, zzzUnity.Burst.CodeGen.BurstILPostProcessor
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running Unity.Jobs.CodeGen.JobsILPostProcessor
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running Unity.Netcode.Editor.CodeGen.INetworkMessageILPP
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP
-info: Unity.ILPP.Runner.PostProcessingPipeline[0]
-      running zzzUnity.Burst.CodeGen.BurstILPostProcessor
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
-      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
-info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc - - 200 - application/grpc 210.2752ms
-ExitCode: 0 Duration: 2s998ms
-[1828/2482  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
-[2474/2482  1s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll (+2 others)
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc - - 200 - application/grpc 679.5785ms
+ExitCode: 0 Duration: 3s116ms
+[1829/2482  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[2478/2482  1s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
 warning CS8785: Generator 'AttributeBasedFieldGenerator' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'IndexOutOfRangeException' with message 'Index was outside the bounds of the array.'
 
-Assets\Scripts\boat\BoatInteraction.cs(36,13): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(69,9): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
 
-Assets\Scripts\boat\BoatInteraction.cs(71,49): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
-[2475/2482  0s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
-warning CS8785: Generator 'AttributeBasedFieldGenerator' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'IndexOutOfRangeException' with message 'Index was outside the bounds of the array.'
-
-Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(67,9): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
-
-Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(109,61): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
-[2476/2482  0s] ILPostProcess Library/Bee/artifacts/1300b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
-Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll, with 147 defines and 442 references
-
-processors: Unity.Jobs.CodeGen.JobsILPostProcessor, Unity.Netcode.Editor.CodeGen.INetworkMessageILPP, Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP, Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP, Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP, zzzUnity.Burst.CodeGen.BurstILPostProcessor
-
-running Unity.Jobs.CodeGen.JobsILPostProcessor
-
-running Unity.Netcode.Editor.CodeGen.INetworkMessageILPP
-
-running Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP
-
-running Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP
-
-running Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP
-
-running zzzUnity.Burst.CodeGen.BurstILPostProcessor
-[2477/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
-[2478/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(112,61): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
 [2479/2482  0s] ILPostProcess Library/Bee/artifacts/1300b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
 Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll, with 145 defines and 465 references
 
@@ -418,16 +369,14 @@ running Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP
 running zzzUnity.Burst.CodeGen.BurstILPostProcessor
 [2480/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
 [2481/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-*** Tundra build success (2.96 seconds), 9 items updated, 2482 evaluated
-Assets\Scripts\boat\BoatInteraction.cs(36,13): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
-Assets\Scripts\boat\BoatInteraction.cs(71,49): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
-Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(67,9): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
-Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(109,61): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
-AssetDatabase: script compilation time: 3.476278s
+*** Tundra build success (3.07 seconds), 5 items updated, 2482 evaluated
+Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(69,9): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
+Assets\Scripts\Journey\Editor\JourneyRealism.Experience.cs(112,61): warning CS0618: 'TMP_Text.enableWordWrapping' is obsolete: 'The enabledWordWrapping property is now obsolete. Please use the textWrappingMode property instead.'
+AssetDatabase: script compilation time: 3.677168s
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.390 seconds
+- Loaded All Assemblies, in  1.365 seconds
 Script 'CharacterController' has the same name as built-in Unity component.
 AddComponent and GetComponent will not work with this script.
 'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowCollectionsPageExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
@@ -435,709 +384,1204 @@ AddComponent and GetComponent will not work with this script.
 'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowDetailsExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindow.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 28.21 ms, found 18 plugins.
+Refreshing native plugins compatible for Editor in 30.39 ms, found 18 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Refreshing native plugins compatible for Editor in 25.38 ms, found 18 plugins.
+Refreshing native plugins compatible for Editor in 26.76 ms, found 18 plugins.
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-HUMANBODY
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.772 seconds
-Domain Reload Profiling: 7143ms
-	BeginReloadAssembly (315ms)
+- Finished resetting the current domain, in  6.733 seconds
+Domain Reload Profiling: 8077ms
+	BeginReloadAssembly (294ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (147ms)
-	RebuildCommonClasses (34ms)
+		CreateAndSetChildDomain (145ms)
+	RebuildCommonClasses (32ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (39ms)
-	LoadAllAssembliesAndSetupDomain (972ms)
-		LoadAssemblies (659ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (971ms)
+		LoadAssemblies (652ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (429ms)
-			TypeCache.Refresh (298ms)
-				TypeCache.ScanAssembly (278ms)
+		AnalyzeDomain (422ms)
+			TypeCache.Refresh (293ms)
+				TypeCache.ScanAssembly (272ms)
 			BuildScriptInfoCaches (104ms)
-			ResolveRequiredComponents (20ms)
-	FinalizeReload (5772ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (6734ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (5485ms)
+		SetupLoadedEditorAssemblies (6419ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (37ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (277ms)
-			ProcessInitializeOnLoadAttributes (4662ms)
-			ProcessInitializeOnLoadMethodAttributes (491ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (272ms)
+			ProcessInitializeOnLoadAttributes (5451ms)
+			ProcessInitializeOnLoadMethodAttributes (633ms)
+			AfterProcessingInitializeOnLoad (19ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Refreshing native plugins compatible for Editor in 34.14 ms, found 18 plugins.
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 40.90 ms, found 18 plugins.
 Unity memory allocator detected: MetaXRAudio native memory allocations will be tracked.
-Preloading 3 native plugins for Editor in 4.19 ms.
-Asset Pipeline Refresh (id=d1b9c144b76dcf84981ab482f96bdba9): Total: 13.559 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+Preloading 3 native plugins for Editor in 6.69 ms.
+Asset Pipeline Refresh (id=218429258d11d1245abb541b5cf842c6): Total: 15.158 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
 	Summary:
 		Imports: total=0 (actual=0, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=6824 ms
-		Asset DB Callback time: managed=1609 ms, native=89 ms
-		Scripting: domain reloads=1, domain reload time=1391 ms, compile time=3479 ms, other=164 ms
-		Project Asset Count: scripts=3530, non-scripts=6785
-		Asset File Changes: new=0, changed=2, moved=0, deleted=0
+		Asset DB Process Time: managed=0 ms, native=8065 ms
+		Asset DB Callback time: managed=1750 ms, native=111 ms
+		Scripting: domain reloads=1, domain reload time=1365 ms, compile time=3679 ms, other=185 ms
+		Project Asset Count: scripts=3532, non-scripts=6912
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
 		Scan Filter Count: 0
 	InvokeCustomDependenciesCallbacks: 0.001ms
-	InvokePackagesCallback: 37.042ms
-	ApplyChangesToAssetFolders: 0.870ms
-	Scan: 207.650ms
-	OnSourceAssetsModified: 0.782ms
-	CategorizeAssetsWithTransientArtifact: 98.184ms
-	ProcessAssetsWithTransientArtifactChanges: 190.944ms
-	CategorizeAssets: 152.378ms
-	ImportOutOfDateAssets: 5859.539ms (2377.103ms without children)
-		CompileScripts: 3478.889ms
-		ReloadNativeAssets: 0.033ms
-		UnloadImportedAssets: 1.054ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.780ms
-		InitializingProgressBar: 0.000ms
+	InvokePackagesCallback: 43.891ms
+	ApplyChangesToAssetFolders: 1.176ms
+	Scan: 467.759ms
+	OnSourceAssetsModified: 0.820ms
+	CategorizeAssetsWithTransientArtifact: 103.739ms
+	ProcessAssetsWithTransientArtifactChanges: 176.546ms
+	CategorizeAssets: 171.368ms
+	ImportOutOfDateAssets: 6828.400ms (3145.596ms without children)
+		CompileScripts: 3678.980ms
+		ReloadNativeAssets: 0.032ms
+		UnloadImportedAssets: 0.994ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.691ms
+		InitializingProgressBar: 0.001ms
 		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
-		OnDemandSchedulerStart: 0.681ms
-	PostProcessAllAssets: 1623.290ms
-	Hotreload: 41.871ms
+		OnDemandSchedulerStart: 1.105ms
+	PostProcessAllAssets: 1768.553ms
+	Hotreload: 52.287ms
 	GatherAllCurrentPrimaryArtifactRevisions: 0.003ms
-	UnloadStreamsBegin: 4.333ms
-	PersistCurrentRevisions: 0.241ms
+	UnloadStreamsBegin: 4.409ms
+	PersistCurrentRevisions: 0.275ms
 	UnloadStreamsEnd: 0.002ms
-	GenerateScriptTypeHashes: 18.883ms
-	Untracked: 5341.935ms
+	GenerateScriptTypeHashes: 20.072ms
+	Untracked: 5538.599ms
 
 Application.AssetDatabase Initial Refresh End
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Scanning for USB devices : 4.947ms
+Scanning for USB devices : 5.108ms
 Initializing Unity extensions:
 Unloading 293 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 13284 unused Assets / (23.6 MB). Loaded Objects now: 16987.
-Memory consumption went from 397.5 MB to 373.8 MB.
-Total: 23.358100 ms (FindLiveObjects: 1.374000 ms CreateObjectMapping: 0.777100 ms MarkObjects: 14.761400 ms  DeleteObjects: 6.445000 ms)
+Unloading 13300 unused Assets / (26.0 MB). Loaded Objects now: 17003.
+Memory consumption went from 404.7 MB to 378.7 MB.
+Total: 29.175500 ms (FindLiveObjects: 2.713200 ms CreateObjectMapping: 1.092200 ms MarkObjects: 17.941600 ms  DeleteObjects: 7.426800 ms)
 
-Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
-Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
-Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
-	Deserialize:            162.770 ms
-	Integration:            443.842 ms
-	Integration of assets:  18.945 ms
-	Thread Wait Time:       0.018 ms
-	Total Operation Time:   625.576 ms
-Unloading 3 unused Assets / (6.4 MB). Loaded Objects now: 17607.
-Memory consumption went from 362.2 MB to 355.7 MB.
-Total: 16.394900 ms (FindLiveObjects: 0.835000 ms CreateObjectMapping: 0.359700 ms MarkObjects: 15.163400 ms  DeleteObjects: 0.035900 ms)
+Opening scene 'Assets/Scenes/Journey/00_Lobby.unity'
+Unloading 54 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/00_Lobby.unity'
+	Deserialize:            180.024 ms
+	Integration:            514.511 ms
+	Integration of assets:  19.379 ms
+	Thread Wait Time:       0.042 ms
+	Total Operation Time:   713.956 ms
+Unloading 3 unused Assets / (1.8 KB). Loaded Objects now: 19169.
+Memory consumption went from 376.6 MB to 376.6 MB.
+Total: 18.763000 ms (FindLiveObjects: 1.011700 ms CreateObjectMapping: 0.476800 ms MarkObjects: 17.228200 ms  DeleteObjects: 0.045900 ms)
 
-Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'b9da6e05ece687db4da188f1c0178ddb') in 0.00868 seconds
-Start importing Assets/Data/Generated/EnvironmentRepair/Mouth_조직.mat using Guid(00cce9f3014096c4788c1e63da27d3d1) (NativeFormatImporter) -> (artifact id: '79d045fddf59282a368fbc2da466c526') in 0.0021709 seconds
-Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0020054 seconds
-Start importing Assets/Data/Generated/Realism/충치_검은부분.mat using Guid(d0bd8cb8270313c4891547e6bde0fbff) (NativeFormatImporter) -> (artifact id: '4aec2066722c6d71e0e365b36c9a94c0') in 0.0026108 seconds
-Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0021868 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0022102 seconds
-Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0019331 seconds
-Start importing Assets/Data/Generated/Realism/방울_반짝임.mat using Guid(e55bec3c2e8f97149ad43519fc7f7977) (NativeFormatImporter) -> (artifact id: '0f3ec6cb7666bcefd6f6cabb5e55897f') in 0.0018881 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.001845 seconds
-Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.001945 seconds
-Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0018526 seconds
-Start importing Assets/Data/Generated/Realism/치아_잇몸_Part_LowerTeethArch.mat using Guid(e9fe03b0167e50d40b9e360979883b82) (NativeFormatImporter) -> (artifact id: 'd6e36e64291dafee3272f5e9f8debc63') in 0.0020082 seconds
-Start importing Assets/Data/Generated/Realism/충전재.mat using Guid(6b47b3b82bab1b34a927f819f959f1d2) (NativeFormatImporter) -> (artifact id: '0d19a540453a601cab8e96e0840a3f88') in 0.001912 seconds
-Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'f724145101ff08148b9c03fb427902d1') in 0.0019097 seconds
-Start importing Assets/Data/Generated/Realism/충치_자국.mat using Guid(cc3afa9fc65e7bb47a7be55ef45a76ba) (NativeFormatImporter) -> (artifact id: 'ce59c304798857c951f0373baf210e22') in 0.0021692 seconds
-Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.002044 seconds
-Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0018183 seconds
-Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0018394 seconds
-Start importing Assets/Data/Generated/Realism/치아_잇몸_Part_UpperTeethArch.mat using Guid(df8d97f34581bfd40a916296429ed339) (NativeFormatImporter) -> (artifact id: '2dc1bb0e90eb3c21cc204153d69f63ed') in 0.0020225 seconds
-Start importing Assets/Data/Generated/Realism/충치_검은부분.asset using Guid(8226b6f950931484eaecc608d1527086) (NativeFormatImporter) -> (artifact id: 'ec5cf907058117d2419e26200b512876') in 0.001951 seconds
-Start importing Assets/Data/Generated/Realism/충치_자국.asset using Guid(cd3f7774083373d4fa6bb5556d4f5e15) (NativeFormatImporter) -> (artifact id: 'b16b4ebf36396920515b56c25af2172b') in 0.001894 seconds
-Start importing Assets/Data/Generated/Realism/충전재_면.asset using Guid(0fdc5e55df56f2b44bceb54d8493e404) (NativeFormatImporter) -> (artifact id: 'e06372b8ca1bfb686b02eb119dcaf228') in 0.0019521 seconds
-Refreshing native plugins compatible for Editor in 27.17 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.26 ms.
-Asset Pipeline Refresh (id=db68cafd95c36594e9152978d6fdb4b7): Total: 0.245 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Journey/01_Mouth.unity using Guid(92611f9a929aedf4d9ef34d9d9f89863) (DefaultImporter) -> (artifact id: '1f9c05758b4ebea0550ba79fc2022d8c') in 0.0012661 seconds
-Refreshing native plugins compatible for Editor in 25.67 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.26 ms.
-Asset Pipeline Refresh (id=1f675011807b16742baaab0860fecd71): Total: 0.082 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Opening scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
-Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-	Deserialize:            19.880 ms
-	Integration:            388.806 ms
-	Integration of assets:  1.135 ms
-	Thread Wait Time:       0.037 ms
-	Total Operation Time:   409.858 ms
-Unloading 191 unused Assets / (58.1 MB). Loaded Objects now: 17559.
-Memory consumption went from 438.8 MB to 380.7 MB.
-Total: 19.035400 ms (FindLiveObjects: 0.865000 ms CreateObjectMapping: 0.963800 ms MarkObjects: 16.843200 ms  DeleteObjects: 0.363100 ms)
+[병원] 홀로그램 재질 교체: Hologram_DigestiveSystem 렌더러 1개, 재질 몸스캔_홀로그램
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Hospital () (at Assets/Scripts/Journey/Editor/JourneyRealism.Missions.cs:416)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:643)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0029567 seconds
-Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0022652 seconds
-Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0019611 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.001796 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.001742 seconds
-Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0021523 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0017528 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0017849 seconds
-Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0018404 seconds
-Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.001691 seconds
-Start importing Assets/Data/Generated/EnvironmentRepair/Esophagus_조직.mat using Guid(f9874bce68388b34cbd19bc88e838926) (NativeFormatImporter) -> (artifact id: 'c4884e5c5cb912965064d4b155f72b89') in 0.00182 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0017559 seconds
-Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0018993 seconds
-Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0017811 seconds
-Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0017184 seconds
-Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0017665 seconds
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Missions.cs Line: 416)
+
+Asset Pipeline Refresh (id=d5019525e9e15e444a5a31a30a8bb5ea): Total: 0.119 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[사람] 간호사 세움: 머리 찾음, 얼굴 찾음
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:StandUp (UnityEngine.GameObject,single) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:127)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:50)
+JourneyRealism:HospitalPeople (UnityEngine.Transform,GermBlaster,MissionGate) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:219)
+JourneyRealism:Hospital () (at Assets/Scripts/Journey/Editor/JourneyRealism.Missions.cs:472)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:643)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 127)
+
+[사람] 간호사: 키 1.66m, 폭 0.28×0.56m, 발 0.00
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:58)
+JourneyRealism:HospitalPeople (UnityEngine.Transform,GermBlaster,MissionGate) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:219)
+JourneyRealism:Hospital () (at Assets/Scripts/Journey/Editor/JourneyRealism.Missions.cs:472)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:643)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 58)
+
+[사람] 의사: 키 1.75m, 폭 1.21×0.67m, 발 0.00
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:58)
+JourneyRealism:HospitalPeople (UnityEngine.Transform,GermBlaster,MissionGate) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:235)
+JourneyRealism:Hospital () (at Assets/Scripts/Journey/Editor/JourneyRealism.Missions.cs:472)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:643)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 58)
+
+Asset Pipeline Refresh (id=656132d483568ea458fb1ff117c9cc9c): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'b9da6e05ece687db4da188f1c0178ddb') in 0.0081589 seconds
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0021839 seconds
+Start importing Assets/Data/Generated/Realism/진료실_벽_아래.mat using Guid(11f75e69ecb87fe4e9cbd93a59718776) (NativeFormatImporter) -> (artifact id: '35213b505283a1593e4f3eb58156fac6') in 0.0020143 seconds
+Start importing Assets/Data/Generated/Realism/진료실_바닥.mat using Guid(338767a5399de0c4698a175597293c3b) (NativeFormatImporter) -> (artifact id: '39d4dbb342ac5174689b59014d3a31c2') in 0.0022403 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0020886 seconds
+Start importing Assets/Data/Generated/Realism/진료실_빛띠.mat using Guid(d330a226a0df1944c91088d81221775e) (NativeFormatImporter) -> (artifact id: 'dbc486266a6f71b5ee7cc5b12ddeab80') in 0.0019666 seconds
+Start importing Assets/Data/Generated/Realism/진료실_천장.mat using Guid(b44da785f4ea5dc4a98d92dd5800fb07) (NativeFormatImporter) -> (artifact id: '3c6924dd847d4558cd4606524753701e') in 0.0020095 seconds
+Start importing Assets/Data/Generated/Realism/진료실_화면.mat using Guid(759d7f9be8e95ee4db8fd679d0ca5545) (NativeFormatImporter) -> (artifact id: '9c36050aa3c8bb373330775199f4b0d3') in 0.00185 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0027203 seconds
+Start importing Assets/Data/Generated/Realism/진료실_벽.mat using Guid(e987e61fa1dbb9849b3c73fb3eac03e6) (NativeFormatImporter) -> (artifact id: '227889a5604a600a8602bb506d25353a') in 0.0027843 seconds
+Start importing Assets/Data/Generated/Realism/탑승_빛.mat using Guid(7a1f263f00a15694d82c586c1f44a69f) (NativeFormatImporter) -> (artifact id: '7e44552605571f7ab30ed388cc8cbe5b') in 0.0020379 seconds
+Start importing Assets/Data/Generated/Realism/진찰_점.mat using Guid(fb473aec91ac6744ebefb3de41b606cd) (NativeFormatImporter) -> (artifact id: 'c13301dc8b66e8f797c2726fa910e95f') in 0.0019434 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.0018155 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'c62e523c9fccabffacba6a6f4e5a3d1b') in 0.0019819 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.0018185 seconds
+Start importing Assets/Data/Generated/Realism/몸스캔_홀로그램.mat using Guid(9c5e3d472d8a70c4f9ace38f7e919993) (NativeFormatImporter) -> (artifact id: 'aad382532580e609725652754a3c2f19') in 0.0017991 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.00188 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0021779 seconds
+Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.001913 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_고리.asset using Guid(b04aabf390e78194bada090238a3f8e2) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_고리'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'ab2b3b1b2922471f3faccedf14fcece4') in 0.0024828 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_바닥판.asset using Guid(e1afa34638fcffa4299266e9a9f4f309) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_바닥판'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0024566 seconds
+ -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0020342 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대_빛띠.asset using Guid(24a3e678a07468c43bd921fc8b62d74b) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대_빛띠'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0018906 seconds
+ -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0021162 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_조종대.asset using Guid(3534d0922b32d5948960f882f969d4c3) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0020313 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_오른쪽.asset using Guid(e64454a17a224994799f0672376e3437) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_오른쪽'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0024099 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_허리_고리.asset using Guid(8ae9df0a087e38d44b411747b913e188) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_허리_고리'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.002272 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_위_해치_고리.asset using Guid(6d9243a76eabbc24d973434e0f228260) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_위_해치_고리'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0024943 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_왼쪽.asset using Guid(1ff5c4373c7ace74d98e98f37fc9a407) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_왼쪽'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0021109 seconds
+Refreshing native plugins compatible for Editor in 27.56 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=21a3971f00a441e48ad557281d481d97): Total: 0.225 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/00_Lobby.unity using Guid(654ee80834b14ae4cbe6dda28c62bda9) (DefaultImporter) -> (artifact id: '7053724a9d950ff0754aefeb5a5d53e3') in 0.0014018 seconds
+Refreshing native plugins compatible for Editor in 28.75 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=515cdf8e99e2feb45ad171122742c528): Total: 0.095 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
+	Deserialize:            28.725 ms
+	Integration:            446.253 ms
+	Integration of assets:  6.689 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   481.684 ms
+Unloading 971 unused Assets / (241.8 MB). Loaded Objects now: 17811.
+Memory consumption went from 0.63 GB to 403.6 MB.
+Total: 36.320000 ms (FindLiveObjects: 0.998900 ms CreateObjectMapping: 0.507600 ms MarkObjects: 31.584500 ms  DeleteObjects: 3.228400 ms)
+
+[이] 원본 상자 (8.75, 5.25, 12.22), 이 32개 (윗니 16 · 아랫니 16), 잇몸 띠 삼각형 3667/6928, 앞니 방향 예전 -z / 새 +z
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:NewTeeth () (at Assets/Scripts/Journey/Editor/JourneyRealism.Extras.cs:84)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:670)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Extras.cs Line: 84)
+
+[이] 예전 윗니 (12.47, 2.34, 10.35) → 새 윗니 (12.24, 3.11, 10.36) @ (0.00, 5.81, 2.53), 예전 아랫니 (12.00, 5.10, 10.37) → 새 아랫니 (12.09, 2.70, 10.03) @ (0.02, 3.25, 2.62)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:NewTeeth () (at Assets/Scripts/Journey/Editor/JourneyRealism.Extras.cs:104)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:670)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Extras.cs Line: 104)
+
+[JourneyRealism] 충치 자리: (3.30, 4.09, 0.14) (평평한 반지름 0.32)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Cavity () (at Assets/Scripts/Journey/Editor/JourneyRealism.Experience.cs:280)
+JourneyRealism:Experience (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.Experience.cs:34)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:679)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Experience.cs Line: 280)
+
+Asset Pipeline Refresh (id=56487384e06849948a5c7976413e0460): Total: 0.018 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Data/Generated/EnvironmentRepair/Mouth_조직.mat using Guid(00cce9f3014096c4788c1e63da27d3d1) (NativeFormatImporter) -> (artifact id: '79d045fddf59282a368fbc2da466c526') in 0.0039612 seconds
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0024312 seconds
+Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.002236 seconds
+Start importing Assets/Data/Generated/Realism/충치_검은부분.mat using Guid(d0bd8cb8270313c4891547e6bde0fbff) (NativeFormatImporter) -> (artifact id: '4aec2066722c6d71e0e365b36c9a94c0') in 0.0021386 seconds
+Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.002162 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0025777 seconds
+Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0023226 seconds
+Start importing Assets/Data/Generated/Realism/방울_반짝임.mat using Guid(e55bec3c2e8f97149ad43519fc7f7977) (NativeFormatImporter) -> (artifact id: '0f3ec6cb7666bcefd6f6cabb5e55897f') in 0.0026588 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0024891 seconds
+Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0019569 seconds
+Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0018248 seconds
+Start importing Assets/Data/Generated/Realism/치아_잇몸_Part_LowerTeethArch.mat using Guid(e9fe03b0167e50d40b9e360979883b82) (NativeFormatImporter) -> (artifact id: 'd6e36e64291dafee3272f5e9f8debc63') in 0.0018771 seconds
+Start importing Assets/Data/Generated/Realism/충전재.mat using Guid(6b47b3b82bab1b34a927f819f959f1d2) (NativeFormatImporter) -> (artifact id: '0d19a540453a601cab8e96e0840a3f88') in 0.0018928 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.0021426 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'b0e86977919403f8fee5f5699bbbd56b') in 0.001887 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.001909 seconds
+Start importing Assets/Data/Generated/Realism/충치_자국.mat using Guid(cc3afa9fc65e7bb47a7be55ef45a76ba) (NativeFormatImporter) -> (artifact id: 'ce59c304798857c951f0373baf210e22') in 0.0019968 seconds
+Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.001894 seconds
+Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0020188 seconds
+Start importing Assets/Data/Generated/Realism/새_이_법랑질.mat using Guid(7d7731ad92cffc440b48a67ee208e086) (NativeFormatImporter) -> (artifact id: 'cf3976889c153a63a376c373d9278eeb') in 0.0019347 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0019312 seconds
+Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0022654 seconds
+Start importing Assets/Data/Generated/Realism/치아_잇몸_Part_UpperTeethArch.mat using Guid(df8d97f34581bfd40a916296429ed339) (NativeFormatImporter) -> (artifact id: 'd44784e6620b4a1421e75cf8c9856be5') in 0.0019849 seconds
+Start importing Assets/Data/Generated/Realism/충치_검은부분.asset using Guid(8226b6f950931484eaecc608d1527086) (NativeFormatImporter) -> (artifact id: '5815b7949bb4e6b0dc81f485ddfe4a00') in 0.0020273 seconds
+Start importing Assets/Data/Generated/Realism/치아_아래_잇몸.asset using Guid(2548b0d7627c4884099da4ad00af02ff) (NativeFormatImporter) -> (artifact id: '119496550ee2bad4adbc0de23b5a1df1') in 0.0019917 seconds
+Start importing Assets/Data/Generated/Realism/치아_아래_이.asset using Guid(979ae260313e76e4a8d93827f7c240a7) (NativeFormatImporter) -> (artifact id: 'f94c791fbd747c224632a519d459a4f1') in 0.0021307 seconds
+Start importing Assets/Data/Generated/Realism/치아_위_이.asset using Guid(2a9d758356acc5643a2077eab26cd074) (NativeFormatImporter) -> (artifact id: '71449765316380001ebaebb6956b0aa2') in 0.0019939 seconds
+Start importing Assets/Data/Generated/Realism/치아_위_잇몸.asset using Guid(0d186c13d59c17748bdb4082b6245ee6) (NativeFormatImporter) -> (artifact id: '8e233d109f2ce09fe4193ba098db1a0b') in 0.0022315 seconds
+Start importing Assets/Data/Generated/Realism/충치_자국.asset using Guid(cd3f7774083373d4fa6bb5556d4f5e15) (NativeFormatImporter) -> (artifact id: 'ff6de6a80ecd77f47cd3f8f76c5980d8') in 0.0020166 seconds
+Start importing Assets/Data/Generated/Realism/충전재_면.asset using Guid(0fdc5e55df56f2b44bceb54d8493e404) (NativeFormatImporter) -> (artifact id: '9f60e385bd6e63a42a2963f3a0e0c4fe') in 0.0018583 seconds
+Refreshing native plugins compatible for Editor in 26.99 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.28 ms.
+Asset Pipeline Refresh (id=618ef46f2fe663c41b21d4b6b812f3da): Total: 0.219 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/01_Mouth.unity using Guid(92611f9a929aedf4d9ef34d9d9f89863) (DefaultImporter) -> (artifact id: '8cd2ac2cb3f66aea1fa6526580cd8448') in 0.00124 seconds
+Refreshing native plugins compatible for Editor in 28.43 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=454d87b4309c6f74b9453a7ac1c14302): Total: 0.090 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/Journey/02_Esophagus.unity'
+Unloading 21 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
+	Deserialize:            22.517 ms
+	Integration:            398.393 ms
+	Integration of assets:  0.860 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   421.783 ms
+Unloading 248 unused Assets / (54.3 MB). Loaded Objects now: 17663.
+Memory consumption went from 426.5 MB to 372.1 MB.
+Total: 23.289200 ms (FindLiveObjects: 1.111500 ms CreateObjectMapping: 0.618900 ms MarkObjects: 21.082200 ms  DeleteObjects: 0.476200 ms)
+
+Start importing Assets/Data/Generated/Realism/정박_고리.asset using Guid(ef9bc00116365a245be49418c45a76fe) (NativeFormatImporter) -> (artifact id: 'a3a23af6132a2b9de963bde8784c5f44') in 0.0037701 seconds
+Refreshing native plugins compatible for Editor in 27.96 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.29 ms.
+Asset Pipeline Refresh (id=632d561a330cfef4b9d035baa0ef87f0): Total: 0.146 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[부위] 후두덮개: 기도 입구 (0.00, -1.20, 2.59) 위 경첩 (0.00, -0.26, 2.54)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Epiglottis () (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:162)
+JourneyRealism:Anatomy (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:23)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:678)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs Line: 162)
+
+Asset Pipeline Refresh (id=fe90140fe7723d54198a2f92b3481392): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=9624c1fbe11b03a41a16a81e72cd216c): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0029584 seconds
+Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0022073 seconds
+Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0020406 seconds
+Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0021661 seconds
+Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0019656 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0019377 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0019265 seconds
+Start importing Assets/Data/Generated/Realism/역류_위산.mat using Guid(b59ce0485401f884bb993f5080f439bb) (NativeFormatImporter) -> (artifact id: 'd73e4fb87f278b331fa9d9c8b753752f') in 0.0019059 seconds
+Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0019234 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0018279 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0019264 seconds
+Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0019066 seconds
+Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0017976 seconds
+Start importing Assets/Data/Generated/EnvironmentRepair/Esophagus_조직.mat using Guid(f9874bce68388b34cbd19bc88e838926) (NativeFormatImporter) -> (artifact id: 'c4884e5c5cb912965064d4b155f72b89') in 0.0023659 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.002064 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'c62e523c9fccabffacba6a6f4e5a3d1b') in 0.0019182 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.0020132 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0018064 seconds
+Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0019164 seconds
+Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0021124 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0024324 seconds
+Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0018332 seconds
+Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0017669 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥판.asset using Guid(e1afa34638fcffa4299266e9a9f4f309) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_바닥판'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0021596 seconds
+Start importing Assets/Data/Generated/Realism/기도_입구.asset using Guid(02423eeedef419847880149877fc5363) (NativeFormatImporter) -> (artifact id: 'b6d00278a1f0819d877f5a9590138b0e') in 0.002013 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_조종대_빛띠.asset using Guid(24a3e678a07468c43bd921fc8b62d74b) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대_빛띠'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0021123 seconds
 Start importing Assets/Data/Generated/EnvironmentRepair/Esophagus_통로.asset using Guid(3560c42f92d15b04896bba9ae259b8e7) (NativeFormatImporter)Main Object Name 'Esophagus_연속_내부벽' does not match filename 'Esophagus_통로'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '706c915033a3d39fb3fe45b4e33f4fbb') in 0.0038348 seconds
+ -> (artifact id: '706c915033a3d39fb3fe45b4e33f4fbb') in 0.0036244 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대.asset using Guid(3534d0922b32d5948960f882f969d4c3) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0027909 seconds
+ -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0022313 seconds
 Start importing Assets/Data/Generated/EnvironmentRepair/Esophagus_괄약근.asset using Guid(85aa59884a594dc40904432d33bf1659) (NativeFormatImporter)Main Object Name '괄약근의 열리는 점막' does not match filename 'Esophagus_괄약근'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '65b13f0d370f740a59f9a2a2ef53eefe') in 0.0032657 seconds
+ -> (artifact id: '65b13f0d370f740a59f9a2a2ef53eefe') in 0.0026719 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_오른쪽.asset using Guid(e64454a17a224994799f0672376e3437) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_오른쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.002365 seconds
+ -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0023762 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_허리_고리.asset using Guid(8ae9df0a087e38d44b411747b913e188) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_허리_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0023254 seconds
+ -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0020693 seconds
+Start importing Assets/Data/Generated/Realism/목구멍_천장.asset using Guid(fcaf5ceba0f2f044094e5df75f3ba4ff) (NativeFormatImporter) -> (artifact id: '8cbf2e4f774b49466e3b5057c7bdfd21') in 0.002001 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_위_해치_고리.asset using Guid(6d9243a76eabbc24d973434e0f228260) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_위_해치_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0023217 seconds
+ -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0020508 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_왼쪽.asset using Guid(1ff5c4373c7ace74d98e98f37fc9a407) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_왼쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0021248 seconds
-Refreshing native plugins compatible for Editor in 29.11 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.27 ms.
-Asset Pipeline Refresh (id=f5a2b934aff31bb45bd5f28a478a655b): Total: 0.175 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Journey/02_Esophagus.unity using Guid(9c54727b48338854e9a2e6a34dcec2e2) (DefaultImporter) -> (artifact id: 'b1cd8582d51f5962d70660057248ec44') in 0.0011377 seconds
-Refreshing native plugins compatible for Editor in 25.59 ms, found 18 plugins.
+ -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0020779 seconds
+Refreshing native plugins compatible for Editor in 27.58 ms, found 18 plugins.
 Preloading 3 native plugins for Editor in 0.26 ms.
-Asset Pipeline Refresh (id=0340a12811ac42d4a826a0745f02bf90): Total: 0.085 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=663116390ba1bfb4f83d6a7216b0c4b4): Total: 0.190 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/02_Esophagus.unity using Guid(9c54727b48338854e9a2e6a34dcec2e2) (DefaultImporter) -> (artifact id: '5174e497739939273444cb534800115f') in 0.0012466 seconds
+Refreshing native plugins compatible for Editor in 27.59 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=0acb605900628184db02bc2f1322ed04): Total: 0.087 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 Opening scene 'Assets/Scenes/Journey/03_Stomach.unity'
-Unloading 21 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/03_Stomach.unity'
-	Deserialize:            21.153 ms
-	Integration:            399.226 ms
-	Integration of assets:  5.158 ms
-	Thread Wait Time:       0.040 ms
-	Total Operation Time:   425.576 ms
-Unloading 167 unused Assets / (68.9 MB). Loaded Objects now: 17797.
-Memory consumption went from 439.0 MB to 370.1 MB.
-Total: 18.363100 ms (FindLiveObjects: 0.857500 ms CreateObjectMapping: 0.761500 ms MarkObjects: 16.440500 ms  DeleteObjects: 0.303400 ms)
+	Deserialize:            32.195 ms
+	Integration:            442.475 ms
+	Integration of assets:  7.266 ms
+	Thread Wait Time:       0.088 ms
+	Total Operation Time:   482.024 ms
+Unloading 193 unused Assets / (80.7 MB). Loaded Objects now: 17969.
+Memory consumption went from 456.7 MB to 376.1 MB.
+Total: 21.404100 ms (FindLiveObjects: 0.927500 ms CreateObjectMapping: 0.406300 ms MarkObjects: 19.691400 ms  DeleteObjects: 0.378500 ms)
 
-Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0030748 seconds
-Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0019071 seconds
-Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.001748 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0018465 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0018994 seconds
-Start importing Assets/Data/Generated/Realism/위액_수면.mat using Guid(b540164506035c54ab718d1ecae2c217) (NativeFormatImporter) -> (artifact id: '6063767bf1b0aaddf94cdc6ac4acd335') in 0.0020924 seconds
-Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0018065 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0017565 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0019372 seconds
-Start importing Assets/Data/Generated/EnvironmentRepair/Stomach_조직.mat using Guid(1923c6851335d2c4cadacd96eb32e419) (NativeFormatImporter) -> (artifact id: 'ccddc25688f6e6c180618df60296b554') in 0.0018539 seconds
-Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0017646 seconds
-Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0016421 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0018128 seconds
-Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0018435 seconds
-Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0017119 seconds
-Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0017583 seconds
-Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0016896 seconds
+[부위] 위샘 6개를 벽에 심음
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:StomachAnatomy () (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:242)
+JourneyRealism:Anatomy (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:24)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:678)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs Line: 242)
+
+Asset Pipeline Refresh (id=fcb72b7cad114c24b9f7c5fee1bc0026): Total: 0.018 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=587313f9896b9154e9d24f6ffdc2ed4f): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0031887 seconds
+Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0023547 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모.mat using Guid(70c208f5479623a4f8675399fb26c8ae) (NativeFormatImporter) -> (artifact id: '2ba10fcffd69a89d199c1929dd124ac0') in 0.0018638 seconds
+Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0024668 seconds
+Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0019573 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균.mat using Guid(62080033f1511b043b18d1249b7b8789) (NativeFormatImporter) -> (artifact id: '435e850d35e098bba32b7e9f13d17655') in 0.0018729 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0020682 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.001882 seconds
+Start importing Assets/Data/Generated/Realism/위액_수면.mat using Guid(b540164506035c54ab718d1ecae2c217) (NativeFormatImporter) -> (artifact id: '6063767bf1b0aaddf94cdc6ac4acd335') in 0.0018028 seconds
+Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0023295 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0019586 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0017679 seconds
+Start importing Assets/Data/Generated/EnvironmentRepair/Stomach_조직.mat using Guid(1923c6851335d2c4cadacd96eb32e419) (NativeFormatImporter) -> (artifact id: 'ccddc25688f6e6c180618df60296b554') in 0.0021258 seconds
+Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0021231 seconds
+Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0020032 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.0019852 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'c62e523c9fccabffacba6a6f4e5a3d1b') in 0.0020703 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.0017763 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0017843 seconds
+Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0018266 seconds
+Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0018192 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0018582 seconds
+Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0017723 seconds
+Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0020551 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_바닥판.asset using Guid(e1afa34638fcffa4299266e9a9f4f309) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_바닥판'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0020914 seconds
+ -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0026588 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대_빛띠.asset using Guid(24a3e678a07468c43bd921fc8b62d74b) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대_빛띠'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0020149 seconds
+ -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0023181 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모_2.asset using Guid(84b307446d19d6448b13bbdaa625dd30) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_편모_2'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'd3595398a8297c9f591147bc75d92144') in 0.0022616 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대.asset using Guid(3534d0922b32d5948960f882f969d4c3) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0020046 seconds
+ -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0021223 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_오른쪽.asset using Guid(e64454a17a224994799f0672376e3437) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_오른쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0019907 seconds
+ -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0022689 seconds
 Start importing Assets/Data/Generated/Realism/위_내부.asset using Guid(88df2cf9671d30343a140070db271a18) (NativeFormatImporter)Main Object Name '위주름이 있는 위 내부' does not match filename '위_내부'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '44f070405b50548df3ccaf891583f256') in 0.0048469 seconds
+ -> (artifact id: '44f070405b50548df3ccaf891583f256') in 0.0051794 seconds
 Start importing Assets/Data/Generated/EnvironmentRepair/Stomach_괄약근.asset using Guid(d8bd458cc5e85c14a9fe9ec378820c8f) (NativeFormatImporter)Main Object Name '괄약근의 열리는 점막' does not match filename 'Stomach_괄약근'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '82e4e8f28a15fa496894f96101f59e23') in 0.0020844 seconds
+ -> (artifact id: '82e4e8f28a15fa496894f96101f59e23') in 0.0021791 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모_1.asset using Guid(f8ff9f7b8d5b8d94e95dd90b526d5df4) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_편모_1'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '764afaf0e004009b0024601dd1801b38') in 0.0020174 seconds
 Start importing Assets/Data/Generated/Realism/위액_웅덩이.asset using Guid(1946323c4227dac4bb9fb87e46855502) (NativeFormatImporter)Main Object Name '위액 웅덩이' does not match filename '위액_웅덩이'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '881a5836c697442b75762cc76914b8ab') in 0.0019389 seconds
+ -> (artifact id: '881a5836c697442b75762cc76914b8ab') in 0.0021116 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모_3.asset using Guid(690ed39ae9df72b4aba2a2150603c5d6) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_편모_3'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '178475125fa066a60c480c6fa62b7f6b') in 0.0020556 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_허리_고리.asset using Guid(8ae9df0a087e38d44b411747b913e188) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_허리_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0020602 seconds
+ -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0020473 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모_0.asset using Guid(fbe30b0dadcd36f4e9707b5efab63310) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_편모_0'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: '06adc7ff278a64c8bff1fa06acfb6315') in 0.0023405 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_위_해치_고리.asset using Guid(6d9243a76eabbc24d973434e0f228260) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_위_해치_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0020861 seconds
-Start importing Assets/Data/Generated/Realism/분문_입구.asset using Guid(be20bfcc94f9dd340a4f5eb86cf4d96a) (NativeFormatImporter) -> (artifact id: 'badef6618b72b30ecb313f8603b95444') in 0.0018925 seconds
+ -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0025032 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_몸통.asset using Guid(9e2ddd5178504474486d5cabe2d4f9af) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_몸통'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'cc82594dd3f3bccb17aacc26084067c4') in 0.002233 seconds
+Start importing Assets/Data/Generated/Realism/분문_입구.asset using Guid(be20bfcc94f9dd340a4f5eb86cf4d96a) (NativeFormatImporter) -> (artifact id: 'badef6618b72b30ecb313f8603b95444') in 0.002197 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_왼쪽.asset using Guid(1ff5c4373c7ace74d98e98f37fc9a407) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_왼쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0019606 seconds
-Refreshing native plugins compatible for Editor in 25.45 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.27 ms.
-Asset Pipeline Refresh (id=32cc98f3d414ef24cb19d03df5e22952): Total: 0.170 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Journey/03_Stomach.unity using Guid(19af44e126fa89f439f89e32afd1d345) (DefaultImporter) -> (artifact id: 'e09531a7b4d15b96c6e518822cbfcc6e') in 0.0012159 seconds
-Refreshing native plugins compatible for Editor in 24.37 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.24 ms.
-Asset Pipeline Refresh (id=d0eeb614e9796624ca28b68e61f57656): Total: 0.081 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+ -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0027512 seconds
+Start importing Assets/Data/Generated/Realism/헬리코박터균_편모_4.asset using Guid(af52c455d9bf7db449f7f25a6c346c52) (NativeFormatImporter)Main Object Name '' does not match filename '헬리코박터균_편모_4'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
+
+ -> (artifact id: 'b0e8f4232ec17bc29d1252d87ea7b31a') in 0.002781 seconds
+Refreshing native plugins compatible for Editor in 26.74 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=b484ffabc75c85941a90c805345b9ba3): Total: 0.220 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/03_Stomach.unity using Guid(19af44e126fa89f439f89e32afd1d345) (DefaultImporter) -> (artifact id: 'b3874173c129029b454d74950e67a500') in 0.0012969 seconds
+Refreshing native plugins compatible for Editor in 27.58 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=a11941c295a91e04c9063587908cc435): Total: 0.088 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 Opening scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-	Deserialize:            20.309 ms
-	Integration:            416.736 ms
-	Integration of assets:  4.835 ms
-	Thread Wait Time:       0.028 ms
-	Total Operation Time:   441.909 ms
-Unloading 254 unused Assets / (57.9 MB). Loaded Objects now: 17779.
-Memory consumption went from 438.7 MB to 380.8 MB.
-Total: 17.899500 ms (FindLiveObjects: 0.860700 ms CreateObjectMapping: 0.353500 ms MarkObjects: 16.141200 ms  DeleteObjects: 0.543200 ms)
+	Deserialize:            31.112 ms
+	Integration:            473.012 ms
+	Integration of assets:  2.936 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   507.075 ms
+Unloading 297 unused Assets / (77.6 MB). Loaded Objects now: 17911.
+Memory consumption went from 463.5 MB to 385.9 MB.
+Total: 30.181800 ms (FindLiveObjects: 1.560600 ms CreateObjectMapping: 1.835300 ms MarkObjects: 25.752600 ms  DeleteObjects: 1.032400 ms)
 
-Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0032401 seconds
-Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0023677 seconds
-Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0019593 seconds
-Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0018043 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0018429 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0019639 seconds
-Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0016775 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0017384 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0017181 seconds
-Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0018876 seconds
-Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0017416 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0016634 seconds
-Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0016716 seconds
-Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0016587 seconds
-Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0017949 seconds
-Start importing Assets/Data/Generated/Realism/미즙_물길_수면.mat using Guid(6eadaf01ad0a2454cbdcb2947618188b) (NativeFormatImporter) -> (artifact id: 'f47d49ba2697eddbecce4d37b16295de') in 0.0017622 seconds
-Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0017576 seconds
-Start importing Assets/Data/Generated/EnvironmentRepair/SmallIntestine_조직.mat using Guid(eef268fd7cd387b45a3407dcb7e6edf0) (NativeFormatImporter) -> (artifact id: '0676d397faefcf38395caa4a97539fbc') in 0.0018219 seconds
+Asset Pipeline Refresh (id=bb3c447494f219f40b3fefb2665a0e0e): Total: 0.018 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[부위] 융털 확대 모형: 벽 (2.68, 0.05, 36.04), 높이 1.09m
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:SmallIntestineAnatomy (UnityEngine.Splines.SplineContainer) (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:314)
+JourneyRealism:Anatomy (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs:25)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:678)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.Anatomy.cs Line: 314)
+
+Asset Pipeline Refresh (id=763ce491cddc3754cbf0936d89ec3818): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=32bce16949cae504b8e7dfdcfe8a8f80): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=decea9a67ab51fa45be6ca181c0c266d): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0039337 seconds
+Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0023588 seconds
+Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0023601 seconds
+Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0019347 seconds
+Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0023776 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0020528 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0021481 seconds
+Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0021375 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.00229 seconds
+Start importing Assets/Data/Generated/Realism/포도당_산소.mat using Guid(18ef337b1de517f468aa78bc7b889b2a) (NativeFormatImporter) -> (artifact id: '60e566936edb9ddd19ce2f13d42cc7e6') in 0.0021782 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0024009 seconds
+Start importing Assets/Data/Generated/Realism/포도당_탄소.mat using Guid(c887621a2d0e59f4eb139ecf5cb2c262) (NativeFormatImporter) -> (artifact id: 'dc2de309633556fa32846622cca6d1e2') in 0.0021629 seconds
+Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0020397 seconds
+Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0022865 seconds
+Start importing Assets/Data/Generated/Realism/혈관_벽.mat using Guid(4bc223ffc19ac5a43bffe6a7b34da5f8) (NativeFormatImporter) -> (artifact id: 'fbddf5ab28a0dee8d6b146db642969c0') in 0.0021997 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.0021455 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'c62e523c9fccabffacba6a6f4e5a3d1b') in 0.0021524 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.0020978 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0019568 seconds
+Start importing Assets/Data/Generated/Realism/포도당_수소.mat using Guid(2d8ac87d523fe2647b8d4c074ccfe6a6) (NativeFormatImporter) -> (artifact id: '8120424ea8a2ed678d82ef010032b587') in 0.0019289 seconds
+Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0018484 seconds
+Start importing Assets/Data/Generated/Realism/포도당_결합.mat using Guid(6defbf860c9a5864189ad682c71bae8a) (NativeFormatImporter) -> (artifact id: 'ebb2e86ea6fd45be95fc6b198859d9db') in 0.0018089 seconds
+Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0019062 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0020814 seconds
+Start importing Assets/Data/Generated/Realism/적혈구_실사_material.mat using Guid(3eaa97f62592911428137009f4837177) (NativeFormatImporter) -> (artifact id: 'ce5abc17dcc6ee35f6945e01de7ddf1f') in 0.0018274 seconds
+Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0018158 seconds
+Start importing Assets/Data/Generated/Realism/미즙_물길_수면.mat using Guid(6eadaf01ad0a2454cbdcb2947618188b) (NativeFormatImporter) -> (artifact id: 'f47d49ba2697eddbecce4d37b16295de') in 0.0017902 seconds
+Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0022675 seconds
+Start importing Assets/Data/Generated/EnvironmentRepair/SmallIntestine_조직.mat using Guid(eef268fd7cd387b45a3407dcb7e6edf0) (NativeFormatImporter) -> (artifact id: '0676d397faefcf38395caa4a97539fbc') in 0.0020636 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_바닥판.asset using Guid(e1afa34638fcffa4299266e9a9f4f309) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_바닥판'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0020116 seconds
-Start importing Assets/Data/Generated/Realism/미즙_물길.asset using Guid(f1af7ba165ea9b447b169a941bcf958b) (NativeFormatImporter) -> (artifact id: '2317181aafb959b36f4c15b75ea1e4d3') in 0.0018376 seconds
-Start importing Assets/Data/Generated/Realism/십이지장_유두.asset using Guid(e3f0f20183c825a46b72ab0e6d567f94) (NativeFormatImporter) -> (artifact id: '5a353ca6739f0b0bb18d8eb9cfb4bb36') in 0.0020383 seconds
+ -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0023622 seconds
+Start importing Assets/Data/Generated/Realism/미즙_물길.asset using Guid(f1af7ba165ea9b447b169a941bcf958b) (NativeFormatImporter) -> (artifact id: '2317181aafb959b36f4c15b75ea1e4d3') in 0.0020427 seconds
+Start importing Assets/Data/Generated/Realism/십이지장_유두.asset using Guid(e3f0f20183c825a46b72ab0e6d567f94) (NativeFormatImporter) -> (artifact id: '5a353ca6739f0b0bb18d8eb9cfb4bb36') in 0.0020994 seconds
+Start importing Assets/Data/Generated/Realism/혈관_2.asset using Guid(042fc8a7f8c704145acf373ec254249d) (NativeFormatImporter) -> (artifact id: 'abd37fa945c1c0641202041d2e02e1dd') in 0.0021371 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대_빛띠.asset using Guid(24a3e678a07468c43bd921fc8b62d74b) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대_빛띠'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0023636 seconds
+ -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0020102 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대.asset using Guid(3534d0922b32d5948960f882f969d4c3) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0020257 seconds
+ -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.0020967 seconds
+Start importing Assets/Data/Generated/Realism/포도당_분자.asset using Guid(d5e3e0a83523c844bb3eaf59cd98292a) (NativeFormatImporter) -> (artifact id: '04f5db134b880f7ebd6fa27d3dfaa766') in 0.0020228 seconds
+Start importing Assets/Data/Generated/Realism/혈관_0.asset using Guid(f54edd729d61e9f4f9a2fa6a569278e7) (NativeFormatImporter) -> (artifact id: '421e2f7958acdae9e9b539f79cb27eb7') in 0.0019424 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_오른쪽.asset using Guid(e64454a17a224994799f0672376e3437) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_오른쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0019916 seconds
+ -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0021814 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_허리_고리.asset using Guid(8ae9df0a087e38d44b411747b913e188) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_허리_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0020735 seconds
+ -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0020513 seconds
+Start importing Assets/Data/Generated/Realism/혈관_1.asset using Guid(8b99a026309be3142b6d8cc1f4fb6acb) (NativeFormatImporter) -> (artifact id: '214978384105b9bd45cf5b4c155ab14b') in 0.0019222 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_위_해치_고리.asset using Guid(6d9243a76eabbc24d973434e0f228260) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_위_해치_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0019526 seconds
+ -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0021911 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_왼쪽.asset using Guid(1ff5c4373c7ace74d98e98f37fc9a407) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_왼쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0021024 seconds
+ -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0020568 seconds
 Start importing Assets/Data/Generated/EnvironmentRepair/SmallIntestine_통로.asset using Guid(1f4ddd3cf9467f944ba022d4181fbdfa) (NativeFormatImporter)Main Object Name 'SmallIntestine_연속_내부벽' does not match filename 'SmallIntestine_통로'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '34e82ba2646b3e5a55b5e11f41cf14eb') in 0.0099754 seconds
-Refreshing native plugins compatible for Editor in 27.09 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.28 ms.
-Asset Pipeline Refresh (id=4963d163dcfc8c84b9812f8827b92a2a): Total: 0.181 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Journey/04_SmallIntestine.unity using Guid(49a0dd1784beda84b9750f4b04d61002) (DefaultImporter) -> (artifact id: 'd67b1b3d03db5843972f83e183c176f9') in 0.0012101 seconds
-Refreshing native plugins compatible for Editor in 24.72 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.25 ms.
-Asset Pipeline Refresh (id=984ea0de2665abe4e8247cd7859e7622): Total: 0.080 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+ -> (artifact id: '34e82ba2646b3e5a55b5e11f41cf14eb') in 0.0095848 seconds
+Refreshing native plugins compatible for Editor in 27.55 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=db7295eca2241ca4eb4d18818a04eb97): Total: 0.260 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/04_SmallIntestine.unity using Guid(49a0dd1784beda84b9750f4b04d61002) (DefaultImporter) -> (artifact id: '1eaa94dab225f490468d5c93dc456641') in 0.0013808 seconds
+Refreshing native plugins compatible for Editor in 26.94 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.31 ms.
+Asset Pipeline Refresh (id=c964e0c32abfe824e9c2dedff9ffcf0a): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 Opening scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-	Deserialize:            14.703 ms
-	Integration:            369.930 ms
-	Integration of assets:  17.485 ms
-	Thread Wait Time:       0.035 ms
-	Total Operation Time:   402.153 ms
-Unloading 236 unused Assets / (58.2 MB). Loaded Objects now: 17815.
-Memory consumption went from 438.4 MB to 380.2 MB.
-Total: 17.605900 ms (FindLiveObjects: 0.969000 ms CreateObjectMapping: 0.398500 ms MarkObjects: 15.706600 ms  DeleteObjects: 0.531400 ms)
+	Deserialize:            19.334 ms
+	Integration:            408.986 ms
+	Integration of assets:  17.781 ms
+	Thread Wait Time:       0.038 ms
+	Total Operation Time:   446.138 ms
+Unloading 300 unused Assets / (121.0 MB). Loaded Objects now: 17918.
+Memory consumption went from 0.50 GB to 395.3 MB.
+Total: 23.210000 ms (FindLiveObjects: 0.948600 ms CreateObjectMapping: 0.999400 ms MarkObjects: 20.543900 ms  DeleteObjects: 0.717400 ms)
 
-Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0034424 seconds
-Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0024207 seconds
-Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0021499 seconds
-Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0022568 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0020692 seconds
-Start importing Assets/Data/Generated/EnvironmentRepair/LargeIntestine_조직.mat using Guid(14d7b8710b3195c449824a385e50ac37) (NativeFormatImporter) -> (artifact id: '0b30fec57e4155212206b8378f1a8cd9') in 0.0020316 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0019596 seconds
-Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0018884 seconds
-Start importing Assets/Data/Generated/Realism/면역_광선.mat using Guid(c683e9ebc0a33bf4e97e5d5da3fdcdd8) (NativeFormatImporter) -> (artifact id: '5d8fd9739ef562a5c98c8de397f6a56d') in 0.0024124 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.002412 seconds
-Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0024379 seconds
-Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0021785 seconds
-Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0019668 seconds
-Start importing Assets/Data/Generated/Realism/대장_내용물_수면.mat using Guid(8b8e39ff34e000543935cfed7cae97bc) (NativeFormatImporter) -> (artifact id: 'e1b2c5c7f9e81947a058216bfd908619') in 0.0018004 seconds
-Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0018228 seconds
-Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0019665 seconds
-Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0018137 seconds
-Start importing Assets/Data/Generated/Realism/방울_균_사라짐.mat using Guid(5e06563ae4c4eef45bbb67e01bdca57c) (NativeFormatImporter) -> (artifact id: 'c2212d5228700aff8ffbefbc0af9979b') in 0.0018912 seconds
-Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0018684 seconds
-Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0019879 seconds
-Start importing Assets/Data/Generated/Realism/회맹판.asset using Guid(80800d277febab442a46c382b80d073a) (NativeFormatImporter) -> (artifact id: 'd8997e2f92dd1502e63dd472d8c5f87d') in 0.001877 seconds
+Asset Pipeline Refresh (id=a28fc0de0d7db61429ae7893e58410fb): Total: 0.018 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Data/Generated/Realism/도구_손잡이.mat using Guid(300afed9ad12a724aba4008d744e4dfd) (NativeFormatImporter) -> (artifact id: '70dcaa72fc23782ccfa5bced7662dad9') in 0.0031438 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_무름.mat using Guid(305ca7abf6efd80429e045ccd3f5c4c5) (NativeFormatImporter) -> (artifact id: 'c596901a4b2684419ed02e3dbb663ffe') in 0.0021966 seconds
+Start importing Assets/Data/Generated/Realism/방울_펩신.mat using Guid(50a18e0f6b53907499bee1a992b22aa9) (NativeFormatImporter) -> (artifact id: 'f09ab016d45a18c9612613d840a7e3ac') in 0.0018697 seconds
+Start importing Assets/Data/Generated/Realism/구멍_안쪽.mat using Guid(f0adc1ccdb92681498d73dda5b7313e4) (NativeFormatImporter) -> (artifact id: 'a60d857519a195730fdeecc9d760b942') in 0.0020166 seconds
+Start importing Assets/Data/Generated/Realism/방울_수분.mat using Guid(61011b537450b91409798c6ab6f3b6b5) (NativeFormatImporter) -> (artifact id: 'cc8ed86ed97d5f9f091ad6d274eca232') in 0.0017943 seconds
+Start importing Assets/Data/Generated/Realism/방울_침_가닥.mat using Guid(a1708965cec938e429319f10bf514db1) (NativeFormatImporter) -> (artifact id: '78ade76d6643a3acda045726e69be8cb') in 0.0018142 seconds
+Start importing Assets/Data/Generated/Realism/캡슐_난간.mat using Guid(a2304ded0e29d0e469cdfc7a2ad99cca) (NativeFormatImporter) -> (artifact id: 'd5b73d278d26c704f4c385f5585f839e') in 0.0017806 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_빛띠.mat using Guid(c383f6e7e3ed312409a463f0d91ded3f) (NativeFormatImporter) -> (artifact id: 'a7c0b5baac3bbb7558d4f34053a44775') in 0.0017815 seconds
+Start importing Assets/Data/Generated/EnvironmentRepair/LargeIntestine_조직.mat using Guid(14d7b8710b3195c449824a385e50ac37) (NativeFormatImporter) -> (artifact id: '0b30fec57e4155212206b8378f1a8cd9') in 0.0018243 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙.mat using Guid(85a38758b8ccbf244a1a22107993a75b) (NativeFormatImporter) -> (artifact id: '0a3c1b88696e311ada8351a07590891f') in 0.0020906 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_단단함.mat using Guid(a535acfa561632743a2644c4090b4a39) (NativeFormatImporter) -> (artifact id: 'd8573b346fc6bb92aae467df595fe29d') in 0.0019939 seconds
+Start importing Assets/Data/Generated/Realism/출발_발판.mat using Guid(c5398473e2ae3a846b0a92ec3c9b1085) (NativeFormatImporter) -> (artifact id: '80792ba0c0e1490add079aa91f9f501f') in 0.0018947 seconds
+Start importing Assets/Data/Generated/Realism/면역_광선.mat using Guid(c683e9ebc0a33bf4e97e5d5da3fdcdd8) (NativeFormatImporter) -> (artifact id: '5d8fd9739ef562a5c98c8de397f6a56d') in 0.0021393 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_묽음.mat using Guid(77364b1d47ffbc14b82a1ca2b7999b5b) (NativeFormatImporter) -> (artifact id: 'e8d59d395814af49aab24bdf92dcf5c1') in 0.0021387 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_뼈대.mat using Guid(d71702986922d5f48b35bbec551084e6) (NativeFormatImporter) -> (artifact id: 'f780d043b43a5cca32e7de9f707dcf2d') in 0.0021952 seconds
+Start importing Assets/Data/Generated/Realism/방울_담즙_가닥.mat using Guid(b8b8567ee28deee4fa377bf6252fb659) (NativeFormatImporter) -> (artifact id: '03a23a07af829676d991646f4d1694e7') in 0.0022684 seconds
+Start importing Assets/Data/Generated/Realism/방울_이자액.mat using Guid(197e015eb5849cc4ca254b6ef6161b7a) (NativeFormatImporter) -> (artifact id: 'b5245fbf56b2cf14b3ff9dcacd24d737') in 0.0020528 seconds
+Start importing Assets/Data/Generated/Realism/방울_위산.mat using Guid(a9c82874ad119334486b57f2b364a13c) (NativeFormatImporter) -> (artifact id: '5447147a24509d6956d421038949ce5e') in 0.0020145 seconds
+Start importing Assets/Data/Generated/Realism/대장_내용물_수면.mat using Guid(8b8e39ff34e000543935cfed7cae97bc) (NativeFormatImporter) -> (artifact id: 'e1b2c5c7f9e81947a058216bfd908619') in 0.0020674 seconds
+Start importing Assets/Data/Generated/Realism/방울_맞힘_반짝.mat using Guid(3c1c4a80387bb604c94ed5102e4723eb) (NativeFormatImporter) -> (artifact id: 'd4799bd408c86c71d888f083bba804f9') in 0.001824 seconds
+Start importing Assets/Data/Generated/Realism/치료_광선.mat using Guid(5c532d73e354c9e4bbb7dcd1e00c60fc) (NativeFormatImporter) -> (artifact id: 'c62e523c9fccabffacba6a6f4e5a3d1b') in 0.002129 seconds
+Start importing Assets/Data/Generated/Realism/도구_몸체.mat using Guid(8c313e877b31bdb498ca31e312f777dc) (NativeFormatImporter) -> (artifact id: '0c10d9b9186c7afde0ca0a8c78ae66ec') in 0.0019199 seconds
+Start importing Assets/Data/Generated/Realism/잠수정_바닥.mat using Guid(ac57e8c5d2e6eea4e90d88193cb79b02) (NativeFormatImporter) -> (artifact id: 'fb4f12e9a31096fb9d406ccd8ee52a1e') in 0.0018113 seconds
+Start importing Assets/Data/Generated/Realism/방울_침.mat using Guid(4d310ed59eb58ba4f950dad4b9fe1b76) (NativeFormatImporter) -> (artifact id: '9ab5cc35340cd6fa2df350471f49dbc5') in 0.0017364 seconds
+Start importing Assets/Data/Generated/Realism/방울_거품.mat using Guid(7de229e7f8c042d44bba48378817296f) (NativeFormatImporter) -> (artifact id: 'a3e83da896bdd51c8cd1028a4ba296f4') in 0.0018635 seconds
+Start importing Assets/Data/Generated/Realism/도구_빛.mat using Guid(9d9b68e8271f24c4ebeb61f0a7ed8150) (NativeFormatImporter) -> (artifact id: '6f8f9bf7374acaa7315f4fcf055588f6') in 0.0023327 seconds
+Start importing Assets/Data/Generated/Realism/방울_균_사라짐.mat using Guid(5e06563ae4c4eef45bbb67e01bdca57c) (NativeFormatImporter) -> (artifact id: 'c2212d5228700aff8ffbefbc0af9979b') in 0.0022437 seconds
+Start importing Assets/Data/Generated/Realism/관찰창_유리.mat using Guid(5e162d87cbad1a142a9ce1c8a647283a) (NativeFormatImporter) -> (artifact id: '74ea871326a66be9b277df98316ab505') in 0.0018661 seconds
+Start importing Assets/Data/Generated/Realism/방울_점액.mat using Guid(ae5d0b17963fd234ba1dd2d58d1193fe) (NativeFormatImporter) -> (artifact id: 'cd09dfd86c8c00868c77887b7682e7c1') in 0.0021042 seconds
+Start importing Assets/Data/Generated/Realism/회맹판.asset using Guid(80800d277febab442a46c382b80d073a) (NativeFormatImporter) -> (artifact id: 'd8997e2f92dd1502e63dd472d8c5f87d') in 0.0018711 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_바닥판.asset using Guid(e1afa34638fcffa4299266e9a9f4f309) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_바닥판'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0020328 seconds
+ -> (artifact id: '315d1027049b576bb2a31d94808c5175') in 0.0021004 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대_빛띠.asset using Guid(24a3e678a07468c43bd921fc8b62d74b) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대_빛띠'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0023445 seconds
+ -> (artifact id: '2fdb548beeed8158f6a9419eaefd82a5') in 0.0020749 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_조종대.asset using Guid(3534d0922b32d5948960f882f969d4c3) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_조종대'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.002104 seconds
+ -> (artifact id: '02a3a3cb8aa942ff8dbdb69ed560e656') in 0.002097 seconds
 Start importing Assets/Data/Generated/EnvironmentRepair/LargeIntestine_통로.asset using Guid(860dd38fa8f75864b87324afdda6a171) (NativeFormatImporter)Main Object Name 'LargeIntestine_연속_내부벽' does not match filename 'LargeIntestine_통로'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '2d3d2a758f9912bf54ee3dfeb16295bd') in 0.0044074 seconds
+ -> (artifact id: '2d3d2a758f9912bf54ee3dfeb16295bd') in 0.0046389 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_오른쪽.asset using Guid(e64454a17a224994799f0672376e3437) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_오른쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0021312 seconds
-Start importing Assets/Data/Generated/Realism/대장_내용물.asset using Guid(f777a79ca7ee1a04f9472b357efccd05) (NativeFormatImporter) -> (artifact id: 'ab1e3906096499bb620d0cc21b0cda27') in 0.0017602 seconds
+ -> (artifact id: 'c0559386a3d23466df86e8559eaaf5db') in 0.0023538 seconds
+Start importing Assets/Data/Generated/Realism/대장_내용물.asset using Guid(f777a79ca7ee1a04f9472b357efccd05) (NativeFormatImporter) -> (artifact id: 'ab1e3906096499bb620d0cc21b0cda27') in 0.0019364 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_단단함.asset using Guid(4965060958e1a764ba82ab7e88194b0b) (NativeFormatImporter) -> (artifact id: '74b0425804e30fc2d60f028583a04d68') in 0.0018727 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_묽음.asset using Guid(a9ee3434d3f500d439200500c134c1d8) (NativeFormatImporter) -> (artifact id: '16c2d81f80f4427a19bb0f1e240ba1c2') in 0.0020124 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_허리_고리.asset using Guid(8ae9df0a087e38d44b411747b913e188) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_허리_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0021751 seconds
+ -> (artifact id: 'c413130c374652a4a112c011bd0493db') in 0.0022717 seconds
+Start importing Assets/Data/Generated/Realism/찌꺼기_무름.asset using Guid(3dd62107a8dadbb4ab32fbec9f4b30d7) (NativeFormatImporter) -> (artifact id: '89c3f7317699f51975a1bd9ace0d34f8') in 0.0021244 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_위_해치_고리.asset using Guid(6d9243a76eabbc24d973434e0f228260) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_위_해치_고리'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0020416 seconds
-Start importing Assets/Data/Generated/Realism/충수_입구.asset using Guid(9d97d2a72d65cc948a85fbf4045b257d) (NativeFormatImporter) -> (artifact id: '0d9c303b0600c9a1b0921d4db30f9014') in 0.0019443 seconds
+ -> (artifact id: 'b42e2df80e901c9e9d5f9d5753d5c490') in 0.0023628 seconds
+Start importing Assets/Data/Generated/Realism/충수_입구.asset using Guid(9d97d2a72d65cc948a85fbf4045b257d) (NativeFormatImporter) -> (artifact id: '0d9c303b0600c9a1b0921d4db30f9014') in 0.0020343 seconds
 Start importing Assets/Data/Generated/Realism/잠수정_세로_뼈대_왼쪽.asset using Guid(1ff5c4373c7ace74d98e98f37fc9a407) (NativeFormatImporter)Main Object Name '' does not match filename '잠수정_세로_뼈대_왼쪽'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
 UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:620)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:621)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 620]
+[Assets/Scripts/Journey/Editor/JourneyRealism.cs line 621]
 
- -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.002183 seconds
-Refreshing native plugins compatible for Editor in 25.23 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.25 ms.
-Asset Pipeline Refresh (id=a1a7187d2d71b90409247ea73d0bfc38): Total: 0.188 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Journey/05_LargeIntestine.unity using Guid(2f3cc399182627147bd9999806104c0f) (DefaultImporter) -> (artifact id: '78f15daa85a36ef1569740fcde7c56eb') in 0.0012694 seconds
-Refreshing native plugins compatible for Editor in 24.79 ms, found 18 plugins.
-Preloading 3 native plugins for Editor in 0.25 ms.
-Asset Pipeline Refresh (id=6a7b9fa81f6742943971f70aaa423f81): Total: 0.084 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+ -> (artifact id: '17fcc295c969e23a1adbdd4d118cec4b') in 0.0020707 seconds
+Refreshing native plugins compatible for Editor in 27.10 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=c730ac543551b59479c1bb58193e88ce): Total: 0.226 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/05_LargeIntestine.unity using Guid(2f3cc399182627147bd9999806104c0f) (DefaultImporter) -> (artifact id: 'bdc11e28478b8eaddb966f99e45d8077') in 0.0014761 seconds
+Refreshing native plugins compatible for Editor in 27.41 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.26 ms.
+Asset Pipeline Refresh (id=fb1a12276a291b741b9ae05a32639734): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/Journey/06_Theater.unity'
+Unloading 27 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/06_Theater.unity'
+	Deserialize:            11.289 ms
+	Integration:            453.823 ms
+	Integration of assets:  0.148 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   465.274 ms
+Unloading 351 unused Assets / (252.8 KB). Loaded Objects now: 18810.
+Memory consumption went from 383.5 MB to 383.2 MB.
+Total: 24.341400 ms (FindLiveObjects: 1.391600 ms CreateObjectMapping: 0.956200 ms MarkObjects: 21.116100 ms  DeleteObjects: 0.876800 ms)
+
+[사람] 의사: 키 1.75m, 폭 1.10×0.86m, 발 0.00
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:58)
+JourneyRealism:EndingClinic () (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:306)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:644)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 58)
+
+[사람] 간호사 세움: 머리 찾음, 얼굴 찾음
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:StandUp (UnityEngine.GameObject,single) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:127)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:50)
+JourneyRealism:EndingClinic () (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:307)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:644)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 127)
+
+[사람] 간호사: 키 1.66m, 폭 0.55×0.30m, 발 0.00
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JourneyRealism:Person (string,string,UnityEngine.Vector3,single,single,UnityEngine.Transform) (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:58)
+JourneyRealism:EndingClinic () (at Assets/Scripts/Journey/Editor/JourneyRealism.People.cs:307)
+JourneyRealism:ConfigureScene (string) (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:644)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:619)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.People.cs Line: 58)
+
+Start importing Assets/Data/Generated/Realism/진료실_벽_아래.mat using Guid(11f75e69ecb87fe4e9cbd93a59718776) (NativeFormatImporter) -> (artifact id: '35213b505283a1593e4f3eb58156fac6') in 0.0032008 seconds
+Start importing Assets/Data/Generated/Realism/진료실_바닥.mat using Guid(338767a5399de0c4698a175597293c3b) (NativeFormatImporter) -> (artifact id: '39d4dbb342ac5174689b59014d3a31c2') in 0.002099 seconds
+Start importing Assets/Data/Generated/Realism/진료실_빛띠.mat using Guid(d330a226a0df1944c91088d81221775e) (NativeFormatImporter) -> (artifact id: 'dbc486266a6f71b5ee7cc5b12ddeab80') in 0.0020092 seconds
+Start importing Assets/Data/Generated/Realism/진료실_천장.mat using Guid(b44da785f4ea5dc4a98d92dd5800fb07) (NativeFormatImporter) -> (artifact id: '3c6924dd847d4558cd4606524753701e') in 0.0023803 seconds
+Start importing Assets/Data/Generated/Realism/진료실_화면.mat using Guid(759d7f9be8e95ee4db8fd679d0ca5545) (NativeFormatImporter) -> (artifact id: '9c36050aa3c8bb373330775199f4b0d3') in 0.0018495 seconds
+Start importing Assets/Data/Generated/Realism/진료실_벽.mat using Guid(e987e61fa1dbb9849b3c73fb3eac03e6) (NativeFormatImporter) -> (artifact id: '227889a5604a600a8602bb506d25353a') in 0.0018505 seconds
+Refreshing native plugins compatible for Editor in 28.85 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.27 ms.
+Asset Pipeline Refresh (id=5192d5a49107ddb4881068f1b612a763): Total: 0.122 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/06_Theater.unity using Guid(960d76005aae54f4e89632964eee584f) (DefaultImporter) -> (artifact id: '1fbfe0041428bd19d823fce9e53e3b74') in 0.0011819 seconds
+Refreshing native plugins compatible for Editor in 28.40 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.41 ms.
+Asset Pipeline Refresh (id=05f0e28e629c6e348a90b887e6ff811d): Total: 0.089 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 [JourneyRealism] 실사 점막·몸속 조명 적용 완료
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1145,70 +1589,94 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:624)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:632)
+JourneyRealism:ApplyScenes () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:625)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
 
-(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 624)
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 625)
+
+Opening scene 'Assets/Scenes/Journey/00_Lobby.unity'
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/00_Lobby.unity'
+	Deserialize:            17.499 ms
+	Integration:            449.954 ms
+	Integration of assets:  0.435 ms
+	Thread Wait Time:       0.038 ms
+	Total Operation Time:   467.926 ms
+Unloading 150 unused Assets / (150.3 MB). Loaded Objects now: 19237.
+Memory consumption went from 0.52 GB to 380.6 MB.
+Total: 38.529500 ms (FindLiveObjects: 1.536100 ms CreateObjectMapping: 0.977200 ms MarkObjects: 35.613400 ms  DeleteObjects: 0.402300 ms)
 
 Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
-Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 73 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
-	Deserialize:            15.391 ms
-	Integration:            399.789 ms
-	Integration of assets:  0.031 ms
-	Thread Wait Time:       0.013 ms
-	Total Operation Time:   415.224 ms
-Unloading 296 unused Assets / (92.4 MB). Loaded Objects now: 17637.
-Memory consumption went from 463.4 MB to 371.1 MB.
-Total: 22.654000 ms (FindLiveObjects: 1.020500 ms CreateObjectMapping: 0.414700 ms MarkObjects: 20.591700 ms  DeleteObjects: 0.626000 ms)
+	Deserialize:            26.524 ms
+	Integration:            472.016 ms
+	Integration of assets:  7.044 ms
+	Thread Wait Time:       0.036 ms
+	Total Operation Time:   505.621 ms
+Unloading 870 unused Assets / (122.8 MB). Loaded Objects now: 17948.
+Memory consumption went from 0.57 GB to 463.4 MB.
+Total: 29.150700 ms (FindLiveObjects: 1.071300 ms CreateObjectMapping: 0.463300 ms MarkObjects: 22.088700 ms  DeleteObjects: 5.526900 ms)
 
 Opening scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-Unloading 28 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-	Deserialize:            11.721 ms
-	Integration:            366.367 ms
-	Integration of assets:  0.850 ms
-	Thread Wait Time:       0.014 ms
-	Total Operation Time:   378.951 ms
-Unloading 53 unused Assets / (31.8 KB). Loaded Objects now: 17683.
-Memory consumption went from 452.5 MB to 452.5 MB.
-Total: 17.699600 ms (FindLiveObjects: 0.838200 ms CreateObjectMapping: 0.344500 ms MarkObjects: 16.287400 ms  DeleteObjects: 0.229100 ms)
+	Deserialize:            16.991 ms
+	Integration:            440.939 ms
+	Integration of assets:  1.185 ms
+	Thread Wait Time:       0.037 ms
+	Total Operation Time:   459.152 ms
+Unloading 78 unused Assets / (45.5 KB). Loaded Objects now: 17792.
+Memory consumption went from 464.1 MB to 464.1 MB.
+Total: 21.314700 ms (FindLiveObjects: 0.985500 ms CreateObjectMapping: 0.458100 ms MarkObjects: 19.497300 ms  DeleteObjects: 0.373200 ms)
 
 Opening scene 'Assets/Scenes/Journey/03_Stomach.unity'
-Unloading 32 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/03_Stomach.unity'
-	Deserialize:            17.858 ms
-	Integration:            439.873 ms
-	Integration of assets:  5.442 ms
-	Thread Wait Time:       0.032 ms
-	Total Operation Time:   463.204 ms
-Unloading 33 unused Assets / (14.5 KB). Loaded Objects now: 17912.
-Memory consumption went from 409.6 MB to 409.6 MB.
-Total: 19.325400 ms (FindLiveObjects: 0.886500 ms CreateObjectMapping: 0.965800 ms MarkObjects: 17.305300 ms  DeleteObjects: 0.167200 ms)
+	Deserialize:            31.757 ms
+	Integration:            440.084 ms
+	Integration of assets:  7.116 ms
+	Thread Wait Time:       0.053 ms
+	Total Operation Time:   479.009 ms
+Unloading 45 unused Assets / (19.2 KB). Loaded Objects now: 18089.
+Memory consumption went from 436.6 MB to 436.6 MB.
+Total: 19.444900 ms (FindLiveObjects: 1.022900 ms CreateObjectMapping: 0.479000 ms MarkObjects: 17.735600 ms  DeleteObjects: 0.206900 ms)
 
 Opening scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-Unloading 45 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-	Deserialize:            19.139 ms
-	Integration:            410.831 ms
-	Integration of assets:  4.861 ms
-	Thread Wait Time:       0.032 ms
-	Total Operation Time:   434.863 ms
-Unloading 139 unused Assets / (185.9 KB). Loaded Objects now: 17889.
-Memory consumption went from 0.59 GB to 0.59 GB.
-Total: 19.603000 ms (FindLiveObjects: 0.942900 ms CreateObjectMapping: 1.031000 ms MarkObjects: 17.184000 ms  DeleteObjects: 0.444400 ms)
+	Deserialize:            25.284 ms
+	Integration:            434.245 ms
+	Integration of assets:  3.319 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   462.875 ms
+Unloading 163 unused Assets / (189.2 KB). Loaded Objects now: 18029.
+Memory consumption went from 0.61 GB to 0.61 GB.
+Total: 18.391600 ms (FindLiveObjects: 0.909700 ms CreateObjectMapping: 0.408200 ms MarkObjects: 16.609300 ms  DeleteObjects: 0.464100 ms)
 
 Opening scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-	Deserialize:            13.040 ms
-	Integration:            387.316 ms
-	Integration of assets:  17.952 ms
-	Thread Wait Time:       0.031 ms
-	Total Operation Time:   418.338 ms
-Unloading 107 unused Assets / (236.3 KB). Loaded Objects now: 17918.
-Memory consumption went from 474.5 MB to 474.2 MB.
-Total: 17.730700 ms (FindLiveObjects: 0.881800 ms CreateObjectMapping: 0.353100 ms MarkObjects: 16.079200 ms  DeleteObjects: 0.416300 ms)
+	Deserialize:            17.224 ms
+	Integration:            399.323 ms
+	Integration of assets:  17.190 ms
+	Thread Wait Time:       0.043 ms
+	Total Operation Time:   433.780 ms
+Unloading 119 unused Assets / (248.9 KB). Loaded Objects now: 18026.
+Memory consumption went from 0.53 GB to 0.53 GB.
+Total: 18.777500 ms (FindLiveObjects: 0.879800 ms CreateObjectMapping: 0.360700 ms MarkObjects: 17.051600 ms  DeleteObjects: 0.485000 ms)
+
+Opening scene 'Assets/Scenes/Journey/06_Theater.unity'
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/06_Theater.unity'
+	Deserialize:            9.385 ms
+	Integration:            416.191 ms
+	Integration of assets:  0.054 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   425.646 ms
+Unloading 176 unused Assets / (72.4 KB). Loaded Objects now: 18921.
+Memory consumption went from 443.4 MB to 443.4 MB.
+Total: 18.569900 ms (FindLiveObjects: 0.924700 ms CreateObjectMapping: 0.379600 ms MarkObjects: 16.838000 ms  DeleteObjects: 0.427200 ms)
 
 [JourneyRealism] 촬영 완료 → Tools/realism_captures
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -1217,70 +1685,70 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-JourneyRealism:Capture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:798)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:633)
+JourneyRealism:Capture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:836)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:634)
 
-(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 798)
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 836)
 
 Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
-Unloading 32 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 78 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
-	Deserialize:            15.857 ms
-	Integration:            401.003 ms
-	Integration of assets:  0.024 ms
-	Thread Wait Time:       0.035 ms
-	Total Operation Time:   416.920 ms
-Unloading 162 unused Assets / (68.9 KB). Loaded Objects now: 17743.
-Memory consumption went from 0.55 GB to 0.55 GB.
-Total: 18.937200 ms (FindLiveObjects: 0.858700 ms CreateObjectMapping: 0.345300 ms MarkObjects: 17.257600 ms  DeleteObjects: 0.475100 ms)
+	Deserialize:            24.616 ms
+	Integration:            399.469 ms
+	Integration of assets:  6.221 ms
+	Thread Wait Time:       0.038 ms
+	Total Operation Time:   430.343 ms
+Unloading 757 unused Assets / (106.1 MB). Loaded Objects now: 17950.
+Memory consumption went from 0.57 GB to 474.5 MB.
+Total: 21.833500 ms (FindLiveObjects: 0.885600 ms CreateObjectMapping: 0.365100 ms MarkObjects: 16.685200 ms  DeleteObjects: 3.897200 ms)
 
 Opening scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-Unloading 28 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 37 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/02_Esophagus.unity'
-	Deserialize:            12.270 ms
-	Integration:            386.046 ms
-	Integration of assets:  10.564 ms
-	Thread Wait Time:       0.091 ms
-	Total Operation Time:   408.971 ms
-Unloading 50 unused Assets / (32.3 KB). Loaded Objects now: 17684.
-Memory consumption went from 411.0 MB to 411.0 MB.
-Total: 19.250700 ms (FindLiveObjects: 0.891400 ms CreateObjectMapping: 0.351600 ms MarkObjects: 17.793700 ms  DeleteObjects: 0.213600 ms)
+	Deserialize:            14.788 ms
+	Integration:            382.182 ms
+	Integration of assets:  4.406 ms
+	Thread Wait Time:       0.030 ms
+	Total Operation Time:   401.406 ms
+Unloading 76 unused Assets / (39.3 KB). Loaded Objects now: 17796.
+Memory consumption went from 432.1 MB to 432.0 MB.
+Total: 18.516200 ms (FindLiveObjects: 0.901100 ms CreateObjectMapping: 0.380600 ms MarkObjects: 16.971700 ms  DeleteObjects: 0.262400 ms)
 
 Opening scene 'Assets/Scenes/Journey/03_Stomach.unity'
-Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 38 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/03_Stomach.unity'
-	Deserialize:            17.727 ms
-	Integration:            405.397 ms
-	Integration of assets:  5.503 ms
-	Thread Wait Time:       0.083 ms
-	Total Operation Time:   428.710 ms
-Unloading 32 unused Assets / (12.9 KB). Loaded Objects now: 17913.
-Memory consumption went from 416.0 MB to 416.0 MB.
-Total: 21.375000 ms (FindLiveObjects: 0.901400 ms CreateObjectMapping: 1.349000 ms MarkObjects: 18.960400 ms  DeleteObjects: 0.163700 ms)
+	Deserialize:            29.483 ms
+	Integration:            417.468 ms
+	Integration of assets:  9.318 ms
+	Thread Wait Time:       0.031 ms
+	Total Operation Time:   456.300 ms
+Unloading 44 unused Assets / (18.8 KB). Loaded Objects now: 18092.
+Memory consumption went from 436.5 MB to 436.5 MB.
+Total: 18.132200 ms (FindLiveObjects: 0.907500 ms CreateObjectMapping: 0.406100 ms MarkObjects: 16.640300 ms  DeleteObjects: 0.177600 ms)
 
 Opening scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-Unloading 40 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/04_SmallIntestine.unity'
-	Deserialize:            20.553 ms
-	Integration:            428.736 ms
-	Integration of assets:  4.716 ms
-	Thread Wait Time:       0.088 ms
-	Total Operation Time:   454.093 ms
-Unloading 119 unused Assets / (173.6 KB). Loaded Objects now: 17890.
-Memory consumption went from 426.7 MB to 426.5 MB.
-Total: 21.406600 ms (FindLiveObjects: 0.957200 ms CreateObjectMapping: 0.437000 ms MarkObjects: 19.578300 ms  DeleteObjects: 0.433400 ms)
+	Deserialize:            25.220 ms
+	Integration:            422.520 ms
+	Integration of assets:  2.452 ms
+	Thread Wait Time:       0.012 ms
+	Total Operation Time:   450.204 ms
+Unloading 146 unused Assets / (178.1 KB). Loaded Objects now: 18029.
+Memory consumption went from 446.3 MB to 446.1 MB.
+Total: 18.168400 ms (FindLiveObjects: 0.864100 ms CreateObjectMapping: 0.344700 ms MarkObjects: 16.516700 ms  DeleteObjects: 0.442200 ms)
 
 Opening scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Journey/05_LargeIntestine.unity'
-	Deserialize:            13.398 ms
-	Integration:            375.828 ms
-	Integration of assets:  16.996 ms
-	Thread Wait Time:       0.037 ms
-	Total Operation Time:   406.259 ms
-Unloading 98 unused Assets / (226.4 KB). Loaded Objects now: 17916.
-Memory consumption went from 426.1 MB to 425.9 MB.
-Total: 18.818900 ms (FindLiveObjects: 0.848100 ms CreateObjectMapping: 0.342500 ms MarkObjects: 17.240900 ms  DeleteObjects: 0.386600 ms)
+	Deserialize:            18.150 ms
+	Integration:            385.796 ms
+	Integration of assets:  17.624 ms
+	Thread Wait Time:       0.094 ms
+	Total Operation Time:   421.664 ms
+Unloading 107 unused Assets / (237.5 KB). Loaded Objects now: 18027.
+Memory consumption went from 446.2 MB to 445.9 MB.
+Total: 18.891900 ms (FindLiveObjects: 0.983000 ms CreateObjectMapping: 0.949000 ms MarkObjects: 16.582100 ms  DeleteObjects: 0.377300 ms)
 
 [JourneyRealism] 현황 기록 → Tools/realism_inspect.txt
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -1289,13 +1757,18 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-JourneyRealism:Inspect () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:855)
-JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:634)
+JourneyRealism:Inspect () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:893)
+JourneyRealism:ApplyAndCapture () (at Assets/Scripts/Journey/Editor/JourneyRealism.cs:635)
 
-(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 855)
+(Filename: Assets/Scripts/Journey/Editor/JourneyRealism.cs Line: 893)
 
 Batchmode quit successfully invoked - shutting down!
-Killing ADB server in 0.2475108 seconds.
+Killing ADB server in 0.052553 seconds.
+Start importing Assets/Data/Generated/Realism/혈관_벽.mat using Guid(4bc223ffc19ac5a43bffe6a7b34da5f8) (NativeFormatImporter) -> (artifact id: 'e8a55266a44dec4935d5ece17ce53820') in 0.004564 seconds
+Start importing Assets/Data/Generated/Realism/몸스캔_홀로그램.mat using Guid(9c5e3d472d8a70c4f9ace38f7e919993) (NativeFormatImporter) -> (artifact id: '74c45e6d8c73d432acc21d96edce21f4') in 0.0023517 seconds
+Refreshing native plugins compatible for Editor in 26.20 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.44 ms.
+Asset Pipeline Refresh (id=1443b6ef16f4fff48974cd504eee6a82): Total: 0.130 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 [Physics::Module] Cleanup current backend.
 [Physics::Module] Id: 0xf2b8ea05
 Input System module state changed to: ShutdownInProgress.
@@ -1305,14 +1778,14 @@ Input System module state changed to: Shutdown.
 [Licensing::IpcConnector] LicenseClient-admin_14 channel disconnected successfully.
 AcceleratorClientConnectionCallback - disconnected - :0
 Cleanup mono
-abort_threads: Failed aborting id: 000000000000A8C0, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000012F24, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 000000000000992C, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000014ECC, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 000000000000A8C0, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000012F24, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 000000000000992C, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000014ECC, mono_thread_manage will ignore it
 
-debugger-agent: Unable to listen on 4156
+debugger-agent: Unable to listen on 4192
 Exiting batchmode successfully now!
 Exiting without the bug reporter. Application will terminate with return code 0

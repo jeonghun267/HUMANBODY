@@ -34,9 +34,12 @@ public class JourneyHud : MonoBehaviour
 
     void Start()
     {
+        // 제목은 단계 이름(예: 병원 진료실), 경로 점은 이 장면의 짧은 이름(예: 병원)으로 맞춘다.
         string current = stageName;
-        if (JourneyManager.Instance != null && JourneyManager.Instance.CurrentStage != null) current = JourneyManager.Instance.CurrentStage.displayName;
-        if (title != null) title.text = current;
+        string heading = current;
+        if (JourneyManager.Instance != null && JourneyManager.Instance.CurrentStage != null && !string.IsNullOrEmpty(JourneyManager.Instance.CurrentStage.displayName))
+            heading = JourneyManager.Instance.CurrentStage.displayName;
+        if (title != null) title.text = heading;
         if (route != null) route.text = RouteText(routeNames, current);
         ShowSteps(current);
         SetGoal(goalText);

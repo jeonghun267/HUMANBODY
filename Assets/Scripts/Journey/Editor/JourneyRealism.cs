@@ -612,7 +612,8 @@ public static partial class JourneyRealism
         // 편집기에서 실행하면 장면을 차례로 열므로, 저장 안 한 작업은 먼저 물어보고 끝나면 원래 장면으로 돌아간다.
         if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return false;
         string previous = EditorSceneManager.GetActiveScene().path;
-        foreach (var name in BodyScenes)
+        // 신체 장면 + 시작(병원 진료실)과 끝(치료 결과)
+        foreach (var name in new[] { "00_Lobby" }.Concat(BodyScenes).Concat(new[] { "06_Theater" }))
         {
             var scene = EditorSceneManager.OpenScene($"{SceneDir}/{name}.unity", OpenSceneMode.Single);
             ConfigureScene(StageId(name));
@@ -638,6 +639,9 @@ public static partial class JourneyRealism
     /// <summary>열린 장면 하나에 적용한다. JourneyBuilder 가 장면을 새로 만들 때도 마지막에 호출한다.</summary>
     public static void ConfigureScene(string id)
     {
+        // 시작은 병원 진료실(진찰 → 초소형 치료 잠수정), 끝은 치료 결과 보고서
+        if (id == "Lobby") { Hospital(); HandToolIn(); Hud(id); return; }
+        if (id == "Theater") { EndingClinic(); return; }
         if (!IsBody(id)) return;
         var o = Get(id);
         var mucosa = Mucosa(id);
@@ -663,7 +667,7 @@ public static partial class JourneyRealism
             }
         }
         if (id == "Stomach") StomachChamber();
-        if (id == "Mouth") Teeth();
+        if (id == "Mouth") { Teeth(); NewTeeth(); }
         foreach (var gate in Object.FindObjectsByType<SphincterGate>(FindObjectsInactive.Include, FindObjectsSortMode.None)) JourneyEnvironmentRepair.GateSurface(gate, id);
         StartPlatforms();
 
@@ -671,7 +675,16 @@ public static partial class JourneyRealism
         LowerRailing();
         Submarines(id);
         Fluids(id);
+        Anatomy(id); // 부위마다 제 역할·자리(벽에 심기, 둥실 떠다님, 혈관 속 적혈구)
         Experience(id);
+        // 치료 임무 (기관마다 직접 하는 일)
+        HandToolIn();
+        if (id == "Mouth") { MouthMissions(); MouthActions(); }
+        if (id == "Esophagus") EsophagusMission();
+        if (id == "Stomach") StomachMission();
+        if (id == "SmallIntestine") EnzymeMission();
+        if (id == "LargeIntestine") FiberMission();
+        Ambience(id);
     }
 
     static void Lighting(Organ o)
@@ -759,7 +772,7 @@ public static partial class JourneyRealism
         Directory.CreateDirectory(outDir);
         // 처음 쓰는 셰이더 조합은 편집기가 뒤에서 컴파일하는 동안 임시 색으로 그린다. 촬영은 컴파일을 기다린다.
         ShaderUtil.allowAsyncCompilation = false;
-        foreach (var name in BodyScenes)
+        foreach (var name in new[] { "00_Lobby" }.Concat(BodyScenes).Concat(new[] { "06_Theater" }))
         {
             EditorSceneManager.OpenScene($"{SceneDir}/{name}.unity", OpenSceneMode.Single);
             var ride = Object.FindFirstObjectByType<CapsuleRide>();
@@ -781,6 +794,21 @@ public static partial class JourneyRealism
                     var look = vertical ? Quaternion.LookRotation(Vector3.down, Vector3.forward) : yaw;
                     Shoot(outDir, name, label + "_앞", pos, look * Quaternion.Euler(vertical ? 0 : 12, 0, 0));
                     Shoot(outDir, name, label + "_옆", pos, look * Quaternion.Euler(vertical ? -60 : 8, vertical ? 0 : -70, 0));
+                    // 부위 배치 확인: 잠수정과 함께 가는 찌꺼기, 출발점에서 올려다본 후두덮개
+                    var waste = GameObject.Find("WasteStages");
+                    if (waste != null) Shoot(outDir, name, label + "_찌꺼기", pos, Quaternion.LookRotation(waste.transform.position - pos), 70f);
+                    var lid = GameObject.Find("후두덮개_경첩");
+                    if (lid != null && label == "출발") Shoot(outDir, name, "후두덮개", pos, Quaternion.LookRotation(lid.transform.position + Vector3.down * .8f - pos), 75f);
+                }
+                var zoom = GameObject.Find("VillusZoom");
+                if (zoom != null)
+                {
+                    // 융털 확대 모형을 지나가며 보는 자리(모형보다 4m 앞의 이동 경로)
+                    float lo = 0, hi = 1;
+                    for (int k = 0; k < 30; k++) { float mid = (lo + hi) * .5f; if (((Vector3)spline.EvaluatePosition(mid)).z < zoom.transform.position.z - 4f) lo = mid; else hi = mid; }
+                    Vector3 at = spline.EvaluatePosition(lo);
+                    capsule.SetPositionAndRotation(at, Quaternion.LookRotation(Vector3.forward));
+                    Shoot(outDir, name, "융털", at, Quaternion.LookRotation(zoom.transform.position + Vector3.up * .3f - at), 60f);
                 }
                 capsule.SetPositionAndRotation(homePos, homeRot);
             }
@@ -793,6 +821,16 @@ public static partial class JourneyRealism
                 Shoot(outDir, name, "위", eye, Quaternion.Euler(-55, 0, 0));
                 var cavity = GameObject.Find("충치_자리");
                 if (cavity != null) Shoot(outDir, name, "충치", eye, Quaternion.LookRotation(cavity.transform.position - eye), 50f);
+                var teeth = GameObject.Find("새_아랫니");
+                if (teeth != null) Shoot(outDir, name, "아랫니", eye, Quaternion.LookRotation(Bounds(teeth).center - eye), 80f);
+                var holo = GameObject.Find("Hologram_DigestiveSystem");
+                if (holo != null)
+                {
+                    // 시작 대기 판이 앞을 가리므로 잠깐 끄고 찍는다
+                    var attract = GameObject.Find("체험_시작_대기"); if (attract != null) attract.SetActive(false);
+                    Shoot(outDir, name, "홀로그램", eye, Quaternion.LookRotation(Bounds(holo).center - eye), 50f);
+                    if (attract != null) attract.SetActive(true);
+                }
             }
         }
         Debug.Log($"[JourneyRealism] 촬영 완료 → {outDir}");

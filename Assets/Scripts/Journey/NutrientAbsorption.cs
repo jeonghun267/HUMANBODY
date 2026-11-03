@@ -95,8 +95,10 @@ public class NutrientAbsorption : MonoBehaviour
             if (gazeOrigin == null) return;
         }
 
+        // 손 치료 도구로 겨냥한다 (컨트롤러가 없으면 시선). 손으로 가리키고 방아쇠를 당기는 체험이 되도록.
         Nutrient hit = null;
-        if (Physics.Raycast(gazeOrigin.position, gazeOrigin.forward, out var h, gazeDistance, nutrientLayer))
+        var aim = JourneyAim.Ray();
+        if (Physics.Raycast(aim.origin, aim.direction, out var h, gazeDistance, nutrientLayer))
             hit = h.collider.GetComponentInParent<Nutrient>();
 
         if (hit != gazed) { gazed = hit; gazeTimer = 0f; }
@@ -162,5 +164,6 @@ public class NutrientAbsorption : MonoBehaviour
     void UpdateUI()
     {
         if (progressText != null) progressText.text = string.Format(progressFormat, absorbed, total);
+        JourneyScore.Record("nutrients", "영양소 흡수", absorbed, total);
     }
 }

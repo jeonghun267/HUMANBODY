@@ -8,11 +8,14 @@ using UnityEngine.InputSystem;
 public static class JourneyAim
 {
     static Transform right, left;
+    /// <summary>왼손잡이 설정 (체험관 설정 파일): 왼손 컨트롤러를 먼저 쓴다.</summary>
+    public static bool LeftHanded;
 
     public static Ray Ray()
     {
         if (right == null) { var r = GameObject.Find("RightHandAnchor"); if (r != null) right = r.transform; }
         if (left == null) { var l = GameObject.Find("LeftHandAnchor"); if (l != null) left = l.transform; }
+        if (LeftHanded && left != null && OVRInput.IsControllerConnected(OVRInput.Controller.LTouch)) return new Ray(left.position, left.forward);
         if (right != null && OVRInput.IsControllerConnected(OVRInput.Controller.RTouch)) return new Ray(right.position, right.forward);
         if (left != null && OVRInput.IsControllerConnected(OVRInput.Controller.LTouch)) return new Ray(left.position, left.forward);
         var cam = Camera.main;

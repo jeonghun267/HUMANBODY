@@ -81,6 +81,7 @@ Shader "인체탐험/실사 점막"
    #pragma multi_compile_fog
    #pragma multi_compile_instancing
    #pragma shader_feature_local _TEETH
+   #pragma multi_compile _ _MUCOSA_LITE
    #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
    struct A {float4 position:POSITION;float3 normal:NORMAL;float2 uv:TEXCOORD0;UNITY_VERTEX_INPUT_INSTANCE_ID};
    struct V {float4 positionCS:SV_POSITION;float3 world:TEXCOORD0;half3 normal:TEXCOORD1;half fog:TEXCOORD2;float2 uv:TEXCOORD3;UNITY_VERTEX_OUTPUT_STEREO};
@@ -113,7 +114,12 @@ Shader "인체탐험/실사 점막"
     half3 ng=normalize(i.normal)*IS_FRONT_VFACE(face,1,-1);
     half3 blend=TriplanarBlend(ng);
     Detail fine=SampleDetail(p,ng,blend,_DetailScale,_NormalStrength);
+    #if defined(_MUCOSA_LITE)
+    // 기기(Quest): 큰 결은 따로 샘플하지 않고 잔결에서 빌려 쓴다 (샘플 6 → 3)
+    Detail macro;macro.normal=fine.normal*.5;macro.height=.35+fine.height*.4;macro.vessel=fine.vessel;
+    #else
     Detail macro=SampleDetail(p+17.3,ng,blend,_MacroScale,_MacroNormalStrength);
+    #endif
     // gum: 1 = 점막(잇몸), 0 = 법랑질. 치아 모드가 아니면 전부 점막이다.
     half gum=1;half3 enamel=0;
     #if defined(_TEETH)
@@ -125,11 +131,13 @@ Shader "인체탐험/실사 점막"
     // 점액막은 잔결을 메우고 큰 굴곡만 따라간다.
     half3 nCoat=normalize(ng+macro.normal*.7*gum+fine.normal*.15*gum);
     // 벽을 타고 흐르는 얇은 액체 막: 결 자료를 흐름 방향으로 밀어 점액막 반사만 움직인다.
+    #if !defined(_MUCOSA_LITE)
     if(_FlowStrength>0)
     {
      Detail film=SampleDetail(p-_FlowDir.xyz*(_Time.y*_FlowSpeed),ng,blend,_DetailScale*.45,_FlowStrength*gum);
      nCoat=normalize(nCoat+film.normal);
     }
+    #endif
 
     half3 albedo=_BaseColor.rgb*lerp(1-_Mottle,1+_Mottle*.6,macro.height);
     albedo=lerp(albedo,_DeepColor.rgb,saturate((1-fine.height)*_Cavity));
@@ -152,7 +160,9 @@ Shader "인체탐험/실사 점막"
 
     half3 color=SampleSH(n)*albedo*occlusion;
     half fresnel=.04+.96*pow(1-saturate(dot(nCoat,view)),5);
+    #if !defined(_MUCOSA_LITE)
     color+=GlossyEnvironmentReflection(reflect(-view,nCoat),p,PerceptualSmoothnessToPerceptualRoughness(_CoatSmoothness),occlusion,inputData.normalizedScreenSpaceUV)*fresnel*_EnvReflection*coatStrength;
+    #endif
     color+=Shade(GetMainLight(),n,nCoat,view,albedo,scatter,tissue,coat,coatStrength)*occlusion;
     #if defined(_ADDITIONAL_LIGHTS)
     uint count=GetAdditionalLightsCount();

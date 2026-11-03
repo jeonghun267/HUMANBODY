@@ -14,16 +14,20 @@ public class CavityTreatment : MonoBehaviour
     public LineRenderer beam;
     public float holdSeconds = 3f, range = 7f, aimRadius = .5f;
     [TextArea] public string goalText = "어금니의 까만 충치를 치료 광선으로 비추고 방아쇠를 누르고 있으세요";
+    [TextArea] public string nextGoalText = "";
     public NarrationLine[] startLines, doneLines;
+    [Tooltip("치료가 끝나면 (다음 임무 시작 등)")] public UnityEngine.Events.UnityEvent onTreated = new UnityEngine.Events.UnityEvent();
 
     float progress;
     bool done, announced;
+    AudioSource hum;
     Vector3 decayScale;
 
     IEnumerator Start()
     {
         if (decay != null) decayScale = decay.localScale;
         if (filling != null) filling.enabled = false;
+        JourneyScore.Record("cavity", "충치 치료", 0, 1);
         // 입장 안내가 끝난 뒤 알려 준다 (안내를 끊지 않게)
         while (JourneyManager.Instance != null && (JourneyManager.Instance.IsIntroPending || JourneyManager.Instance.IsTransitioning)) yield return null;
         while (GuideNarrator.Instance != null && GuideNarrator.Instance.IsSpeaking) yield return null;
@@ -44,6 +48,8 @@ public class CavityTreatment : MonoBehaviour
             beam.enabled = JourneyAim.TriggerHeld();
             if (beam.enabled) JourneyAim.Beam(beam, ray.origin + ray.direction * .1f, aimed ? decay.position : ray.origin + ray.direction * range);
         }
+        if (hum == null) { hum = Sfx.Loop("cure", decay, 0f, true); }
+        hum.volume = Mathf.MoveTowards(hum.volume, working ? .45f : 0f, Time.deltaTime * 3f);
         if (!working) return;
         progress += Time.deltaTime;
         float t = Mathf.Clamp01(progress / holdSeconds);
@@ -60,10 +66,19 @@ public class CavityTreatment : MonoBehaviour
         if (decay != null) decay.gameObject.SetActive(false);
         if (filling != null) filling.enabled = true;
         if (beam != null) beam.enabled = false;
+        if (hum != null) hum.volume = 0;
         if (sparkle != null) sparkle.Emit(30);
-        Sfx.Play("ting", transform.position, .8f, 1.1f);
+        Sfx.Play("success", transform.position, .8f, 1f);
         Haptics.Pulse(.6f, .2f);
-        if (JourneyHud.Instance != null) { JourneyHud.Instance.SetStatus("충치 치료 완료!"); JourneyHud.Instance.SetGoal(announced ? "혀 위의 음식 쪽으로 걸어가 씹어 보세요" : ""); }
-        if (GuideNarrator.Instance != null && doneLines != null && doneLines.Length > 0) GuideNarrator.Instance.Play(doneLines);
+        if (JourneyHud.Instance != null) { JourneyHud.Instance.SetStatus("충치 치료 완료!"); JourneyHud.Instance.SetGoal(nextGoalText); }
+        JourneyScore.Record("cavity", "충치 치료", 1, 1);
+        StartCoroutine(AfterTreated());
+    }
+
+    IEnumerator AfterTreated()
+    {
+        // 완료 대사를 끝까지 들려준 뒤 다음 임무를 시작한다 (다음 임무 안내가 이 대사를 끊지 않게).
+        if (GuideNarrator.Instance != null && doneLines != null && doneLines.Length > 0) yield return GuideNarrator.Instance.PlayRoutine(doneLines);
+        onTreated?.Invoke();
     }
 }

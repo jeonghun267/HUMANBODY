@@ -9,6 +9,12 @@ public static partial class JourneyRealism
 {
     public static void ApplyCaptureAndDebug() { ApplyAndCapture(); DebugTeeth(); }
 
+    /// <summary>배치모드: 대본(journey_content.json)을 단계 자료로 불러온 뒤 적용·촬영.</summary>
+    public static void ImportApplyAndCapture() { JourneyBuilder.ImportStages(); ApplyAndCapture(); }
+
+    /// <summary>배치모드: 적용·촬영 뒤 장면 속 물체 조사까지.</summary>
+    public static void ApplyCaptureAndInventory() { ApplyAndCapture(); Inventory(); }
+
     public static void DebugTeeth()
     {
         const string outDir = "Tools/realism_captures";

@@ -49,6 +49,19 @@ public static partial class JourneyRealism
         if (ride.seatPoint != null) ride.seatPoint.position = capsule.position - Vector3.up * EyeHeight;
         if (ride.guideSeatPoint != null) ride.guideSeatPoint.position = capsule.position + capsule.rotation * new Vector3(.62f, -.32f, .72f);
 
+        var screen = PodVisual(pod);
+
+        // 대장: 굳어 가는 찌꺼기는 잠수정 안이 아니라 앞쪽 바닥 내용물 위에 떠서 함께 나아간다.
+        var waste = capsule.Find("WasteStages");
+        if (waste != null) waste.position = capsule.position + capsule.rotation * new Vector3(0, -2.3f, 3.6f);
+        // 소장: 흡수 진행 표시는 계기판 화면 자리로.
+        var progress = capsule.Find("ProgressUI");
+        if (progress != null) progress.SetPositionAndRotation(screen.position + screen.forward * -.01f, screen.rotation);
+    }
+
+    /// <summary>잠수정 겉모습(유리창·뼈대·바닥·조종대). pod 의 원점 = 탐험가 눈. 계기판 화면 자리를 돌려준다.</summary>
+    static Transform PodVisual(Transform pod)
+    {
         var frame = CockpitMaterial("잠수정_뼈대", new Color(.17f, .21f, .24f), .6f, 0);
         var floorMat = CockpitMaterial("잠수정_바닥", new Color(.09f, .11f, .13f), .3f, 0);
         var glow = CockpitMaterial("잠수정_빛띠", new Color(.05f, .12f, .15f), .2f, .7f);
@@ -76,13 +89,7 @@ public static partial class JourneyRealism
         var screen = Child(pod, "계기판_화면");
         screen.localPosition = new Vector3(0, -.5f, .66f);
         screen.localRotation = Quaternion.LookRotation(screen.localPosition - Vector3.zero);
-
-        // 대장: 굳어 가는 찌꺼기는 잠수정 안이 아니라 앞쪽 바닥 내용물 위에 떠서 함께 나아간다.
-        var waste = capsule.Find("WasteStages");
-        if (waste != null) waste.position = capsule.position + capsule.rotation * new Vector3(0, -2.3f, 3.6f);
-        // 소장: 흡수 진행 표시는 계기판 화면 자리로.
-        var progress = capsule.Find("ProgressUI");
-        if (progress != null) progress.SetPositionAndRotation(screen.position + screen.forward * -.01f, screen.rotation);
+        return screen;
     }
 
     static void Part(Transform parent, string name, Mesh mesh, Material material, Vector3 localPos, Quaternion localRot)

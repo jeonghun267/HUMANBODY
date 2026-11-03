@@ -33,14 +33,34 @@ def collect() -> dict[str, str]:
             lines[f"{sid}_absorbed_{nid}"] = text
         for part in s.get("parts", []):
             lines[f"{sid}_part_{part['id']}"] = part["line"]
+        # 치료 임무 대사 (JourneyRealism.Missions 가 같은 이름으로 찾는다)
+        for key, text in s.get("missions", {}).items():
+            lines[f"{sid}_mission_{key}"] = text
+        # 사람 NPC 대화 (의사·간호사 목소리는 VOICES 로 바꾼다)
+        for key, item in s.get("dialogue", {}).items():
+            lines[f"{sid}_talk_{key}"] = (item["text"], item.get("speaker", ""))
+        # OX 퀴즈 (의사 선생님 목소리): 문제와 해설
+        for i, q in enumerate(s.get("quiz", []), 1):
+            lines[f"{sid}_quiz_{i}_q"] = (q["text"], "doctor")
+            lines[f"{sid}_quiz_{i}_a"] = (q["explain"], "doctor")
     lines.update(EXTRA)
     return lines
 
 
-async def synth(name: str, text: str, voice: str, rate: str, pitch: str, force: bool):
+# 사람 NPC 목소리: 의사는 남성, 간호사는 성인 여성 (병아리 조수는 기본 목소리를 높게)
+VOICES = {
+    "doctor": ("ko-KR-InJoonNeural", "+0%", "+0Hz"),
+    "nurse": ("ko-KR-SunHiNeural", "+0%", "+0Hz"),
+}
+
+
+async def synth(name: str, text, voice: str, rate: str, pitch: str, force: bool):
     dest = OUT / f"{name}.mp3"
     if dest.exists() and not force:
         return f"{name}: 있음"
+    if isinstance(text, tuple):
+        text, speaker = text
+        voice, rate, pitch = VOICES.get(speaker, (voice, rate, pitch))
     await edge_tts.Communicate(text, voice, rate=rate, pitch=pitch).save(str(dest))
     return f"{name}: 생성 ({dest.stat().st_size // 1024} KB)"
 

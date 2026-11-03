@@ -15,16 +15,18 @@ public static partial class JourneyRealism
 {
     static readonly Dictionary<string, string> Goals = new Dictionary<string, string>
     {
-        { "Mouth", "어금니의 까만 충치를 치료하고, 혀 위의 음식을 씹어 보세요" },
-        { "Esophagus", "근육이 차례로 조여 음식을 아래로 밀어 내리는 모습을 지켜보세요" },
-        { "Stomach", "위액이 음식을 녹이는 동안 기다리면 유문이 열려요" },
-        { "SmallIntestine", "떠다니는 영양소를 바라봐서 흡수시키세요" },
+        { "Lobby", "몸 스캔에서 아픈 곳을 찾아 진찰한 뒤, 초소형 치료 잠수정에 타세요" },
+        { "Mouth", "어금니의 까만 충치를 치료하고, 이에 붙은 치태 세균을 없애세요" },
+        { "Esophagus", "아래에서 올라오는 위산 방울을 겨냥해 중화제를 쏘세요" },
+        { "Stomach", "헬리코박터균을 물리치고, 음식이 녹아 유문이 열리면 출발해요" },
+        { "SmallIntestine", "떠다니는 영양소를 손으로 가리키고 방아쇠를 당겨 흡수시키세요" },
         { "LargeIntestine", "유익균은 지키고 해로운 균만 물리치세요" },
     };
     static readonly Dictionary<string, string> Names = new Dictionary<string, string>
     {
-        { "Mouth", "입" }, { "Esophagus", "식도" }, { "Stomach", "위" }, { "SmallIntestine", "소장" }, { "LargeIntestine", "대장" },
+        { "Lobby", "병원" }, { "Mouth", "입" }, { "Esophagus", "식도" }, { "Stomach", "위" }, { "SmallIntestine", "소장" }, { "LargeIntestine", "대장" },
     };
+    static readonly string[] Route = { "병원", "입", "식도", "위", "소장", "대장" };
 
     static void Experience(string id)
     {
@@ -94,6 +96,7 @@ public static partial class JourneyRealism
         }
         hud.stageName = Names[id];
         hud.goalText = Goals[id];
+        hud.routeNames = Route;
 
         // STILL 과 같은 판: 어두운 바다빛 둥근 판 + 옅은 하늘색 2px 외곽선(첫 자식이라 글자 밑에 깔린다)
         UiKit();
@@ -239,49 +242,59 @@ public static partial class JourneyRealism
 
     static void Cavity()
     {
-        var lower = GameObject.Find("Part_LowerTeethArch");
         var spawn = GameObject.Find("SpawnPoint");
-        if (lower == null || spawn == null) return;
-        var filter = lower.GetComponentInChildren<MeshFilter>();
-        if (filter == null || filter.sharedMesh == null) return;
+        var filter = ToothSurfaces(true).FirstOrDefault(); // 새 이 모형의 아랫니 (없으면 예전 치열)
+        if (spawn == null || filter == null || filter.sharedMesh == null) return;
+        var lower = filter.transform;
+        // 예전 자리는 먼저 지운다(못 찾았을 때 숨겨진 예전 치열 위에 검은 조각만 떠 있지 않게)
+        foreach (var stale in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None).Where(t => t != null && t.name == "충치_자리").ToArray()) Object.DestroyImmediate(stale.gameObject);
 
         // 탐험가 오른쪽 가까운 아래 어금니의 씹는 면을 찾는다(임시 충돌로 위에서 아래로 쏘아 본다).
         var probe = filter.gameObject.AddComponent<MeshCollider>(); probe.sharedMesh = filter.sharedMesh;
         Physics.SyncTransforms();
         Vector3 origin = spawn.transform.position; RaycastHit best = default; float bestScore = float.MaxValue;
         // 씹는 면 한가운데: 둘레 여덟 방향도 비슷한 높이의 위를 향한 면이어야 한다(이 사이 틈이나 모서리는 피한다).
-        bool Flat(Vector3 center, float height)
+        // 실제 어금니처럼 교두(봉우리)가 있는 모형은 평평한 곳이 좁아, 못 찾으면 조건을 조금씩 푼다.
+        bool Flat(Vector3 center, float height, float radius, float tolerance)
         {
             for (int k = 0; k < 8; k++)
             {
                 float a = k * Mathf.PI / 4;
-                var from = center + new Vector3(Mathf.Cos(a) * .32f, 8f, Mathf.Sin(a) * .32f);
-                if (!probe.Raycast(new Ray(from, Vector3.down), out var near, 20f) || near.normal.y < .55f || Mathf.Abs(near.point.y - height) > .15f) return false;
+                var from = center + new Vector3(Mathf.Cos(a) * radius, 8f, Mathf.Sin(a) * radius);
+                if (!probe.Raycast(new Ray(from, Vector3.down), out var near, 20f) || near.normal.y < .5f || Mathf.Abs(near.point.y - height) > tolerance) return false;
             }
             return true;
         }
-        foreach (float side in new[] { 1f, -1f })
-        for (float dx = 1.5f; dx <= 5f; dx += .15f)
-        for (float dz = -2f; dz <= 3f; dz += .15f)
+        foreach (var (radius, tolerance, upright) in new[] { (.32f, .15f, .85f), (.22f, .2f, .75f), (.15f, .28f, .6f) })
         {
-            var from = origin + new Vector3(side * dx, 8f, dz);
-            if (!probe.Raycast(new Ray(from, Vector3.down), out var hit, 20f) || hit.normal.y < .85f) continue;
-            if (!Flat(new Vector3(hit.point.x, 0, hit.point.z), hit.point.y)) continue;
-            float score = Mathf.Abs(Vector3.Distance(new Vector3(hit.point.x, origin.y, hit.point.z), origin) - 2.6f) + (side < 0 ? .5f : 0);
-            if (score < bestScore) { bestScore = score; best = hit; }
+            foreach (float side in new[] { 1f, -1f })
+            for (float dx = 1.5f; dx <= 5f; dx += .15f)
+            for (float dz = -2f; dz <= 3f; dz += .15f)
+            {
+                var from = origin + new Vector3(side * dx, 8f, dz);
+                if (!probe.Raycast(new Ray(from, Vector3.down), out var hit, 20f) || hit.normal.y < upright) continue;
+                if (!Flat(new Vector3(hit.point.x, 0, hit.point.z), hit.point.y, radius, tolerance)) continue;
+                float score = Mathf.Abs(Vector3.Distance(new Vector3(hit.point.x, origin.y, hit.point.z), origin) - 2.6f) + (side < 0 ? .5f : 0);
+                if (score < bestScore) { bestScore = score; best = hit; }
+            }
+            if (bestScore < float.MaxValue) { Debug.Log($"[JourneyRealism] 충치 자리: {best.point} (평평한 반지름 {radius})"); break; }
         }
         if (bestScore == float.MaxValue) { Object.DestroyImmediate(probe); Debug.LogWarning("[JourneyRealism] 충치 자리를 찾지 못함"); return; }
 
-        var old = lower.transform.Find("충치_자리"); if (old != null) Object.DestroyImmediate(old.gameObject);
         var site = new GameObject("충치_자리").transform;
         site.SetPositionAndRotation(best.point, Quaternion.FromToRotation(Vector3.up, best.normal));
-        site.SetParent(lower.transform, true); // 씹을 때 아래턱과 함께 움직인다
+        site.SetParent(lower, true); // 씹을 때 아래턱과 함께 움직인다
 
         // 이 표면을 따라 붙도록 각 점을 위에서 이 모형으로 내려 찍는다(스티커처럼 떠 보이지 않게).
         Vector3 Conform(Vector3 local, float lift)
         {
             var from = site.TransformPoint(local + Vector3.up * .6f);
-            if (probe.Raycast(new Ray(from, -site.up), out var hit, 2f)) return site.InverseTransformPoint(hit.point) + Vector3.up * lift;
+            // 교두(봉우리) 옆면이나 옆 이에 맞은 점은 쓰지 않는다(가시처럼 튀어나온다): 위를 향한 면, 가운데 높이에서 멀지 않은 점만
+            if (probe.Raycast(new Ray(from, -site.up), out var hit, 2f) && Vector3.Dot(hit.normal, site.up) > .45f)
+            {
+                var p = site.InverseTransformPoint(hit.point);
+                return new Vector3(p.x, Mathf.Clamp(p.y, -.12f, .12f) + lift, p.z);
+            }
             return new Vector3(local.x, lift, local.z);
         }
 
@@ -357,9 +370,13 @@ public static partial class JourneyRealism
         blaster.ride = ride;
         blaster.beam = BeamLine(root.transform, "면역_광선", new Color(.4f, .95f, 1f), .02f);
         blaster.hitBurst = Burst(root.transform, "균_사라짐", Droplet("균_사라짐", new Color(.75f, 1f, .85f, .7f), rim: 1.4f, highlight: 1.6f), new Vector2(.04f, .12f), new Vector2(.6f, 1.6f), new Vector2(.4f, .9f));
-        blaster.startLines = Say("앗, 해로운 균이 몰려왔어! 손으로 겨냥하고 방아쇠를 당겨서 면역 광선으로 물리쳐 줘. 초록색 유익균은 맞히지 마!", 7f);
-        blaster.helpfulHitLines = Say("그건 유익균이야! 우리 몸을 돕는 친구니까 지켜 주자.", 3.5f);
-        blaster.clearedLines = Say("해로운 균을 모두 물리쳤어! 유익균이 많아지면 장이 튼튼해져.", 5f);
+        blaster.startLines = Mission("LargeIntestine", "germ_start", 7f);
+        blaster.helpfulHitLines = Mission("LargeIntestine", "germ_helpful", 3.5f);
+        blaster.clearedLines = Mission("LargeIntestine", "germ_done", 5f);
+        blaster.targetLabel = "해로운 균"; blaster.scoreKey = "germs"; blaster.scoreLabel = "해로운 균 퇴치";
+        blaster.goalText = "해로운 균을 겨냥하고 방아쇠를 당겨 물리치세요 (초록 유익균은 지켜요)";
+        blaster.clearedStatus = "해로운 균을 모두 물리쳤어요!";
+        blaster.releaseRide = true; blaster.followBasis = false; blaster.spots = new Transform[0];
 
         // 기존 정차 사이(.45)에 '균을 다 없앨 때까지 기다리는' 정차를 넣는다.
         var stops = (ride.stops ?? new CapsuleRide.RideStop[0]).Where(s => !s.holdUntilReleased).ToList();

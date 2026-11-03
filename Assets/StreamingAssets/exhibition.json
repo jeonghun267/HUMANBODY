@@ -1,0 +1,10 @@
+{
+  "attractMode": true,
+  "sessionMinutes": 15,
+  "idleResetSeconds": 120,
+  "seated": false,
+  "seatedEyeRaise": 0.45,
+  "leftHanded": false,
+  "subtitleScale": 1.0,
+  "spectatorView": true
+}

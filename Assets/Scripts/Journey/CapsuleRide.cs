@@ -25,6 +25,8 @@ public class CapsuleRide : MonoBehaviour
         public bool holdUntilReleased;
         [Tooltip("Release() 가 오지 않아도 이 시간이 지나면 출발한다 (진행이 막히지 않게)")]
         public float maxHoldSeconds = 90f;
+        [Tooltip("출발에 필요한 Release() 횟수 (예: 유문 열림 + 세균 퇴치 = 2)")]
+        [Min(1)] public int releasesNeeded = 1;
     }
 
     [Header("경로")]
@@ -50,6 +52,8 @@ public class CapsuleRide : MonoBehaviour
     [Header("멀미 완화")]
     [Tooltip("스플라인 기울기(피치/롤)를 따라 캡슐이 기울지 않도록 항상 수평(요 회전만) 유지")]
     public bool keepUpright = true;
+    [Tooltip("잠수정이 방향을 바꾸는 최대 속도(도/초). 빠르게 돌면 멀미가 난다")]
+    public float maxYawSpeed = 18f;
 
     [Header("도착 처리")]
     [Tooltip("경로 끝에 도착하면 다음 단계로 이동")]
@@ -70,11 +74,11 @@ public class CapsuleRide : MonoBehaviour
     int nextStop;
     float currentSpeed, lastYaw;
     bool controllerWasEnabled, movementWasEnabled, followerWasEnabled;
-    bool released;
+    int releases;
     ComfortLocomotion locomotion;
 
     /// <summary>holdUntilReleased 정차에서 다시 출발시킨다. 정차 전에 불려도 기억해 두었다가 바로 지나간다.</summary>
-    public void Release() => released = true;
+    public void Release() => releases++;
 
     void Start()
     {
@@ -145,7 +149,8 @@ public class CapsuleRide : MonoBehaviour
         if (!keepUpright) return;
         // 스플라인 카트가 진행 방향으로 기울여 놓은 회전을 요(yaw)만 남기고 되돌린다 — 수직 하강(식도)에서도 플레이어는 늘 똑바로 선다
         Vector3 f = transform.forward; f.y = 0f;
-        if (f.sqrMagnitude > 0.01f) lastYaw = Mathf.Atan2(f.x, f.z) * Mathf.Rad2Deg;
+        // 멀미 완화: 굽은 길에서 잠수정이 홱 돌지 않도록 초당 maxYawSpeed 도까지만 천천히 돈다
+        if (f.sqrMagnitude > 0.01f) lastYaw = Mathf.MoveTowardsAngle(lastYaw, Mathf.Atan2(f.x, f.z) * Mathf.Rad2Deg, maxYawSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0f, lastYaw, 0f);
     }
 
@@ -210,8 +215,8 @@ public class CapsuleRide : MonoBehaviour
         if (stop.holdUntilReleased)
         {
             float until = Time.time + stop.maxHoldSeconds;
-            while (!released && Time.time < until) yield return null;
-            released = false;
+            while (releases < stop.releasesNeeded && Time.time < until) yield return null;
+            releases = Mathf.Max(0, releases - stop.releasesNeeded);
         }
         if (IsRiding) moving = true;
     }

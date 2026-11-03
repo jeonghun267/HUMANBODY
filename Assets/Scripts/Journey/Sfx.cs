@@ -14,6 +14,9 @@ public static class Sfx
     public static AudioClip Get(string name)
     {
         if (cache.TryGetValue(name, out var c)) return c;
+        // Resources/Sfx/{이름} 파일이 있으면 그것을 쓴다 (Tools/make_sfx.py 로 만든 더 풍성한 소리). 없으면 아래 합성음.
+        var file = Resources.Load<AudioClip>("Sfx/" + name);
+        if (file != null) { cache[name] = file; return file; }
         float[] d = name switch
         {
             "gulp" => Gulp(),

@@ -1,5 +1,5 @@
 Mode: journey
-UTC: 2026-11-03T18:38:03.6181941Z
+UTC: 2026-11-03T20:41:27.1030287Z
 PASS Lobby bootstrap
 PASS 01_Mouth keeps the original player
 PASS 01_Mouth keeps the original persistent root
@@ -13,21 +13,19 @@ PASS 03_Stomach keeps the original player
 PASS 03_Stomach keeps the original persistent root
 PASS 03_Stomach has a narrator
 PASS Stomach digestion opens pylorus
-PASS Persistent root remains independent while riding toward 04_SmallIntestine
+PASS Missions on the way to 04_SmallIntestine start and clear (1)
 PASS 04_SmallIntestine keeps the original player
 PASS 04_SmallIntestine keeps the original persistent root
 PASS 04_SmallIntestine has a narrator
-PASS Stomach submarine waits for the pylorus and continues to the small intestine
 PASS All nutrients absorb and completion event fires
-PASS Persistent root remains independent while riding toward 05_LargeIntestine
+PASS Missions on the way to 05_LargeIntestine start and clear (3)
 PASS 05_LargeIntestine keeps the original player
 PASS 05_LargeIntestine keeps the original persistent root
 PASS 05_LargeIntestine has a narrator
-PASS Harmful germs appear in front of the submarine
+PASS Missions on the way to 06_Theater start and clear (2)
 PASS 06_Theater keeps the original player
 PASS 06_Theater keeps the original persistent root
 PASS 06_Theater has a narrator
-PASS Clearing harmful germs releases the submarine to the theater
 PASS 00_Lobby keeps the original player
 PASS 00_Lobby keeps the original persistent root
 PASS 00_Lobby has a narrator

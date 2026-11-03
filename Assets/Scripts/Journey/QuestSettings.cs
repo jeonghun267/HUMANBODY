@@ -24,6 +24,9 @@ public class QuestSettings : MonoBehaviour
         OVRManager.foveatedRenderingLevel = foveation;
         OVRManager.useDynamicFoveatedRendering = true;
         OVRPlugin.systemDisplayFrequency = 72f;
+        // 프레임 유지: 질감은 한 단계 작은 해상도로(메모리·대역폭 절반 이하), 점막 재질은 가벼운 판(잔결 한 겹, 흐르는 막·주변 반사 없음)
+        QualitySettings.globalTextureMipmapLimit = 1;
+        Shader.EnableKeyword("_MUCOSA_LITE");
         SceneManager.sceneLoaded += (_, __) => ApplySceneSettings();
         ApplySceneSettings();
     }

@@ -279,9 +279,8 @@ public static class JourneyValidation
         var gate = Object.FindObjectsByType<SphincterGate>(FindObjectsSortMode.None).Single();
         yield return Wait(() => gate.IsOpen, "Stomach pylorus opens after digestion", 60);
         Check(gate.IsOpen, "Stomach digestion opens pylorus");
-        // 위는 잠수정으로 위액 위를 지나 유문을 통과한다(유문 앞 정차는 문이 열리면 풀린다).
-        yield return RideTo("04_SmallIntestine", playerId, persistent);
-        Check(true, "Stomach submarine waits for the pylorus and continues to the small intestine");
+        // 위는 잠수정으로 위액 위를 지나 유문을 통과한다. 유문 앞 정차는 유문 열림과 헬리코박터균 퇴치가 둘 다 끝나야 풀린다.
+        yield return RideThroughMissions("04_SmallIntestine", playerId, persistent);
         var absorption = Object.FindFirstObjectByType<NutrientAbsorption>();
         absorption.completeLines = Lines(0.1f);
         bool absorbedAll = false;
@@ -289,19 +288,9 @@ public static class JourneyValidation
         foreach (var nutrient in Object.FindObjectsByType<Nutrient>(FindObjectsSortMode.None)) absorption.Absorb(nutrient);
         yield return Wait(() => absorbedAll, "Nutrient absorption completion", 20);
         Check(true, "All nutrients absorb and completion event fires");
-        yield return RideTo("05_LargeIntestine", playerId, persistent);
-        // 대장: 정차 지점에서 해로운 균 물리치기가 시작되고, 다 없애야 잠수정이 다시 출발한다.
-        var blaster = Object.FindFirstObjectByType<GermBlaster>();
-        var colonRide = Object.FindFirstObjectByType<CapsuleRide>();
-        colonRide.speed = 0.5f; colonRide.easeSeconds = 0.1f;
-        foreach (var stop in colonRide.stops) stop.lines = Lines(0.1f);
-        blaster.startLines = Lines(0.05f); blaster.clearedLines = Lines(0.05f);
-        colonRide.Board();
-        yield return Wait(() => blaster.IsActive, "Germ game starts at the colon stop", 30);
-        Check(blaster.IsActive && blaster.Remaining > 0, "Harmful germs appear in front of the submarine");
-        blaster.DefeatAll();
-        yield return Stage("06_Theater", playerId, persistent);
-        Check(true, "Clearing harmful germs releases the submarine to the theater");
+        // 소장: 효소 짝 맞추기 3라운드, 대장: 해로운 균 물리치기 → 유익균 먹이 주기. 모두 끝내야 잠수정이 다시 출발한다.
+        yield return RideThroughMissions("05_LargeIntestine", playerId, persistent);
+        yield return RideThroughMissions("06_Theater", playerId, persistent);
 
         // Exercise the existing no-video fallback; video/audio quality needs a device run.
         var ending = Object.FindFirstObjectByType<TheaterEnding>();
@@ -326,6 +315,27 @@ public static class JourneyValidation
         Check(persistent != null && JourneyManager.Instance.transform.root == persistent && persistent.parent == null,
             name + " keeps the original persistent root");
         Check(GuideNarrator.Instance != null, name + " has a narrator");
+    }
+
+    /// <summary>잠수정을 태우고, 정차 지점에서 시작되는 겨냥 임무는 바로 끝내며 다음 장면까지 간다.</summary>
+    static IEnumerator RideThroughMissions(string next, int playerId, Transform persistent)
+    {
+        var ride = Object.FindFirstObjectByType<CapsuleRide>();
+        if (ride == null) throw new Exception("Missing submarine before " + next);
+        ride.speed = 0.5f; ride.easeSeconds = 0.1f;
+        foreach (var stop in ride.stops) stop.lines = Lines(0.1f);
+        foreach (var hunt in Object.FindObjectsByType<GermBlaster>(FindObjectsSortMode.None)) { hunt.startLines = Lines(0.05f); hunt.clearedLines = Lines(0.05f); hunt.helpfulHitLines = Lines(0.05f); }
+        ride.Board();
+        int cleared = 0;
+        double end = EditorApplication.timeSinceStartup + 150;
+        while (SceneManager.GetActiveScene().name != next)
+        {
+            foreach (var hunt in Object.FindObjectsByType<GermBlaster>(FindObjectsSortMode.None)) if (hunt.IsActive) { hunt.DefeatAll(); cleared++; }
+            if (EditorApplication.timeSinceStartup > end) throw new TimeoutException("Ride through missions to " + next);
+            yield return null;
+        }
+        Check(cleared > 0, "Missions on the way to " + next + " start and clear (" + cleared + ")");
+        yield return Stage(next, playerId, persistent);
     }
 
     static IEnumerator RideTo(string next, int playerId, Transform persistent)

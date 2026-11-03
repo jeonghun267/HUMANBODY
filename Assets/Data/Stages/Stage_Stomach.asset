@@ -21,9 +21,9 @@ MonoBehaviour:
       \uBAA8\uC2B5\uC744 \uAD00\uCC30\uD574 \uBCF4\uC790."
     voice: {fileID: 8300000, guid: 9158eb65e2ec7614bba064d9bfcb1f8d, type: 3}
     holdSeconds: 6.1099997
-  - text: "\uC704\uC0B0\uC740 \uC0B0\uC131\uB3C4 1~2\uB85C \uC544\uC8FC \uAC15\uD55C
-      \uC0B0\uC131\uC774\uC57C. \uD558\uC9C0\uB9CC \uC704\uBCBD\uC740 \uB450\uAEBC\uC6B4
-      \uC810\uC561\uC73C\uB85C \uBCF4\uD638\uB418\uACE0 \uC788\uC5B4\uC11C \uC548\uC804\uD574."
+  - text: "\uC704 \uBCBD \uAC00\uAE4C\uC774\uC5D0 \uB098\uC120 \uBAA8\uC591 \uC138\uADE0\uC774
+      \uBCF4\uC774\uBA74 \uADF8\uAC8C \uD5EC\uB9AC\uCF54\uBC15\uD130\uADE0\uC774\uC57C.
+      \uC704\uAC00 \uC4F0\uB9B0 \uC6D0\uC778\uC774\uB2C8 \uBAA8\uB450 \uBB3C\uB9AC\uCE58\uC790!"
     voice: {fileID: 8300000, guid: 33104324a55ae39479372555ff3fa302, type: 3}
     holdSeconds: 7.1499996
   outroLines:
@@ -43,4 +43,4 @@ MonoBehaviour:
   - "\uC704\uC0B0\uC740 \uC74C\uC2DD\uC5D0 \uC11E\uC778 \uC138\uADE0\uC744 \uC8FD\uC774\uB294
     \uC5ED\uD560\uB3C4 \uD574\uC694."
   fadeColor: {r: 0.2901961, g: 0.07058824, b: 0.09411765, a: 1}
-  ridesCapsule: 0
+  ridesCapsule: 1

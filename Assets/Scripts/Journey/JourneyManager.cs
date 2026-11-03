@@ -26,6 +26,8 @@ public class JourneyManager : MonoBehaviour
     public int CurrentIndex { get; private set; } = -1;
     public bool IsTransitioning { get; private set; }
     public bool IsIntroPending { get; private set; }
+    /// <summary>켜져 있는 동안 입장 안내를 시작하지 않는다 (전시 대기 화면).</summary>
+    public static bool HoldIntro;
 
     int enteredSceneHandle = -1;
     Coroutine intro;
@@ -126,6 +128,8 @@ public class JourneyManager : MonoBehaviour
     IEnumerator PlayIntroAfterDelay(OrganStage stage)
     {
         yield return new WaitForSeconds(introDelay);
+        // 전시 모드: 체험자가 시작을 누를 때까지 첫 안내를 미룬다 (ExhibitionSession).
+        while (HoldIntro) yield return null;
         if (CurrentStage != stage) yield break;
         if (GuideNarrator.Instance != null && stage.introLines != null && stage.introLines.Length > 0)
             yield return GuideNarrator.Instance.PlayRoutine(stage.introLines);

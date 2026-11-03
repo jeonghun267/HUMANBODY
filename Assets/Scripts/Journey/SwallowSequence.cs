@@ -35,12 +35,40 @@ public class SwallowSequence : MonoBehaviour
     public bool pullPlayer = false;
     public bool advanceOnFinish = true;
     public UnityEvent onSwallowed = new UnityEvent();
+    [Header("삼킴 타이밍")]
+    [Tooltip("켜면 후두덮개가 닫히는 순간 방아쇠를 당겨야 삼킨다 (일찍 당기면 사레). 세 번 실패하거나 시간이 지나면 저절로 넘어간다")]
+    public bool timingGame;
+    public float timingLimit = 15f;
 
     bool running;
 
     public void Begin()
     {
         if (!running) StartCoroutine(Run());
+    }
+
+    /// <summary>후두덮개가 천천히 닫혔다 열렸다 한다. 닫힌 순간(70% 이상) 방아쇠를 당기면 성공.</summary>
+    IEnumerator Timing(Quaternion epiStart)
+    {
+        int fails = 0; float start = Time.time; bool ok = false;
+        if (JourneyHud.Instance != null) JourneyHud.Instance.SetGoal("후두덮개가 기도를 덮는 순간 방아쇠를 당겨 꿀꺽 삼키세요");
+        yield return null;
+        while (!ok && fails < 3 && Time.time - start < timingLimit)
+        {
+            float k = .5f + .5f * Mathf.Sin((Time.time - start) * 2.2f - Mathf.PI / 2);
+            epiglottis.localRotation = epiStart * Quaternion.Euler(epiglottisCloseAngle * k, 0, 0);
+            bool closed = k > .7f;
+            if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus(closed ? "<color=#7FE3FF>지금!</color>" : "기다려…");
+            if (JourneyAim.TriggerDown())
+            {
+                if (closed) { ok = true; Sfx.Play("correct", epiglottis.position, .8f); }
+                else { fails++; Sfx.Play("incorrect", epiglottis.position, .8f); Haptics.Pulse(.9f, .3f); if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus("콜록! 사레들렸어요. 닫힐 때 눌러요"); yield return new WaitForSeconds(1.2f); }
+            }
+            yield return null;
+        }
+        JourneyScore.Record("swallow", "꿀꺽 삼키기", ok ? 1 : 0, 1);
+        if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus(ok ? "꿀꺽 성공!" : "후두덮개가 닫히는 걸 잘 봐 두자!");
+        epiglottis.localRotation = epiStart;
     }
 
     IEnumerator Run()
@@ -53,6 +81,7 @@ public class SwallowSequence : MonoBehaviour
         Quaternion tongueStart = tongue != null ? tongue.localRotation : Quaternion.identity;
         Quaternion uvulaStart = uvula != null ? uvula.localRotation : Quaternion.identity;
         Quaternion epiStart = epiglottis != null ? epiglottis.localRotation : Quaternion.identity;
+        if (timingGame && epiglottis != null) yield return Timing(epiStart);
 
         // 1. 혀 들림 + 목젖 상승 + 후두덮개 닫힘
         float t = 0f;
