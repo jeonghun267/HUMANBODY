@@ -113,21 +113,27 @@ public static partial class JourneyRealism
             return pts.Count > 0 ? pts.Aggregate(Vector3.zero, (a, p) => a + p) / pts.Count : (Vector3?)null;
         }
         var b = PersonBounds(go);
-        if (b.size.y >= Mathf.Max(b.size.x, b.size.z)) return;
+        if (b.size.y >= Mathf.Max(b.size.x, b.size.z) * .8f) return; // 팔 벌린 T자세는 폭이 키만 할 수 있다 — 누운 모형만 세운다
         var head = Centroid("hair", "mask", "head"); var feet = Centroid("shoe", "boot", "foot");
         Vector3 axis;
         if (head.HasValue && feet.HasValue) axis = head.Value - feet.Value;
+        else if (head.HasValue)
+        {
+            // 신발 재질이 없는 모형(흰 간호사복): 몸 가운데 → 머리 쪽. 들어올 때 90° 단위로 눕혀 들어오므로 가장 큰 축으로 맞춘다 (반대로 세워 거꾸로 섰었다)
+            var d = head.Value - b.center; var ad = new Vector3(Mathf.Abs(d.x), Mathf.Abs(d.y), Mathf.Abs(d.z));
+            axis = ad.x >= ad.y && ad.x >= ad.z ? Vector3.right * Mathf.Sign(d.x) : ad.y >= ad.z ? Vector3.up * Mathf.Sign(d.y) : Vector3.forward * Mathf.Sign(d.z);
+        }
         else axis = b.size.x > b.size.z ? Vector3.right : Vector3.forward; // 머리 쪽을 모르면 긴 축만 세운다
         go.transform.rotation = Quaternion.FromToRotation(axis.normalized, Vector3.up) * go.transform.rotation;
 
-        var face = Centroid("mask", "face"); var hair = Centroid("hair");
+        var face = Centroid("mask", "face", "eye"); var hair = Centroid("hair"); // 얼굴 앞: 마스크·얼굴, 없으면 눈
         if (face.HasValue && hair.HasValue)
         {
             var front = Vector3.ProjectOnPlane(face.Value - hair.Value, Vector3.up);
             var want = Quaternion.Euler(0, yaw, 0) * Vector3.forward;
             if (front.sqrMagnitude > 1e-6f) go.transform.rotation = Quaternion.AngleAxis(Vector3.SignedAngle(front, want, Vector3.up), Vector3.up) * go.transform.rotation;
         }
-        Debug.Log($"[사람] {go.name} 세움: 머리 {(head.HasValue ? "찾음" : "모름")}, 얼굴 {(face.HasValue ? "찾음" : "모름")}");
+        Debug.Log($"[사람] {go.name} 세움 (누운 크기 {b.size:F2}): 머리 {(head.HasValue ? "찾음" : "모름")}, 얼굴 {(face.HasValue ? "찾음" : "모름")}");
     }
 
     /// <summary>움직임이 없는 모형(간호사·의사)은 두 팔을 벌린 T자세라 어색하다: 위팔을 몸 옆으로 내리고 아래팔을 살짝 앞으로 굽힌다. 뼈 이름은 두 방식(LeftArm / Bip001 L UpperArm)을 다 찾는다.</summary>
@@ -136,7 +142,7 @@ public static partial class JourneyRealism
         var anim = person.GetComponentInChildren<Animation>();
         if (anim != null && anim.enabled && anim.GetClipCount() > 0) return; // 자기 움직임을 쓰면 그 자세를 쓴다
         var center = PersonBounds(person).center;
-        foreach (var (upperKey, foreKey, handKey) in new[] { (new[] { "LeftArm", "L UpperArm" }, new[] { "LeftForeArm", "L Forearm" }, new[] { "LeftHand", "L Hand" }), (new[] { "RightArm", "R UpperArm" }, new[] { "RightForeArm", "R Forearm" }, new[] { "RightHand", "R Hand" }) })
+        foreach (var (upperKey, foreKey, handKey) in new[] { (new[] { "LeftArm", "L UpperArm", "LUARM" }, new[] { "LeftForeArm", "L Forearm", "LFARM" }, new[] { "LeftHand", "L Hand", "LHAND" }), (new[] { "RightArm", "R UpperArm", "RUARM" }, new[] { "RightForeArm", "R Forearm", "RFARM" }, new[] { "RightHand", "R Hand", "RHAND" }) })
         {
             var upper = Bone(person, upperKey); var fore = Bone(person, foreKey); var hand = Bone(person, handKey);
             if (upper == null || fore == null) continue;
@@ -172,8 +178,15 @@ public static partial class JourneyRealism
         var own = person.GetComponentInChildren<Animation>();
         npc.clip = own != null && own.enabled ? own : null; // 끈 움직임은 틀지 않는다 (틀면 내린 팔이 다시 올라간다)
         var audio = person.GetComponent<AudioSource>(); if (audio == null) audio = person.AddComponent<AudioSource>();
-        audio.spatialBlend = .7f; audio.minDistance = 1.5f; audio.maxDistance = 12f; audio.playOnAwake = false;
+        // 대화 목소리는 또렷하게: 반만 입체로, 3m 안은 그대로 들리고 15m 까지 고르게 작아진다 (예전 70% 입체·1.5m 부터 급히 작아짐 → 잘 안 들렸다)
+        audio.spatialBlend = .5f; audio.minDistance = 3f; audio.maxDistance = 15f; audio.rolloffMode = AudioRolloffMode.Linear; audio.volume = 1f; audio.playOnAwake = false;
         npc.voice = audio;
+        // 걸어 다니므로 몸에 부딪히게 (대화 겨냥은 머리 뼈 자리로 하므로 상관없다). 모형은 키에 맞춰 축척이 바뀌어 있어 자식 축척을 되돌린다
+        var pb = PersonBounds(person);
+        var bodyGo = new GameObject("몸_충돌"); bodyGo.transform.SetParent(person.transform, false);
+        bodyGo.transform.SetPositionAndRotation(new Vector3(pb.center.x, pb.min.y, pb.center.z), Quaternion.identity);
+        var ls = person.transform.lossyScale; bodyGo.transform.localScale = new Vector3(1 / ls.x, 1 / ls.y, 1 / ls.z);
+        var capsule = bodyGo.AddComponent<CapsuleCollider>(); capsule.radius = .28f; capsule.height = pb.size.y; capsule.center = new Vector3(0, pb.size.y / 2, 0);
         float top = PersonBounds(person).max.y;
         UiKit();
 
@@ -192,8 +205,7 @@ public static partial class JourneyRealism
         npc.choiceRoot = UiChild(rect, "선택지", new Vector2(24, -196), new Vector2(570, 120));
         // 선택지 틀: 손으로 가리키고 방아쇠를 당긴다 (충돌 상자로 겨냥 판정)
         var template = UiChild(npc.choiceRoot, "선택지_틀", Vector2.zero, new Vector2(570, 56)).gameObject;
-        var bg = template.AddComponent<Image>(); Sliced(bg, KitPanel, new Color(PrimaryTint.r, PrimaryTint.g, PrimaryTint.b, .35f), 1f);
-        var label = UiText(template.transform, "글", new Vector2(18, -10), new Vector2(534, 40), 26, Color.white, FontStyles.Bold); label.text = "선택";
+        DepthButtonUi((RectTransform)template.transform, "선택", 26, PrimaryTint, new Color(.3f, .72f, .95f, 1f), 8f); // STILL 입체 버튼
         var box = template.AddComponent<BoxCollider>(); box.isTrigger = true; box.center = new Vector3(285, -28, 0); box.size = new Vector3(570, 56, 10);
         npc.choiceTemplate = template;
         npc.panel = panelGo;
@@ -221,7 +233,7 @@ public static partial class JourneyRealism
     {
         // 접수대 간호사: 입구에서 들어오면 왼쪽 앞. 처음 다가가면 먼저 인사한다.
         PackProp("desk_no_computer", new Vector3(-2.6f, 0, -2.2f), 90, 1.5f, false, room);
-        var nurseGo = Person("Nurse.glb", "간호사", new Vector3(-3.4f, 0, -2.2f), 90, 1.66f, room);
+        var nurseGo = Person("Nurse2.glb", "간호사", new Vector3(-3.4f, 0, -2.2f), 90, 1.66f, room); // 예전 수술복 간호사는 얼굴이 어색해(좀비 같다는 의견) 흰 간호사복 모형으로
         if (nurseGo != null)
         {
             var nurse = Npc(nurseGo, "간호사");
@@ -233,6 +245,13 @@ public static partial class JourneyRealism
                 Node("Lobby", "nurse_4"), Node("Lobby", "nurse_5"),
             };
             nurse.startNode = 0; nurse.repeatNode = 5;
+            var monitor = Object.FindFirstObjectByType<ClinicMonitor>(); // 진찰 결과 모니터의 '환자 증상'
+            if (monitor != null)
+            {
+                UnityEventTools.AddStringPersistentListener(nurse.nodes[1].onEnter, monitor.SetSymptom, "이가 시려요");
+                UnityEventTools.AddStringPersistentListener(nurse.nodes[2].onEnter, monitor.SetSymptom, "배가 아파요");
+                UnityEventTools.AddStringPersistentListener(nurse.nodes[3].onEnter, monitor.SetSymptom, "이도 시리고\n배도 아파요");
+            }
             // 안내판(체험_안내판)은 적용할 때마다 다시 만들어진다: 안내판을 직접 가리키면 연결이 끊기므로 간호사를 거쳐 지금 안내판에 쓴다
             UnityEventTools.AddStringPersistentListener(nurse.nodes[4].onEnter, nurse.ShowGoal, "몸 스캔 오른쪽의 의사 선생님께 말을 걸어 보세요");
         }
@@ -304,13 +323,14 @@ public static partial class JourneyRealism
         var spawn = GameObject.Find("SpawnPoint");
         if (spawn != null) spawn.transform.SetPositionAndRotation(new Vector3(0, 0, -3.6f), Quaternion.identity);
         var room = ClinicRoom();
+        ClinicMonitorUi(room, true); // 큰 화면: 치료 결과 (모두 치료 완료)
 
         // 마지막 장면은 퀴즈가 끝날 때까지 기다린다 (예전 영상 끝내기 장치는 자동 검사용으로만 남긴다)
         foreach (var ending in Object.FindObjectsByType<TheaterEnding>(FindObjectsInactive.Include, FindObjectsSortMode.None)) { ending.playAfterIntro = false; ending.fallbackSeconds = 9999f; }
 
         // 들어서면(0,-3.6) 가운데 퀴즈판, 오른쪽 의사 선생님, 왼쪽 보고서, 그 사이 뒤쪽에 간호사 — 서로 가리지 않게
         var doctorGo = Person("Doctor.glb", "의사", new Vector3(2.1f, 0, -.4f), 213, 1.75f, room);
-        var nurseGo = Person("Nurse.glb", "간호사", new Vector3(-.75f, 0, .9f), 170, 1.66f, room);
+        var nurseGo = Person("Nurse2.glb", "간호사", new Vector3(-.75f, 0, .9f), 170, 1.66f, room);
         HospitalNpc doctor = null;
         if (doctorGo != null)
         {
@@ -361,16 +381,16 @@ public static partial class JourneyRealism
         quiz.progressText = UiText(rect, "차례", new Vector2(30, -22), new Vector2(840, 40), 28, new Color(.5f, .9f, 1f), FontStyles.Bold);
         quiz.questionText = UiText(rect, "문제", new Vector2(30, -70), new Vector2(840, 120), 40, Color.white, FontStyles.Bold);
         quiz.feedbackText = UiText(rect, "해설", new Vector2(30, -200), new Vector2(840, 100), 27, new Color(.92f, .96f, .98f));
-        (Image img, BoxCollider box) Button(string name, string mark, float x, Color color)
+        // STILL 키트의 입체 버튼 (판에서 떠 있는 앞판, 가리키면 밝아지고 누르면 들어간다)
+        (Image img, BoxCollider box) Button(string name, string mark, float x, Color color, Color hover)
         {
             var b = UiChild(rect, name, new Vector2(x, -320), new Vector2(380, 210));
-            var image = b.gameObject.AddComponent<Image>(); Sliced(image, KitPanel, color, .6f);
-            var t = UiText(b, "글", new Vector2(0, -20), new Vector2(380, 170), 140, Color.white, FontStyles.Bold); t.text = mark; t.alignment = TextAlignmentOptions.Center;
+            var depth = DepthButtonUi(b, mark, 140, color, hover, 16f);
             var c = b.gameObject.AddComponent<BoxCollider>(); c.isTrigger = true; c.center = new Vector3(190, -105, 0); c.size = new Vector3(380, 210, 10);
-            return (image, c);
+            return (depth.front, c);
         }
-        (quiz.oImage, quiz.oButton) = Button("O_판", "O", 50, new Color(.16f, .55f, .78f, .55f));
-        (quiz.xImage, quiz.xButton) = Button("X_판", "X", 470, new Color(.78f, .35f, .3f, .55f));
+        (quiz.oImage, quiz.oButton) = Button("O_판", "O", 50, PrimaryTint, new Color(.3f, .72f, .95f, 1f));
+        (quiz.xImage, quiz.xButton) = Button("X_판", "X", 470, new Color(.78f, .33f, .3f, 1f), new Color(.95f, .48f, .42f, 1f));
         quiz.questionText.text = "퀴즈를 시작하면 여기에 문제가 나와요"; quiz.progressText.text = "OX 퀴즈";
         quiz.panel = panelGo;
         foreach (var t in go.GetComponentsInChildren<TextMeshProUGUI>()) t.ForceMeshUpdate();
@@ -388,7 +408,7 @@ public static partial class JourneyRealism
         var plate = go.AddComponent<Image>(); Sliced(plate, KitPanel, PlateFill, 1.4f);
         var title = UiText(rect, "제목", new Vector2(26, -18), new Vector2(650, 44), 32, new Color(.5f, .9f, 1f), FontStyles.Bold); title.text = "함께 만든 모형 (CC BY 4.0)";
         var body = UiText(rect, "내용", new Vector2(26, -70), new Vector2(650, 290), 22, Color.white);
-        body.text = "이 모형: Human teeth — Alexander Antipov (Dessen)\n의사: Doctor — BrushDip\n간호사: Nurse Surgical Rigged — bachelorgkv\n진료실 소품: Sci-Fi Styled Modular Pack\n모두 sketchfab.com · 저작자 표시 4.0 국제";
+        body.text = "이 모형: Human teeth — Alexander Antipov (Dessen)\n의사: Doctor — BrushDip\n간호사: Nurse 2 & 3 — Diddy_Blud_117 (marcosacevez57)\n진료실 소품: Sci-Fi Styled Modular Pack\n모두 sketchfab.com · 저작자 표시 4.0 국제";
         foreach (var t in go.GetComponentsInChildren<TextMeshProUGUI>()) t.ForceMeshUpdate();
     }
 }

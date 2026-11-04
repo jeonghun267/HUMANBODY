@@ -12,6 +12,8 @@ public class StageExitPortal : MonoBehaviour
     public bool playOutro = true;
     [Tooltip("특정 단계로 강제 이동 (비우면 다음 단계)")]
     public string overrideStageId;
+    [Tooltip("닿기만 해도 떠난다. 끄면 Depart() 로만 (병원 잠수정: 출발 버튼)")]
+    public bool walkInToDepart = true;
 
     bool used;
 
@@ -22,7 +24,14 @@ public class StageExitPortal : MonoBehaviour
         if (used) return;
         bool isPlayer = other.CompareTag("Player") || other.CompareTag("VRCamera") || other.CompareTag("Boat")
                         || other.GetComponentInParent<OVRCameraRig>() != null;
-        if (!isPlayer || JourneyManager.Instance == null) return;
+        if (!isPlayer || !walkInToDepart) return;
+        Depart();
+    }
+
+    /// <summary>다음 단계로 떠난다 (출발 버튼 등에서 부른다).</summary>
+    public void Depart()
+    {
+        if (used || JourneyManager.Instance == null) return;
         used = true;
         if (string.IsNullOrEmpty(overrideStageId)) JourneyManager.Instance.GoToNext(playOutro);
         else JourneyManager.Instance.GoTo(overrideStageId, playOutro);

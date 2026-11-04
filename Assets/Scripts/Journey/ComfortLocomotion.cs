@@ -2,14 +2,20 @@
 using UnityEngine;
 
 /// <summary>
-/// 멀미 완화 이동: 텔레포트(오른손 스틱 앞으로 밀었다 놓기) + 스냅턴(왼손 스틱 좌우 30°).
-/// OVRPlayerController 의 부드러운 이동은 VR 기기에서는 끄고, PC(에디터) 테스트에서는 키보드 이동을 위해 남겨 둔다.
+/// 이동: STILL 처럼 걸어 다닌다 — 왼쪽 막대로 걷기(박물관 걸음 1.5m/s), 오른쪽 막대로 부드러운 회전(60°/s), 순간이동·끊어 돌기 없음.
+/// 걷기·회전은 OVRPlayerController 가 하고, 여기서는 그 속도를 맞추고 걸을 수 있는 바닥(TeleportArea 가 있는 장면, 예: 입)을 벗어나지 않게 막는다.
+/// 걷고 도는 동안에는 시야 가장자리 어둡게(ComfortVignette)가 멀미를 줄인다. walking 을 끄면 예전 방식(텔레포트 + 스냅턴)으로 돌아간다.
 /// </summary>
 [RequireComponent(typeof(CharacterController))]
 [AddComponentMenu("인체탐험/편안한 이동") ]
 public class ComfortLocomotion : MonoBehaviour
 {
-    [Header("텔레포트")]
+    [Header("걷기 (STILL 방식)")]
+    public bool walking = true;
+    [Tooltip("m/s — 박물관 걸음")] public float walkSpeed = 1.5f;
+    [Tooltip("°/s — 오른쪽 막대 부드러운 회전")] public float turnSpeed = 60f;
+
+    [Header("텔레포트 (걷기를 끈 때)")]
     public bool teleportEnabled = true;
     public float maxDistance = 8f;
     public LayerMask groundMask = ~0;
@@ -31,6 +37,7 @@ public class ComfortLocomotion : MonoBehaviour
     LineRenderer line;
     GameObject marker;
     Vector3 target; bool hasTarget, aiming, snapReady = true;
+    Vector3 safe; bool hasSafe;
     OVRScreenFade teleportFade;
     bool teleportFading;
 
@@ -40,7 +47,14 @@ public class ComfortLocomotion : MonoBehaviour
         cc = GetComponent<CharacterController>();
         hand = transform.Find("OVRCameraRig/TrackingSpace/RightHandAnchor");
         bool onDevice = Application.platform == RuntimePlatform.Android || OVRManager.isHmdPresent;
-        if (ovr != null && disableSmoothOnDevice && onDevice)
+        if (ovr != null && walking)
+        {
+            ovr.EnableLinearMovement = true; ovr.EnableRotation = true;
+            ovr.SnapRotation = false; ovr.RotationEitherThumbstick = false; ovr.HmdRotatesY = true;
+            ovr.RotationAmount = turnSpeed / 60f;                 // OVR: 초당 회전 = 60 × RotationAmount
+            ovr.Acceleration = walkSpeed * ovr.Damping / 6f;      // OVR: 끝 속도 ≈ 6 × Acceleration / Damping (m/s)
+        }
+        else if (ovr != null && disableSmoothOnDevice && onDevice)
         {
             ovr.EnableLinearMovement = false;
             ovr.EnableRotation = false; // 스냅턴은 여기서 처리
@@ -67,8 +81,20 @@ public class ComfortLocomotion : MonoBehaviour
     {
         // 캡슐 탑승/삼킴 연출 중에는 이동과 회전을 잠근다.
         if (cc == null || !cc.enabled) { CancelTeleport(); return; }
+        if (walking) return; // 걷기·회전은 OVRPlayerController 가 한다
         if (snapTurnEnabled) HandleSnapTurn();
         if (teleportEnabled) HandleTeleport();
+    }
+
+    /// <summary>걸을 수 있는 바닥이 정해진 장면(입: 혀 위)에서는 그 밖으로 걸어 나가면 마지막으로 서 있던 자리로 되돌린다.</summary>
+    void LateUpdate()
+    {
+        if (!walking || cc == null || !cc.enabled || !TeleportArea.AnyActive) { hasSafe = false; return; }
+        bool onArea = Physics.Raycast(transform.position, Vector3.down, out var hit, cc.height, ~0, QueryTriggerInteraction.Ignore) && TeleportArea.Allows(hit.collider);
+        if (onArea) { safe = transform.position; hasSafe = true; return; }
+        if (!hasSafe) return;
+        cc.enabled = false; transform.position = safe; cc.enabled = true;
+        if (ovr != null) ovr.Stop();
     }
 
     public void CancelTeleport()

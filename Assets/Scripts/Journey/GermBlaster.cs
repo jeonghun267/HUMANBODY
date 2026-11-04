@@ -50,6 +50,8 @@ public class GermBlaster : MonoBehaviour
     [Tooltip("장면이 시작되면 안내가 끝난 뒤 저절로 시작")] public bool beginOnStart;
     [Tooltip("새 여정의 시작이면 치료 기록을 지운다 (병원)")] public bool resetScore;
     public UnityEvent onCleared = new UnityEvent();
+    [System.Serializable] public class HitEvent : UnityEvent<int> { }
+    [Tooltip("표적을 맞힐 때마다 (자리가 있으면 자리 번호, 없으면 맞힌 차례) — 병원 진찰 결과 모니터 등")] public HitEvent onHit = new HitEvent();
 
     class Germ { public Transform t; public Vector3 home; public float phase, scale; public bool harmful, fed; public int index; }
     readonly List<Germ> germs = new List<Germ>();
@@ -200,6 +202,7 @@ public class GermBlaster : MonoBehaviour
         int hitIndex = spots != null && spots.Length > 0 ? best.index : total - remaining;
         remaining--;
         Record();
+        onHit?.Invoke(hitIndex);
         if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus(Score());
         if (remaining > 0 && hitLines != null && hitIndex < hitLines.Length) Speak(new[] { hitLines[hitIndex] });
         if (remaining <= 0) StartCoroutine(FinishAfter(hitLines != null && hitIndex < hitLines.Length ? hitLines[hitIndex] : null));

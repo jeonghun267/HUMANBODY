@@ -53,7 +53,7 @@ public class HospitalNpc : MonoBehaviour
     public UnityEvent onConversationEnd = new UnityEvent();
     public bool IsTalking { get; private set; }
 
-    readonly List<(BoxCollider box, Image image, int next)> buttons = new List<(BoxCollider, Image, int)>();
+    readonly List<(BoxCollider box, Image image, DepthButton depth, int next)> buttons = new List<(BoxCollider, Image, DepthButton, int)>();
     Quaternion headRest; Quaternion[] spineRest;
     Transform eye;
     bool greeted;
@@ -94,8 +94,16 @@ public class HospitalNpc : MonoBehaviour
             int hover = -1;
             if (Physics.Raycast(ray, out var hit, 8f, ~0, QueryTriggerInteraction.Collide))
                 for (int i = 0; i < buttons.Count; i++) if (hit.collider == buttons[i].box) hover = i;
-            for (int i = 0; i < buttons.Count; i++) buttons[i].image.color = i == hover ? new Color(.35f, .8f, 1f, .75f) : new Color(.16f, .55f, .78f, .35f);
-            if (hover >= 0 && JourneyAim.TriggerDown()) { Sfx.Play("click", buttons[hover].box.transform.position, .6f); chosen = buttons[hover].next; }
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                if (buttons[i].depth != null) buttons[i].depth.SetHover(i == hover); // 입체 버튼: 밝아지고 둘레 고리
+                else if (buttons[i].image != null) buttons[i].image.color = i == hover ? new Color(.35f, .8f, 1f, .75f) : new Color(.16f, .55f, .78f, .35f);
+            }
+            if (hover >= 0 && JourneyAim.TriggerDown())
+            {
+                Sfx.Play("click", buttons[hover].box.transform.position, .6f); chosen = buttons[hover].next;
+                if (buttons[hover].depth != null) buttons[hover].depth.Press();
+            }
         }
     }
 
@@ -145,7 +153,8 @@ public class HospitalNpc : MonoBehaviour
             if (lineText != null) lineText.text = node.text;
             node.onEnter?.Invoke();
             float wait = 1.5f + node.text.Length * .07f;
-            if (voice != null && node.voice != null) { voice.clip = node.voice; voice.Play(); wait = node.voice.length + .3f; }
+            if (voice != null && node.voice != null) { voice.clip = node.voice; voice.Play(); wait = node.voice.length + .3f; Debug.Log($"[대화] {npcName}: 목소리 {node.voice.name} ({node.voice.length:0.0}초) 재생"); }
+            else Debug.LogWarning($"[대화] {npcName}: 목소리 없음 ({(voice == null ? "소리 장치 없음" : "대사 음성 없음")}) — {node.text}");
             if (node.choices != null && node.choices.Length > 0)
             {
                 // 말이 끝나기 전에도 고를 수 있다
@@ -186,7 +195,7 @@ public class HospitalNpc : MonoBehaviour
         if (nameText != null) nameText.text = npcName;
         if (lineText != null) lineText.text = line.text;
         float wait = line.voice != null ? line.voice.length + .3f : Mathf.Max(line.holdSeconds, 1.5f + line.text.Length * .07f);
-        if (voice != null && line.voice != null) { voice.clip = line.voice; voice.Play(); }
+        if (voice != null && line.voice != null) { voice.clip = line.voice; voice.Play(); Debug.Log($"[대화] {npcName}: 목소리 {line.voice.name} 재생"); }
         yield return new WaitForSeconds(wait);
         if (panel != null) panel.SetActive(false);
         IsTalking = false;
@@ -202,7 +211,7 @@ public class HospitalNpc : MonoBehaviour
         go.GetComponentInChildren<TextMeshProUGUI>().text = choice.label;
         var box = go.GetComponent<BoxCollider>();
         box.size = new Vector3(rect.sizeDelta.x, rect.sizeDelta.y, 10);
-        buttons.Add((box, go.GetComponent<Image>(), choice.next));
+        buttons.Add((box, go.GetComponent<Image>(), go.GetComponent<DepthButton>(), choice.next));
     }
 
     void ClearChoices()

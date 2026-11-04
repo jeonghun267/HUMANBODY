@@ -395,11 +395,10 @@ public static partial class JourneyRealism
         Box(room, "빛띠_뒤", new Vector3(0, 1f, back - .01f), new Vector3(halfX * 2, .05f, .02f), stripe);
         foreach (var c in room.GetComponentsInChildren<Collider>()) c.enabled = c.name == "바닥" || c.name.EndsWith("벽");
 
-        // 천장 등과 실내 조명
-        foreach (var p in new[] { new Vector3(-2.5f, 0, -1.5f), new Vector3(2.5f, 0, -1.5f), new Vector3(-2.5f, 0, 3f), new Vector3(2.5f, 0, 3f) })
+        // 실내 조명 (천장 LED 판은 ClinicDecor 에서 같은 자리에 단다 — 예전 막대등은 공장 같았다)
+        var lampSpots = new[] { new Vector3(-2.5f, 0, -1.5f), new Vector3(2.5f, 0, -1.5f), new Vector3(-2.5f, 0, 3f), new Vector3(2.5f, 0, 3f) };
+        foreach (var p in lampSpots)
         {
-            var lamp = PackProp("light_celing_1", new Vector3(p.x, 0, p.z), 0, .9f, false, room);
-            if (lamp != null) { var b = Bounds(lamp); lamp.transform.position += Vector3.up * (height - b.max.y); }
             var light = new GameObject("천장_조명").AddComponent<Light>(); light.transform.SetParent(room, false);
             light.type = LightType.Point; light.range = 7; light.intensity = .45f; light.color = new Color(1f, .97f, .92f); light.shadows = LightShadows.None;
             light.transform.position = new Vector3(p.x, height - .3f, p.z);
@@ -425,6 +424,7 @@ public static partial class JourneyRealism
                 r.sharedMaterials = r.sharedMaterials.Select(m => m != null && m.name.ToLower().Contains("screen") ? dark : m).ToArray();
         }
 
+        ClinicDecor(room, halfX, front, back, height, lampSpots);
         return room;
     }
 
@@ -522,13 +522,24 @@ public static partial class JourneyRealism
         hunt.scaleRange = Vector2.one; hunt.range = 7f; hunt.aimRadius = .2f; hunt.bob = 0; hunt.releaseRide = false;
         hunt.beginOnStart = true; hunt.resetScore = true;
         hunt.targetLabel = "진찰"; hunt.scoreKey = ""; hunt.goalText = "몸 스캔에서 빨갛게 빛나는 곳을 겨냥하고 방아쇠를 당겨 진찰하세요";
-        hunt.clearedStatus = "진찰 완료! 잠수정에 타세요";
+        hunt.clearedStatus = "진찰 완료! 잠수정 옆 출발 버튼을 누르세요";
         hunt.startLines = new NarrationLine[0];
         hunt.hitLines = new[] { Mission("Lobby", "scan_tooth")[0], Mission("Lobby", "scan_stomach")[0], Mission("Lobby", "scan_colon")[0] };
         hunt.clearedLines = Mission("Lobby", "scan_done", 6f);
         if (gate != null) { ClearListeners(hunt.onCleared, gate); UnityEventTools.AddPersistentListener(hunt.onCleared, gate.Open); }
         // 사람 의사·간호사와 대화, 시작 대기 화면, 병원 소리
+        // 큰 화면: 진찰 결과 모니터 (간호사에게 말한 증상 → 몸 스캔으로 찾은 곳 → 오늘의 치료 경로)
+        var monitor = ClinicMonitorUi(room, false);
+        ClearMissing(hunt.onHit); ClearMissing(hunt.onCleared);
+        if (monitor != null) { UnityEventTools.AddPersistentListener(hunt.onHit, monitor.Found); UnityEventTools.AddPersistentListener(hunt.onCleared, monitor.ShowPlan); }
         HospitalPeople(room, hunt, gate);
+        if (portal != null && gate != null)
+        {
+            // 탑승구에 걸어 들어가기만 해서는 떠나지 않는다 — 옆 조작대의 '출발' 버튼으로 (진찰 전에는 잠겨 있다)
+            portal.walkInToDepart = false; EditorUtility.SetDirty(portal);
+            BoardingConsoleUi(room, new Vector3(1.5f, 0, 2.65f), new Vector3(.8f, 0, 1.2f), portal, gate);
+        }
+        LobbySigns(room, new Vector3(-2.6f, 0, -2.2f), new Vector3(2.4f, 0, 3.3f), spawn != null ? spawn.transform.position : new Vector3(0, 0, -3.6f), 3.2f);
         ExhibitionDevices();
         var amb = GameObject.Find("병원_소리") ?? new GameObject("병원_소리");
         var sa = amb.GetComponent<SceneAmbience>(); if (sa == null) sa = amb.AddComponent<SceneAmbience>(); sa.clipName = "clinic"; sa.volume = .3f;

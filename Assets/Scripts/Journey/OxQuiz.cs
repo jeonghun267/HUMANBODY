@@ -33,8 +33,14 @@ public class OxQuiz : MonoBehaviour
     public bool IsDone { get; private set; }
     public bool IsRunning { get; private set; }
     int answer = -1;
+    DepthButton oDepth, xDepth;
 
-    void Start() { if (panel != null) panel.SetActive(false); }
+    void Start()
+    {
+        if (panel != null) panel.SetActive(false);
+        oDepth = oButton != null ? oButton.GetComponent<DepthButton>() : null;
+        xDepth = xButton != null ? xButton.GetComponent<DepthButton>() : null;
+    }
 
     public void Begin() { if (!IsRunning && !IsDone) StartCoroutine(Run()); }
 
@@ -43,13 +49,17 @@ public class OxQuiz : MonoBehaviour
 
     void Update()
     {
-        if (!IsRunning || answer >= 0) return;
-        var ray = JourneyAim.Ray();
         int hover = -1;
-        if (Physics.Raycast(ray, out var hit, 10f, ~0, QueryTriggerInteraction.Collide)) hover = hit.collider == oButton ? 1 : hit.collider == xButton ? 0 : -1;
-        if (oImage != null) oImage.color = hover == 1 ? new Color(.45f, .85f, 1f, .9f) : new Color(.16f, .55f, .78f, .55f);
-        if (xImage != null) xImage.color = hover == 0 ? new Color(1f, .6f, .5f, .9f) : new Color(.78f, .35f, .3f, .55f);
-        if (hover >= 0 && JourneyAim.TriggerDown()) answer = hover;
+        if (IsRunning && answer < 0 && Physics.Raycast(JourneyAim.Ray(), out var hit, 10f, ~0, QueryTriggerInteraction.Collide))
+            hover = hit.collider == oButton ? 1 : hit.collider == xButton ? 0 : -1;
+        // 입체 버튼이면 가리킬 때 밝아지고 둘레 고리가 켜진다 (해설을 듣는 동안은 꺼 둔다)
+        if (oDepth != null) oDepth.SetHover(hover == 1); else if (oImage != null) oImage.color = hover == 1 ? new Color(.45f, .85f, 1f, .9f) : new Color(.16f, .55f, .78f, .55f);
+        if (xDepth != null) xDepth.SetHover(hover == 0); else if (xImage != null) xImage.color = hover == 0 ? new Color(1f, .6f, .5f, .9f) : new Color(.78f, .35f, .3f, .55f);
+        if (hover >= 0 && JourneyAim.TriggerDown())
+        {
+            answer = hover;
+            var pressed = hover == 1 ? oDepth : xDepth; if (pressed != null) pressed.Press();
+        }
     }
 
     IEnumerator Run()

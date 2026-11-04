@@ -270,12 +270,42 @@ public static class JourneyValidation
         Check(eyeHeight > 1.4f && eyeHeight < 1.8f, $"병원: 헤드셋 없이도 눈이 서 있는 높이 (바닥에서 {eyeHeight:0.00}m)");
         var nurse = Object.FindObjectsByType<HospitalNpc>(FindObjectsSortMode.None).FirstOrDefault(n => n.npcName == "간호사");
         Check(nurse != null && nurse.nodes.Length > 4 && nurse.nodes[4].onEnter.GetPersistentEventCount() > 0 && nurse.nodes[4].onEnter.GetPersistentTarget(0) != null, "병원: 간호사의 '의사 선생님께 가 보세요'가 할 일 판에 이어져 있다");
+        // 이동: STILL 처럼 걷기(왼쪽 막대 1.5m/s)·부드러운 회전(60°/s), 텔레포트·스냅턴 없음
+        var walker = GameObject.FindWithTag("Player");
+        var ovrPc = walker != null ? walker.GetComponent<OVRPlayerController>() : null; var loco = walker != null ? walker.GetComponent<ComfortLocomotion>() : null;
+        Check(loco != null && loco.walking && ovrPc != null && ovrPc.EnableLinearMovement && ovrPc.EnableRotation && !ovrPc.SnapRotation && Mathf.Abs(ovrPc.RotationAmount * 60f - 60f) < 1f && Mathf.Abs(6f * ovrPc.Acceleration / ovrPc.Damping - 1.5f) < .05f, $"병원: 걸어 다니기 (속도 {(ovrPc != null ? 6f * ovrPc.Acceleration / ovrPc.Damping : 0):0.00}m/s, 회전 {(ovrPc != null ? ovrPc.RotationAmount * 60f : 0):0}°/s)");
+        // 사람 목소리: 간호사가 말을 걸면 대사 음성이 그 사람의 소리 장치에 걸린다
+        if (nurse != null)
+        {
+            nurse.Talk(); yield return null;
+            Check(nurse.nodes[0].voice != null && nurse.voice != null && nurse.voice.clip == nurse.nodes[0].voice && nurse.voice.spatialBlend <= .5f, "병원: 간호사가 말을 걸면 대사 음성이 나온다");
+            nurse.StopAllCoroutines(); if (nurse.voice != null) nurse.voice.Stop(); if (nurse.panel != null) nurse.panel.SetActive(false);
+        }
+        // 큰 화면의 진찰 결과 모니터: 간호사 증상·몸 스캔 진찰에 이어져 있고, 위를 진찰하면 결과가 뜬다
+        var monitor = Object.FindFirstObjectByType<ClinicMonitor>();
+        var scan = GameObject.Find("몸_스캔_진찰")?.GetComponent<GermBlaster>();
+        bool Wired(UnityEngine.Events.UnityEventBase e) => e != null && Enumerable.Range(0, e.GetPersistentEventCount()).Any(i => e.GetPersistentTarget(i) == monitor);
+        Check(monitor != null && scan != null && Wired(scan.onHit) && Wired(scan.onCleared) && nurse != null && Wired(nurse.nodes[1].onEnter), "병원: 진찰 결과 모니터가 간호사 증상·몸 스캔 진찰에 이어져 있다");
+        if (monitor != null && scan != null)
+        {
+            scan.onHit.Invoke(1); yield return null;
+            Check(monitor.findings.Length == 3 && monitor.findings[1].result.text == monitor.findings[1].foundText && monitor.findings[0].result.text == "?", "병원: 위를 진찰하면 모니터의 '위' 칸만 채워진다");
+        }
         UiShots();
         GuideNarrator.Instance.Skip();
         Check(SceneManager.GetActiveScene().name == "00_Lobby", "Lobby bootstrap");
         var portal = Object.FindFirstObjectByType<StageExitPortal>();
         portal.playOutro = false;
+        // 탑승: 걸어 들어가기만 해서는 떠나지 않고, 진찰 전에는 출발 버튼이 잠겨 있다가, 진찰이 끝나면(관문 열림) 버튼으로 떠난다
+        var boarding = Object.FindFirstObjectByType<BoardingConsole>();
+        var boardGate = portal.GetComponent<MissionGate>();
+        Check(boarding != null && boarding.portal == portal && boarding.gate == boardGate && !portal.walkInToDepart, "병원: 잠수정 옆 출발 버튼이 탑승구에 이어져 있다");
         portal.SendMessage("OnTriggerEnter", GameObject.FindWithTag("Player").GetComponent<CharacterController>());
+        boarding.Press(); yield return Delay(0.3);
+        Check(!boarding.Ready && !boarding.Departed && !JourneyManager.Instance.IsTransitioning, "병원: 진찰 전에는 탑승구에 들어가도, 출발 버튼을 눌러도 떠나지 않는다");
+        boardGate.Open(); yield return null;
+        Check(boarding.Ready, "병원: 진찰이 끝나면 출발 버튼이 열린다");
+        boarding.Press();
         yield return Stage("01_Mouth", playerId, persistent);
 
         // 입: 씹기 → 양치를 안 하면?(충치가 생기는 과정) → 충치 치료 → 치태 세균 → 삼키기 → 식도
@@ -379,6 +409,8 @@ public static class JourneyValidation
         // 소장: 효소 짝 맞추기 3라운드, 대장: 해로운 균 물리치기 → 유익균 먹이 주기. 모두 끝내야 잠수정이 다시 출발한다.
         yield return RideThroughMissions("05_LargeIntestine", playerId, persistent);
         yield return RideThroughMissions("06_Theater", playerId, persistent);
+        var endMonitor = Object.FindFirstObjectByType<ClinicMonitor>();
+        Check(endMonitor != null && endMonitor.findings.All(f => f.result.text == "치료 완료"), "마지막 진료실: 큰 화면 모니터가 모두 치료 완료");
 
         // Exercise the existing no-video fallback; video/audio quality needs a device run.
         var ending = Object.FindFirstObjectByType<TheaterEnding>();
