@@ -258,14 +258,18 @@ public static class JourneyValidation
         }
         GuideNarrator.Instance.gapBetweenLines = 0;
         GuideNarrator.Instance.holdAfterLast = 0;
-        // 헤드셋 없이 돌리면 머리 추적 값이 0 이라 눈(VRCamera)이 발 높이(바닥 추적 원점)에 있다.
-        // 추적 공간을 서 있는 눈높이(1.6m)만큼 올려, 눈 둘레에서 비켜 가는 무리와 거리 검사가 실제와 같은 눈을 쓰게 한다.
+        // 헤드셋 없이 돌리면 머리 추적 값이 0 이라 눈(VRCamera)이 발 높이에 붙는다. 이제는 플레이어의 눈높이 맞춤(PlayerEyeHeight)이
+        // 실제 플레이(에디터)와 똑같이 서 있는 눈높이로 올린다 — 검사가 따로 올리면 에디터에서 바닥에 낀 화면을 놓친다.
         var head = GameObject.FindWithTag("VRCamera");
-        if (head != null && head.transform.parent != null && head.transform.localPosition.sqrMagnitude < 1e-4f) head.transform.parent.localPosition += Vector3.up * 1.6f;
         foreach (var gaze in Object.FindObjectsByType<GazeSelector>(FindObjectsSortMode.None)) gaze.enabled = false;
         shotDir = SessionState.GetString(Shots, "");
         if (ShotsOn) Directory.CreateDirectory(shotDir);
         yield return Delay(2);
+        var spawnPoint = GameObject.Find("SpawnPoint");
+        float eyeHeight = head != null ? head.transform.position.y - (spawnPoint != null ? spawnPoint.transform.position.y : 0f) : -1f;
+        Check(eyeHeight > 1.4f && eyeHeight < 1.8f, $"병원: 헤드셋 없이도 눈이 서 있는 높이 (바닥에서 {eyeHeight:0.00}m)");
+        var nurse = Object.FindObjectsByType<HospitalNpc>(FindObjectsSortMode.None).FirstOrDefault(n => n.npcName == "간호사");
+        Check(nurse != null && nurse.nodes.Length > 4 && nurse.nodes[4].onEnter.GetPersistentEventCount() > 0 && nurse.nodes[4].onEnter.GetPersistentTarget(0) != null, "병원: 간호사의 '의사 선생님께 가 보세요'가 할 일 판에 이어져 있다");
         UiShots();
         GuideNarrator.Instance.Skip();
         Check(SceneManager.GetActiveScene().name == "00_Lobby", "Lobby bootstrap");

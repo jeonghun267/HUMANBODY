@@ -173,6 +173,9 @@ public class HospitalNpc : MonoBehaviour
     /// <summary>다음에 말을 걸면 시작할 대사를 바꾼다 (진찰이 끝나면 잠수정 안내로 등).</summary>
     public void SetStart(int node) { startNode = node; repeatNode = -1; }
 
+    /// <summary>체험 안내판의 할 일을 바꾼다. 안내판은 다시 만들어질 수 있어 장면에 저장된 연결은 안내판 대신 사람을 가리키게 한다.</summary>
+    public void ShowGoal(string text) { if (JourneyHud.Instance != null) JourneyHud.Instance.SetGoal(text); }
+
     /// <summary>대화와 상관없이 한 줄 말한다 (진찰 결과 등). 다른 말이 끝날 때까지 기다렸다가 말한다.</summary>
     public IEnumerator SayRoutine(NarrationLine line)
     {

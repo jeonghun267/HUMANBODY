@@ -25,6 +25,7 @@ public static partial class JourneyRealism
         int i = System.Array.IndexOf(args, "-realismScenes");
         if (i < 0 || i + 1 >= args.Length) { Debug.LogError("[JourneyRealism] -realismScenes 장면이름,장면이름 이 필요함"); return; }
         ShaderUtil.allowAsyncCompilation = false;
+        PlayerEye(); // 영속 프리팹의 플레이어 눈높이(모든 장면 공통)
         foreach (var name in args[i + 1].Split(','))
         {
             var scene = EditorSceneManager.OpenScene($"{SceneDir}/{name.Trim()}.unity", OpenSceneMode.Single);

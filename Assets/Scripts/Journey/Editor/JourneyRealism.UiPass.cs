@@ -89,7 +89,7 @@ public static partial class JourneyRealism
     public static void UiPass()
     {
         ShaderUtil.allowAsyncCompilation = false;
-        StyleSpeechBubble();
+        StyleSpeechBubble(); PlayerEye();
         foreach (var name in new[] { "00_Lobby" }.Concat(BodyScenes).Concat(new[] { "06_Theater" }))
         {
             var scene = EditorSceneManager.OpenScene($"{SceneDir}/{name}.unity", OpenSceneMode.Single);

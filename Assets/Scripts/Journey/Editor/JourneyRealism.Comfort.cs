@@ -28,6 +28,31 @@ public static partial class JourneyRealism
         EditorUtility.SetDirty(mat);
     }
 
+    /// <summary>
+    /// 영속 프리팹의 플레이어 눈높이: 바닥 기준 추적으로 바꾸고(기기에서 체험자의 실제 눈높이 — 눈높이 기준은 사용자 키 값이 0 이면 눈이 바닥에 붙는다)
+    /// 헤드셋 없이 돌릴 때 서 있는 눈높이로 올리는 눈높이 맞춤을 붙인다.
+    /// </summary>
+    static void PlayerEye()
+    {
+        const string path = "Assets/Data/Generated/JourneyPersistent.prefab";
+        var root = PrefabUtility.LoadPrefabContents(path);
+        try
+        {
+            var player = root.GetComponentInChildren<OVRPlayerController>(true);
+            if (player == null) { Debug.LogWarning("[눈높이] 플레이어 없음"); return; }
+            if (player.GetComponent<PlayerEyeHeight>() == null) player.gameObject.AddComponent<PlayerEyeHeight>();
+            var manager = root.GetComponentInChildren<OVRManager>(true);
+            if (manager != null)
+            {
+                var so = new SerializedObject(manager);
+                so.FindProperty("_trackingOriginType").intValue = (int)OVRManager.TrackingOrigin.FloorLevel;
+                so.ApplyModifiedPropertiesWithoutUndo();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, path);
+        }
+        finally { PrefabUtility.UnloadPrefabContents(root); }
+    }
+
     /// <summary>잠수정 장면마다 실제 속도(m/s)·가속·회전 한도·수직 하강 속도를 적는다 (배치용).</summary>
     public static void ComfortReport()
     {

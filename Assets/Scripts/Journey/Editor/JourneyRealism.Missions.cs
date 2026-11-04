@@ -569,7 +569,8 @@ public static partial class JourneyRealism
         var forward = spawn != null ? spawn.transform.forward : Vector3.forward;
         var go = new GameObject("치료_보고서", typeof(RectTransform), typeof(Canvas));
         var canvas = go.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
-        var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(640, 440);
+        // 임무가 9~10가지로 늘어 예전 판(440)에서는 마지막 줄이 요약 줄과 겹쳐 판 밖으로 넘쳤다 → 판을 키우고 내용은 칸에 맞춰 글자를 줄인다
+        var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(640, 560);
         rect.position = eye + forward * 2.2f - Vector3.up * .1f; rect.rotation = Quaternion.LookRotation(rect.position - eye); rect.localScale = Vector3.one * ReportScale;
         UiKit();
         var plate = go.AddComponent<Image>(); Sliced(plate, KitPanel, PlateFill, 1.4f);
@@ -577,9 +578,10 @@ public static partial class JourneyRealism
         Stretch(line.rectTransform); Sliced(line, KitLine, PlateLine, 1.4f); line.transform.SetSiblingIndex(0);
         var title = UiText(rect, "제목", new Vector2(28, -20), new Vector2(584, 56), 42, Color.white, FontStyles.Bold); title.text = "치료 보고서";
         var report = go.AddComponent<TreatmentReport>();
-        report.body = UiText(rect, "내용", new Vector2(28, -92), new Vector2(584, 260), 28, new Color(.92f, .96f, .98f));
+        report.body = UiText(rect, "내용", new Vector2(28, -92), new Vector2(584, 370), 28, new Color(.92f, .96f, .98f));
+        report.body.enableAutoSizing = true; report.body.fontSizeMin = 20; report.body.fontSizeMax = 28;
         report.body.text = "충치 치료   완료\n치태 세균  6/6   완료\n역류 위산 중화  8/8   완료\n헬리코박터균 퇴치  7/7   완료\n영양소 흡수  18/18   완료\n해로운 균  8/8   완료";
-        report.summary = UiText(rect, "요약", new Vector2(28, -372), new Vector2(584, 44), 30, new Color(.5f, .9f, 1f), FontStyles.Bold);
+        report.summary = UiText(rect, "요약", new Vector2(28, -476), new Vector2(584, 44), 30, new Color(.5f, .9f, 1f), FontStyles.Bold);
         report.summary.text = "모든 치료를 마쳤어요!";
         foreach (var t in go.GetComponentsInChildren<TextMeshProUGUI>()) t.ForceMeshUpdate();
     }

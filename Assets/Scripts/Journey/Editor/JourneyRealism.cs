@@ -615,7 +615,7 @@ public static partial class JourneyRealism
         // 편집기에서 실행하면 장면을 차례로 열므로, 저장 안 한 작업은 먼저 물어보고 끝나면 원래 장면으로 돌아간다.
         if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return false;
         string previous = EditorSceneManager.GetActiveScene().path;
-        StyleSpeechBubble();
+        StyleSpeechBubble(); PlayerEye();
         // 신체 장면 + 시작(병원 진료실)과 끝(치료 결과)
         foreach (var name in new[] { "00_Lobby" }.Concat(BodyScenes).Concat(new[] { "06_Theater" }))
         {

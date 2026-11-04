@@ -48,6 +48,9 @@ public static partial class JourneyRealism
         go.name = name;
         go.transform.SetPositionAndRotation(position, Quaternion.Euler(0, yaw, 0));
         StandUp(go, yaw);
+        // 모형에 든 움직임은 쓰지 않는다: 의사 모형의 움직임은 두 팔을 옆으로 든 채 손짓만 하는 동작이라 가만히 서 있으면 T자세처럼 보였다.
+        // 팔은 몸 옆으로 내리고(RelaxArms), 숨쉬기·고개 돌리기·끄덕임(HospitalNpc)으로 살아 있게 한다.
+        foreach (var a in go.GetComponentsInChildren<Animation>(true)) { a.playAutomatically = false; a.enabled = false; PrefabUtility.RecordPrefabInstancePropertyModifications(a); }
         RelaxArms(go);
         var b = PersonBounds(go);
         if (b.size.y > 1e-3f) go.transform.localScale *= height / b.size.y;
@@ -127,13 +130,13 @@ public static partial class JourneyRealism
         Debug.Log($"[사람] {go.name} 세움: 머리 {(head.HasValue ? "찾음" : "모름")}, 얼굴 {(face.HasValue ? "찾음" : "모름")}");
     }
 
-    /// <summary>움직임이 없는 모형(간호사)은 두 팔을 벌린 T자세라 어색하다: 위팔을 몸 옆으로 내리고 아래팔을 살짝 앞으로 굽힌다.</summary>
+    /// <summary>움직임이 없는 모형(간호사·의사)은 두 팔을 벌린 T자세라 어색하다: 위팔을 몸 옆으로 내리고 아래팔을 살짝 앞으로 굽힌다. 뼈 이름은 두 방식(LeftArm / Bip001 L UpperArm)을 다 찾는다.</summary>
     static void RelaxArms(GameObject person)
     {
         var anim = person.GetComponentInChildren<Animation>();
-        if (anim != null && anim.GetClipCount() > 0) return; // 자기 움직임이 있으면 그 자세를 쓴다
+        if (anim != null && anim.enabled && anim.GetClipCount() > 0) return; // 자기 움직임을 쓰면 그 자세를 쓴다
         var center = PersonBounds(person).center;
-        foreach (var (upperKey, foreKey, handKey) in new[] { ("LeftArm", "LeftForeArm", "LeftHand"), ("RightArm", "RightForeArm", "RightHand") })
+        foreach (var (upperKey, foreKey, handKey) in new[] { (new[] { "LeftArm", "L UpperArm" }, new[] { "LeftForeArm", "L Forearm" }, new[] { "LeftHand", "L Hand" }), (new[] { "RightArm", "R UpperArm" }, new[] { "RightForeArm", "R Forearm" }, new[] { "RightHand", "R Hand" }) })
         {
             var upper = Bone(person, upperKey); var fore = Bone(person, foreKey); var hand = Bone(person, handKey);
             if (upper == null || fore == null) continue;
@@ -166,7 +169,8 @@ public static partial class JourneyRealism
         npc.npcName = displayName;
         npc.head = Bone(person, "Head_05", "Bip001 Head", "Head");
         npc.spine = new[] { Bone(person, "Spine1", "Spine_01", "Spine") }.Where(t => t != null).ToArray();
-        npc.clip = person.GetComponentInChildren<Animation>();
+        var own = person.GetComponentInChildren<Animation>();
+        npc.clip = own != null && own.enabled ? own : null; // 끈 움직임은 틀지 않는다 (틀면 내린 팔이 다시 올라간다)
         var audio = person.GetComponent<AudioSource>(); if (audio == null) audio = person.AddComponent<AudioSource>();
         audio.spatialBlend = .7f; audio.minDistance = 1.5f; audio.maxDistance = 12f; audio.playOnAwake = false;
         npc.voice = audio;
@@ -229,11 +233,12 @@ public static partial class JourneyRealism
                 Node("Lobby", "nurse_4"), Node("Lobby", "nurse_5"),
             };
             nurse.startNode = 0; nurse.repeatNode = 5;
-            var hud = Object.FindFirstObjectByType<JourneyHud>();
-            if (hud != null) UnityEventTools.AddStringPersistentListener(nurse.nodes[4].onEnter, hud.SetGoal, "가운데 몸 스캔 앞의 의사 선생님께 말을 걸어 보세요");
+            // 안내판(체험_안내판)은 적용할 때마다 다시 만들어진다: 안내판을 직접 가리키면 연결이 끊기므로 간호사를 거쳐 지금 안내판에 쓴다
+            UnityEventTools.AddStringPersistentListener(nurse.nodes[4].onEnter, nurse.ShowGoal, "몸 스캔 오른쪽의 의사 선생님께 말을 걸어 보세요");
         }
-        // 의사 선생님: 몸 스캔 옆. 말을 걸면 진찰을 시작하고, 진찰이 끝나면 잠수정을 안내한다.
-        var doctorGo = Person("Doctor.glb", "의사", new Vector3(1.35f, 0, 1.5f), 200, 1.75f, room);
+        // 의사 선생님: 몸 스캔 오른쪽 앞, 탐험가 쪽을 본다. 말을 걸면 진찰을 시작하고, 진찰이 끝나면 잠수정을 안내한다.
+        // 예전 자리(1.35, 1.5)는 들어서는 자리에서 보면 홀로그램 빛 알갱이와 뒤쪽 잠수정 사이에 끼어 겹쳐 보였다 → 둘 다에서 비켜선 자리.
+        var doctorGo = Person("Doctor.glb", "의사", new Vector3(1.8f, 0, -.4f), 210, 1.75f, room);
         if (doctorGo != null && scan != null)
         {
             var doctor = Npc(doctorGo, "의사 선생님");

@@ -17,6 +17,7 @@ public class SpectatorView : MonoBehaviour
     static SpectatorView instance;
     Camera view;
     TextMeshProUGUI info;
+    RectTransform panel;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class SpectatorView : MonoBehaviour
         var scaler = canvasGo.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1920, 1080);
         var bg = new GameObject("바탕", typeof(Image)).GetComponent<Image>(); bg.transform.SetParent(canvasGo.transform, false);
         bg.color = new Color(.05f, .11f, .15f, .8f);
-        var rect = bg.rectTransform; rect.anchorMin = new Vector2(0, 1); rect.anchorMax = new Vector2(0, 1); rect.pivot = new Vector2(0, 1); rect.anchoredPosition = new Vector2(30, -30); rect.sizeDelta = new Vector2(560, 300);
+        var rect = panel = bg.rectTransform; rect.anchorMin = new Vector2(0, 1); rect.anchorMax = new Vector2(0, 1); rect.pivot = new Vector2(0, 1); rect.anchoredPosition = new Vector2(30, -30); rect.sizeDelta = new Vector2(560, 300);
         info = new GameObject("내용", typeof(TextMeshProUGUI)).GetComponent<TextMeshProUGUI>(); info.transform.SetParent(bg.transform, false);
         var ir = info.rectTransform; ir.anchorMin = Vector2.zero; ir.anchorMax = Vector2.one; ir.offsetMin = new Vector2(22, 16); ir.offsetMax = new Vector2(-22, -16);
         info.fontSize = 30; info.color = Color.white; if (font != null) info.font = font;
@@ -56,5 +57,7 @@ public class SpectatorView : MonoBehaviour
         sb.AppendLine($"<b><color=#7FE3FF>지금: {(stage != null ? stage.displayName : "-")}</color></b>");
         foreach (var e in JourneyScore.Entries) sb.AppendLine($"{e.label}  {e.done}/{e.total}{(e.Complete ? "  <color=#7FE3FF>완료</color>" : "")}");
         info.text = sb.ToString();
+        // 판은 글 줄 수에 맞춘다 (병원에서는 한 줄뿐이라 높은 빈 판이 화면 왼쪽 위를 가렸다)
+        panel.sizeDelta = new Vector2(panel.sizeDelta.x, info.GetPreferredValues(info.text, panel.sizeDelta.x - 44, 0).y + 32);
     }
 }
