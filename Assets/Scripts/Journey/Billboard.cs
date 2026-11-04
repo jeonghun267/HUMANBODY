@@ -14,8 +14,7 @@ public class Billboard : MonoBehaviour
     {
         if (cam == null)
         {
-            var tagged = GameObject.FindWithTag("VRCamera");
-            cam = tagged != null ? tagged.transform : (Camera.main != null ? Camera.main.transform : null);
+            cam = JourneyEye.Get();
             if (cam == null) return;
         }
         Vector3 dir = transform.position - cam.position;

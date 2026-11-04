@@ -13,7 +13,31 @@ public static partial class JourneyRealism
     public static void ImportApplyAndCapture() { JourneyBuilder.ImportStages(); ApplyAndCapture(); }
 
     /// <summary>배치모드: 적용·촬영 뒤 장면 속 물체 조사까지.</summary>
-    public static void ApplyCaptureAndInventory() { ApplyAndCapture(); Inventory(); }
+    public static void ApplyCaptureAndInventory() { ApplyAndCapture(); Inventory(); Budget(); }
+
+    /// <summary>
+    /// 지정한 장면만 다시 적용한다 (배치: -realismScenes 03_Stomach,04_SmallIntestine).
+    /// 다른 장면(편집기에서 직접 손보고 저장한 장면 등)은 건드리지 않는다.
+    /// </summary>
+    public static void ApplySome()
+    {
+        var args = System.Environment.GetCommandLineArgs();
+        int i = System.Array.IndexOf(args, "-realismScenes");
+        if (i < 0 || i + 1 >= args.Length) { Debug.LogError("[JourneyRealism] -realismScenes 장면이름,장면이름 이 필요함"); return; }
+        ShaderUtil.allowAsyncCompilation = false;
+        foreach (var name in args[i + 1].Split(','))
+        {
+            var scene = EditorSceneManager.OpenScene($"{SceneDir}/{name.Trim()}.unity", OpenSceneMode.Single);
+            ConfigureScene(StageId(name.Trim()));
+            EditorSceneManager.MarkSceneDirty(scene);
+            EditorSceneManager.SaveScene(scene);
+            Debug.Log($"[JourneyRealism] {name.Trim()} 만 다시 적용");
+        }
+        AssetDatabase.SaveAssets();
+    }
+
+    /// <summary>대사 자료(journey_content.json)를 단계 에셋에 다시 불러온 뒤 적용·촬영·조사·성능 어림까지 (배치용).</summary>
+    public static void ImportApplyCaptureAndInventory() { JourneyBuilder.ImportStages(); ApplyCaptureAndInventory(); }
 
     public static void DebugTeeth()
     {

@@ -33,6 +33,8 @@ public class ChewingSequence : MonoBehaviour
     public ParticleSystem salivaVfx;
     [Tooltip("함께 시작하고 멈출 모든 침샘 방출기")]
     public ParticleSystem[] salivaEmitters;
+    [Tooltip("이가 음식을 물 때마다 튀는 침 섞인 부스러기")]
+    public ParticleSystem crumbs;
     public AudioSource chewAudio;
     public AudioClip chewClip;
     [Header("완료")]
@@ -126,10 +128,16 @@ public class ChewingSequence : MonoBehaviour
             if (chewAudio != null && chewClip != null) chewAudio.PlayOneShot(chewClip);
             else if (foodBolus != null) Sfx.Play("crunch", foodBolus.position, .8f, Random.Range(.9f, 1.1f));
             float t = 0;
+            bool bit = false;
             while (t < duration)
             {
                 t += Time.deltaTime;
                 float phase = Mathf.Clamp01(t / duration);
+                if (!bit && phase >= .5f)
+                {
+                    bit = true;
+                    if (crumbs != null && foodBolus != null) { crumbs.transform.position = foodBolus.position; crumbs.Emit(10); }
+                }
                 // k: 0 = 벌린 자세, 1 = 음식을 문 자세 (주기 가운데)
                 float k = Mathf.Sin(phase * Mathf.PI);
                 // 다무는 동안 씹는 쪽으로 비켜 있다가 무는 순간 가운데로 돌아오며 갈아 준다.

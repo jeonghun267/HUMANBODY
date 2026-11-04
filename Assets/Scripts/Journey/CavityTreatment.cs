@@ -3,7 +3,8 @@ using UnityEngine;
 
 /// <summary>
 /// 충치 치료. 어금니 씹는 면의 까만 충치를 파란 치료 광선으로 비추고 방아쇠를 누르고 있으면
-/// 썩은 부분이 줄어들어 사라지고 하얀 충전재로 메워진다. 입 장면 진행(씹기·삼키기)과는 따로 언제든 할 수 있다.
+/// 썩은 부분이 줄어들어 사라지고 하얀 충전재로 메워진다.
+/// hiddenUntilBegin 이면 처음엔 충치가 없고, 충치가 생기는 과정(DecayTimeLapse)이 Reveal 로 키운 뒤 Begin 으로 치료를 시작한다.
 /// </summary>
 [AddComponentMenu("인체탐험/충치 치료")]
 public class CavityTreatment : MonoBehaviour
@@ -16,30 +17,58 @@ public class CavityTreatment : MonoBehaviour
     [TextArea] public string goalText = "어금니의 까만 충치를 치료 광선으로 비추고 방아쇠를 누르고 있으세요";
     [TextArea] public string nextGoalText = "";
     public NarrationLine[] startLines, doneLines;
+    [Tooltip("처음엔 충치가 없다가 Reveal 로 생기고, Begin 을 불러야 치료를 시작한다 (충치가 생기는 과정을 먼저 보여 줄 때)")]
+    public bool hiddenUntilBegin;
     [Tooltip("치료가 끝나면 (다음 임무 시작 등)")] public UnityEngine.Events.UnityEvent onTreated = new UnityEngine.Events.UnityEvent();
 
     float progress;
-    bool done, announced;
+    bool done, begun;
     AudioSource hum;
     Vector3 decayScale;
+    public bool IsTreating => begun && !done;
+    public bool IsDone => done;
+
+    void Awake()
+    {
+        if (decay != null) decayScale = decay.localScale;
+        if (hiddenUntilBegin) Reveal(0);
+    }
 
     IEnumerator Start()
     {
-        if (decay != null) decayScale = decay.localScale;
         if (filling != null) filling.enabled = false;
         JourneyScore.Record("cavity", "충치 치료", 0, 1);
+        if (hiddenUntilBegin) yield break;
         // 입장 안내가 끝난 뒤 알려 준다 (안내를 끊지 않게)
         while (JourneyManager.Instance != null && (JourneyManager.Instance.IsIntroPending || JourneyManager.Instance.IsTransitioning)) yield return null;
         while (GuideNarrator.Instance != null && GuideNarrator.Instance.IsSpeaking) yield return null;
-        if (done) yield break;
-        announced = true;
+        Begin();
+    }
+
+    /// <summary>충치가 생기는 정도 (0 = 없음, 1 = 다 생김).</summary>
+    public void Reveal(float amount)
+    {
+        if (decay == null || done) return;
+        decay.gameObject.SetActive(amount > .01f);
+        decay.localScale = decayScale * Mathf.Clamp01(amount);
+    }
+
+    /// <summary>치료를 시작한다: 충치를 다 보이게 하고 목표·안내를 띄운다.</summary>
+    public void Begin()
+    {
+        if (done || begun) return;
+        begun = true;
+        Reveal(1);
         if (JourneyHud.Instance != null) JourneyHud.Instance.SetGoal(goalText);
         if (GuideNarrator.Instance != null && startLines != null && startLines.Length > 0) GuideNarrator.Instance.Play(startLines);
     }
 
+    /// <summary>바로 치료를 마친다 (건너뛰기·자동 검사용).</summary>
+    public void TreatNow() { if (!done) { begun = true; Finish(); } }
+
     void Update()
     {
-        if (done || decay == null) return;
+        if (done || !begun || decay == null) return;
         var ray = JourneyAim.Ray();
         bool aimed = JourneyAim.Near(ray, decay.position, aimRadius, range, out _);
         bool working = aimed && JourneyAim.TriggerHeld();

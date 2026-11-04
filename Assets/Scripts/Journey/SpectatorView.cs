@@ -44,7 +44,7 @@ public class SpectatorView : MonoBehaviour
     void LateUpdate()
     {
         if (view == null) return;
-        var cam = Camera.main;
+        var cam = JourneyEye.EyeCamera();
         if (cam != null && cam != view)
         {
             float k = 1 - Mathf.Exp(-smoothing * Time.deltaTime);

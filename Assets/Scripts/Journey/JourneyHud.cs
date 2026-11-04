@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,11 +23,23 @@ public class JourneyHud : MonoBehaviour
 
     [Header("걷는 장면: 시선 아래에 따라오기")]
     public bool followGaze;
-    public float followDistance = 1.1f;
-    [Tooltip("시선보다 몇 도 아래에 둘지")] public float followDown = 32f;
+    public float followDistance = 1.0f;
+    [Tooltip("시선보다 몇 도 아래에 둘지")] public float followDown = 24f;
     public float followSmoothing = 2.5f;
+    [Tooltip("시선이 이만큼(도) 벗어나야 따라오기 시작한다 — 고개를 조금 돌릴 때마다 판이 움직이면 어지럽다")]
+    public float recenterAngle = 20f;
+
+    [Header("잠수정 장면: 조종석 화면")]
+    [Tooltip("타면 실제 눈 기준(앞 0.78m, 0.36m 아래 ≈ 25°)에 판을 놓고 잠수정에 붙인다 — 좌석 높이가 장면마다 달라도 같은 자리에 보인다")]
+    public bool cockpit;
+    public Vector3 cockpitOffset = new Vector3(0, -.36f, .78f);
+
+    [Header("자막")]
+    [Tooltip("안내 내레이션 자막 판 (안내판 위). 말할 때만 보인다")] public GameObject subtitlePanel;
+    public TextMeshProUGUI subtitle;
 
     Transform eye;
+    bool recentering, cockpitPlaced;
 
     void Awake() => Instance = this;
     void OnDestroy() { if (Instance == this) Instance = null; }
@@ -45,6 +57,8 @@ public class JourneyHud : MonoBehaviour
         SetGoal(goalText);
         SetStatus(status != null ? status.text : "");
         if (followGaze) Snap();
+        // 안내 병아리 대신 목소리만: 자막은 이 안내판 위 자막 판에 나온다
+        if (subtitlePanel != null) { subtitlePanel.SetActive(false); if (GuideNarrator.Instance != null) GuideNarrator.Instance.UseSubtitles(subtitlePanel, subtitle); }
     }
 
     /// <summary>"입 › 식도 › [위] › 소장 › 대장" — 지금 있는 기관만 밝게.</summary>
@@ -93,17 +107,33 @@ public class JourneyHud : MonoBehaviour
         {
             var a = progressFill.anchorMax; a.x = Mathf.Clamp01(ride.cart.SplinePosition); progressFill.anchorMax = a;
         }
+        if (cockpit && !cockpitPlaced && ride != null && ride.IsRiding && Eye() != null)
+        {
+            var yaw = Quaternion.Euler(0, ride.transform.eulerAngles.y, 0);
+            var pos = eye.position + yaw * cockpitOffset;
+            transform.SetParent(ride.transform, true);
+            transform.SetPositionAndRotation(pos, Quaternion.LookRotation(pos - eye.position, Vector3.up));
+            cockpitPlaced = true;
+        }
         if (followGaze && Eye() != null)
         {
             Target(out var pos, out var rot);
-            float k = 1 - Mathf.Exp(-followSmoothing * Time.deltaTime);
-            transform.SetPositionAndRotation(Vector3.Lerp(transform.position, pos, k), Quaternion.Slerp(transform.rotation, rot, k));
+            // 게으른 따라오기: 판이 시선에서 recenterAngle 넘게 벗어나거나 몸이 걸어서 멀어지면 그때 부드럽게 제자리로 온다
+            float off = Vector3.Angle(transform.position - eye.position, pos - eye.position);
+            float gap = Mathf.Abs(Vector3.Distance(transform.position, eye.position) - followDistance);
+            if (!recentering && (off > recenterAngle || gap > .35f)) recentering = true;
+            if (recentering)
+            {
+                float k = 1 - Mathf.Exp(-followSmoothing * Time.deltaTime);
+                transform.SetPositionAndRotation(Vector3.Lerp(transform.position, pos, k), Quaternion.Slerp(transform.rotation, rot, k));
+                if (off < 2f && gap < .05f) recentering = false;
+            }
         }
     }
 
     Transform Eye()
     {
-        if (eye == null && Camera.main != null) eye = Camera.main.transform;
+        if (eye == null) eye = JourneyEye.Get();
         return eye;
     }
 

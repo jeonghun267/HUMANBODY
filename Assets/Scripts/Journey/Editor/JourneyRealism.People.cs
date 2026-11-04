@@ -178,8 +178,9 @@ public static partial class JourneyRealism
         panelGo.transform.SetParent(person.transform, true);
         var canvas = panelGo.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace; canvas.sortingOrder = 6;
         var rect = (RectTransform)panelGo.transform; rect.sizeDelta = new Vector2(620, 330);
-        rect.position = new Vector3(person.transform.position.x, top + .35f, person.transform.position.z) + person.transform.right * .55f;
-        rect.localScale = Vector3.one * (.0011f / Mathf.Max(1e-4f, person.transform.lossyScale.x));
+        // 대화하는 거리(약 2m)에서 대사 글자가 약 1.3°로 읽히게 (예전 0.0011 은 0.85° 로 작았다)
+        rect.position = NpcPanelSpot(person, top);
+        rect.localScale = Vector3.one * (NpcPanelScale / Mathf.Max(1e-4f, person.transform.lossyScale.x));
         var plate = panelGo.AddComponent<Image>(); Sliced(plate, KitPanel, PlateFill, 1.4f);
         var line = UiChild(rect, "외곽선", Vector2.zero, Vector2.zero).gameObject.AddComponent<Image>(); Stretch(line.rectTransform); Sliced(line, KitLine, PlateLine, 1.4f); line.transform.SetSiblingIndex(0);
         npc.nameText = UiText(rect, "이름", new Vector2(24, -14), new Vector2(570, 44), 32, new Color(.5f, .9f, 1f), FontStyles.Bold);
@@ -199,7 +200,7 @@ public static partial class JourneyRealism
         promptGo.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
         var pr = (RectTransform)promptGo.transform; pr.sizeDelta = new Vector2(300, 64);
         pr.position = new Vector3(person.transform.position.x, top + .22f, person.transform.position.z);
-        pr.localScale = Vector3.one * (.0011f / Mathf.Max(1e-4f, person.transform.lossyScale.x));
+        pr.localScale = Vector3.one * (NpcPromptScale / Mathf.Max(1e-4f, person.transform.lossyScale.x));
         var chip = promptGo.AddComponent<Image>(); Sliced(chip, KitPanel, new Color(.05f, .11f, .15f, .9f), 1f);
         var pt = UiText(pr, "글", new Vector2(16, -12), new Vector2(268, 40), 26, new Color(.5f, .9f, 1f), FontStyles.Bold); pt.text = "방아쇠: 대화하기"; pt.alignment = TextAlignmentOptions.Center;
         promptGo.AddComponent<Billboard>();
@@ -349,7 +350,7 @@ public static partial class JourneyRealism
         panelGo.transform.SetParent(go.transform, false);
         panelGo.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
         var rect = (RectTransform)panelGo.transform; rect.sizeDelta = new Vector2(900, 560);
-        rect.position = new Vector3(.6f, 1.5f, -1.2f); rect.rotation = Quaternion.LookRotation(rect.position - new Vector3(0, 1.6f, -3.6f)); rect.localScale = Vector3.one * .0016f;
+        rect.position = new Vector3(.6f, 1.5f, -1.2f); rect.rotation = Quaternion.LookRotation(rect.position - new Vector3(0, 1.6f, -3.6f)); rect.localScale = Vector3.one * QuizScale;
         var plate = panelGo.AddComponent<Image>(); Sliced(plate, KitPanel, PlateFill, 1.4f);
         var line = UiChild(rect, "외곽선", Vector2.zero, Vector2.zero).gameObject.AddComponent<Image>(); Stretch(line.rectTransform); Sliced(line, KitLine, PlateLine, 1.4f); line.transform.SetSiblingIndex(0);
         quiz.progressText = UiText(rect, "차례", new Vector2(30, -22), new Vector2(840, 40), 28, new Color(.5f, .9f, 1f), FontStyles.Bold);

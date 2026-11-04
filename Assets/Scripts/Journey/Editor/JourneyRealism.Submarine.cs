@@ -18,6 +18,8 @@ public static partial class JourneyRealism
 {
     const float EyeHeight = 1.6f; // 좌석(발) → 눈
     const float PodRadius = 1.7f;
+    /// <summary>계기판 화면 자리(눈 기준): 0.86m 앞, 25° 아래 — 조종대 판(-0.58m)보다 위라 가리지 않고, 고개를 조금만 숙이면 읽힌다.</summary>
+    static readonly Vector3 ScreenSpot = new Vector3(0, -.36f, .78f);
 
     static void Submarines(string id)
     {
@@ -48,6 +50,14 @@ public static partial class JourneyRealism
         // 눈 = 이동 경로(관 한가운데). 좌석은 그만큼 아래, 안내 병아리는 오른쪽 앞 조종대 위.
         if (ride.seatPoint != null) ride.seatPoint.position = capsule.position - Vector3.up * EyeHeight;
         if (ride.guideSeatPoint != null) ride.guideSeatPoint.position = capsule.position + capsule.rotation * new Vector3(.62f, -.32f, .72f);
+        // 도착 자리 = 좌석: 장면에 들어오자마자 잠수정 안 그 눈높이에 있다. 예전엔 발판 위(좌석에서 0.6~1.4m 떨어진 곳)에 섰다가
+        // 탑승하는 순간 눈이 툭 옮겨졌다(멀미). 안내판도 처음부터 제자리(눈 앞 25° 아래)에 보인다.
+        var spawnPoint = GameObject.Find("SpawnPoint");
+        if (spawnPoint != null && ride.seatPoint != null)
+        {
+            var ahead = Vector3.ProjectOnPlane(capsule.forward, Vector3.up); if (ahead.sqrMagnitude < 1e-4f) ahead = Vector3.forward;
+            spawnPoint.transform.SetPositionAndRotation(ride.seatPoint.position, Quaternion.LookRotation(ahead.normalized));
+        }
 
         var screen = PodVisual(pod);
 
@@ -87,8 +97,8 @@ public static partial class JourneyRealism
         Part(pod, "조종대", Arc(.62f, .98f, -55, 55, .07f, 40), frame, new Vector3(0, -.62f, 0), Quaternion.identity);
         Part(pod, "조종대_빛띠", Arc(.95f, .985f, -55, 55, .02f, 40), glow, new Vector3(0, -.545f, 0), Quaternion.identity);
         var screen = Child(pod, "계기판_화면");
-        screen.localPosition = new Vector3(0, -.5f, .66f);
-        screen.localRotation = Quaternion.LookRotation(screen.localPosition - Vector3.zero);
+        screen.localPosition = ScreenSpot;
+        screen.localRotation = Quaternion.LookRotation(ScreenSpot);
         return screen;
     }
 

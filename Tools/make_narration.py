@@ -68,6 +68,9 @@ async def synth(name: str, text, voice: str, rate: str, pitch: str, force: bool)
 async def main(a):
     OUT.mkdir(parents=True, exist_ok=True)
     lines = collect()
+    if a.narrator_only:  # 사람 목소리(의사·간호사) 대사는 빼고, 안내 목소리 대사만 덮어쓴다
+        lines = {n: t for n, t in lines.items() if not (isinstance(t, tuple) and t[1] in VOICES)}
+        a.force = True
     print(f"{len(lines)}줄, voice={a.voice} rate={a.rate} pitch={a.pitch}")
     sem = asyncio.Semaphore(4)
     async def run(n, t):
@@ -79,7 +82,8 @@ async def main(a):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--voice", default="ko-KR-SunHiNeural")
-    ap.add_argument("--rate", default="+3%")
-    ap.add_argument("--pitch", default="+25Hz", help="병아리 느낌으로 살짝 높게")
+    ap.add_argument("--rate", default="+0%")
+    ap.add_argument("--pitch", default="+0Hz", help="안내 병아리를 없앤 뒤로는 차분한 기본 높이 (예전 병아리 목소리: +25Hz, 빠르기 +3%%)")
+    ap.add_argument("--narrator-only", action="store_true", help="안내 목소리 대사만 다시 만든다 (의사·간호사 목소리 대사는 그대로)")
     ap.add_argument("--force", action="store_true", help="기존 파일 덮어쓰기")
     asyncio.run(main(ap.parse_args()))

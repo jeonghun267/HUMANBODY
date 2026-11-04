@@ -1,0 +1,15 @@
+﻿05_LargeIntestine t=0.5 위치 (-1.0, 0.9, 14.2) 진행 (0.02, 0.00, 1.00)
+
+[앞] 가운데 광선에 걸리는 물체(상자 기준, 가까운 순)
+   -16.9m  연속_기관벽  (MeshRenderer, 크기 (9.2, 6.7, 34.3), 재질 LargeIntestine_조직)
+    -1.7m  Prop_ExplorerCapsule/관찰_잠수정/관찰창  (MeshRenderer, 크기 (3.5, 3.4, 3.5), 재질 관찰창_유리)
+    -1.3m  Prop_ExplorerCapsule/관찰_잠수정/세로_뼈대_왼쪽  (MeshRenderer, 크기 (2.4, 3.4, 2.5), 재질 잠수정_뼈대)
+    -1.2m  Prop_ExplorerCapsule/관찰_잠수정/세로_뼈대_오른쪽  (MeshRenderer, 크기 (2.5, 3.4, 2.4), 재질 잠수정_뼈대)
+    13.4m  대장_끝  (MeshRenderer, 크기 (8.0, 6.8, 9.0), 재질 LargeIntestine_조직)
+
+[뒤] 가운데 광선에 걸리는 물체(상자 기준, 가까운 순)
+   -17.4m  연속_기관벽  (MeshRenderer, 크기 (9.2, 6.7, 34.3), 재질 LargeIntestine_조직)
+    -1.7m  Prop_ExplorerCapsule/관찰_잠수정/관찰창  (MeshRenderer, 크기 (3.5, 3.4, 3.5), 재질 관찰창_유리)
+    -1.3m  Prop_ExplorerCapsule/관찰_잠수정/세로_뼈대_왼쪽  (MeshRenderer, 크기 (2.4, 3.4, 2.5), 재질 잠수정_뼈대)
+    -1.2m  Prop_ExplorerCapsule/관찰_잠수정/세로_뼈대_오른쪽  (MeshRenderer, 크기 (2.5, 3.4, 2.4), 재질 잠수정_뼈대)
+     7.2m  회맹판  (MeshRenderer, 크기 (1.5, 3.0, 3.0), 재질 LargeIntestine_조직)

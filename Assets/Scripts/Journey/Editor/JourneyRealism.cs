@@ -459,8 +459,11 @@ public static partial class JourneyRealism
         Directory.CreateDirectory(Folder);
         string path = $"{Folder}/구멍_안쪽.mat";
         var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
-        if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(mat, path); }
-        mat.SetColor("_BaseColor", new Color(.09f, .02f, .03f)); mat.SetFloat("_Smoothness", .85f); mat.SetFloat("_Metallic", 0);
+        // 구멍 안은 빛이 닿지 않는 어둠: 반짝이는 재질은 기본 반사(푸른 하늘)를 비춰 구멍 가운데 파란 줄이 보였다 → 반사 없는 검정
+        var unlit = Shader.Find("Universal Render Pipeline/Unlit");
+        if (mat == null) { mat = new Material(unlit); AssetDatabase.CreateAsset(mat, path); }
+        if (mat.shader != unlit) mat.shader = unlit;
+        mat.SetColor("_BaseColor", new Color(.02f, .005f, .008f));
         EditorUtility.SetDirty(mat);
         return mat;
     }
@@ -612,6 +615,7 @@ public static partial class JourneyRealism
         // 편집기에서 실행하면 장면을 차례로 열므로, 저장 안 한 작업은 먼저 물어보고 끝나면 원래 장면으로 돌아간다.
         if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return false;
         string previous = EditorSceneManager.GetActiveScene().path;
+        StyleSpeechBubble();
         // 신체 장면 + 시작(병원 진료실)과 끝(치료 결과)
         foreach (var name in new[] { "00_Lobby" }.Concat(BodyScenes).Concat(new[] { "06_Theater" }))
         {
@@ -640,8 +644,8 @@ public static partial class JourneyRealism
     public static void ConfigureScene(string id)
     {
         // 시작은 병원 진료실(진찰 → 초소형 치료 잠수정), 끝은 치료 결과 보고서
-        if (id == "Lobby") { Hospital(); HandToolIn(); Hud(id); return; }
-        if (id == "Theater") { EndingClinic(); return; }
+        if (id == "Lobby") { Hospital(); HandToolIn(); Hud(id); StyleLabels(); return; }
+        if (id == "Theater") { EndingClinic(); StyleLabels(); return; }
         if (!IsBody(id)) return;
         var o = Get(id);
         var mucosa = Mucosa(id);
@@ -685,6 +689,7 @@ public static partial class JourneyRealism
         if (id == "SmallIntestine") EnzymeMission();
         if (id == "LargeIntestine") FiberMission();
         Ambience(id);
+        StyleLabels(); // 판을 STILL 키트 한 벌로
     }
 
     static void Lighting(Organ o)
@@ -719,6 +724,17 @@ public static partial class JourneyRealism
         RenderSettings.fogColor = deep * .28f;
         RenderSettings.fogDensity = o.fogDensity;
         RenderSettings.reflectionIntensity = .35f;
+        // 몸속에는 하늘이 없다: 관 끝 틈 등으로 하늘(주황 원판과 지평선 줄)이 비치지 않게 검은 하늘로 둔다
+        RenderSettings.skybox = BlackSky();
+    }
+
+    static Material BlackSky()
+    {
+        string path = $"{Folder}/몸속_검은_하늘.mat";
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+        if (mat == null) { mat = new Material(Shader.Find("Skybox/Procedural")); AssetDatabase.CreateAsset(mat, path); }
+        mat.SetFloat("_Exposure", 0f); mat.SetFloat("_SunSize", 0f); mat.SetColor("_GroundColor", Color.black); mat.SetColor("_SkyTint", Color.black);
+        EditorUtility.SetDirty(mat); return mat;
     }
 
     static Light LampChild(Transform root, string name, LightType type)
@@ -808,7 +824,9 @@ public static partial class JourneyRealism
                     for (int k = 0; k < 30; k++) { float mid = (lo + hi) * .5f; if (((Vector3)spline.EvaluatePosition(mid)).z < zoom.transform.position.z - 4f) lo = mid; else hi = mid; }
                     Vector3 at = spline.EvaluatePosition(lo);
                     capsule.SetPositionAndRotation(at, Quaternion.LookRotation(Vector3.forward));
-                    Shoot(outDir, name, "융털", at, Quaternion.LookRotation(zoom.transform.position + Vector3.up * .3f - at), 60f);
+                    var shell = zoom.transform.Find("융털_겉");
+                    var target = shell != null ? Bounds(shell.gameObject).center : zoom.transform.position + Vector3.up * .3f;
+                    Shoot(outDir, name, "융털", at, Quaternion.LookRotation(target - at), 60f);
                 }
                 capsule.SetPositionAndRotation(homePos, homeRot);
             }
@@ -823,6 +841,20 @@ public static partial class JourneyRealism
                 if (cavity != null) Shoot(outDir, name, "충치", eye, Quaternion.LookRotation(cavity.transform.position - eye), 50f);
                 var teeth = GameObject.Find("새_아랫니");
                 if (teeth != null) Shoot(outDir, name, "아랫니", eye, Quaternion.LookRotation(Bounds(teeth).center - eye), 80f);
+                // 씹기: 음식을 아래 어금니에 올린 벌린 자세와, 다물어 문 자세 (윗니가 음식 위에 닿아야 한다)
+                var chew = Object.FindFirstObjectByType<ChewingSequence>();
+                if (chew != null && chew.upperJaw != null && chew.chewPoint != null && chew.foodBolus != null)
+                {
+                    var jaw = chew.upperJaw; var rest = jaw.localRotation; var food = chew.foodBolus; var home = food.position;
+                    var fb = Bounds(food.gameObject); var root = food.position - new Vector3(fb.center.x, fb.min.y, fb.center.z);
+                    food.position = chew.chewPoint.position + root;
+                    var side = chew.chewPoint.position + new Vector3(chew.chewPoint.position.x < 0 ? 2.4f : -2.4f, 1.3f, -1.6f); // 혀 위 반대편에서 비스듬히
+                    Shoot(outDir, name, "씹기_벌림", side, Quaternion.LookRotation(chew.chewPoint.position - side), 55f);
+                    jaw.localRotation = rest * Quaternion.AngleAxis(-chew.jawOpenAngle, Vector3.right);
+                    food.position = chew.chewPoint.position + root;
+                    Shoot(outDir, name, "씹기_다묾", side, Quaternion.LookRotation(chew.chewPoint.position - side), 55f);
+                    jaw.localRotation = rest; food.position = home;
+                }
                 var holo = GameObject.Find("Hologram_DigestiveSystem");
                 if (holo != null)
                 {

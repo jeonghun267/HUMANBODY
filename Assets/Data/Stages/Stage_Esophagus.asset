@@ -16,16 +16,21 @@ MonoBehaviour:
   displayName: "\uC2DD\uB3C4"
   sceneName: 02_Esophagus
   introLines:
+  - text: "\uC704\uB97C \uC62C\uB824\uB2E4\uBD10! \uD6C4\uB450\uB36E\uAC1C\uAC00
+      \uC228 \uC26C\uB294 \uAE38\uC778 \uAE30\uB3C4\uB97C \uB36E\uC5C8\uC5B4. \uADF8\uB798\uC11C
+      \uC0BC\uD0A8 \uC74C\uC2DD\uC740 \uC2DD\uB3C4\uB85C\uB9CC \uB0B4\uB824\uAC00."
+    voice: {fileID: 8300000, guid: de44d0763d1c0f4418fe535a1e4dfe30, type: 3}
+    holdSeconds: 6.7599998
   - text: "\uC2DD\uB3C4\uB294 \uC785\uACFC \uC704\uB97C \uC787\uB294 \uC57D 25\uC13C\uD2F0\uBBF8\uD130
       \uAE38\uC774\uC758 \uADFC\uC721 \uAD00\uC774\uC57C. \uD0D0\uD5D8 \uCEA1\uC290\uC744
       \uD0C0\uACE0 \uC74C\uC2DD\uC774 \uB0B4\uB824\uAC00\uB294 \uAE38\uC744 \uAD00\uCC30\uD574
       \uBCF4\uC790!"
-    voice: {fileID: 8300000, guid: de44d0763d1c0f4418fe535a1e4dfe30, type: 3}
+    voice: {fileID: 8300000, guid: bd8a33608ac3fdb4aa919c6da27f508f, type: 3}
     holdSeconds: 8.19
   - text: "\uB0B4\uB824\uAC00\uB294 \uB3D9\uC548 \uC704\uC5D0\uC11C \uAC70\uAFB8\uB85C
       \uC62C\uB77C\uC624\uB294 \uC704\uC0B0 \uBC29\uC6B8\uC774 \uBCF4\uC774\uBA74,
       \uC911\uD654\uC81C\uB97C \uC3F4\uC11C \uC5C6\uC560 \uC918!"
-    voice: {fileID: 8300000, guid: bd8a33608ac3fdb4aa919c6da27f508f, type: 3}
+    voice: {fileID: 8300000, guid: 45ae132fa19efba4bb2aabd87b9a7127, type: 3}
     holdSeconds: 5.9799995
   outroLines:
   - text: "\uC800 \uC544\uB798 \uC785\uAD6C\uAC00 \uC704\uB85C \uB4E4\uC5B4\uAC00\uB294

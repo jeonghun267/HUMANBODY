@@ -70,7 +70,7 @@ public class HospitalNpc : MonoBehaviour
         if (clip != null && clip.clip != null) { clip.wrapMode = WrapMode.Loop; clip.Play(); }
     }
 
-    Transform Eye() { if (eye == null && Camera.main != null) eye = Camera.main.transform; return eye; }
+    Transform Eye() { if (eye == null) eye = JourneyEye.Get(); return eye; }
 
     void Update()
     {

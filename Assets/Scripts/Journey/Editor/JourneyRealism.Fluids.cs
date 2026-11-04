@@ -75,7 +75,7 @@ public static partial class JourneyRealism
             if (i < nx && j < nz) { int k = j * (nx + 1) + i, n = k + nx + 1; tri.AddRange(new[] { k, n, k + 1, k + 1, n, n + 1 }); }
         }
         var mesh = new Mesh { name = "위액 웅덩이" }; mesh.SetVertices(v); mesh.SetUVs(0, uv); mesh.SetTriangles(tri, 0); mesh.RecalculateNormals(); mesh.RecalculateBounds();
-        SurfaceObject("위액_웅덩이", mesh, LiquidSurface("위액_수면", new Color(.8f, .76f, .45f, .55f), new Color(.32f, .2f, .08f), .06f));
+        SurfaceObject("위액_웅덩이", mesh, LiquidSurface("위액_수면", new Color(.74f, .74f, .4f, .8f), new Color(.24f, .2f, .06f), .06f)); // 밑 점막 결이 비쳐 벌집처럼 보이지 않게 진하게, 연둣빛 노란 위액
     }
 
     /// <summary>관 바닥을 따라 흘러가는 내용물 수면. 이동 경로를 따라가며, 가장자리는 벽 속에 묻힌다. uv 는 미터(가로, 흐른 거리).</summary>

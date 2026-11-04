@@ -81,3 +81,6 @@ Thumbs.db
 
 # 로컬 작업 백업 (git 기록이 대신한다)
 Tools/backup/
+
+# Android 네이티브 빌드 임시 파일 (빌드할 때마다 다시 생긴다)
+.utmp/

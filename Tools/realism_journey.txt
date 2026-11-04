@@ -1,28 +1,39 @@
 Mode: journey
-UTC: 2026-11-03T20:41:27.1030287Z
+UTC: 2026-11-04T03:02:49.4859618Z
 PASS Lobby bootstrap
 PASS 01_Mouth keeps the original player
 PASS 01_Mouth keeps the original persistent root
 PASS 01_Mouth has a narrator
+PASS 입: 처음엔 충치가 없다
+PASS 입: 씹기가 끝난 뒤 충치가 생기는 과정이 시작된다
+PASS 입: 시간이 흐른 뒤 충치가 생기고 치료가 시작된다
+PASS 입: 충치 치료 뒤 치태 세균 없애기(양치)가 시작된다
 PASS 02_Esophagus keeps the original player
 PASS 02_Esophagus keeps the original persistent root
 PASS 02_Esophagus has a narrator
-PASS Mouth zone -> chewing -> swallowing -> esophagus
+PASS Mouth: chew -> decay time-lapse -> cavity treatment -> plaque -> swallow -> esophagus
+PASS 식도: 후두덮개가 첫 안내 대사 동안 닫힘 (0.1초 ≤ 9.0초)
+PASS 식도: 후두덮개가 닫히며 침방울이 튐
 PASS Persistent root remains independent while riding toward 03_Stomach
+PASS 02_Esophagus: 떠다니는 것이 눈 1.2m 안으로 안 들어옴 (가장 가까이 4.18m, 역류_위산_중화/방울 물체 (-2.5, -4.9, 0.7) 눈 (1.9, -4.6, 0.9))
 PASS 03_Stomach keeps the original player
 PASS 03_Stomach keeps the original persistent root
 PASS 03_Stomach has a narrator
+PASS 위: 둥실거림이 느리다 (7개, 가장 빠름 0.11m/s · 7°/s)
 PASS Stomach digestion opens pylorus
 PASS Missions on the way to 04_SmallIntestine start and clear (1)
+PASS 03_Stomach: 떠다니는 것이 눈 1.2m 안으로 안 들어옴 (가장 가까이 1.41m, ChymeFlowSpline/Prop_ChymeBlob(Clone) 물체 (-1.8, 0.5, 3.3) 눈 (-0.4, 1.7, 3.6))
 PASS 04_SmallIntestine keeps the original player
 PASS 04_SmallIntestine keeps the original persistent root
 PASS 04_SmallIntestine has a narrator
 PASS All nutrients absorb and completion event fires
 PASS Missions on the way to 05_LargeIntestine start and clear (3)
+PASS 04_SmallIntestine: 떠다니는 것이 눈 1.2m 안으로 안 들어옴 (가장 가까이 2.29m, VillusZoom/Object_4 물체 (1.9, 0.3, 36.5) 눈 (-0.4, 0.7, 36.5))
 PASS 05_LargeIntestine keeps the original player
 PASS 05_LargeIntestine keeps the original persistent root
 PASS 05_LargeIntestine has a narrator
 PASS Missions on the way to 06_Theater start and clear (2)
+PASS 05_LargeIntestine: 떠다니는 것이 눈 1.2m 안으로 안 들어옴 (가장 가까이 2.00m, HarmfulSwarm/Char_Virus_가벼움(Clone) 물체 (0.2, 1.6, 19.7) 눈 (0.5, 0.8, 21.9))
 PASS 06_Theater keeps the original player
 PASS 06_Theater keeps the original persistent root
 PASS 06_Theater has a narrator

@@ -22,6 +22,8 @@ public class GermBlaster : MonoBehaviour
     [Tooltip("범위의 기준. 비우면 ride, 그것도 없으면 이 물체")] public Transform basis;
     [Tooltip("표적이 기준과 함께 움직인다 (내려가는 잠수정 주변)")] public bool followBasis;
     [Tooltip("떠다니는 폭(m)")] public float bob = .35f;
+    [Tooltip("범위로 뿌릴 때, 기준(잠수정) 가운데에서 이 반지름(m) 안에는 표적을 두지 않는다 (잠수정 유리 안·눈앞에 생기면 어지럽다). 떠다니는 폭과 표적 크기만큼 더 띄운다")]
+    public float clearRadius = 2.1f;
     public CapsuleRide ride;
     [Tooltip("다 없애면 잠수정 정차를 푼다")] public bool releaseRide = true;
     public LineRenderer beam;
@@ -29,6 +31,7 @@ public class GermBlaster : MonoBehaviour
     public float range = 16f, aimRadius = .45f, cooldown = .2f, beamSeconds = .08f;
     [Tooltip("쏠 때 / 맞혔을 때 / 지킬 대상을 맞혔을 때 소리 (Sfx 이름)")] public string fireSound = "beam", hitSound = "pop", wrongSound = "wrong";
     [Tooltip("맞히면 없애는 대신 커지며 빛난다 (유익균에게 먹이 주기 등)")] public bool growOnHit;
+    [Tooltip("먹이 주기에서 먹이가 날아올 무리 (대장의 식이섬유). 맞힌 표적에 가장 가까운 것이 날아가 먹힌다")] public FloatingSwarm feedSource;
     [Tooltip("표적 위에 띄울 이름 (효소 짝 맞추기의 음식 이름 등). 비우면 띄우지 않는다")] public string harmfulTag, helpfulTag;
     [Tooltip("모형마다 다른 이름 (prefabs 와 같은 순서). 있으면 위 이름 대신 쓴다")] public string[] harmfulTags = new string[0], helpfulTags = new string[0];
     public TMPro.TMP_FontAsset tagFont;
@@ -114,9 +117,11 @@ public class GermBlaster : MonoBehaviour
         {
             var prefab = prefabs[i % prefabs.Length];
             if (prefab == null) continue;
-            var local = spawnCenter + Vector3.Scale(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), spawnExtents);
-            var go = Instantiate(prefab, origin.TransformPoint(local), Random.rotation, transform);
             float s = Random.Range(scaleRange.x, scaleRange.y);
+            var local = spawnCenter + Vector3.Scale(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), spawnExtents);
+            float clear = clearRadius > 0 ? clearRadius + bob + s * .6f : 0f;
+            if (local.magnitude < clear) local = (local.sqrMagnitude > 1e-4f ? local.normalized : Vector3.forward) * clear; // 잠수정 둘레 밖으로
+            var go = Instantiate(prefab, origin.TransformPoint(local), Random.rotation, transform);
             go.transform.localScale = Vector3.one * s;
             foreach (var c in go.GetComponentsInChildren<Collider>()) c.enabled = false; // 맞힘 판정은 광선 거리로 한다
             germs.Add(new Germ { t = go.transform, home = followBasis ? local : go.transform.position, phase = Random.value * 10f, scale = s, harmful = harmful });
@@ -181,7 +186,13 @@ public class GermBlaster : MonoBehaviour
             if (time > warnAfter && helpfulHitLines != null && helpfulHitLines.Length > 0) { Speak(helpfulHitLines); warnAfter = time + 6f; }
             return;
         }
-        if (growOnHit) { best.fed = true; best.t.localScale *= 1.35f; best.t.gameObject.AddComponent<Rotator>().degreesPerSecond = new Vector3(0, 90, 0); }
+        if (growOnHit)
+        {
+            best.fed = true;
+            var food = NearestFeed(best.t.position);
+            if (food != null) StartCoroutine(Feed(food, best.t));
+            else Grow(best.t);
+        }
         else best.t.gameObject.SetActive(false);
         if (hitBurst != null) { hitBurst.transform.position = end; hitBurst.Emit(24); }
         Sfx.Play(hitSound, end, .8f, Random.Range(.95f, 1.1f));
@@ -192,6 +203,61 @@ public class GermBlaster : MonoBehaviour
         if (JourneyHud.Instance != null) JourneyHud.Instance.SetStatus(Score());
         if (remaining > 0 && hitLines != null && hitIndex < hitLines.Length) Speak(new[] { hitLines[hitIndex] });
         if (remaining <= 0) StartCoroutine(FinishAfter(hitLines != null && hitIndex < hitLines.Length ? hitLines[hitIndex] : null));
+    }
+
+    IEnumerator MoveAside(Transform t)
+    {
+        yield return new WaitForSeconds(growOnHit ? .8f : .2f); // 배부른 유익균은 잠깐 보여 준다
+        if (t == null) yield break;
+        var basis = Basis;
+        var side = Vector3.ProjectOnPlane(t.position - basis.position, basis.forward);
+        if (side.sqrMagnitude < .09f) side = basis.right * (Random.value < .5f ? -1 : 1);
+        Vector3 from = t.position, to = from + side.normalized * 2.5f + Vector3.up * .3f, size = t.localScale;
+        for (float k = 0; k < 1 && t != null; k += Time.deltaTime / 1.4f)
+        {
+            float e = Mathf.SmoothStep(0, 1, k);
+            t.position = Vector3.Lerp(from, to, e);
+            t.localScale = size * (1 - e);
+            yield return null;
+        }
+        if (t != null) t.gameObject.SetActive(false);
+    }
+
+    static void Grow(Transform germ) { germ.localScale *= 1.35f; germ.gameObject.AddComponent<Rotator>().degreesPerSecond = new Vector3(0, 90, 0); }
+
+    /// <summary>먹이 무리(식이섬유)에서 표적에 가장 가까운 것 (12m 안).</summary>
+    Transform NearestFeed(Vector3 at)
+    {
+        if (feedSource == null) return null;
+        Transform best = null; float bestDist = 12f * 12f;
+        foreach (Transform c in feedSource.transform)
+        {
+            if (!c.gameObject.activeInHierarchy) continue;
+            float d = (c.position - at).sqrMagnitude;
+            if (d < bestDist) { best = c; bestDist = d; }
+        }
+        return best;
+    }
+
+    /// <summary>식이섬유가 맞힌 유익균에게 날아가 먹히고, 유익균이 커지며 빛난다.</summary>
+    IEnumerator Feed(Transform food, Transform germ)
+    {
+        food.SetParent(null, true); // 무리의 위치 갱신에서 떼어 낸다
+        Vector3 from = food.position, size = food.localScale;
+        float t = 0, seconds = .7f;
+        while (t < seconds && food != null && germ != null)
+        {
+            t += Time.deltaTime;
+            float k = Mathf.SmoothStep(0, 1, t / seconds);
+            food.position = Vector3.Lerp(from, germ.position, k) + Vector3.up * .4f * Mathf.Sin(k * Mathf.PI);
+            food.localScale = size * (1 - .8f * k);
+            yield return null;
+        }
+        if (food != null) Destroy(food.gameObject);
+        if (germ == null) yield break;
+        Grow(germ);
+        if (hitBurst != null) { hitBurst.transform.position = germ.position; hitBurst.Emit(12); }
+        Sfx.Play("ting", germ.position, .5f, 1.2f);
     }
 
     IEnumerator FinishAfter(NarrationLine last)
@@ -207,6 +273,9 @@ public class GermBlaster : MonoBehaviour
         if (done) return;
         active = false; done = true;
         foreach (var g in germs) if (g.t != null && g.harmful && !growOnHit) g.t.gameObject.SetActive(false);
+        // 길 위에 떠 있던 나머지(지킬 대상, 배부른 유익균)는 벽 쪽으로 비켜 사라진다. 그대로 두면 다시 출발한 잠수정이 그 사이를 뚫고 지나가 눈앞을 스친다.
+        if (spots == null || spots.Length == 0)
+            foreach (var g in germs) if (g.t != null && g.t.gameObject.activeSelf) StartCoroutine(MoveAside(g.t));
         Sfx.Play("success", Basis.position, .7f);
         if (JourneyHud.Instance != null) { JourneyHud.Instance.SetStatus(clearedStatus); JourneyHud.Instance.SetGoal(""); }
         Speak(clearedLines);

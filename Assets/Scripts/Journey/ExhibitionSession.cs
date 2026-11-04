@@ -82,7 +82,7 @@ public class ExhibitionSession : MonoBehaviour
 
     void Update()
     {
-        var cam = Camera.main;
+        var cam = JourneyEye.EyeCamera();
         if (cam != null && !seatedApplied && Settings.seated)
         {
             // 앉은 체험자: 카메라 장치를 그만큼 올려 서 있는 눈높이로 맞춘다

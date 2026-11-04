@@ -18,8 +18,8 @@ public static class JourneyAim
         if (LeftHanded && left != null && OVRInput.IsControllerConnected(OVRInput.Controller.LTouch)) return new Ray(left.position, left.forward);
         if (right != null && OVRInput.IsControllerConnected(OVRInput.Controller.RTouch)) return new Ray(right.position, right.forward);
         if (left != null && OVRInput.IsControllerConnected(OVRInput.Controller.LTouch)) return new Ray(left.position, left.forward);
-        var cam = Camera.main;
-        return cam != null ? new Ray(cam.transform.position, cam.transform.forward) : new Ray(Vector3.zero, Vector3.forward);
+        var eye = JourneyEye.Get();
+        return eye != null ? new Ray(eye.position, eye.forward) : new Ray(Vector3.zero, Vector3.forward);
     }
 
     public static bool TriggerDown() =>

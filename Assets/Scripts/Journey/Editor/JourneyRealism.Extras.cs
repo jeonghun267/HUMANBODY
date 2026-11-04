@@ -27,6 +27,15 @@ public static partial class JourneyRealism
         if (upperOld == null || lowerOld == null || prefab == null) return;
         foreach (var n in new[] { "새_윗니", "새_아랫니" }) foreach (var o in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None).Where(t => t != null && t.name == n).ToArray()) Object.DestroyImmediate(o.gameObject);
 
+        // 맞물림은 '음식을 문 자세'(아래턱을 다문 자세)에서 맞춘다. 모형은 위아래 이가 맞닿아 있으므로, 그 자세에서 어금니 사이를
+        // 눌린 음식 두께만큼 띄운다. 그러면 평소(벌린 자세)에는 아래턱이 벌어져 이 사이로 음식이 들어갈 틈이 보인다.
+        // (평소 자세에서 맞붙여 두면 입이 닫혀 보이고, 씹을 때 아랫니가 윗니 속으로 파고든다)
+        var chew = Object.FindFirstObjectByType<ChewingSequence>();
+        var jaw = chew != null ? chew.upperJaw : null;
+        var jawRest = jaw != null ? jaw.localRotation : Quaternion.identity;
+        if (jaw != null) jaw.localRotation = jawRest * Quaternion.AngleAxis(-chew.jawOpenAngle, Vector3.right);
+        const float foodGap = .3f; // 음식을 문 순간 어금니 사이 (JourneyMouthAnatomy.BiteGap)
+
         // 예전 치열은 다시 적용할 때 이미 렌더러가 꺼져 있어(꺼진 렌더러는 크기가 0) 메시 자체로 잰다. 충치 조각 같은 작은 것은 빼고 가장 큰 메시만.
         MeshFilter Arch(GameObject arch) => arch.GetComponentsInChildren<MeshFilter>(true).Where(f => f.sharedMesh != null).OrderByDescending(f => f.sharedMesh.vertexCount).First();
         var upperArch = Arch(upperOld); var lowerArch = Arch(lowerOld);
@@ -86,7 +95,7 @@ public static partial class JourneyRealism
         var upper = TeethArch("새_윗니", "위", Subset(teeth, UpperTooth), Subset(gum, k => Band(k) && UpperGum(k)));
         var lower = TeethArch("새_아랫니", "아래", Subset(teeth, k => !UpperTooth(k)), Subset(gum, k => Band(k) && !UpperGum(k)));
         // 두 치열은 모형 그대로의 맞물림을 지키도록 같은 변환을 쓴다: 앞니 방향을 예전 치열과 맞추고(필요하면 반 바퀴),
-        // 예전 두 치열의 평균 폭·앞뒤 길이에 맞추고, 씹는 틈을 예전 윗니 아래끝과 아랫니 위끝의 가운데 높이에 둔다.
+        // 예전 두 치열의 평균 폭·앞뒤 길이에 맞추고, 아래 어금니 씹는 면을 예전 씹는 자리(다문 자세) 높이에, 윗니는 음식 두께만큼 위에 둔다.
         // (상자 끝끼리 따로 맞추면 예전 치열 상자가 위아래로 1.6m 겹쳐 있어 새 이끼리 파고든다)
         var arches = new[] { upper, lower };
         foreach (var root in arches) if (oldApexBack != newApexBack) root.rotation = Quaternion.Euler(0, 180, 0);
@@ -95,13 +104,34 @@ public static partial class JourneyRealism
         float sx = (upperTarget.size.x + lowerTarget.size.x) / 2 / Mathf.Max(1e-4f, both.size.x), sz = (upperTarget.size.z + lowerTarget.size.z) / 2 / Mathf.Max(1e-4f, both.size.z);
         foreach (var root in arches) root.localScale = new Vector3(sx, sx, sz);
         both = Both();
-        float biteY = (upperTarget.min.y + lowerTarget.max.y) / 2;
+        float lowerTop = chew != null && chew.chewPoint != null ? chew.chewPoint.position.y + .05f : (upperTarget.min.y + lowerTarget.max.y - foodGap) / 2;
         var centre = (upperTarget.center + lowerTarget.center) / 2;
-        foreach (var root in arches) root.position += new Vector3(centre.x - both.center.x, biteY - (root.position.y + gap * sx), centre.z - both.center.z);
+        foreach (var root in arches) root.position += new Vector3(centre.x - both.center.x, lowerTop + (root == upper ? foodGap : 0) - (root.position.y + gap * sx), centre.z - both.center.z);
         upper.SetParent(upperOld.transform, true);
         lower.SetParent(lowerOld.transform, true); // 아래턱과 함께 움직인다
+        if (chew != null && chew.chewPoint != null) SnapChewPoint(chew.chewPoint, lower);
         var ub = Bounds(upper.gameObject); var lb = Bounds(lower.gameObject);
-        Debug.Log($"[이] 예전 윗니 {upperTarget.size} → 새 윗니 {ub.size} @ {ub.center}, 예전 아랫니 {lowerTarget.size} → 새 아랫니 {lb.size} @ {lb.center}");
+        Debug.Log($"[이] 예전 윗니 {upperTarget.size} → 새 윗니 {ub.size} @ {ub.center}, 예전 아랫니 {lowerTarget.size} → 새 아랫니 {lb.size} @ {lb.center} (다문 자세, 어금니 사이 {foodGap}m)");
+        if (jaw != null) jaw.localRotation = jawRest; // 평소 자세로: 아랫니가 아래턱과 함께 벌어진다
+    }
+
+    /// <summary>씹는 자리(음식을 올려 씹는 아래 어금니 씹는 면)를 새 아래 어금니 위로 옮긴다. 예전 치열에 맞춰 있던 자리라 새 이에서는 뜨거나 묻힌다.</summary>
+    static void SnapChewPoint(Transform point, Transform lowerArch)
+    {
+        var f = lowerArch.GetComponentsInChildren<MeshFilter>().FirstOrDefault(m => m.name == "이");
+        if (f == null || f.sharedMesh == null) return;
+        var m = f.transform.localToWorldMatrix;
+        var verts = f.sharedMesh.vertices.Select(v => m.MultiplyPoint3x4(v)).ToList();
+        var at = point.position;
+        Vector2 Flat(Vector3 v) => new Vector2(v.x, v.z);
+        // 씹는 자리에서 수평으로 가장 가까운 이의 머리(둘레 0.45m)에서 가장 높은 곳 = 씹는 면
+        var nearest = verts.OrderBy(v => (Flat(v) - Flat(at)).sqrMagnitude).First();
+        var crown = verts.Where(v => (Flat(v) - Flat(nearest)).magnitude < .45f).ToList();
+        float top = crown.Max(v => v.y);
+        var cusps = crown.Where(v => v.y > top - .25f).ToList();
+        var snapped = new Vector3(cusps.Average(v => v.x), top - .05f, cusps.Average(v => v.z));
+        Debug.Log($"[이] 씹는 자리 {at} → {snapped} (새 아래 어금니 씹는 면)");
+        point.position = snapped;
     }
 
     class TeethGeometry { public List<Vector3> v = new List<Vector3>(), n = new List<Vector3>(); public List<int> t = new List<int>(); }
@@ -228,7 +258,8 @@ public static partial class JourneyRealism
     {
         var ride = Object.FindFirstObjectByType<CapsuleRide>();
         if (ride == null) return;
-        var foods = new[] { ("녹말", GlucosePrefab(), "아밀레이스", "enzyme_starch"), ("단백질", Prefab("Part_ProteinChain"), "트립신", "enzyme_protein"), ("지방", Prefab("Prop_FattyAcid"), "라이페이스", "enzyme_fat") };
+        // 음식 분자는 색으로 종류를 알아보는 반투명 확대 모형 (녹말 꿀빛 · 단백질 하늘빛 · 지방 연노랑)
+        var foods = new[] { ("녹말", MoleculeModel(GlucosePrefab(), "녹말", StarchTint), "아밀레이스", "enzyme_starch"), ("단백질", MoleculeModel(Prefab("Part_ProteinChain"), "단백질", ProteinTint), "트립신", "enzyme_protein"), ("지방", MoleculeModel(Prefab("Prop_FattyAcid"), "지방", FatTint), "라이페이스", "enzyme_fat") };
         var rounds = new List<GermBlaster>();
         for (int i = 0; i < foods.Length; i++)
         {
@@ -238,7 +269,7 @@ public static partial class JourneyRealism
             hunt.ride = ride; hunt.basis = ride.transform; hunt.followBasis = false; hunt.spots = new Transform[0];
             hunt.harmfulPrefabs = new[] { prefab }; hunt.harmfulCount = 4; hunt.harmfulTags = new[] { food };
             hunt.helpfulPrefabs = others.Select(o => o.Item2).ToArray(); hunt.helpfulCount = 4; hunt.helpfulTags = others.Select(o => o.Item1).ToArray();
-            hunt.spawnCenter = new Vector3(0, 0, 5.5f); hunt.spawnExtents = new Vector3(2f, 1.1f, 1.8f); hunt.scaleRange = new Vector2(.4f, .5f); hunt.range = 12f;
+            hunt.spawnCenter = new Vector3(0, 0, 5.5f); hunt.spawnExtents = new Vector3(2f, 1.1f, 1.8f); hunt.scaleRange = new Vector2(.6f, .75f); hunt.range = 12f;
             hunt.tagFont = KoreanFont();
             hunt.targetLabel = food; hunt.goalText = $"{enzyme} 효소로 {food}에만 맞히세요";
             hunt.clearedStatus = $"{food} 분해 완료!";
@@ -270,6 +301,7 @@ public static partial class JourneyRealism
         hunt.harmfulPrefabs = new[] { Prefab("Char_Probiotic") }; hunt.harmfulCount = 5; hunt.harmfulTag = "유익균";
         hunt.helpfulPrefabs = new[] { Prefab("Char_HarmfulBacteria") }; hunt.helpfulCount = 2; hunt.helpfulTag = "해로운 균";
         hunt.growOnHit = true; hunt.tagFont = KoreanFont();
+        hunt.feedSource = GameObject.Find("FiberSwarm")?.GetComponent<FloatingSwarm>(); // 떠다니던 식이섬유가 먹이로 날아간다
         hunt.spawnCenter = new Vector3(0, -.3f, 5.5f); hunt.spawnExtents = new Vector3(2f, 1.1f, 1.8f); hunt.scaleRange = new Vector2(.35f, .45f); hunt.range = 12f;
         hunt.targetLabel = "배부른 유익균"; hunt.goalText = "초록 유익균에게 식이섬유를 쏴서 먹이를 주세요";
         hunt.clearedStatus = "유익균이 튼튼해졌어요!"; hunt.fireSound = "whoosh"; hunt.hitSound = "ting";

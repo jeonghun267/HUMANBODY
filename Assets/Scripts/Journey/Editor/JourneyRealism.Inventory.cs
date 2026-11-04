@@ -70,8 +70,16 @@ public static partial class JourneyRealism
                 var roles = go.GetComponentsInParent<MonoBehaviour>(true).Concat(go.GetComponentsInChildren<MonoBehaviour>(true)).Where(m => m != null)
                     .Select(m => m.GetType().Name).Where(n => n != "PartLabel").Distinct().Take(5);
                 string role = (label != null ? $"이름표:{label.displayName}({label.partId}) " : "") + string.Join(",", roles);
+                string path = PathOf(go.transform);
+                // 가운데가 벽 면에서 얼마나 떨어졌나(음수 = 벽 속). 반쯤 묻혀 목만 내민 것(위샘 등)은 가운데가 벽 면 근처라 '붙음'이다.
+                float half = b.extents.magnitude * .6f, centre = wall + half;
                 string state = go.GetComponentInParent<GentleFloat>() != null ? "둥실 떠다님(의도)" : go.GetComponentInParent<HingeClose>() != null ? "경첩에 달림(의도)"
-                             : wall < -.6f ? "벽 속에 묻힘" : wall < .35f ? "벽에 붙음" : "떠 있음";
+                             : go.GetComponentInParent<Sway>() != null ? "매달려 흔들림(의도)"
+                             : go.GetComponentInParent<JourneyCharacterMotion>() != null || go.GetComponentInChildren<JourneyCharacterMotion>() != null ? "헤엄치는 캐릭터(의도)"
+                             : go.name.Contains("Platform") ? "잠수정 정박대(의도)"
+                             : path.Contains("벽_혈관") ? "벽 바로 밑 혈관(의도)"
+                             : Mathf.Max(b.size.x, Mathf.Max(b.size.y, b.size.z)) > 4f ? "큰 구조물(입 바닥·천장·치열)"
+                             : centre < -half * .8f ? "벽 속에 묻힘" : wall < .35f ? "벽에 붙음" : "떠 있음";
                 string name = $"{scene}_{index:00}";
                 rows.Append($"{scene}\t{index}\t{go.name}\t{source}\t{b.center.x:0.0},{b.center.y:0.0},{b.center.z:0.0}\t{b.size.x:0.0}x{b.size.y:0.0}x{b.size.z:0.0}\t{wall:0.00}\t{state}\t{role}\t{PathOf(go.transform)}\n");
                 CloseUp(outDir, name, b);
@@ -102,15 +110,26 @@ public static partial class JourneyRealism
         Debug.Log("[JourneyRealism] 물체 조사 완료 → " + outDir);
     }
 
-    /// <summary>물체 가운데에서 여러 방향으로 벽까지 잰 가장 가까운 거리 − 물체 반경. 음수면 벽 속.</summary>
+    /// <summary>
+    /// 물체 가운데에서 여러 방향으로 벽까지 잰 가장 가까운 거리 − 물체 반경. 음수면 벽 속.
+    /// 벽 뒷면도 맞힌다: 가운데가 벽 면 뒤(벽 속)에 있으면 바깥으로 쏜 광선이 뒷면만 지나가서, 뒷면을 못 맞히면 먼 반대쪽 벽을 재게 된다.
+    /// 뒷면을 맞히면(광선과 면 방향이 같으면) 그만큼 벽 속에 있는 것이다.
+    /// </summary>
     static float WallDistance(Bounds b, MeshCollider[] walls)
     {
         float best = float.MaxValue, half = b.extents.magnitude * .6f;
         var dirs = new List<Vector3>();
         for (int i = 0; i < 26; i++) { var d = new Vector3((i % 3) - 1, ((i / 3) % 3) - 1, (i / 9) - 1); if (d != Vector3.zero) dirs.Add(d.normalized); }
+        bool backfaces = Physics.queriesHitBackfaces;
+        Physics.queriesHitBackfaces = true;
         foreach (var w in walls)
         foreach (var d in dirs)
-            if (w.Raycast(new Ray(b.center, d), out var hit, 50f)) best = Mathf.Min(best, hit.distance);
+            if (w.Raycast(new Ray(b.center, d), out var hit, 50f))
+            {
+                float signed = Vector3.Dot(hit.normal, d) > 0 ? -hit.distance : hit.distance;
+                if (Mathf.Abs(signed) < Mathf.Abs(best)) best = signed;
+            }
+        Physics.queriesHitBackfaces = backfaces;
         return best == float.MaxValue ? 99f : best - half;
     }
 

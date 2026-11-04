@@ -1,59 +1,65 @@
 ﻿장면	번호	물체	원본	위치	크기(m)	벽까지(m)	상태	역할	경로
-01_Mouth	1	Part_Tongue	Assets/Data/Generated/MouthAnatomy/혀_해부형.asset (혀_해부형)	0.0,1.3,6.0	6.7x5.1x11.8	1.64	떠 있음	이름표:혀(Tongue) TeleportArea,Billboard,Image,TextMeshProUGUI	TonguePivot/Part_Tongue
-01_Mouth	2	Part_Palate	Assets/Data/Generated/MouthAnatomy/입천장_잇몸연결형.asset (입천장_잇몸연결형)	0.0,4.3,3.8	12.5x6.4x12.7	-5.11	벽 속에 묻힘		Part_Palate
-01_Mouth	3	턱밑샘관_구멍_왼쪽	Library/unity default resources (Sphere)	-0.5,2.7,0.0	0.3x0.1x0.3	0.00	벽에 붙음	이름표:침샘(SalivaryGland) LiquidContactSplash,Billboard,Image,TextMeshProUGUI	SalivaryGlands/턱밑샘관_구멍_왼쪽
-01_Mouth	4	돌기	Library/unity default resources (Sphere)	0.5,2.7,0.0	0.3x0.1x0.3	0.00	벽에 붙음		SalivaryGlands/턱밑샘관_구멍_오른쪽/돌기
+01_Mouth	1	Part_Tongue	Assets/Data/Generated/MouthAnatomy/혀_해부형.asset (혀_해부형)	0.0,1.3,6.0	6.7x5.1x11.8	-9.37	큰 구조물(입 바닥·천장·치열)	이름표:혀(Tongue) TeleportArea,Billboard,Image,TextMeshProUGUI	TonguePivot/Part_Tongue
+01_Mouth	2	Part_Palate	Assets/Data/Generated/MouthAnatomy/입천장_잇몸연결형.asset (입천장_잇몸연결형)	0.0,4.3,3.8	12.5x6.4x12.7	-5.11	큰 구조물(입 바닥·천장·치열)		Part_Palate
+01_Mouth	3	돌기	Library/unity default resources (Sphere)	0.5,2.7,0.0	0.3x0.1x0.3	0.00	벽에 붙음		SalivaryGlands/턱밑샘관_구멍_오른쪽/돌기
+01_Mouth	4	턱밑샘관_구멍_왼쪽	Library/unity default resources (Sphere)	-0.5,2.7,0.0	0.3x0.1x0.3	0.00	벽에 붙음	이름표:침샘(SalivaryGland) LiquidContactSplash,Billboard,Image,TextMeshProUGUI	SalivaryGlands/턱밑샘관_구멍_왼쪽
 01_Mouth	5	혀밑샘관_구멍_왼쪽	Library/unity default resources (Sphere)	-2.2,2.9,2.1	0.2x0.1x0.2	0.10	벽에 붙음	이름표:침샘(SalivaryGland) LiquidContactSplash,Billboard,Image,TextMeshProUGUI	SalivaryGlands/혀밑샘관_구멍_왼쪽
 01_Mouth	6	돌기	Library/unity default resources (Sphere)	2.2,2.9,2.1	0.2x0.1x0.2	0.10	벽에 붙음		SalivaryGlands/혀밑샘관_구멍_오른쪽/돌기
-01_Mouth	7	Part_UpperTeethArch	Assets/Models/Meshy/Part_UpperTeethArch.glb	0.0,5.8,2.5	12.2x3.1x10.4	-2.81	벽 속에 묻힘	이름표:윗니(UpperTeeth) Billboard,Image,TextMeshProUGUI	Part_UpperTeethArch
-01_Mouth	8	Part_LowerTeethArch	Assets/Models/Meshy/Part_LowerTeethArch.glb	0.0,3.3,2.6	12.1x2.7x10.0	-0.27	벽에 붙음	이름표:아랫니(LowerTeeth) Billboard,Image,TextMeshProUGUI	LowerJawPivot/Part_LowerTeethArch
+01_Mouth	7	Part_UpperTeethArch	Assets/Models/Meshy/Part_UpperTeethArch.glb	0.0,5.7,2.3	12.2x3.1x10.3	-2.91	큰 구조물(입 바닥·천장·치열)	이름표:윗니(UpperTeeth) Billboard,Image,TextMeshProUGUI	Part_UpperTeethArch
+01_Mouth	8	Part_LowerTeethArch	Assets/Models/Meshy/Part_LowerTeethArch.glb	0.0,2.1,2.9	12.1x3.4x10.1	-6.33	큰 구조물(입 바닥·천장·치열)	이름표:아랫니(LowerTeeth) Billboard,Image,TextMeshProUGUI	LowerJawPivot/Part_LowerTeethArch
 01_Mouth	9	Prop_FoodBolus	Assets/Models/Meshy/Prop_FoodBolus.glb	0.0,4.0,4.4	1.2x0.5x1.2	-0.27	벽에 붙음	이름표:음식 덩어리(Bolus) Billboard,Image,TextMeshProUGUI	Prop_FoodBolus
-01_Mouth	10	귀밑샘관_구멍_왼쪽	Library/unity default resources (Sphere)	-9.2,5.3,5.8	0.2x0.4x0.4	18.24	떠 있음	이름표:침샘(SalivaryGland) LiquidContactSplash,Billboard,Image,TextMeshProUGUI	SalivaryGlands/귀밑샘관_구멍_왼쪽
-01_Mouth	11	돌기	Library/unity default resources (Sphere)	9.2,5.3,5.8	0.2x0.4x0.4	18.24	떠 있음		SalivaryGlands/귀밑샘관_구멍_오른쪽/돌기
-01_Mouth	12	Part_Uvula	Assets/Models/Meshy/Part_Uvula.glb	0.0,4.3,10.1	1.4x2.4x1.5	1.23	떠 있음	이름표:목젖(Uvula) Sway,Billboard,Image,TextMeshProUGUI	UvulaPivot/Part_Uvula
+01_Mouth	10	돌기	Library/unity default resources (Sphere)	9.2,5.3,5.8	0.2x0.4x0.4	-0.23	벽에 붙음		SalivaryGlands/귀밑샘관_구멍_오른쪽/돌기
+01_Mouth	11	귀밑샘관_구멍_왼쪽	Library/unity default resources (Sphere)	-9.2,5.3,5.8	0.2x0.4x0.4	-0.23	벽에 붙음	이름표:침샘(SalivaryGland) LiquidContactSplash,Billboard,Image,TextMeshProUGUI	SalivaryGlands/귀밑샘관_구멍_왼쪽
+01_Mouth	12	Part_Uvula	Assets/Models/Meshy/Part_Uvula.glb	0.0,4.3,10.1	1.4x2.4x1.5	1.23	매달려 흔들림(의도)	이름표:목젖(Uvula) Sway,Billboard,Image,TextMeshProUGUI	UvulaPivot/Part_Uvula
 01_Mouth	13	Part_Epiglottis	Assets/Models/Meshy/Part_Epiglottis.glb	0.0,1.2,12.7	2.1x2.2x1.0	0.18	벽에 붙음	이름표:후두덮개(Epiglottis) Billboard,Image,TextMeshProUGUI	EpiglottisPivot/Part_Epiglottis
 01_Mouth	실행1	Char_HarmfulBacteria	Assets/Data/Generated/Characters/Char_HarmfulBacteria.prefab	-	-	-	실행 중 생성	임무 표적:치태_세균_없애기	-
-02_Esophagus	1	목구멍_천장	Assets/Data/Generated/Realism/목구멍_천장.asset (목구멍_천장)	0.0,3.5,0.0	8.2x2.6x8.2	-0.13	벽에 붙음		목구멍_천장
-02_Esophagus	2	EsophagusTopPlatform	Library/unity default resources (Cylinder)	0.0,-3.6,0.0	4.0x0.2x4.0	1.19	떠 있음		EsophagusTopPlatform
+02_Esophagus	1	목구멍_천장	Assets/Data/Generated/Realism/목구멍_천장.asset (목구멍_천장)	0.0,3.5,0.0	8.2x2.6x8.2	-0.13	큰 구조물(입 바닥·천장·치열)		목구멍_천장
+02_Esophagus	2	EsophagusTopPlatform	Assets/Data/Generated/Realism/정박_고리.asset (정박_고리)	0.0,-3.7,0.0	5.2x0.1x5.2	0.67	잠수정 정박대(의도)		EsophagusTopPlatform
 02_Esophagus	3	Part_Epiglottis	Assets/Models/Meshy/Part_Epiglottis.glb	0.0,-1.3,2.1	1.9x2.0x0.9	-0.40	경첩에 달림(의도)	이름표:후두덮개(Epiglottis) HingeClose,Billboard,Image,TextMeshProUGUI	후두덮개_경첩/Part_Epiglottis
-02_Esophagus	4	기도_입구	Assets/Data/Generated/Realism/기도_입구.asset (기도_입구)	0.0,-1.2,2.8	1.8x1.8x0.6	0.28	벽에 붙음		기도_입구
+02_Esophagus	4	기도_입구	Assets/Data/Generated/Realism/기도_입구.asset (기도_입구)	0.0,-1.2,2.8	1.8x1.8x0.6	-0.96	벽에 붙음		기도_입구
 02_Esophagus	실행1	역류_위산_방울	Assets/Data/Generated/Realism/역류_위산_방울.prefab	-	-	-	실행 중 생성	임무 표적:역류_위산_중화	-
-03_Stomach	1	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-8.4,2.4,-1.5	1.8x1.3x0.9	-0.57	벽에 붙음	LiquidContactSplash	Walls/Part_GastricGland
-03_Stomach	2	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	8.9,2.3,-1.5	1.7x0.9x0.9	0.03	벽에 붙음	이름표:위샘(GastricGland) Billboard,Image,TextMeshProUGUI,LiquidContactSplash	Walls/Part_GastricGland
-03_Stomach	3	Char_Pepsin	Assets/Models/Meshy/Char_Pepsin.glb	3.0,1.4,-1.0	1.0x1.2x0.6	0.88	떠 있음	이름표:펩신(Pepsin) Billboard,Image,TextMeshProUGUI,JourneyCharacterMotion	Char_Pepsin
+03_Stomach	1	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-8.4,2.4,-1.5	1.8x1.3x0.9	-0.71	벽에 붙음	LiquidContactSplash	Walls/Part_GastricGland
+03_Stomach	2	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	8.9,2.3,-1.5	1.7x0.9x0.9	-0.73	벽에 붙음	이름표:위샘(GastricGland) Billboard,Image,TextMeshProUGUI,LiquidContactSplash	Walls/Part_GastricGland
+03_Stomach	3	Char_Pepsin	Assets/Models/Meshy/Char_Pepsin.glb	3.0,1.4,-1.0	1.0x1.2x0.6	0.88	헤엄치는 캐릭터(의도)	이름표:펩신(Pepsin) Billboard,Image,TextMeshProUGUI,JourneyCharacterMotion	Char_Pepsin
 03_Stomach	4	Prop_FoodBolus	Assets/Models/Meshy/Prop_FoodBolus.glb	-3.0,0.4,0.2	1.0x0.4x1.0	-0.01	둥실 떠다님(의도)	JourneyDissolve,GentleFloat	Digestion/Prop_FoodBolus
 03_Stomach	5	Prop_FoodBolus	Assets/Models/Meshy/Prop_FoodBolus.glb	3.1,0.4,1.6	1.0x0.4x1.0	-0.03	둥실 떠다님(의도)	JourneyDissolve,GentleFloat	Digestion/Prop_FoodBolus
-03_Stomach	6	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	8.1,2.4,3.5	1.8x1.3x1.0	0.04	벽에 붙음	LiquidContactSplash	Walls/Part_GastricGland
-03_Stomach	7	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-8.2,2.4,3.5	1.7x1.1x1.0	-0.21	벽에 붙음		Walls/Part_GastricGland
+03_Stomach	6	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	8.1,2.4,3.5	1.8x1.3x1.0	-0.78	벽에 붙음	LiquidContactSplash	Walls/Part_GastricGland
+03_Stomach	7	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-8.2,2.4,3.5	1.7x1.1x1.0	-0.73	벽에 붙음		Walls/Part_GastricGland
 03_Stomach	8	Part_ProteinChain	Assets/Models/Meshy/Part_ProteinChain.glb	-3.4,1.0,4.2	1.4x0.5x0.7	0.44	둥실 떠다님(의도)	GentleFloat	Digestion/Part_ProteinChain
 03_Stomach	9	Prop_FoodBolus	Assets/Models/Meshy/Prop_FoodBolus.glb	-3.3,0.4,4.6	1.0x0.4x1.0	-0.03	둥실 떠다님(의도)	JourneyDissolve,GentleFloat	Digestion/Prop_FoodBolus
 03_Stomach	10	Part_ProteinChain	Assets/Models/Meshy/Part_ProteinChain.glb	3.3,1.0,5.4	1.4x0.5x0.7	0.61	둥실 떠다님(의도)	GentleFloat	Digestion/Part_ProteinChain
 03_Stomach	11	Prop_FoodBolus	Assets/Models/Meshy/Prop_FoodBolus.glb	3.2,0.4,5.8	1.0x0.4x1.0	0.03	둥실 떠다님(의도)	JourneyDissolve,GentleFloat	Digestion/Prop_FoodBolus
 03_Stomach	12	Part_ProteinChain	Assets/Models/Meshy/Part_ProteinChain.glb	-3.0,1.1,6.8	1.4x0.5x0.7	0.04	둥실 떠다님(의도)	GentleFloat	Digestion/Part_ProteinChain
-03_Stomach	13	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-4.0,2.4,7.2	1.6x0.9x1.0	-0.34	벽에 붙음		Walls/Part_GastricGland
-03_Stomach	14	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	4.2,2.4,7.2	1.6x0.9x0.6	1.63	떠 있음		Walls/Part_GastricGland
+03_Stomach	13	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	-4.0,2.4,7.2	1.6x0.9x1.0	-0.68	벽에 붙음		Walls/Part_GastricGland
+03_Stomach	14	Part_GastricGland	Assets/Models/Meshy/Part_GastricGland.glb	4.2,2.4,7.2	1.6x0.9x0.6	-0.66	벽에 붙음		Walls/Part_GastricGland
 03_Stomach	실행1	Char_Enzyme	Assets/Data/Generated/Characters/Char_Enzyme.prefab	-	-	-	실행 중 생성	떠다니는 무리:EnzymeSwarm	-
 03_Stomach	실행2	Prop_ChymeBlob	Assets/Models/Meshy/Prop_ChymeBlob.glb	-	-	-	실행 중 생성	흐르는 줄:ChymeFlowSpline	-
 03_Stomach	실행3	헬리코박터균	Assets/Data/Generated/Realism/헬리코박터균.prefab	-	-	-	실행 중 생성	임무 표적:헬리코박터균_퇴치	-
 03_Stomach	실행4	Prop_AminoAcid	Assets/Models/Meshy/Prop_AminoAcid.glb	-	-	-	실행 중 생성	절단 조각:EnzymeCut	-
-04_SmallIntestine	1	혈관_2	Assets/Data/Generated/Realism/혈관_2.asset (혈관_2)	2.7,2.2,49.3	1.3x1.3x20.0	-5.92	벽 속에 묻힘	SplineContainer,SplineFlow	벽_혈관/혈관_2
-04_SmallIntestine	2	혈관_1	Assets/Data/Generated/Realism/혈관_1.asset (혈관_1)	-2.7,-0.9,38.1	1.2x1.2x24.3	-7.13	벽 속에 묻힘	SplineContainer,SplineFlow	벽_혈관/혈관_1
-04_SmallIntestine	3	혈관_0	Assets/Data/Generated/Realism/혈관_0.asset (혈관_0)	-2.4,2.1,22.4	1.6x1.3x21.9	-6.55	벽 속에 묻힘	SplineContainer,SplineFlow	벽_혈관/혈관_0
-04_SmallIntestine	4	SmallIntestineStartPlatform	Library/unity default resources (Cylinder)	0.0,0.2,2.5	3.0x0.1x3.0	1.48	떠 있음		SmallIntestineStartPlatform
-04_SmallIntestine	5	Part_VillusCrossSection	Assets/Models/Meshy/Part_VillusCrossSection.glb	2.3,0.1,36.0	1.1x0.6x0.4	0.03	벽에 붙음		VillusZoom/Part_VillusCrossSection
-04_SmallIntestine	6	Part_CapillaryTube	Assets/Models/Meshy/Part_CapillaryTube.glb	2.3,0.1,36.1	0.8x0.5x0.3	0.07	벽에 붙음	이름표:모세혈관(Capillary) Billboard,Image,TextMeshProUGUI	VillusZoom/Part_CapillaryTube
-04_SmallIntestine	7	Part_LactealTube	Assets/Models/Meshy/Part_LactealTube.glb	2.3,0.1,36.1	0.5x0.2x0.1	0.21	벽에 붙음	이름표:유미관(Lacteal) Billboard,Image,TextMeshProUGUI	VillusZoom/Part_LactealTube
-04_SmallIntestine	실행1	적혈구_실사	Assets/Data/Generated/Realism/적혈구_실사.prefab	-	-	-	실행 중 생성	흐르는 줄:CapillarySpline	-
-04_SmallIntestine	실행2	Prop_FattyAcid	Assets/Models/Meshy/Prop_FattyAcid.glb	-	-	-	실행 중 생성	흐르는 줄:LactealSpline	-
+04_SmallIntestine	1	혈관_1	Assets/Data/Generated/Realism/혈관_1.asset (혈관_1)	-2.7,-0.9,38.1	1.2x1.2x24.3	-7.13	벽 바로 밑 혈관(의도)	SplineContainer,SplineFlow	벽_혈관/혈관_1
+04_SmallIntestine	2	혈관_2	Assets/Data/Generated/Realism/혈관_2.asset (혈관_2)	2.7,2.2,49.3	1.3x1.3x20.0	-5.92	벽 바로 밑 혈관(의도)	SplineContainer,SplineFlow	벽_혈관/혈관_2
+04_SmallIntestine	3	혈관_0	Assets/Data/Generated/Realism/혈관_0.asset (혈관_0)	-2.4,2.1,22.4	1.6x1.3x21.9	-6.55	벽 바로 밑 혈관(의도)	SplineContainer,SplineFlow	벽_혈관/혈관_0
+04_SmallIntestine	4	SmallIntestineStartPlatform	Library/unity default resources (Cylinder)	0.0,0.2,2.5	3.0x0.1x3.0	1.48	잠수정 정박대(의도)		SmallIntestineStartPlatform
+04_SmallIntestine	5	작은_융털_4	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.4,0.0,34.4	1.4x0.9x1.1	-0.36	벽에 붙음		융털_숲/작은_융털_4
+04_SmallIntestine	6	작은_융털_1	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.2,0.8,35.3	1.3x0.6x1.1	-0.10	벽에 붙음		융털_숲/작은_융털_1
+04_SmallIntestine	7	작은_융털_0	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.1,-0.6,35.5	1.4x1.1x1.1	-0.28	벽에 붙음		융털_숲/작은_융털_0
+04_SmallIntestine	8	모세혈관_관	Assets/Data/Generated/Realism/융털_모세혈관.asset (융털_모세혈관)	2.4,0.1,36.3	1.5x0.8x1.2	-0.32	벽에 붙음		VillusZoom/모세혈관_관
+04_SmallIntestine	9	암죽관_관	Assets/Data/Generated/Realism/융털_암죽관.asset (융털_암죽관)	2.4,0.1,36.3	1.0x0.3x0.7	-0.08	벽에 붙음		VillusZoom/암죽관_관
+04_SmallIntestine	10	융털_겉	Assets/Data/Generated/Realism/융털_겉.asset (융털_겉)	2.3,0.1,36.4	1.7x1.0x1.4	-0.30	벽에 붙음		VillusZoom/융털_겉
+04_SmallIntestine	11	작은_융털_2	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.0,-0.7,37.3	1.4x1.1x1.1	-0.30	벽에 붙음		융털_숲/작은_융털_2
+04_SmallIntestine	12	작은_융털_3	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.4,0.9,37.6	1.4x0.6x1.1	-0.22	벽에 붙음		융털_숲/작은_융털_3
+04_SmallIntestine	13	작은_융털_5	Assets/Data/Generated/Realism/융털_작은.asset (융털_작은)	2.3,-0.1,38.5	1.4x0.9x1.1	-0.25	벽에 붙음		융털_숲/작은_융털_5
+04_SmallIntestine	실행1	Prop_FattyAcid	Assets/Models/Meshy/Prop_FattyAcid.glb	-	-	-	실행 중 생성	흐르는 줄:LactealSpline	-
+04_SmallIntestine	실행2	적혈구_실사	Assets/Data/Generated/Realism/적혈구_실사.prefab	-	-	-	실행 중 생성	흐르는 줄:흐름	-
 04_SmallIntestine	실행3	포도당_분자	Assets/Data/Generated/Realism/포도당_분자.prefab	-	-	-	실행 중 생성	영양소:포도당	-
 04_SmallIntestine	실행4	Prop_AminoAcid	Assets/Models/Meshy/Prop_AminoAcid.glb	-	-	-	실행 중 생성	영양소:아미노산	-
-04_SmallIntestine	실행5	Part_ProteinChain	Assets/Models/Meshy/Part_ProteinChain.glb	-	-	-	실행 중 생성	임무 표적:효소_짝맞추기_2	-
-05_LargeIntestine	1	LargeIntestineStartPlatform	Library/unity default resources (Cylinder)	0.0,0.2,2.5	3.0x0.1x3.0	1.30	떠 있음		LargeIntestineStartPlatform
+04_SmallIntestine	실행5	Part_ProteinChain	Assets/Models/Meshy/Part_ProteinChain.glb	-	-	-	실행 중 생성	지킬 대상:효소_짝맞추기_3	-
+05_LargeIntestine	1	LargeIntestineStartPlatform	Library/unity default resources (Cylinder)	0.0,0.2,2.5	3.0x0.1x3.0	1.30	잠수정 정박대(의도)		LargeIntestineStartPlatform
 05_LargeIntestine	2	Prop_WasteSoft	Assets/Models/Meshy/Prop_WasteSoft.glb	-1.0,-1.7,5.1	1.3x0.7x1.2	-0.32	둥실 떠다님(의도)	이름표:찌꺼기(Waste) RideProgressSwitcher,GentleFloat,CinemachineSplineCart,CapsuleRide,Billboard	Prop_ExplorerCapsule/WasteStages/Prop_WasteSoft
 05_LargeIntestine	3	Prop_WasteLiquid	Assets/Models/Meshy/Prop_WasteLiquid.glb	-1.0,-1.6,5.1	1.5x0.2x1.4	-0.35	둥실 떠다님(의도)	이름표:찌꺼기(Waste) RideProgressSwitcher,GentleFloat,CinemachineSplineCart,CapsuleRide,Billboard	Prop_ExplorerCapsule/WasteStages/Prop_WasteLiquid
 05_LargeIntestine	4	Prop_WasteSolid	Assets/Models/Meshy/Prop_WasteSolid.glb	-1.0,-1.7,5.1	1.6x0.6x1.0	-0.37	둥실 떠다님(의도)	이름표:찌꺼기(Waste) RideProgressSwitcher,GentleFloat,CinemachineSplineCart,CapsuleRide,Billboard	Prop_ExplorerCapsule/WasteStages/Prop_WasteSolid
 05_LargeIntestine	실행1	Part_FiberStrand	Assets/Models/Meshy/Part_FiberStrand.glb	-	-	-	실행 중 생성	떠다니는 무리:FiberSwarm	-
-05_LargeIntestine	실행2	Char_Probiotic	Assets/Data/Generated/Characters/Char_Probiotic.prefab	-	-	-	실행 중 생성	떠다니는 무리:ProbioticSwarm	-
-05_LargeIntestine	실행3	Char_HarmfulBacteria	Assets/Data/Generated/Characters/Char_HarmfulBacteria.prefab	-	-	-	실행 중 생성	떠다니는 무리:HarmfulSwarm	-
-05_LargeIntestine	실행4	Char_Virus	Assets/Data/Generated/Characters/Char_Virus.prefab	-	-	-	실행 중 생성	떠다니는 무리:HarmfulSwarm	-
+05_LargeIntestine	실행2	Char_HarmfulBacteria	Assets/Data/Generated/Characters/Char_HarmfulBacteria.prefab	-	-	-	실행 중 생성	떠다니는 무리:HarmfulSwarm	-
+05_LargeIntestine	실행3	Char_Virus	Assets/Data/Generated/Characters/Char_Virus.prefab	-	-	-	실행 중 생성	떠다니는 무리:HarmfulSwarm	-
+05_LargeIntestine	실행4	Char_Probiotic	Assets/Data/Generated/Characters/Char_Probiotic.prefab	-	-	-	실행 중 생성	떠다니는 무리:ProbioticSwarm	-
 05_LargeIntestine	실행5	Prop_WaterDroplet	Assets/Models/Meshy/Prop_WaterDroplet.glb	-	-	-	실행 중 생성	벽 흡수:WaterAbsorption	-

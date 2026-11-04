@@ -17,9 +17,8 @@ public class BodyHeadlamp : MonoBehaviour
     {
         if (eye == null)
         {
-            var cam = Camera.main;
-            if (cam == null) return;
-            eye = cam.transform;
+            eye = JourneyEye.Get(); // VRCamera 태그 눈 (Camera.main 은 비어 있다)
+            if (eye == null) return;
         }
         PlaceAt(eye);
     }

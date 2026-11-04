@@ -205,7 +205,7 @@ public class KoreanJourneyEditor : Editor
         { "receivePort", "수신 포트" },
         { "remoteMarker", "원격 관찰 표시" },
         { "repeatCooldown", "다시 설명하기까지 대기 시간" },
-        { "restIntensity", "정지 중 가장자리 어둡기" },
+        { "idleIntensity", "가만히 있을 때 가장자리 어둡기" }, { "fullAcceleration", "최대 세기 가속도" }, { "narrowAngle", "좁힐 때 시야 반각" }, { "wideAngle", "넓힐 때 시야 반각" },
         { "ride", "탑승 캡슐" },
         { "ridesCapsule", "캡슐을 타는 단계" },
         { "ringCount", "수축 고리 개수" },

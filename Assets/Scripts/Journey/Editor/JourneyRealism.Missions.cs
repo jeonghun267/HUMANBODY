@@ -107,9 +107,9 @@ public static partial class JourneyRealism
                         t => .1f * Mathf.Sqrt(Mathf.Clamp01(Mathf.Sin(t * Mathf.PI) * 1.6f)), 90, 12);
         SaveMesh($"{Folder}/헬리코박터균_몸통.asset", ref mesh);
         body.AddComponent<MeshFilter>().sharedMesh = mesh;
-        var bodyMat = Lit("헬리코박터균", new Color(.5f, .62f, .32f), .65f);
+        var bodyMat = Lit("헬리코박터균", new Color(.56f, .58f, .46f), .75f); // 실제 세균처럼 옅은 올리브빛 회색, 젖은 윤기
         body.AddComponent<MeshRenderer>().sharedMaterial = bodyMat;
-        var flagMat = Lit("헬리코박터균_편모", new Color(.62f, .7f, .45f), .4f);
+        var flagMat = Lit("헬리코박터균_편모", new Color(.72f, .73f, .64f), .5f);
         for (int k = 0; k < 5; k++)
         {
             float a = k * Mathf.PI * 2 / 5, phase = k * 1.3f;
@@ -207,25 +207,84 @@ public static partial class JourneyRealism
         hunt.spots = spots.ToArray();
         hunt.harmfulPrefabs = new[] { Prefab("Char_HarmfulBacteria") }.Where(p => p != null).ToArray();
         hunt.helpfulPrefabs = new GameObject[0];
-        hunt.scaleRange = new Vector2(.22f, .3f); hunt.range = 8f; hunt.aimRadius = .3f; hunt.releaseRide = false;
+        hunt.range = 8f; hunt.aimRadius = .3f; hunt.releaseRide = false;
         hunt.targetLabel = "치태 세균"; hunt.scoreKey = "plaque"; hunt.scoreLabel = "치태 세균";
         hunt.goalText = "이에 붙은 치태 세균을 겨냥하고 방아쇠를 당겨 없애세요";
         hunt.clearedStatus = "치태 세균을 모두 없앴어요!";
         hunt.startLines = new NarrationLine[0];
         hunt.clearedLines = Mission("Mouth", "plaque_done", 5f);
-        ClearListeners(treat.onTreated, hunt);
-        UnityEventTools.AddPersistentListener(treat.onTreated, hunt.Begin);
 
-        // 치료를 마쳐야 음식을 씹을 수 있다 (너무 오래 걸리면 저절로 열린다)
-        var chew = GameObject.Find("ChewZone");
-        if (chew != null)
+        // 입 진행: 씹기(음식이 어금니 위로, 턱이 씹고 침샘에서 침) → 양치를 안 하면?(시간 흐름: 찌꺼기에 세균이 불어나 충치가 생김)
+        //          → 충치 치료 → 치태 세균 없애기(양치) → 꿀꺽 삼키기 → 식도
+        treat.hiddenUntilBegin = true;
+        var lapse = Ensure<DecayTimeLapse>(GameObject.Find("충치가_생기는_과정") ?? new GameObject("충치가_생기는_과정"));
+        lapse.cavity = treat; lapse.spots = spots.ToArray();
+        lapse.germPrefab = hunt.harmfulPrefabs.FirstOrDefault();
+        lapse.residuePrefab = Prefab("Prop_FoodBolus");
+        MouthGermSizes(lapse, hunt);
+        lapse.acid = Burst(lapse.transform, "충치_산_거품", Droplet("세균_산", new Color(1f, .95f, .62f, .45f), rim: 1.5f, highlight: 1.6f), new Vector2(.03f, .07f), new Vector2(.05f, .2f), new Vector2(.8f, 1.4f));
+        lapse.startLines = Mission("Mouth", "decay_start", 6f);
+        lapse.cavityLines = Mission("Mouth", "decay_cavity", 6f);
+        EditorUtility.SetDirty(lapse);
+
+        var chewing = Object.FindFirstObjectByType<ChewingSequence>();
+        var swallow = Object.FindFirstObjectByType<SwallowSequence>();
+        if (chewing != null)
         {
-            var gate = chew.GetComponent<MissionGate>(); if (gate == null) gate = chew.AddComponent<MissionGate>();
-            gate.colliders = chew.GetComponents<Collider>(); gate.autoOpenAfter = 300f;
-            ClearListeners(hunt.onCleared, gate);
-            UnityEventTools.AddPersistentListener(hunt.onCleared, gate.Open);
+            if (swallow != null) ClearListeners(chewing.onChewingFinished, swallow); // 예전: 씹고 바로 삼킴
+            ClearListeners(chewing.onChewingFinished, lapse);
+            UnityEventTools.AddPersistentListener(chewing.onChewingFinished, lapse.Begin);
+            EditorUtility.SetDirty(chewing);
         }
+        ClearListeners(lapse.onFinished, treat);
+        UnityEventTools.AddPersistentListener(lapse.onFinished, treat.Begin);
+        ClearListeners(treat.onTreated, hunt); ClearListeners(treat.onTreated, lapse);
+        UnityEventTools.AddPersistentListener(treat.onTreated, lapse.ClearGerms); // 시간 흐름에서 생긴 세균을 임무 세균으로 바꾼다
+        UnityEventTools.AddPersistentListener(treat.onTreated, hunt.Begin);
+        foreach (var gate in Object.FindObjectsByType<MissionGate>(FindObjectsSortMode.None)) ClearListeners(hunt.onCleared, gate);
+        if (swallow != null)
+        {
+            ClearListeners(hunt.onCleared, swallow);
+            UnityEventTools.AddPersistentListener(hunt.onCleared, swallow.Begin);
+        }
+
+        // 씹기가 처음 할 일이라 씹기 구역은 처음부터 열려 있다 (예전엔 치료를 마쳐야 열렸다)
+        var chew = GameObject.Find("ChewZone");
+        var oldGate = chew != null ? chew.GetComponent<MissionGate>() : null;
+        if (oldGate != null) { foreach (var c in chew.GetComponents<Collider>()) c.enabled = true; Object.DestroyImmediate(oldGate); }
         EditorUtility.SetDirty(treat); EditorUtility.SetDirty(hunt);
+    }
+
+    /// <summary>
+    /// 입 세균·찌꺼기 크기. 이 하나가 1m 넘는 크기라 0.26m 세균은 탐험가 자리에서 점처럼 보여 '불어나는' 게 안 읽힌다.
+    /// 시간 흐름의 세균과 치태 세균 임무의 세균은 같은 크기(이어서 바뀌어도 티 나지 않게).
+    /// </summary>
+    static void MouthGermSizes(DecayTimeLapse lapse, GermBlaster hunt)
+    {
+        const float germ = .36f, residue = .32f;
+        var lite = Prefab("Char_HarmfulBacteria"); // 가벼운 판(삼각형 1만 2천 → 5천)
+        if (lite != null) { lapse.germPrefab = lite; hunt.harmfulPrefabs = new[] { lite }; }
+        lapse.germScale = germ; lapse.germsPerSpot = 4;
+        if (lapse.residuePrefab != null)
+        {
+            var probe = (GameObject)PrefabUtility.InstantiatePrefab(lapse.residuePrefab); var size = Bounds(probe).size; Object.DestroyImmediate(probe);
+            lapse.residueScale = residue / Mathf.Max(.01f, Mathf.Max(size.x, Mathf.Max(size.y, size.z)));
+        }
+        hunt.scaleRange = new Vector2(germ - .04f, germ + .04f);
+        EditorUtility.SetDirty(lapse); EditorUtility.SetDirty(hunt);
+    }
+
+    /// <summary>입 장면에서 세균·찌꺼기 크기만 바꾼다 (다른 것은 그대로 — 편집기에서 손본 입 장면 보호). 배치용.</summary>
+    public static void TuneMouthGerms()
+    {
+        var scene = UnityEditor.SceneManagement.EditorSceneManager.OpenScene($"{SceneDir}/01_Mouth.unity", UnityEditor.SceneManagement.OpenSceneMode.Single);
+        var lapse = Object.FindFirstObjectByType<DecayTimeLapse>();
+        var hunt = GameObject.Find("치태_세균_없애기")?.GetComponent<GermBlaster>();
+        if (lapse == null || hunt == null) { Debug.LogError("[입] 충치 과정·치태 세균 임무를 찾지 못함"); return; }
+        MouthGermSizes(lapse, hunt);
+        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(scene);
+        UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene);
+        Debug.Log($"[입] 세균 {lapse.germScale}m ×{lapse.germsPerSpot}, 치태 세균 {hunt.scaleRange}");
     }
 
     // ───────────────────────────── 식도: 역류 위산 방울 중화 ─────────────────────────────
@@ -511,7 +570,7 @@ public static partial class JourneyRealism
         var go = new GameObject("치료_보고서", typeof(RectTransform), typeof(Canvas));
         var canvas = go.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
         var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(640, 440);
-        rect.position = eye + forward * 2.2f - Vector3.up * .1f; rect.rotation = Quaternion.LookRotation(rect.position - eye); rect.localScale = Vector3.one * .0016f;
+        rect.position = eye + forward * 2.2f - Vector3.up * .1f; rect.rotation = Quaternion.LookRotation(rect.position - eye); rect.localScale = Vector3.one * ReportScale;
         UiKit();
         var plate = go.AddComponent<Image>(); Sliced(plate, KitPanel, PlateFill, 1.4f);
         var line = UiChild(rect, "외곽선", Vector2.zero, Vector2.zero).gameObject.AddComponent<Image>();

@@ -19,11 +19,19 @@ public static partial class JourneyRealism
     {
         var ride = Object.FindFirstObjectByType<CapsuleRide>();
         var path = ride != null && ride.cart != null ? ride.cart.Spline : null;
-        if (id == "Mouth") SalivaDrips();
+        if (id == "Mouth") { SalivaDrips(); ChewCrumbs(); }
         if (id == "Esophagus") Epiglottis();
         if (id == "Stomach") StomachAnatomy();
-        if (id == "SmallIntestine" && path != null) SmallIntestineAnatomy(path);
-        if (id == "LargeIntestine") WasteLumps();
+        if (id == "SmallIntestine" && path != null) { SmallIntestineAnatomy(path); IleocecalEnd(path); DuodenumStart(path); }
+        if (id == "LargeIntestine") { WasteLumps(); WaterParticles(); if (path != null) ColonEnd(path); }
+        LiteSwarms(); // 떼로 떠다니는 세균·바이러스는 가벼운 판(성능)
+        // 소장·대장 출발 발판: 이제 처음부터 좌석에 앉아 시작하므로 쓰지 않는다. 멀리서 옆으로 보면 관 한가운데 떠 있는 하늘색 줄처럼 보였다
+        if (id == "SmallIntestine" || id == "LargeIntestine")
+            foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None).Where(t => t.name.EndsWith("StartPlatform")))
+                foreach (var r in t.GetComponentsInChildren<Renderer>(true)) r.enabled = false;
+        // 잠수정을 타는 장면: 떠다니는 무리(영양소·세균·식이섬유 등)는 잠수정 유리 밖에만 있다 (눈앞·유리 안을 지나가면 어지럽다)
+        if (path != null || id == "Stomach")
+            foreach (var swarm in Object.FindObjectsByType<FloatingSwarm>(FindObjectsInactive.Include, FindObjectsSortMode.None)) { swarm.keepOutRadius = PodRadius + .3f; EditorUtility.SetDirty(swarm); }
     }
 
     // ───────────────────────────── 공통 ─────────────────────────────
@@ -104,6 +112,19 @@ public static partial class JourneyRealism
             drip.transform.SetParent(em.transform.parent, true);
             var main = drip.main; main.maxParticles = 12;
         }
+    }
+
+    /// <summary>어금니가 음식을 물 때마다 침에 젖은 음식 부스러기가 튀었다가 떨어진다.</summary>
+    static void ChewCrumbs()
+    {
+        var chew = Object.FindFirstObjectByType<ChewingSequence>();
+        if (chew == null) return;
+        var crumbs = Burst(chew.transform, "음식_부스러기", Droplet("부스러기", new Color(.78f, .62f, .32f, .95f), rim: .6f, highlight: 1.1f), new Vector2(.04f, .1f), new Vector2(.6f, 1.4f), new Vector2(.5f, .9f));
+        crumbs.transform.rotation = Quaternion.Euler(-90, 0, 0); // 위로 튄다
+        var main = crumbs.main; main.gravityModifier = 1.2f; main.maxParticles = 60;
+        var shape = crumbs.shape; shape.shapeType = ParticleSystemShapeType.Hemisphere; shape.radius = .25f;
+        chew.crumbs = crumbs;
+        EditorUtility.SetDirty(chew);
     }
 
     // ───────────────────────────── 식도 ─────────────────────────────
@@ -239,7 +260,21 @@ public static partial class JourneyRealism
                 var label = glands[i].GetComponent<PartLabel>();
                 if (label != null && label.labelRoot != null) label.labelRoot.transform.position = tip + inward * .5f + Vector3.up * .4f;
             }
-            Debug.Log($"[부위] 위샘 {glands.Count}개를 벽에 심음");
+            // 실제 위샘은 0.1~0.2mm 로 점막에 촘촘히 난 작은 구멍(위오목) 안에 있다. 1.7m 나팔 6개는 실제처럼 보이지 않으므로
+            // 하나만 '확대 모형' 홀로그램으로 남기고 나머지는 숨긴다(분비물은 벽의 그 자리에서 그대로 나온다 — 위오목에서 나오는 것처럼).
+            const int exhibit = 2;
+            for (int i = 0; i < glands.Count; i++)
+            {
+                if (i == exhibit) { Holo(glands[i]); continue; }
+                foreach (var r in glands[i].GetComponentsInChildren<Renderer>(true)) if (!(r is ParticleSystemRenderer)) r.enabled = false;
+                var l = glands[i].GetComponent<PartLabel>(); if (l != null && l.labelRoot != null) l.labelRoot.SetActive(false);
+            }
+            if (glands.Count > exhibit)
+            {
+                var g = glands[exhibit]; var gb = Bounds(g);
+                ModelTag(g.transform, "위샘_확대_표시", gb.center + Vector3.up * (gb.extents.y + .45f), new Vector3(0, 1.75f, gb.center.z - 4f), "위샘 확대 모형", "실제 크기 약 0.1~0.2mm · 점막의 작은 구멍 속");
+            }
+            Debug.Log($"[부위] 위샘 {glands.Count}개를 벽에 심음 (확대 모형 1개, 나머지는 숨김)");
         }
 
         // 2) 음식 덩어리 ↔ 미즙: 위액 웅덩이에 반쯤 잠겨 위의 꿈틀거림에 맞춰 출렁이고, 둘레에서 산 거품이 오른다. 잠수정 길(x=0)에서 비켜 둔다.
@@ -269,13 +304,129 @@ public static partial class JourneyRealism
             }
         }
 
+        // 미즙 흐름: 위액 바닥을 따라 잠수정 길 왼쪽 아래로 흘러 유문 아래쪽으로 빠져나간다.
+        // (예전엔 잠수정 길을 그대로 따라 흘러 미즙 덩어리가 탐험가 눈앞 0.4m 를 지나갔다)
+        var chyme = GameObject.Find("ChymeFlowSpline")?.GetComponent<SplineContainer>();
+        if (chyme != null)
+        {
+            chyme.Spline.Clear();
+            // 유문 앞에서도 잠수정(눈 높이 1.8m, 가운데)에서 1.3m 넘게 떨어진 왼쪽 아래 구석으로 빠져나간다
+            foreach (var p in new[] { new Vector3(-1.9f, .45f, 2.5f), new Vector3(-1.6f, .42f, 5.5f), new Vector3(-1.3f, .38f, 7.8f), new Vector3(-1f, .3f, 9f), new Vector3(-.8f, .25f, 9.8f) })
+                chyme.Spline.Add(new BezierKnot(chyme.transform.InverseTransformPoint(p)), TangentMode.AutoSmooth);
+            EditorUtility.SetDirty(chyme);
+            var chymeFlow = chyme.GetComponent<SplineFlow>();
+            if (chymeFlow != null) { chymeFlow.scaleRange = new Vector2(.18f, .28f); EditorUtility.SetDirty(chymeFlow); }
+        }
+
         // 3) 단백질 사슬: 위액 위에 떠서 천천히 흔들린다(펩신이 다가와 자르는 장면은 그대로).
         var cut = Object.FindFirstObjectByType<EnzymeCutSequence>();
         if (cut != null && cut.proteinChains != null)
             foreach (var chain in cut.proteinChains.Where(c => c != null))
             {
                 var f = Ensure<GentleFloat>(chain.gameObject); f.bob = .08f; f.period = 5f; f.drift = .05f; f.tilt = 6f; f.spin = 4f;
+                Holo(chain.gameObject);
             }
+
+        // 4) 분자 크기의 것(펩신·단백질 사슬·잘린 아미노산)은 실제로는 보이지 않을 만큼 작다 → 실사 위 속에서 만화처럼 보이지 않게
+        //    하늘색 '분자 확대 모형' 홀로그램으로. 장식으로 떠다니던 효소 무리(만화 분자 10개)는 숨긴다.
+        var pepsinModel = GameObject.Find("Char_Pepsin");
+        if (pepsinModel != null)
+        {
+            // 팔다리 달린 캐릭터 대신 실제 효소처럼 둥근 단백질 덩어리(가운데 활성 자리 홈) — 이름표·움직임은 그대로
+            var existing = pepsinModel.transform.Find("효소_모형");
+            Vector3 centre = existing != null ? existing.position : Bounds(pepsinModel).center; // 다시 적용할 때는 캐릭터 렌더러가 꺼져 있어 크기가 0
+            foreach (var r in pepsinModel.GetComponentsInChildren<Renderer>(true)) if (!(r is ParticleSystemRenderer) && r.name != "효소_모형") r.enabled = false;
+            var globule = existing ?? new GameObject("효소_모형").transform;
+            globule.SetParent(pepsinModel.transform, false);
+            globule.position = centre; globule.rotation = Quaternion.LookRotation(Vector3.back); globule.localScale = Vector3.one / Mathf.Max(1e-4f, pepsinModel.transform.lossyScale.x);
+            Ensure<MeshFilter>(globule.gameObject).sharedMesh = EnzymeMesh("펩신_효소_모형", 1.1f, 31);
+            var gr = Ensure<MeshRenderer>(globule.gameObject); gr.enabled = true;
+            Holo(globule.gameObject);
+            var pb = gr.bounds;
+            ModelTag(pepsinModel.transform, "분자_확대_표시", pb.center + Vector3.up * (pb.extents.y + .4f), new Vector3(0, 1.75f, pb.center.z - 4f), "분자 확대 모형", "펩신(소화 효소)이 단백질을 잘라요");
+        }
+        if (cut != null && cut.fragmentPrefab != null && !cut.fragmentPrefab.name.EndsWith("_홀로그램"))
+        {
+            var fragment = (GameObject)PrefabUtility.InstantiatePrefab(cut.fragmentPrefab);
+            PrefabUtility.UnpackPrefabInstance(fragment, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+            Holo(fragment); fragment.name = cut.fragmentPrefab.name + "_홀로그램";
+            cut.fragmentPrefab = SavePrefab(fragment, fragment.name);
+            EditorUtility.SetDirty(cut);
+        }
+        var enzymeSwarm = GameObject.Find("EnzymeSwarm"); if (enzymeSwarm != null) enzymeSwarm.SetActive(false);
+    }
+
+    /// <summary>
+    /// 효소(단백질) 확대 모형: 울퉁불퉁한 둥근 덩어리 세 마디(도메인)와, 앞쪽 가운데를 가로지르는 활성 자리 홈. 지름 size.
+    /// </summary>
+    static Mesh EnzymeMesh(string name, float size, int seed)
+    {
+        const int lon = 48, lat = 30;
+        var v = new List<Vector3>(); var tri = new List<int>();
+        for (int j = 0; j <= lat; j++)
+        for (int i = 0; i <= lon; i++)
+        {
+            float th = Mathf.PI * j / lat, ph = Mathf.PI * 2 * i / lon;
+            var d = new Vector3(Mathf.Sin(th) * Mathf.Cos(ph), Mathf.Cos(th), Mathf.Sin(th) * Mathf.Sin(ph));
+            float lobes = .1f * Mathf.Sin(ph * 3 + seed) * Mathf.Sin(th * 2);                     // 세 마디
+            float bumps = .12f * (Fbm((float)i / lon, (float)j / lat, 8, 3, seed) - .5f);         // 잔 울퉁불퉁
+            float cleft = .28f * Mathf.Exp(-(d.y * d.y) / .02f) * Mathf.Max(0, d.z);              // 활성 자리 홈
+            v.Add(d * size * .5f * (1 + lobes + bumps - cleft));
+            if (i < lon && j < lat) { int k = j * (lon + 1) + i, k2 = k + lon + 1; tri.AddRange(new[] { k, k + 1, k2, k + 1, k2 + 1, k2 }); }
+        }
+        var mesh = new Mesh { name = name }; mesh.SetVertices(v); mesh.SetTriangles(tri, 0); mesh.RecalculateNormals(); mesh.RecalculateBounds();
+        SaveMesh($"{Folder}/{name}.asset", ref mesh);
+        return mesh;
+    }
+
+    /// <summary>
+    /// 분자 확대 모형(소장 영양소·효소 짝 맞추기): 원래 모형을 지름 1m 로 맞추고, 종류를 알아보도록 제 색은 살린 반투명 빛 재질로.
+    /// 쓰는 곳에서 크기 배율(무리 scaleRange, 표적 scaleRange)로 실제 크기를 정한다.
+    /// </summary>
+    static GameObject MoleculeModel(GameObject source, string name, Color tint)
+    {
+        if (source == null) return null;
+        var root = new GameObject(name + "_확대모형");
+        var inst = (GameObject)PrefabUtility.InstantiatePrefab(source, root.transform);
+        PrefabUtility.UnpackPrefabInstance(inst, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+        inst.transform.localPosition = Vector3.zero; inst.transform.localRotation = Quaternion.identity;
+        var b = Bounds(inst); inst.transform.localScale *= 1f / Mathf.Max(1e-4f, Mathf.Max(b.size.x, Mathf.Max(b.size.y, b.size.z)));
+        b = Bounds(inst); inst.transform.position -= b.center;
+        var mat = TransparentLit($"확대모형_{name}", new Color(tint.r, tint.g, tint.b, .55f), .85f, tint * .3f);
+        foreach (var r in inst.GetComponentsInChildren<Renderer>(true))
+        {
+            if (r is ParticleSystemRenderer || r is TrailRenderer || r is LineRenderer) continue;
+            var mats = r.sharedMaterials; for (int i = 0; i < mats.Length; i++) mats[i] = mat; r.sharedMaterials = mats; r.shadowCastingMode = ShadowCastingMode.Off;
+        }
+        return SavePrefab(root, root.name);
+    }
+
+    static readonly Color StarchTint = new Color(1f, .8f, .3f), ProteinTint = new Color(.5f, .75f, 1f), FatTint = new Color(1f, .93f, .6f);
+
+    /// <summary>분자·확대 모형용 하늘색 홀로그램 재질로 바꾼다 (입자는 그대로).</summary>
+    static void Holo(GameObject go)
+    {
+        var holo = TransparentLit("확대모형_홀로그램", new Color(.45f, .85f, 1f, .3f), .8f, new Color(.08f, .3f, .45f));
+        foreach (var r in go.GetComponentsInChildren<Renderer>(true))
+        {
+            if (r is ParticleSystemRenderer || r is TrailRenderer || r is LineRenderer) continue;
+            var mats = r.sharedMaterials; for (int i = 0; i < mats.Length; i++) mats[i] = holo; r.sharedMaterials = mats;
+            r.shadowCastingMode = ShadowCastingMode.Off;
+        }
+    }
+
+    /// <summary>확대 모형 표시판(키트 판): 무엇인지와 실제 크기를 알려 준다. from 쪽(탐험가 자리)을 본다.</summary>
+    static void ModelTag(Transform parent, string name, Vector3 at, Vector3 from, string title, string sub)
+    {
+        UiKit();
+        var tag = parent.Find(name) ?? new GameObject(name, typeof(RectTransform), typeof(Canvas)).transform;
+        tag.SetParent(parent, true);
+        var rect = (RectTransform)tag; tag.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace; rect.sizeDelta = new Vector2(460, 110);
+        tag.position = at; tag.rotation = Quaternion.LookRotation(at - from); tag.localScale = Vector3.one * .0022f / Mathf.Max(1e-4f, parent.lossyScale.x);
+        var plate = Ensure<UnityEngine.UI.Image>(tag.gameObject); Sliced(plate, KitPanel, PlateFill, 1.4f);
+        var text = tag.Find("글")?.GetComponent<TMPro.TextMeshProUGUI>() ?? UiText(rect, "글", new Vector2(18, -12), new Vector2(424, 86), 30, new Color(.6f, .92f, 1f), TMPro.FontStyles.Bold);
+        text.text = title + "\n<size=24><color=#E8F4FA>" + sub + "</color></size>"; text.alignment = TMPro.TextAlignmentOptions.Center;
+        text.ForceMeshUpdate();
     }
 
     /// <summary>위 단면에서 벽 높이가 y 가 되는 둘레 각도(오른쪽 벽 또는 왼쪽 벽).</summary>
@@ -297,22 +448,24 @@ public static partial class JourneyRealism
     {
         var rbc = RbcPrefab();
 
-        // 1) 융털 확대 모형: 실제 융털처럼 오른쪽 벽에 뿌리를 두고 안쪽으로 손가락처럼 솟는다. 잠수정 유리에 닿지 않을 만큼만 키운다.
-        var zoom = GameObject.Find("VillusZoom");
-        if (zoom != null)
+        // 0) 벽 전체를 덮는 작은 융털: 장을 약 250배 키운 크기라 실제 융털(약 1mm)은 높이 15~24cm 손가락, 15cm 간격으로 빽빽하다.
+        //    장면을 열 때 벽 메시에서 만들고(큰 메시 파일을 저장하지 않는다), 실행 중에는 눈 가까운 구간만 그린다.
+        var wallMf = GameObject.Find("연속_기관벽")?.GetComponent<MeshFilter>();
+        if (wallMf != null)
         {
-            float z = zoom.transform.position.z;
-            var wall = TubeWall("SmallIntestine", path, z, -12 * Mathf.Deg2Rad, out var inward);
-            Vector3 lane = (Vector3)path.EvaluatePosition(NearestT(path, z));
-            const float podClear = 1.7f + .3f;
-            float scale = .44f; // 3.2m → 1.4m
-            while (scale > .2f && Vector3.Distance(wall + inward * 3.2f * scale, lane) < podClear) scale -= .02f;
-            zoom.transform.localScale = Vector3.one * scale;
-            zoom.transform.SetPositionAndRotation(wall - inward * .12f, Quaternion.FromToRotation(Vector3.up, inward) * Quaternion.Euler(0, 90, 0));
-            foreach (var flow in zoom.GetComponentsInChildren<SplineFlow>(true))
-                if (flow.name.Contains("Capillary")) { flow.prefabs = new[] { rbc }; flow.scaleRange = new Vector2(.16f, .2f); flow.spinSpeed = 40; EditorUtility.SetDirty(flow); }
-            Debug.Log($"[부위] 융털 확대 모형: 벽 {wall}, 높이 {3.2f * scale:0.00}m");
+            var carpetGo = GameObject.Find("융털_카펫") ?? new GameObject("융털_카펫");
+            carpetGo.transform.SetParent(null); carpetGo.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity); carpetGo.transform.localScale = Vector3.one;
+            var carpet = Ensure<VilliCarpet>(carpetGo);
+            carpet.wall = wallMf; carpet.material = Mucosa("SmallIntestine"); carpet.drawRange = 11f;
+            carpet.flow = ((Vector3)path.EvaluatePosition(1) - (Vector3)path.EvaluatePosition(0)).normalized;
+            carpet.Build();
+            EditorUtility.SetDirty(carpet);
+            Debug.Log($"[부위] 융털 카펫: {carpet.VilliCount}개 (간격 {carpet.spacing}m)");
         }
+
+        // 1) 융털 확대 모형: 오른쪽 벽에서 손가락처럼 솟은 반투명 융털. 안의 모세혈관(적혈구가 돈다)과 가운데 암죽관(지방산이 내려간다)이 비쳐 보인다.
+        var zoom = GameObject.Find("VillusZoom");
+        if (zoom != null) Villus(zoom.transform, path, rbc);
 
         // 2) 벽 속 혈관 3줄: 점막 바로 밑(돌림 주름의 뿌리 높이)을 따라 굽이치는 반투명 혈관 안을 적혈구가 굴러 흐른다.
         //    주름 사이 골에서는 드러나 보이고, 주름 볏 뒤로는 숨는다(주름 볏을 타고 넘으면 멀리서 공중에 뜬 실처럼 보인다).
@@ -349,12 +502,232 @@ public static partial class JourneyRealism
         }
 
         // 3) 포도당: 영양소 역할은 그대로, 바이러스로 보이던 가시 공 대신 육각 고리 분자.
+        //    흡수할 때는 빛 꼬리를 그리며 가장 가까운 장벽(벽 전체가 융털)으로, 융털 모형이 가까우면 그 모세혈관으로 빨려 들어간다.
         var glucose = GlucosePrefab();
+        var trail = GlowTrail("영양소_빛꼬리");
+        var tubeWall = GameObject.Find("연속_기관벽")?.GetComponent<Collider>();
         foreach (var absorb in Object.FindObjectsByType<NutrientAbsorption>(FindObjectsSortMode.None))
         {
-            foreach (var kind in absorb.kinds ?? new NutrientAbsorption.NutrientKind[0]) if (kind.id == "Glucose") kind.prefab = glucose;
+            foreach (var kind in absorb.kinds ?? new NutrientAbsorption.NutrientKind[0])
+            {
+                // 영양소 분자는 실제로는 보이지 않을 만큼 작다 → 색으로 종류를 알아보는 반투명 확대 모형, 0.6~0.8m (예전 1m 넘는 색칠 모형)
+                if (kind.id == "Glucose") kind.prefab = MoleculeModel(glucose, "포도당", StarchTint);
+                else if (kind.id == "AminoAcid") kind.prefab = MoleculeModel(Prefab("Prop_AminoAcid"), "아미노산", ProteinTint);
+                else if (kind.id == "FattyAcid") kind.prefab = MoleculeModel(Prefab("Prop_FattyAcid"), "지방산", FatTint);
+                kind.trailColor = kind.id == "Glucose" ? new Color(1f, .8f, .3f) : kind.id == "AminoAcid" ? new Color(.5f, .8f, 1f) : new Color(1f, .96f, .7f);
+            }
+            absorb.trailMaterial = trail; absorb.wall = tubeWall;
+            if (absorb.swarm != null) { absorb.swarm.scaleRange = new Vector2(.6f, .8f); EditorUtility.SetDirty(absorb.swarm); }
             EditorUtility.SetDirty(absorb);
         }
+    }
+
+    /// <summary>
+    /// 소장 터널 끝: 예전엔 막으려고 넣은 공이 멀리서 납작한 주황 원판(가운데 미즙 수면 줄)으로 보였다.
+    /// 실제 소장 끝은 대장으로 넘어가는 문(회맹판)이므로, 주름이 가운데로 오므라든 근육 문을 놓는다. 가장자리는 벽 속으로 들어가 이음매가 없다.
+    /// </summary>
+    static void IleocecalEnd(SplineContainer path)
+    {
+        var cap = GameObject.Find("통로_끝_벽");
+        if (cap != null) foreach (var r in cap.GetComponentsInChildren<Renderer>()) r.enabled = false;
+        Vector3 end = path.EvaluatePosition(1), last = (end - (Vector3)path.EvaluatePosition(.99f)).normalized;
+        // 납작한 문은 멀리서 마주 보면 판처럼 보인다 → 9m 에 걸쳐 주름이 모이며 좁아지는 깔때기로 닫는다(깊은 곳은 빛이 닿지 않아 어둡게 사라진다)
+        var go = GameObject.Find("회맹판_소장끝") ?? new GameObject("회맹판_소장끝");
+        go.transform.SetPositionAndRotation(end + last * 2.5f, Quaternion.LookRotation(last)); go.transform.localScale = Vector3.one;
+        foreach (Transform child in go.transform) if (child.name == "구멍_안쪽") Object.DestroyImmediate(child.gameObject);
+        var mesh = FunnelMesh("회맹판_소장끝", 3.7f, 9f, 9, .38f);
+        Ensure<MeshFilter>(go).sharedMesh = mesh;
+        var mr = Ensure<MeshRenderer>(go); mr.sharedMaterial = Mucosa("SmallIntestine"); mr.shadowCastingMode = ShadowCastingMode.Off;
+        var slit = GameObject.CreatePrimitive(PrimitiveType.Sphere); slit.name = "구멍_안쪽"; Object.DestroyImmediate(slit.GetComponent<Collider>());
+        slit.transform.SetParent(go.transform, false); slit.transform.localPosition = new Vector3(0, 0, 8.9f); slit.transform.localScale = new Vector3(.7f, .35f, .05f);
+        var sr = slit.GetComponent<Renderer>(); sr.sharedMaterial = HoleMaterial(); sr.shadowCastingMode = ShadowCastingMode.Off;
+    }
+
+    /// <summary>대장 터널 끝: 막으려고 넣은 공이 멀리서 둥근 혹처럼 보였다 → 같은 주름 깔때기로 닫는다(대장은 관이 조금 가늘다).</summary>
+    static void ColonEnd(SplineContainer path)
+    {
+        var cap = GameObject.Find("통로_끝_벽");
+        if (cap != null) foreach (var r in cap.GetComponentsInChildren<Renderer>()) r.enabled = false;
+        Vector3 end = path.EvaluatePosition(1), last = (end - (Vector3)path.EvaluatePosition(.99f)).normalized;
+        var go = GameObject.Find("대장_끝") ?? new GameObject("대장_끝");
+        go.transform.SetPositionAndRotation(end + last * 2.5f, Quaternion.LookRotation(last)); go.transform.localScale = Vector3.one;
+        Ensure<MeshFilter>(go).sharedMesh = FunnelMesh("대장_끝", 3.4f, 8f, 7, .4f);
+        var mr = Ensure<MeshRenderer>(go); mr.sharedMaterial = Mucosa("LargeIntestine"); mr.shadowCastingMode = ShadowCastingMode.Off;
+    }
+
+    /// <summary>
+    /// 소장 터널 시작(뒤쪽): 관이 뚫려 있어 뒤돌아보면 하늘이 주황 원판(지평선 줄)으로 보였다.
+    /// 실제로는 위에서 넘어온 유문(십이지장 쪽)이므로 같은 주름 깔때기로 닫는다.
+    /// </summary>
+    static void DuodenumStart(SplineContainer path)
+    {
+        Vector3 start = path.EvaluatePosition(0), first = ((Vector3)path.EvaluatePosition(.01f) - start).normalized;
+        var go = GameObject.Find("유문_소장시작") ?? new GameObject("유문_소장시작");
+        go.transform.SetPositionAndRotation(start - first * 2.5f, Quaternion.LookRotation(-first)); go.transform.localScale = Vector3.one;
+        Ensure<MeshFilter>(go).sharedMesh = FunnelMesh("유문_소장시작", 3.7f, 7f, 8, .34f);
+        var mr = Ensure<MeshRenderer>(go); mr.sharedMaterial = Mucosa("SmallIntestine"); mr.shadowCastingMode = ShadowCastingMode.Off;
+    }
+
+    /// <summary>
+    /// 관 끝을 닫는 깔때기: 가장자리(반지름 rim)에서 length 만큼 들어가며 주름 folds 개가 가운데로 모이고 좁아진다. 앞(+z) = 안쪽.
+    /// 앞뒤 양면을 다 그려(점막 재질은 한쪽 면만 그린다) 어느 쪽에서 봐도 빠진 데가 없다.
+    /// </summary>
+    static Mesh FunnelMesh(string name, float rim, float length, int folds, float foldHeight)
+    {
+        const int around = 72, rings = 24;
+        var v = new List<Vector3>(); var tri = new List<int>();
+        for (int r = 0; r <= rings; r++)
+        for (int a = 0; a <= around; a++)
+        {
+            float u = (float)r / rings, phi = (float)a / around * Mathf.PI * 2;
+            float fold = foldHeight * Mathf.Pow(.5f + .5f * Mathf.Cos(folds * phi + u * 1.2f), 3) * Mathf.Sin(Mathf.PI * Mathf.Clamp01(u * 1.2f));
+            float rr = Mathf.Max(.04f, rim * Mathf.Pow(u, .85f) - fold);
+            v.Add(new Vector3(Mathf.Cos(phi) * rr, Mathf.Sin(phi) * rr, length * Mathf.Pow(1 - u, 1.25f)));
+            if (r < rings && a < around) { int k = r * (around + 1) + a, n = k + around + 1; tri.AddRange(new[] { k, n, k + 1, k + 1, n, n + 1 }); }
+        }
+        int count = v.Count, triCount = tri.Count;
+        v.AddRange(v.GetRange(0, count)); // 뒷면
+        for (int i = 0; i < triCount; i += 3) { tri.Add(tri[i] + count); tri.Add(tri[i + 2] + count); tri.Add(tri[i + 1] + count); }
+        var mesh = new Mesh { name = name }; mesh.SetVertices(v); mesh.SetTriangles(tri, 0); mesh.RecalculateNormals(); mesh.RecalculateBounds();
+        SaveMesh($"{Folder}/{name}.asset", ref mesh);
+        return mesh;
+    }
+
+    /// <summary>
+    /// 융털 확대 모형. 벽에 뿌리를 묻고 흐름 쪽으로 30° 눕힌 반투명 손가락(겉 = 흡수 세포층) 안에
+    /// 모세혈관 두 가닥이 암죽관을 감아 올라가 끝에서 이어지고(적혈구가 돈다), 가운데 막힌 암죽관으로 지방산이 내려간다.
+    /// 예전 단면 모형은 숨기고, 모세혈관·암죽관 이름표(설명·시선 대상)는 새 관 자리로 옮긴다. 둘레에 작은 융털 몇 개를 세워 숲처럼 보이게 한다.
+    /// 잠수정 유리(반지름 1.7m)에서 0.3m 떨어질 만큼만 키운다.
+    /// </summary>
+    static void Villus(Transform zoom, SplineContainer path, GameObject rbc)
+    {
+        // 뿌리 크기가 바뀌어도 이름표 크기는 그대로
+        var labels = zoom.GetComponentsInChildren<PartLabel>(true).Where(l => l.labelRoot != null).Select(l => (l.labelRoot.transform, l.labelRoot.transform.lossyScale.x)).ToList();
+        float z = zoom.position.z;
+        float tLane = NearestT(path, z);
+        Vector3 flow = ((Vector3)path.EvaluateTangent(tLane)).normalized;
+        const float lean = 30 * Mathf.Deg2Rad, R = .3f;
+        bool Clear(Transform root, System.Func<float, Vector3> centre, System.Func<float, float> radius)
+        {
+            for (float s = .1f; s <= 1.001f; s += .1f)
+            {
+                var p = root.TransformPoint(centre(s));
+                Vector3 lane = path.EvaluatePosition(NearestT(path, p.z));
+                if (Vector3.Distance(p, lane) - radius(s) * root.lossyScale.x < PodRadius + .3f) return false;
+            }
+            return true;
+        }
+        // 벽 자리에 손가락 축(y)을 세운다: 벽 안쪽에서 흐름 쪽으로 눕히고, x = 끝이 휘는 쪽(하류)
+        void Stand(Transform root, float angleDeg, float dz)
+        {
+            var wall = TubeWall("SmallIntestine", path, z + dz, angleDeg * Mathf.Deg2Rad, out var inward);
+            var along = Vector3.ProjectOnPlane(flow, inward).normalized;
+            var axis = (inward * Mathf.Cos(lean) + along * Mathf.Sin(lean)).normalized;
+            var x = Vector3.ProjectOnPlane(along, axis).normalized;
+            root.SetPositionAndRotation(wall - inward * .15f, Quaternion.LookRotation(Vector3.Cross(x, axis), axis));
+        }
+
+        zoom.localScale = Vector3.one;
+        Stand(zoom, -12, 0);
+        float L = 2.4f;
+        Vector3 Centre(float s) => new Vector3(.12f * L * s * s, s * L, 0);
+        float Skin(float s) => R * (1 + .18f * (1 - Mathf.SmoothStep(0, .18f, s))) * (1 + .03f * Mathf.Sin(s * 23f)) * (s < .8f ? 1 : Mathf.Sqrt(Mathf.Max(0, 1 - (s - .8f) * (s - .8f) / .04f)));
+        while (L > .9f && !Clear(zoom, Centre, Skin)) L -= .05f;
+
+        // 겉: 흡수 세포층(비쳐 보이는 분홍). 안의 관보다 나중에 그려 안쪽이 겉빛에 물들어 보이게 한다.
+        // 확대 모형은 실제 융털(벽의 작은 손가락)과 헷갈리지 않게 하늘색 홀로그램 겉면 — 안의 모세혈관·암죽관은 제 색
+        var shellMat = TransparentLit("융털_겉", new Color(.45f, .85f, 1f, .2f), .8f, new Color(.06f, .25f, .38f));
+        var shell = Tube(Centre, Skin, 64, 24); shell.name = "융털_겉";
+        SaveMesh($"{Folder}/융털_겉.asset", ref shell);
+        var shellGo = Child(zoom, "융털_겉").gameObject;
+        Ensure<MeshFilter>(shellGo).sharedMesh = shell;
+        var shellR = Ensure<MeshRenderer>(shellGo); shellR.sharedMaterial = shellMat; shellR.shadowCastingMode = ShadowCastingMode.Off; shellR.sortingOrder = 1;
+
+        // 모세혈관: 두 가닥이 암죽관을 반대편에서 감아 올라가 끝에서 이어지는 고리(동맥 쪽으로 올라가 정맥 쪽으로 내려온다). 마지막 점 = 첫 점.
+        var loop = new List<Vector3>();
+        Vector3 Coil(float s, float phase) { float h = .03f + .8f * s, a = s * 2.2f * Mathf.PI * 2 + phase, r = Skin(h) * .62f; return Centre(h) + new Vector3(Mathf.Cos(a) * r, 0, Mathf.Sin(a) * r); }
+        for (int j = 0; j <= 30; j++) loop.Add(Coil(j / 30f, 0));
+        for (int j = 30; j >= 0; j--) loop.Add(Coil(j / 30f, Mathf.PI));
+        loop.Add(Centre(-.03f) + new Vector3(0, 0, Skin(0) * .5f)); // 뿌리(벽 속)에서 다시 동맥 쪽으로
+        loop.Add(loop[0]);
+        var capMesh = Tube(t => Catmull(loop, t), t => .055f, 260, 8); capMesh.name = "융털_모세혈관";
+        SaveMesh($"{Folder}/융털_모세혈관.asset", ref capMesh);
+        var capGo = Child(zoom, "모세혈관_관").gameObject;
+        Ensure<MeshFilter>(capGo).sharedMesh = capMesh;
+        var capMat = TransparentLit("모세혈관_벽", new Color(.85f, .08f, .1f, .55f), .6f, new Color(.35f, .02f, .03f));
+        capMat.SetFloat("_EnvironmentReflections", 0); capMat.EnableKeyword("_ENVIRONMENTREFLECTIONS_OFF");
+        var capR = Ensure<MeshRenderer>(capGo); capR.sharedMaterial = capMat; capR.shadowCastingMode = ShadowCastingMode.Off;
+        var capSpline = FlowSpline("CapillarySpline", loop.Where((_, j) => j % 2 == 0 || j == loop.Count - 1).Select(zoom.TransformPoint).ToList(), zoom);
+        var blood = Ensure<SplineFlow>(capSpline.gameObject);
+        blood.spline = capSpline; blood.prefabs = new[] { rbc }; blood.count = 12; blood.scaleRange = new Vector2(.09f, .11f);
+        blood.loopSeconds = capSpline.CalculateLength() / .45f; blood.wobbleRadius = .008f; blood.spinSpeed = 40; blood.alignToPath = true; blood.startHidden = false;
+        EditorUtility.SetDirty(blood);
+
+        // 암죽관: 가운데의 끝이 막힌 젖빛 관. 흡수한 지방은 융털 끝쪽에서 들어와 뿌리(림프관) 쪽으로 내려간다.
+        float Lacteal(float s) => .07f * (s < .85f ? 1 : Mathf.Sqrt(Mathf.Max(0, 1 - (s - .85f) * (s - .85f) / .0225f)));
+        var lacMesh = Tube(s => Centre(.02f + .74f * s), Lacteal, 48, 10); lacMesh.name = "융털_암죽관";
+        SaveMesh($"{Folder}/융털_암죽관.asset", ref lacMesh);
+        var lacGo = Child(zoom, "암죽관_관").gameObject;
+        Ensure<MeshFilter>(lacGo).sharedMesh = lacMesh;
+        var lacR = Ensure<MeshRenderer>(lacGo); lacR.sharedMaterial = TransparentLit("암죽관_벽", new Color(1f, .97f, .85f, .45f), .7f, new Color(.12f, .11f, .08f)); lacR.shadowCastingMode = ShadowCastingMode.Off;
+        var lacSpline = FlowSpline("LactealSpline", Enumerable.Range(0, 9).Select(j => zoom.TransformPoint(Centre(.72f - .74f * j / 8f))).ToList(), zoom);
+        var fat = Ensure<SplineFlow>(lacSpline.gameObject);
+        fat.spline = lacSpline;
+        if (fat.prefabs == null || fat.prefabs.Length == 0 || fat.prefabs[0] == null) fat.prefabs = new[] { Prefab("Prop_FattyAcid") };
+        float fatSize = 1;
+        if (fat.prefabs[0] != null) { var probe = (GameObject)PrefabUtility.InstantiatePrefab(fat.prefabs[0]); var s = Bounds(probe).size; fatSize = Mathf.Max(.01f, Mathf.Max(s.x, Mathf.Max(s.y, s.z))); Object.DestroyImmediate(probe); }
+        fat.count = 6; fat.scaleRange = new Vector2(.09f, .12f) / fatSize; fat.loopSeconds = lacSpline.CalculateLength() / .25f; fat.wobbleRadius = .01f; fat.alignToPath = true; fat.startHidden = false;
+        EditorUtility.SetDirty(fat);
+
+        // 예전 단면 모형은 숨기고(새 손가락이 그 역할), 모세혈관·암죽관 이름표와 시선 대상은 새 관 자리로
+        var cross = zoom.Find("Part_VillusCrossSection") ?? zoom.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Part_VillusCrossSection");
+        if (cross != null) { foreach (var r in cross.GetComponentsInChildren<Renderer>()) r.enabled = false; foreach (var c in cross.GetComponentsInChildren<Collider>()) c.enabled = false; }
+        var capPart = zoom.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Part_CapillaryTube");
+        var lacPart = zoom.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Part_LactealTube");
+        if (capPart != null) MoveLabelToWall(capPart.gameObject, zoom.TransformPoint(Coil(.55f, 0)));
+        if (lacPart != null) MoveLabelToWall(lacPart.gameObject, zoom.TransformPoint(Centre(.3f)));
+        // 이름표는 관 옆, 잠수정 쪽으로 조금 나와 있게
+        void LabelNear(Transform part, Vector3 at)
+        {
+            var l = part != null ? part.GetComponent<PartLabel>() : null;
+            if (l == null || l.labelRoot == null) return;
+            Vector3 lane = path.EvaluatePosition(NearestT(path, at.z));
+            l.labelRoot.transform.position = at + (lane - at).normalized * .55f + Vector3.up * .25f;
+        }
+        LabelNear(capPart, zoom.TransformPoint(Centre(.95f)));
+        LabelNear(lacPart, zoom.TransformPoint(Centre(.35f)));
+        foreach (var (t, size) in labels) t.localScale *= size / Mathf.Max(1e-5f, t.lossyScale.x);
+
+        // 예전 둘레의 큰 융털(1m 넘는 손가락)은 벽의 작은 융털 카펫이 대신한다
+        var forest = GameObject.Find("융털_숲"); if (forest != null) Object.DestroyImmediate(forest);
+        // '확대 모형' 표시: 실제 크기를 알려 준다
+        UiKit();
+        var tag = zoom.Find("확대_모형_표시") ?? new GameObject("확대_모형_표시", typeof(RectTransform), typeof(Canvas)).transform;
+        tag.SetParent(zoom, false);
+        var tagRect = (RectTransform)tag; tag.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace; tagRect.sizeDelta = new Vector2(420, 110);
+        Vector3 tipWorld = zoom.TransformPoint(Centre(1.08f));
+        Vector3 laneAt = path.EvaluatePosition(NearestT(path, tipWorld.z));
+        tag.position = tipWorld + (laneAt - tipWorld).normalized * .35f + Vector3.up * .3f;
+        tag.rotation = Quaternion.LookRotation(tag.position - laneAt); tag.localScale = Vector3.one * .0016f / Mathf.Max(1e-4f, zoom.lossyScale.x);
+        var tagPlate = Ensure<UnityEngine.UI.Image>(tag.gameObject); Sliced(tagPlate, KitPanel, PlateFill, 1.4f);
+        var tagText = tag.Find("글")?.GetComponent<TMPro.TextMeshProUGUI>() ?? UiText(tagRect, "글", new Vector2(18, -12), new Vector2(384, 86), 30, new Color(.6f, .92f, 1f), TMPro.FontStyles.Bold);
+        tagText.text = "융털 확대 모형\n<size=24><color=#E8F4FA>실제 크기 약 1mm · 벽의 작은 돌기</color></size>"; tagText.alignment = TMPro.TextAlignmentOptions.Center;
+        tagText.ForceMeshUpdate();
+        Debug.Log($"[부위] 융털 확대 모형: 길이 {L:0.00}m(굵기 {R * 2:0.0}m), 홀로그램 겉면");
+
+    }
+
+    /// <summary>빛 꼬리(더하기 섞기, 꼭짓점 색 = 꼬리 색). TrailRenderer 용.</summary>
+    static Material GlowTrail(string name)
+    {
+        string path = $"{Folder}/{name}.mat";
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+        if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Particles/Unlit")); AssetDatabase.CreateAsset(mat, path); }
+        mat.SetFloat("_Surface", 1); mat.SetFloat("_Blend", 2); mat.SetOverrideTag("RenderType", "Transparent");
+        mat.SetInt("_SrcBlend", (int)BlendMode.SrcAlpha); mat.SetInt("_DstBlend", (int)BlendMode.One); mat.SetInt("_ZWrite", 0);
+        mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT"); mat.EnableKeyword("_BLENDMODE_ADD"); mat.renderQueue = (int)RenderQueue.Transparent;
+        mat.SetColor("_BaseColor", Color.white);
+        EditorUtility.SetDirty(mat); return mat;
     }
 
     static float NearestT(SplineContainer path, float z)
@@ -389,6 +762,12 @@ public static partial class JourneyRealism
                 if (mat == null) { mat = new Material(src); AssetDatabase.CreateAsset(mat, path); } else mat.CopyPropertiesFromMaterial(src);
                 mat.enableInstancing = true; EditorUtility.SetDirty(mat); return mat;
             }).ToArray();
+        }
+        // 지름 10~20cm 로 수십 개가 흐르므로 가벼운 판(삼각형 3,648 → 700, Tools/make_lite_models.py)을 쓴다 — 모양·재질은 그대로
+        foreach (var f in cell.GetComponentsInChildren<MeshFilter>())
+        {
+            var light = LiteMesh("RBC", f.sharedMesh, out string info);
+            if (light != null) { f.sharedMesh = light; Debug.Log($"[가벼운 모형] 적혈구: {info}"); }
         }
         return SavePrefab(root, "적혈구_실사");
     }
@@ -505,6 +884,23 @@ public static partial class JourneyRealism
         var ps = Ambient("찌꺼기_수분_흡수", waste.transform.position + Vector3.up * .25f, Quaternion.Euler(-90, 0, 0), water, 5f, new Vector2(.04f, .09f), new Vector2(.25f, .5f), -.04f, new Vector2(2f, 3f), ParticleSystemShapeType.Hemisphere, Vector3.one, false);
         var shape = ps.shape; shape.radius = .5f;
         ps.transform.SetParent(waste.transform, true);
+    }
+
+    /// <summary>
+    /// 대장 수분 흡수: 예전 물방울 모형 35개(크고 파란 방울)는 장난감처럼 보여서 끄고, 잠수정 둘레(유리 밖 2.2m)에서 작은 물방울이 생겨
+    /// 벽 쪽으로 퍼지며 스며드는 입자로 보여 준다. 잠수정을 따라가지만 입자는 제자리에 남아 흘러간다(세계 좌표).
+    /// </summary>
+    static void WaterParticles()
+    {
+        foreach (var old in Object.FindObjectsByType<WallAbsorption>(FindObjectsInactive.Include, FindObjectsSortMode.None)) { old.enabled = false; old.count = 1; EditorUtility.SetDirty(old); }
+        var ride = Object.FindFirstObjectByType<CapsuleRide>();
+        if (ride == null) return;
+        var water = Droplet("수분", new Color(.75f, .88f, 1f, .45f));
+        var ps = Ambient("수분_흡수_입자", ride.transform.position, Quaternion.identity, water, 14f, new Vector2(.04f, .09f), new Vector2(.35f, .6f), 0f, new Vector2(1.4f, 2.2f), ParticleSystemShapeType.Sphere, Vector3.one, false);
+        ps.transform.SetParent(ride.transform, true); ps.transform.localPosition = Vector3.zero;
+        var shape = ps.shape; shape.radius = PodRadius + .5f; shape.radiusThickness = 0f; // 유리 밖 껍질에서만 생겨 바깥(벽)으로
+        var main = ps.main; main.maxParticles = 60; main.prewarm = false;
+        EditorUtility.SetDirty(ps);
     }
 
     /// <summary>울퉁불퉁한 덩어리(원점 가운데, size 크기). kind 0 = 납작한 물기 덩어리, 1 = 둥근 덩어리, 2 = 마디가 진 길쭉한 덩어리.</summary>

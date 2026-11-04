@@ -16,7 +16,7 @@ public static partial class JourneyRealism
     static readonly Dictionary<string, string> Goals = new Dictionary<string, string>
     {
         { "Lobby", "몸 스캔에서 아픈 곳을 찾아 진찰한 뒤, 초소형 치료 잠수정에 타세요" },
-        { "Mouth", "어금니의 까만 충치를 치료하고, 이에 붙은 치태 세균을 없애세요" },
+        { "Mouth", "혀 위의 음식 쪽으로 걸어가 꼭꼭 씹어 보세요" },
         { "Esophagus", "아래에서 올라오는 위산 방울을 겨냥해 중화제를 쏘세요" },
         { "Stomach", "헬리코박터균을 물리치고, 음식이 녹아 유문이 열리면 출발해요" },
         { "SmallIntestine", "떠다니는 영양소를 손으로 가리키고 방아쇠를 당겨 흡수시키세요" },
@@ -70,7 +70,10 @@ public static partial class JourneyRealism
         return text;
     }
 
-    /// <summary>안내판: 잠수정 장면은 조종대 화면, 걷는 입 장면은 시선 아래를 따라온다.</summary>
+    /// <summary>
+    /// 안내판: 잠수정 장면은 조종대 위 화면(눈에서 0.86m, 25° 아래), 걷는 장면은 시선 24° 아래 1m 에 게으르게 따라온다.
+    /// 글자는 가상현실에서 편하게 읽히는 크기(본문 약 1.8°, 작은 글자 약 1.5°)로 맞춘다.
+    /// </summary>
     static JourneyHud Hud(string id)
     {
         var old = GameObject.Find("체험_안내판"); if (old != null) Object.DestroyImmediate(old);
@@ -79,20 +82,22 @@ public static partial class JourneyRealism
 
         var go = new GameObject("체험_안내판", typeof(RectTransform), typeof(Canvas));
         var canvas = go.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace; canvas.sortingOrder = 5;
-        var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(540, 250);
+        var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(560, 270);
         var hud = go.AddComponent<JourneyHud>();
         if (anchor != null)
         {
+            // 예전 화면 자리(37° 아래)는 고개를 많이 숙여야 해서 25° 아래로 올린다 (조종대 판보다 위)
+            anchor.localPosition = ScreenSpot; anchor.localRotation = Quaternion.LookRotation(ScreenSpot);
             rect.SetParent(anchor, false); rect.localPosition = Vector3.zero; rect.localRotation = Quaternion.identity;
-            rect.localScale = Vector3.one * .001f;
-            hud.ride = ride;
+            rect.localScale = Vector3.one * .0008f; // 0.86m 앞에서 폭 45cm(약 29°) — 시야를 너무 덮지 않게
+            hud.ride = ride; hud.cockpit = true; hud.cockpitOffset = ScreenSpot;
         }
         else
         {
             var spawn = GameObject.Find("SpawnPoint");
             rect.position = (spawn != null ? spawn.transform.position : Vector3.zero) + new Vector3(0, 1.0f, .9f);
-            rect.localScale = Vector3.one * .0011f;
-            hud.followGaze = true;
+            rect.localScale = Vector3.one * .0012f;
+            hud.followGaze = true; hud.followDistance = 1f; hud.followDown = 24f; hud.recenterAngle = 20f;
         }
         hud.stageName = Names[id];
         hud.goalText = Goals[id];
@@ -104,40 +109,48 @@ public static partial class JourneyRealism
         var line = UiChild(rect, "외곽선", Vector2.zero, Vector2.zero).gameObject.AddComponent<Image>();
         Stretch(line.rectTransform); Sliced(line, KitLine, PlateLine, 1.4f); line.transform.SetSiblingIndex(0);
 
-        hud.title = UiText(rect, "기관", new Vector2(24, -16), new Vector2(300, 50), 38, Color.white, FontStyles.Bold);
+        hud.title = UiText(rect, "기관", new Vector2(24, -14), new Vector2(300, 54), 42, Color.white, FontStyles.Bold);
         // 상태 칩: 점수·진행률 (비어 있으면 숨긴 것처럼 흐리다)
-        var chip = UiChild(rect, "상태_칩", new Vector2(300, -20), new Vector2(216, 42)).gameObject.AddComponent<Image>();
+        var chip = UiChild(rect, "상태_칩", new Vector2(316, -20), new Vector2(220, 44)).gameObject.AddComponent<Image>();
         Sliced(chip, KitPanel, new Color(PrimaryTint.r, PrimaryTint.g, PrimaryTint.b, .35f), 1f);
-        hud.status = UiText(chip.transform, "상태", new Vector2(12, -6), new Vector2(192, 32), 22, new Color(.75f, .95f, 1f), FontStyles.Bold);
+        hud.status = UiText(chip.transform, "상태", new Vector2(10, -5), new Vector2(200, 34), 24, new Color(.75f, .95f, 1f), FontStyles.Bold);
         hud.status.alignment = TextAlignmentOptions.Center; hud.status.enableWordWrapping = false; hud.status.overflowMode = TextOverflowModes.Ellipsis;
         hud.statusChip = chip.gameObject;
 
         // 소화 경로 단계: 점과 이름 (입 · 식도 · 위 · 소장 · 대장)
         int count = hud.routeNames.Length;
         hud.stepDots = new Image[count]; hud.stepLabels = new TextMeshProUGUI[count];
-        const float left = 40, right = 500;
-        var track = UiChild(rect, "경로_선", new Vector2(left, -84), new Vector2(right - left, 2)).gameObject.AddComponent<Image>();
+        const float left = 44, right = 516;
+        var track = UiChild(rect, "경로_선", new Vector2(left, -88), new Vector2(right - left, 2)).gameObject.AddComponent<Image>();
         track.color = new Color(1, 1, 1, .15f); track.raycastTarget = false;
         for (int i = 0; i < count; i++)
         {
             float x = Mathf.Lerp(left, right, count == 1 ? .5f : (float)i / (count - 1));
-            var dot = UiChild(rect, "경로_점_" + i, new Vector2(x - 8, -77), new Vector2(16, 16)).gameObject.AddComponent<Image>();
-            dot.sprite = KitDot; dot.raycastTarget = false; dot.rectTransform.pivot = new Vector2(.5f, .5f); dot.rectTransform.anchoredPosition = new Vector2(x, -85);
-            var label = UiText(rect, "경로_이름_" + i, new Vector2(x - 40, -98), new Vector2(80, 28), 19, Color.white);
+            var dot = UiChild(rect, "경로_점_" + i, new Vector2(x - 9, -80), new Vector2(18, 18)).gameObject.AddComponent<Image>();
+            dot.sprite = KitDot; dot.raycastTarget = false; dot.rectTransform.pivot = new Vector2(.5f, .5f); dot.rectTransform.anchoredPosition = new Vector2(x, -89);
+            var label = UiText(rect, "경로_이름_" + i, new Vector2(x - 45, -102), new Vector2(90, 30), 22, Color.white);
             label.alignment = TextAlignmentOptions.Top; label.text = hud.routeNames[i];
             hud.stepDots[i] = dot; hud.stepLabels[i] = label;
         }
 
-        hud.goal = UiText(rect, "할일", new Vector2(24, -134), new Vector2(492, 70), 24, new Color(.92f, .96f, .98f));
+        hud.goal = UiText(rect, "할일", new Vector2(24, -140), new Vector2(512, 84), 27, new Color(.92f, .96f, .98f));
         if (ride != null)
         {
-            var barBack = UiChild(rect, "진행_바탕", new Vector2(24, -220), new Vector2(492, 12)).gameObject.AddComponent<Image>();
+            var barBack = UiChild(rect, "진행_바탕", new Vector2(24, -238), new Vector2(512, 12)).gameObject.AddComponent<Image>();
             Sliced(barBack, KitPanel, new Color(1, 1, 1, .07f), 3f);
             var fill = UiChild(barBack.transform, "진행", Vector2.zero, Vector2.zero);
             fill.anchorMin = Vector2.zero; fill.anchorMax = new Vector2(0, 1); fill.pivot = new Vector2(0, .5f); fill.offsetMin = fill.offsetMax = Vector2.zero;
             var fillImage = fill.gameObject.AddComponent<Image>(); Sliced(fillImage, KitPanel, PrimaryTint, 3f);
             hud.progressFill = fill;
         }
+        // 자막 판: 안내판 바로 위(시선과 안내판 사이). 안내 병아리 대신 목소리 내레이션의 자막이 여기 나온다
+        var sub = UiChild(rect, "자막", new Vector2(0, 118), new Vector2(560, 104));
+        var subPlate = sub.gameObject.AddComponent<Image>(); Sliced(subPlate, KitPanel, PlateFill, 1.4f);
+        var subLine = UiChild(sub, "외곽선", Vector2.zero, Vector2.zero).gameObject.AddComponent<Image>(); Stretch(subLine.rectTransform); Sliced(subLine, KitLine, PlateLine, 1.4f);
+        hud.subtitle = UiText(sub, "글", new Vector2(20, -12), new Vector2(520, 80), 28, Color.white);
+        hud.subtitle.alignment = TextAlignmentOptions.Center; hud.subtitle.text = "";
+        hud.subtitlePanel = sub.gameObject; sub.gameObject.SetActive(false);
+
         // 실행 전(편집기·촬영)에도 내용이 보이도록 미리 채운다. 실행하면 JourneyHud 가 다시 채운다.
         hud.title.text = Names[id];
         hud.goal.text = Goals[id];
@@ -202,6 +215,8 @@ public static partial class JourneyRealism
 
     static GameObject Prefab(string name)
     {
+        var light = LitePrefab(name); // 떼로 나오는 세균·바이러스는 가벼운 판
+        if (light != null) return light;
         var animated = JourneyPolishSetup.AnimatedPrefab(name);
         return animated != null ? animated : AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/Models/Meshy/{name}.glb");
     }

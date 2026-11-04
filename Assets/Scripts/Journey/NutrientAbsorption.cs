@@ -21,6 +21,7 @@ public class NutrientAbsorption : MonoBehaviour
         public int count = 5;
         [TextArea(1, 3)] public string absorbedLine = "포도당은 우리 몸의 에너지원이에요!";
         public AudioClip absorbedVoice;
+        [Tooltip("흡수될 때 그리는 빛 꼬리 색")] public Color trailColor = new Color(1f, .85f, .4f);
     }
 
     [Header("영양소")]
@@ -39,6 +40,8 @@ public class NutrientAbsorption : MonoBehaviour
     public float absorbDuration = 0.6f;
     public ParticleSystem absorbVfx;
     public AudioClip absorbSfx;
+    [Tooltip("흡수될 때 빛 꼬리 재질 (비우면 꼬리 없음)")] public Material trailMaterial;
+    [Tooltip("장벽 충돌체: 융털 모형이 멀면 가장 가까운 벽(벽 전체가 융털)으로 빨려 들어간다")] public Collider wall;
 
     [Header("화면")]
     public TextMeshProUGUI progressText;
@@ -61,7 +64,7 @@ public class NutrientAbsorption : MonoBehaviour
     {
         sfx = gameObject.AddComponent<AudioSource>();
         sfx.spatialBlend = 0f;
-        if (gazeOrigin == null && Camera.main != null) gazeOrigin = Camera.main.transform;
+        if (gazeOrigin == null) gazeOrigin = JourneyEye.Get();
 
         Transform parent = swarm != null ? swarm.transform : transform;
         foreach (var k in kinds)
@@ -90,8 +93,7 @@ public class NutrientAbsorption : MonoBehaviour
         if (gazeOrigin == null)
         {
             // 영속 리그가 이 오브젝트보다 늦게 생길 수 있으므로 매 프레임 재시도
-            var eye = GameObject.FindWithTag("VRCamera");
-            gazeOrigin = eye != null ? eye.transform : (Camera.main != null ? Camera.main.transform : null);
+            gazeOrigin = JourneyEye.Get();
             if (gazeOrigin == null) return;
         }
 
@@ -137,18 +139,52 @@ public class NutrientAbsorption : MonoBehaviour
         Transform t = n.transform;
         t.SetParent(null, true); // FloatingSwarm 의 위치 갱신에서 분리
         Vector3 start = t.position, startScale = t.localScale;
-        Vector3 end = absorbTarget != null ? absorbTarget.position : start + Vector3.down * 1.5f;
+        Vector3 end = AbsorbPoint(start);
+        // 빛 꼬리를 그리며 빨려 들어간다 (먼 벽일수록 조금 더 오래)
+        if (trailMaterial != null)
+        {
+            var trail = t.gameObject.AddComponent<TrailRenderer>();
+            trail.sharedMaterial = trailMaterial; trail.time = .45f; trail.minVertexDistance = .05f;
+            trail.widthCurve = new AnimationCurve(new Keyframe(0, .14f), new Keyframe(1, 0));
+            var c = n.kind != null ? n.kind.trailColor : Color.white;
+            trail.colorGradient = new Gradient { colorKeys = new[] { new GradientColorKey(c, 0), new GradientColorKey(c, 1) }, alphaKeys = new[] { new GradientAlphaKey(.9f, 0), new GradientAlphaKey(0, 1) } };
+            trail.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off; trail.receiveShadows = false;
+        }
+        float duration = absorbDuration * Mathf.Clamp(Vector3.Distance(start, end) / 2.5f, 1f, 2f);
+        Vector3 lift = Vector3.up * Mathf.Min(.6f, Vector3.Distance(start, end) * .15f);
         float e = 0f;
-        while (e < absorbDuration && t != null)
+        while (e < duration && t != null)
         {
             e += Time.deltaTime;
-            float k = e / absorbDuration;
-            t.position = Vector3.Lerp(start, end, k * k);
-            t.localScale = startScale * (1f - k);
+            float k = e / duration;
+            t.position = Vector3.Lerp(start, end, k * k) + lift * Mathf.Sin(k * Mathf.PI);
+            t.localScale = startScale * (1f - k * .85f);
             yield return null;
         }
         JourneyParticleBurst.Emit(absorbVfx, end, 20);
         if (t != null) Destroy(t.gameObject);
+    }
+
+    /// <summary>
+    /// 빨려 들어갈 곳: 융털 모형(모세혈관)이 가까우면 그곳, 멀면 가장 가까운 장벽(벽 전체가 융털로 덮여 있다).
+    /// 멀리 있는 모형으로 몇십 m 를 날아가면 순간이동처럼 보인다.
+    /// </summary>
+    Vector3 AbsorbPoint(Vector3 from)
+    {
+        const float near = 6f;
+        if (absorbTarget != null && Vector3.Distance(from, absorbTarget.position) < near) return absorbTarget.position;
+        if (wall != null)
+        {
+            float best = float.MaxValue; Vector3 point = Vector3.zero;
+            for (int i = 0; i < 26; i++)
+            {
+                var d = new Vector3(i % 3 - 1, i / 3 % 3 - 1, i / 9 - 1);
+                if (d == Vector3.zero) continue;
+                if (wall.Raycast(new Ray(from, d.normalized), out var hit, 12f) && hit.distance < best) { best = hit.distance; point = hit.point - d.normalized * .05f; }
+            }
+            if (best < float.MaxValue) return point;
+        }
+        return absorbTarget != null ? absorbTarget.position : from + Vector3.down * 1.5f;
     }
 
     IEnumerator CompleteRoutine()

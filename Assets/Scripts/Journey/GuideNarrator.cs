@@ -18,6 +18,9 @@ public class GuideNarrator : MonoBehaviour
     [Header("자막 화면 (안내 캐릭터 머리 위 공간 화면)")]
     public GameObject speechBubble;
     public TextMeshProUGUI subtitleText;
+    [Tooltip("모습 없이 목소리만 (안내 병아리를 보이지 않게 한 뒤): 소리가 한쪽에서 들리지 않게 머리 안에서 들린다")]
+    public bool voiceOnly;
+    GameObject defaultBubble; TextMeshProUGUI defaultText; // 장면 안내판에 자막 자리가 없을 때 쓰는 원래 말풍선
 
     [Header("타이핑 연출")]
     [Tooltip("초당 타이핑 글자 수 (자모 단위)")]
@@ -51,9 +54,25 @@ public class GuideNarrator : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(transform.root.gameObject);
         audioSource = GetComponent<AudioSource>();
-        audioSource.spatialBlend = 1f;
+        audioSource.spatialBlend = voiceOnly ? 0f : 1f;
         audioSource.playOnAwake = false;
+        defaultBubble = speechBubble; defaultText = subtitleText;
         if (speechBubble != null) speechBubble.SetActive(false);
+    }
+
+    /// <summary>자막을 장면 안내판의 자막 판으로 보낸다 (안내판이 장면마다 새로 생긴다). 원래 말풍선은 숨긴다.</summary>
+    public void UseSubtitles(GameObject panel, TextMeshProUGUI text)
+    {
+        if (panel == null || text == null) return;
+        if (defaultBubble != null && defaultBubble != panel) defaultBubble.SetActive(false);
+        speechBubble = panel; subtitleText = text;
+        speechBubble.SetActive(IsSpeaking);
+    }
+
+    /// <summary>등록한 자막 판이 장면과 함께 사라졌으면 원래 말풍선으로 돌아간다.</summary>
+    void EnsureSubtitles()
+    {
+        if (speechBubble == null || subtitleText == null) { speechBubble = defaultBubble; subtitleText = defaultText; }
     }
 
     void Update()
@@ -83,6 +102,7 @@ public class GuideNarrator : MonoBehaviour
         completion = onFinished;
         IsSpeaking = true;
         SetTalking(true);
+        EnsureSubtitles();
         if (speechBubble != null) speechBubble.SetActive(true);
         var routine = StartCoroutine(RunLines(lines, mySession));
         if (session == mySession && IsSpeaking) current = routine;
