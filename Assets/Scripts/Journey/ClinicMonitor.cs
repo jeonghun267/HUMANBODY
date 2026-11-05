@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,8 @@ public class ClinicMonitor : MonoBehaviour
     public Image[] planSteps = new Image[0];
     [Tooltip("마지막 진료실: 처음부터 모두 치료 완료로 보인다")] public bool completeOnStart;
     public Color waitColor = new Color(.32f, .42f, .48f, 1f), foundColor = new Color(1f, .45f, .4f, 1f), doneColor = new Color(.5f, .9f, 1f, 1f);
+    [Tooltip("결과 칸이 채워질 때 '삐빅', 치료 계획이 뜰 때 '삐삐삐' (화면에서 난다)")] public string foundSound = "monitor_found", planSound = "monitor_plan";
+    [Tooltip("치료 계획 소리를 몸 스캔 완료음 뒤로 미루는 시간 (초)")] public float planSoundDelay = .6f;
 
     /// <summary>치료 경로 칸: 할 일은 파랑, 끝낸 곳은 초록빛 청록 (흰 글자가 읽히는 깊이).</summary>
     public static readonly Color StepTodo = new Color(.16f, .55f, .78f, 1f), StepDone = new Color(.18f, .55f, .42f, 1f);
@@ -47,15 +50,23 @@ public class ClinicMonitor : MonoBehaviour
     {
         if (complete || index < 0 || index >= findings.Length) return;
         if (got.Length != findings.Length) got = new bool[findings.Length];
+        if (!got[index] && !string.IsNullOrEmpty(foundSound)) Sfx.Play(foundSound, transform.position, 1f);
         got[index] = true;
         Refresh();
     }
 
     public void ShowPlan()
     {
+        if (!planShown && !string.IsNullOrEmpty(planSound) && isActiveAndEnabled) StartCoroutine(PlanSound());
         planShown = true;
         for (int i = 0; i < got.Length; i++) got[i] = true;
         Refresh();
+    }
+
+    IEnumerator PlanSound()
+    {
+        yield return new WaitForSeconds(planSoundDelay);
+        Sfx.Play(planSound, transform.position, 1f);
     }
 
     public void Complete()

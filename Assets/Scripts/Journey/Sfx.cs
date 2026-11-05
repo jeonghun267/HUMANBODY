@@ -47,6 +47,17 @@ public static class Sfx
         Object.Destroy(go, src.clip.length / Mathf.Max(0.1f, pitch) + 0.1f);
     }
 
+    /// <summary>듣는 사람 귀에서 한 번 재생 (2D). 장면이 바뀌어도 끝까지 들린다 (장면 이동 소리).</summary>
+    public static void Play2D(string name, float volume = 1f)
+    {
+        var go = new GameObject("Sfx_" + name);
+        if (Application.isPlaying) Object.DontDestroyOnLoad(go);
+        var src = go.AddComponent<AudioSource>();
+        src.clip = Get(name); src.spatialBlend = 0f; src.volume = volume;
+        src.Play();
+        Object.Destroy(go, src.clip.length + 0.1f);
+    }
+
     /// <summary>루프 앰비언스 소스 만들기.</summary>
     public static AudioSource Loop(string name, Transform parent, float volume = 0.4f, bool spatial = false)
     {

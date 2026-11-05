@@ -21,6 +21,9 @@ public class JourneyManager : MonoBehaviour
     public float fadeDuration = 1.0f;
     [Tooltip("씬 로드 후 입장 내레이션을 시작하기까지 대기(초)")]
     public float introDelay = 1.5f;
+    [Tooltip("장면을 옮길 때 나는 잠수정 이동 소리 (Resources/Sfx, 비우면 소리 없음)")]
+    public string travelSound = "travel";
+    [Range(0f, 1f)] public float travelVolume = .6f;
 
     public OrganStage CurrentStage { get; private set; }
     public int CurrentIndex { get; private set; } = -1;
@@ -89,6 +92,9 @@ public class JourneyManager : MonoBehaviour
             if (playOutro && GuideNarrator.Instance != null && CurrentStage.outroLines != null && CurrentStage.outroLines.Length > 0)
                 yield return GuideNarrator.Instance.PlayRoutine(CurrentStage.outroLines);
         }
+
+        // 잠수정 이동 소리: 화면이 어두워지는 동안 시작해 다음 장면이 밝아질 때까지 이어진다 (장면이 바뀌어도 끊기지 않음)
+        if (!string.IsNullOrEmpty(travelSound)) Sfx.Play2D(travelSound, travelVolume);
 
         // 페이드 아웃 (OVRScreenFade 가 있으면 사용, 없으면 대기만)
         var fade = OVRScreenFade.instance != null ? OVRScreenFade.instance : FindAnyObjectByType<OVRScreenFade>();

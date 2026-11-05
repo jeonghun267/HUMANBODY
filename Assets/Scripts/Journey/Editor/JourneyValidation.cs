@@ -274,11 +274,36 @@ public static class JourneyValidation
         var walker = GameObject.FindWithTag("Player");
         var ovrPc = walker != null ? walker.GetComponent<OVRPlayerController>() : null; var loco = walker != null ? walker.GetComponent<ComfortLocomotion>() : null;
         Check(loco != null && loco.walking && ovrPc != null && ovrPc.EnableLinearMovement && ovrPc.EnableRotation && !ovrPc.SnapRotation && Mathf.Abs(ovrPc.RotationAmount * 60f - 60f) < 1f && Mathf.Abs(6f * ovrPc.Acceleration / ovrPc.Damping - 1.5f) < .05f, $"병원: 걸어 다니기 (속도 {(ovrPc != null ? 6f * ovrPc.Acceleration / ovrPc.Damping : 0):0.00}m/s, 회전 {(ovrPc != null ? ovrPc.RotationAmount * 60f : 0):0}°/s)");
+        // 소리: 새 효과음 파일이 모두 있고(없으면 Sfx 가 '띵' 합성음으로 대신해 버린다), 걸으면 병원 바닥 발소리가 나고, 병원 배경 음악이 흐른다
+        var newSounds = new[] { "hover", "monitor_found", "monitor_plan", "travel", "bgm_clinic", "bgm_body" }
+            .Concat(Enumerable.Range(1, 4).SelectMany(k => new[] { $"step_clinic_{k}", $"step_wet_{k}" }));
+        var missingSounds = newSounds.Where(n => Resources.Load<AudioClip>("Sfx/" + n) == null).ToArray();
+        Check(missingSounds.Length == 0, "소리: 발소리·버튼·모니터·이동·배경 음악 파일이 모두 있다" + (missingSounds.Length > 0 ? " (없음: " + string.Join(", ", missingSounds) + ")" : ""));
+        var feet = walker != null ? walker.GetComponent<Footsteps>() : null;
+        var walkerCc = walker != null ? walker.GetComponent<CharacterController>() : null;
+        if (feet != null && walkerCc != null)
+        {
+            Vector3 walkStart = walker.transform.position; int stepsBefore = feet.Steps; float walked = 0f, walkTime = 0f;
+            var walkDir = Vector3.ProjectOnPlane(walker.transform.forward, Vector3.up).normalized;
+            while (walked < 2.2f && walkTime < 6f) // 1.1m 앞으로 갔다가 되돌아온다 (1.5m/s)
+            {
+                var before = walker.transform.position;
+                walkerCc.Move((walked < 1.1f ? walkDir : -walkDir) * 1.5f * Time.deltaTime);
+                walked += Vector3.ProjectOnPlane(walker.transform.position - before, Vector3.up).magnitude;
+                walkTime += Time.deltaTime; yield return null;
+            }
+            Check(feet.Surface == "step_clinic" && feet.Steps - stepsBefore >= 2, $"병원: 걸으면 딱딱한 바닥 발소리가 난다 ({walked:0.0}m 걷는 동안 {feet.Steps - stepsBefore}걸음, {feet.Surface})");
+            walkerCc.enabled = false; walker.transform.position = walkStart; walkerCc.enabled = true;
+        }
+        else Check(false, "병원: 플레이어에 발소리(Footsteps)가 없다");
+        var music = JourneyMusic.Instance;
+        Check(music != null && music.CurrentTrack == "bgm_clinic" && music.CurrentClip != null && music.CurrentClip.name == "bgm_clinic", $"병원: 병원 배경 음악이 흐른다 ({(music != null ? music.CurrentTrack : "배경 음악 없음")})");
         // 사람 목소리: 간호사가 말을 걸면 대사 음성이 그 사람의 소리 장치에 걸린다
         if (nurse != null)
         {
             nurse.Talk(); yield return null;
             Check(nurse.nodes[0].voice != null && nurse.voice != null && nurse.voice.clip == nurse.nodes[0].voice && nurse.voice.spatialBlend <= .5f, "병원: 간호사가 말을 걸면 대사 음성이 나온다");
+            Check(music != null && music.Ducked, "병원: 사람이 말하는 동안 배경 음악이 줄어든다");
             nurse.StopAllCoroutines(); if (nurse.voice != null) nurse.voice.Stop(); if (nurse.panel != null) nurse.panel.SetActive(false);
         }
         // 큰 화면의 진찰 결과 모니터: 간호사 증상·몸 스캔 진찰에 이어져 있고, 위를 진찰하면 결과가 뜬다
@@ -290,6 +315,7 @@ public static class JourneyValidation
         {
             scan.onHit.Invoke(1); yield return null;
             Check(monitor.findings.Length == 3 && monitor.findings[1].result.text == monitor.findings[1].foundText && monitor.findings[0].result.text == "?", "병원: 위를 진찰하면 모니터의 '위' 칸만 채워진다");
+            Check(GameObject.Find("Sfx_" + monitor.foundSound) != null, "병원: 모니터 결과 칸이 채워질 때 '삐빅' 소리가 난다");
         }
         UiShots();
         GuideNarrator.Instance.Skip();
@@ -305,8 +331,15 @@ public static class JourneyValidation
         Check(!boarding.Ready && !boarding.Departed && !JourneyManager.Instance.IsTransitioning, "병원: 진찰 전에는 탑승구에 들어가도, 출발 버튼을 눌러도 떠나지 않는다");
         boardGate.Open(); yield return null;
         Check(boarding.Ready, "병원: 진찰이 끝나면 출발 버튼이 열린다");
+        boarding.button.SetHover(false); boarding.button.SetHover(true);
+        Check(GameObject.Find("Sfx_" + boarding.button.hoverSound) != null, "병원: 입체 버튼을 가리키면 '틱' 소리가 난다");
         boarding.Press();
+        var travel = GameObject.Find("Sfx_" + JourneyManager.Instance.travelSound);
+        Check(travel != null && travel.scene.name == "DontDestroyOnLoad", "병원: 출발하면 잠수정 이동 소리가 나고, 장면이 바뀌어도 끊기지 않는다");
         yield return Stage("01_Mouth", playerId, persistent);
+        var mouthFeet = GameObject.FindWithTag("Player").GetComponent<Footsteps>();
+        Check(mouthFeet != null && mouthFeet.Surface == "step_wet" && music != null && music.CurrentTrack == "bgm_body",
+            $"입: 몸속에서는 축축한 바닥 발소리·몸속 배경 음악 ({(mouthFeet != null ? mouthFeet.Surface : "발소리 없음")}, {(music != null ? music.CurrentTrack : "배경 음악 없음")})");
 
         // 입: 씹기 → 양치를 안 하면?(충치가 생기는 과정) → 충치 치료 → 치태 세균 → 삼키기 → 식도
         var chew = Object.FindFirstObjectByType<ChewingSequence>();
@@ -411,6 +444,7 @@ public static class JourneyValidation
         yield return RideThroughMissions("06_Theater", playerId, persistent);
         var endMonitor = Object.FindFirstObjectByType<ClinicMonitor>();
         Check(endMonitor != null && endMonitor.findings.All(f => f.result.text == "치료 완료"), "마지막 진료실: 큰 화면 모니터가 모두 치료 완료");
+        Check(music != null && music.CurrentTrack == "bgm_clinic", $"마지막 진료실: 다시 병원 배경 음악 ({(music != null ? music.CurrentTrack : "배경 음악 없음")})");
 
         // Exercise the existing no-video fallback; video/audio quality needs a device run.
         var ending = Object.FindFirstObjectByType<TheaterEnding>();

@@ -14,14 +14,25 @@ public class DepthButton : MonoBehaviour
     [Tooltip("앞판이 판에서 떠 있는 거리 (캔버스 단위)")]
     public float lift = 12f;
     public float pressSeconds = .18f;
+    [Tooltip("가리키기 시작할 때 나는 작은 '틱' (비우면 소리 없음)")] public string hoverSound = "hover";
 
     bool hover;
     float press;
     Vector3 rest;
+    static float lastTick;
 
     void Awake() { if (front != null) rest = front.rectTransform.localPosition; }
 
-    public void SetHover(bool on) => hover = on;
+    public void SetHover(bool on)
+    {
+        // 겨냥이 버튼 사이를 빠르게 지나가도 소리가 겹쳐 따다닥거리지 않게 아주 짧은 간격을 둔다
+        if (on && !hover && isActiveAndEnabled && !string.IsNullOrEmpty(hoverSound) && Time.unscaledTime - lastTick > .06f)
+        {
+            lastTick = Time.unscaledTime;
+            Sfx.Play(hoverSound, transform.position, .3f, Random.Range(.97f, 1.03f));
+        }
+        hover = on;
+    }
     public void Press() => press = 1f;
 
     void Update()
