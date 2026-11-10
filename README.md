@@ -9,7 +9,7 @@
 ![Meta XR SDK](https://img.shields.io/badge/Meta%20XR%20SDK-83.0-0467DF)
 ![C#](https://img.shields.io/badge/C%23-.NET-512BD4?logo=csharp)
 
-![병원 진료실 — 홀로그램 몸, 진찰 모니터, 잠수정 탑승구, 의사 선생님](Docs/images/00_cover.jpg)
+![병원 진료실 — 홀로그램 몸, 진찰 모니터, 잠수정 탑승구, 의사 선생님](docs/images/00_cover.jpg)
 
 - **대상**: 체험관 어린이 관람객 (아이 눈높이 대사, 앉아서 체험 · 왼손잡이 설정 지원)
 - **플랫폼**: Meta Quest 2/3 (Android 단독 실행) · PC (Quest Link)
@@ -55,31 +55,31 @@
 
 ### 병원 진료실 — 진찰
 
-![간호사 · 진찰 모니터 · 출발 버튼](Docs/images/01_clinic.jpg)
+![간호사 · 진찰 모니터 · 출발 버튼](docs/images/01_clinic.jpg)
 
 간호사 머리 위 **할 일 말풍선**을 따라 대화하고, 홀로그램 몸의 빨간 점을 겨누면 진찰 모니터가 삐빅 소리와 함께 증상의 원인(충치 · 헬리코박터균 · 해로운 균)을 보여 줍니다. 세 곳을 다 찾으면 출발 버튼이 열립니다.
 
 ### 입 — 충치와 치태
 
-![씹기 · 충치 · 치태 세균](Docs/images/02_mouth.jpg)
+![씹기 · 충치 · 치태 세균](docs/images/02_mouth.jpg)
 
 방아쇠로 턱을 움직여 씹고, 시간을 빨리 돌려 충치가 생기는 과정을 본 뒤, 파란 치료 광선으로 충치를 메우고 이 사이 세균을 물리칩니다.
 
 ### 식도 · 위
 
-![후두덮개 · 위액 거품 · 헬리코박터균](Docs/images/03_esophagus_stomach.jpg)
+![후두덮개 · 위액 거품 · 헬리코박터균](docs/images/03_esophagus_stomach.jpg)
 
 잠수정 좌석에 앉아 식도를 내려가며 역류하는 위산을 중화하고, 위에서는 나선 모양 헬리코박터균을 물리친 뒤 유문이 열리면 소장으로 갑니다.
 
 ### 소장 · 대장
 
-![융털 · 영양소 흡수 · 해로운 균](Docs/images/04_intestines.jpg)
+![융털 · 영양소 흡수 · 해로운 균](docs/images/04_intestines.jpg)
 
 소장에서는 효소와 영양소의 짝을 맞추고 융털로 흡수되는 모습을 관찰합니다. 대장에서는 해로운 균만 골라 물리치고(유익균을 맞히면 말립니다), 유익균에게 식이섬유를 먹입니다.
 
 ### 마지막 진료실 — 치료 결과
 
-![마지막 진료실 · 치료 결과 모니터 · OX 퀴즈](Docs/images/05_ending.jpg)
+![마지막 진료실 · 치료 결과 모니터 · OX 퀴즈](docs/images/05_ending.jpg)
 
 치료 전 증상과 부위별 치료 완료를 확인하고, OX 퀴즈와 치료 보고서로 마무리합니다.
 
@@ -173,7 +173,7 @@ HUMANBODY/
 │   ├── StreamingAssets/       exhibition.json (체험관 설정)
 │   └── Scenes/, Scripts/      예전 버전 (MouseScene · OrganScene · SmallIntestine · Toilet)
 ├── Tools/                     에셋 생성 · 검사용 Python 스크립트, 자동 촬영 결과
-└── Docs/                      플레이 점검 기록, README 이미지
+└── docs/                      플레이 점검 기록, README 이미지
 ```
 
 장면은 손으로 배치하지 않고 에디터 코드(`JourneyBuilder` → `JourneyRealism`)로 만듭니다. 대사나 모형을 바꾸면 메뉴로 다시 적용합니다.
@@ -201,7 +201,7 @@ HUMANBODY/
 
 ## 외부 연동 — NDI · OSC
 
-![NDI 송출 장면 — 왼쪽 모니터가 헤드셋 화면을 받아 보여 준다](Docs/images/ndi_cover.jpg)
+![NDI 송출 장면 — 왼쪽 모니터가 헤드셋 화면을 받아 보여 준다](docs/images/ndi_cover.jpg)
 
 | 구분 | 내용 |
 |---|---|
@@ -226,7 +226,7 @@ HUMANBODY/
 | 2026-10 | 입 장면 부위 배치를 해부학 기준으로 다시 맞춤 (맞물림 · 접촉 거리 수치 검사) |
 | 2026-11 | 실사 점막 셰이더, 병원 진료실 이야기 · 장면별 치료 임무, 사람 의사 · 간호사, 걷기 이동, 효과음 · 배경 음악, 화면 표시 개편(진행 점 · 말풍선 · 표적 힌트), Quest APK 빌드 |
 
-최근 점검 내용은 [Docs/플레이점검_2026-11-05.md](Docs/플레이점검_2026-11-05.md)에 있습니다.
+최근 점검 내용은 [docs/플레이점검_2026-11-05.md](docs/플레이점검_2026-11-05.md)에 있습니다.
 
 </details>
 
