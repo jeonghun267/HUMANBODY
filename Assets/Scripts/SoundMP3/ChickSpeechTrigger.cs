@@ -1,17 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ë³‘ì•„ë¦¬ ìŒì„± ì‹œì‘ êµ¬ì—­") ]
 public class ChickSpeechTrigger : MonoBehaviour
 {
-    [Header("¼³Á¤")]
-    public AudioSource chickAudioSource; // º´¾Æ¸® ¸ñ¼Ò¸® ³ª¿À´Â °÷
-    public AudioClip ttsClip;            // "À§ÀåÀ¸·Î °¡ÀÚ!" À½¼º ÆÄÀÏ
+    [Header("ì„¤ì •")]
+    public AudioSource chickAudioSource; // ë³‘ì•„ë¦¬ ëª©ì†Œë¦¬ ë‚˜ì˜¤ëŠ” ê³³
+    public AudioClip ttsClip;            // "ìœ„ì¥ìœ¼ë¡œ ê°€ì!" ìŒì„± íŒŒì¼
 
     private void OnTriggerEnter(Collider other)
     {
-        // Á¤ÈÆÀÌ°¡ ¸»ÇÑ ´ë·Î ÅÂ±×¸¦ "VRCamera"·Î °íÁ¤!
+        // ì •í›ˆì´ê°€ ë§í•œ ëŒ€ë¡œ íƒœê·¸ë¥¼ "VRCamera"ë¡œ ê³ ì •!
         if (other.CompareTag("VRCamera"))
         {
-            Debug.Log(" VRCamera °¨ÁöµÊ! º´¾Æ¸® ¸àÆ® ½ÃÀÛ!");
+            Debug.Log(" VRCamera ê°ì§€ë¨! ë³‘ì•„ë¦¬ ë©˜íŠ¸ ì‹œì‘!");
 
             if (chickAudioSource != null && ttsClip != null)
             {
@@ -20,10 +21,10 @@ public class ChickSpeechTrigger : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning(" ¿Àµğ¿À ¼Ò½º³ª Å¬¸³ÀÌ ºñ¾îÀÖ¾î!");
+                Debug.LogWarning(" ì˜¤ë””ì˜¤ ì†ŒìŠ¤ë‚˜ í´ë¦½ì´ ë¹„ì–´ìˆì–´!");
             }
 
-            // ÇÑ ¹ø ¹âÀ¸¸é ÀçÀÛµ¿ ¾È ÇÏ°Ô ²ô±â
+            // í•œ ë²ˆ ë°Ÿìœ¼ë©´ ì¬ì‘ë™ ì•ˆ í•˜ê²Œ ë„ê¸°
             gameObject.SetActive(false);
         }
     }

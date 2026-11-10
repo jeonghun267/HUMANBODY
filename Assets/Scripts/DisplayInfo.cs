@@ -1,28 +1,29 @@
-using UnityEngine;
-using TMPro; // TextMeshPro °ü·Ã
+ï»¿using UnityEngine;
+using TMPro; // TextMeshPro ê´€ë ¨
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì„¤ëª… í‘œì‹œ") ]
 public class DisplayInfo : MonoBehaviour
 {
-    [Header("¼³¸í UI")]
-    [Tooltip("¼³¸í UI ÆĞ³Î °ÔÀÓ¿ÀºêÁ§Æ®")]
+    [Header("ì„¤ëª… í™”ë©´")]
+    [Tooltip("ì„¤ëª… í™”ë©´ íŒ¨ë„ ê²Œì„ì˜¤ë¸Œì íŠ¸")]
     [SerializeField]
     private GameObject infoPanelObject;
 
-    [Tooltip("¼³¸í ÅØ½ºÆ®(TextMeshProUGUI)")]
+    [Tooltip("ì„¤ëª… í…ìŠ¤íŠ¸(ê¸€ì í‘œì‹œ êµ¬ì„± ìš”ì†Œ)")]
     [SerializeField]
     private TextMeshProUGUI explanationTextComponent;
 
     [TextArea(3, 10)]
-    [Tooltip("ÇØ´ç °´Ã¼¿¡ ´ëÇÑ ¼³¸í ÅØ½ºÆ®")]
+    [Tooltip("í•´ë‹¹ ê°ì²´ì— ëŒ€í•œ ì„¤ëª… í…ìŠ¤íŠ¸")]
     [SerializeField]
-    private string organExplanation = "ÀÌ ¿µ¿ª¿¡ ±â°ü ¼³¸íÀÌ Ç¥½ÃµË´Ï´Ù. ÆíÁıÇØ¼­ »ç¿ëÇÏ¼¼¿ä.";
+    private string organExplanation = "ì´ ì˜ì—­ì— ê¸°ê´€ ì„¤ëª…ì´ í‘œì‹œë©ë‹ˆë‹¤. í¸ì§‘í•´ì„œ ì‚¬ìš©í•˜ì„¸ìš”.";
 
-    [Header("¿ø°İ °­Á¶ Ç¥½Ã")]
-    [Tooltip("¿ø°İ »ç¿ëÀÚ°¡ º¼ ¶§ °­Á¶ÇÒ ¿ÀºêÁ§Æ®")]
+    [Header("ì›ê²© ê°•ì¡° í‘œì‹œ")]
+    [Tooltip("ì›ê²© ì‚¬ìš©ìê°€ ë³¼ ë•Œ ê°•ì¡°í•  ì˜¤ë¸Œì íŠ¸")]
     [SerializeField]
     private GameObject remoteHighlightObject;
 
-    // °´Ã¼ÀÇ ID (±âº»: °ÔÀÓ¿ÀºêÁ§Æ® ÀÌ¸§)
+    // ê°ì²´ì˜ ID (ê¸°ë³¸: ê²Œì„ì˜¤ë¸Œì íŠ¸ ì´ë¦„)
     public string OrganID => gameObject.name;
 
     void Start()
@@ -36,38 +37,38 @@ public class DisplayInfo : MonoBehaviour
         }
     }
 
-    // Á¤º¸ Ç¥½Ã
+    // ì •ë³´ í‘œì‹œ
     public void ShowInfo()
     {
-        Debug.Log($"Á¤º¸ Ç¥½Ã: {gameObject.name}");
+        Debug.Log($"ì •ë³´ í‘œì‹œ: {gameObject.name}");
         if (infoPanelObject != null)
         {
             infoPanelObject.SetActive(true);
         }
 
-        // ÇÊ¿ä ½Ã OSC Àü¼Û ÄÚµå Ãß°¡:
+        // í•„ìš” ì‹œ OSC ì „ì†¡ ì½”ë“œ ì¶”ê°€:
         // OSCManager.Instance?.SendInteractionStatus(OrganID, true); 
     }
 
-    // Á¤º¸ ¼û±â±â
+    // ì •ë³´ ìˆ¨ê¸°ê¸°
     public void HideInfo()
     {
-        Debug.Log($"Á¤º¸ ¼û±è: {gameObject.name}");
+        Debug.Log($"ì •ë³´ ìˆ¨ê¹€: {gameObject.name}");
         if (infoPanelObject != null)
         {
             infoPanelObject.SetActive(false);
         }
 
-        // ÇÊ¿ä ½Ã OSC Àü¼Û ÄÚµå Ãß°¡:
+        // í•„ìš” ì‹œ OSC ì „ì†¡ ì½”ë“œ ì¶”ê°€:
         // OSCManager.Instance?.SendInteractionStatus(OrganID, false);
     }
 
-    // ¿ø°İ »ç¿ëÀÚÀÇ »óÈ£ÀÛ¿ë »óÅÂ Ç¥½Ã
+    // ì›ê²© ì‚¬ìš©ìì˜ ìƒí˜¸ì‘ìš© ìƒíƒœ í‘œì‹œ
     public void ShowRemoteStatus()
     {
         if (infoPanelObject == null || !infoPanelObject.activeSelf)
         {
-            Debug.Log($"¿ø°İ »óÅÂ Ç¥½Ã: {gameObject.name}");
+            Debug.Log($"ì›ê²© ìƒíƒœ í‘œì‹œ: {gameObject.name}");
             if (remoteHighlightObject != null)
             {
                 remoteHighlightObject.SetActive(true);
@@ -75,10 +76,10 @@ public class DisplayInfo : MonoBehaviour
         }
     }
 
-    // ¿ø°İ »óÅÂ ¼û±è
+    // ì›ê²© ìƒíƒœ ìˆ¨ê¹€
     public void HideRemoteStatus()
     {
-        Debug.Log($"¿ø°İ »óÅÂ ¼û±è: {gameObject.name}");
+        Debug.Log($"ì›ê²© ìƒíƒœ ìˆ¨ê¹€: {gameObject.name}");
         if (remoteHighlightObject != null)
         {
             remoteHighlightObject.SetActive(false);

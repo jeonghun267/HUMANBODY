@@ -1,14 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ë°•ì‚¬ ì„¤ëª… ì œì–´") ]
 public class DoctorController : MonoBehaviour
 {
     private AudioSource audioSource;
-    // playerHead º¯¼ö »èÁ¦ (ÀÌÁ¦ ÇÊ¿ä ¾øÀ½)
+    // playerHead ë³€ìˆ˜ ì‚­ì œ (ì´ì œ í•„ìš” ì—†ìŒ)
 
     void Start()
     {
-        // ¿Àµğ¿À ¼Ò½º °¡Á®¿À±â (¸»Àº ÇØ¾ß ÇÏ´Ï±î!)
+        // ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ê°€ì ¸ì˜¤ê¸° (ë§ì€ í•´ì•¼ í•˜ë‹ˆê¹Œ!)
         audioSource = GetComponent<AudioSource>();
 
         if (audioSource == null)
@@ -18,10 +19,10 @@ public class DoctorController : MonoBehaviour
         }
     }
 
-    // Update / LateUpdate ÇÔ¼ö »èÁ¦! 
-    // (ÀÌÁ¦ º´¾Æ¸®´Â ½ºÅ©¸³Æ®·Î Àı´ë È¸ÀüÇÏÁö ¾ÊÀ½)
+    // Update / LateUpdate í•¨ìˆ˜ ì‚­ì œ! 
+    // (ì´ì œ ë³‘ì•„ë¦¬ëŠ” ìŠ¤í¬ë¦½íŠ¸ë¡œ ì ˆëŒ€ íšŒì „í•˜ì§€ ì•ŠìŒ)
 
-    // ¡Ú ¼³¸íÇÏ´Â ±â´ÉÀº À¯Áö! ¡Ú
+    // â˜… ì„¤ëª…í•˜ëŠ” ê¸°ëŠ¥ì€ ìœ ì§€! â˜…
     public void PlayExplanation(string organName)
     {
         string audioFileName = "Explain_" + organName;
@@ -32,11 +33,11 @@ public class DoctorController : MonoBehaviour
             if (audioSource.isPlaying) audioSource.Stop();
             audioSource.clip = clip;
             audioSource.Play();
-            Debug.Log("[Doctor] »ß¾à! È¸Àü ¾øÀÌ ¼³¸í¸¸ ÇÕ´Ï´Ù: " + organName);
+            Debug.Log("[Doctor] ì‚ì•½! íšŒì „ ì—†ì´ ì„¤ëª…ë§Œ í•©ë‹ˆë‹¤: " + organName);
         }
         else
         {
-            Debug.LogWarning("[Doctor] ÆÄÀÏ ¾øÀ½: " + audioFileName);
+            Debug.LogWarning("[Doctor] íŒŒì¼ ì—†ìŒ: " + audioFileName);
         }
     }
 }

@@ -1,0 +1,63 @@
+===== 00_Lobby
+  (16 parts, 0 overlaps)
+===== 01_Mouth
+  OVERLAP 100 %  Part_Tongue [c=0.0,2.4,3.0 s=4.5x5.2x10.0]  <->  Prop_FoodBolus [c=0.0,4.0,3.0 s=1.2x0.5x1.2]
+  OVERLAP 100 %  Prop_FoodBolus [c=0.0,4.0,3.0 s=1.2x0.5x1.2]  <->  Part_LowerTeethArch [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  OVERLAP 78 %  Prop_SalivaGland [c=2.8,3.4,-0.6 s=1.1x0.9x0.7]  <->  Part_LowerTeethArch [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  OVERLAP 78 %  Prop_SalivaGland [c=-2.8,3.4,-0.6 s=1.1x0.9x0.7]  <->  Part_LowerTeethArch [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  OVERLAP 62 %  Part_Palate [c=0.0,10.6,3.0 s=6.3x4.5x8.0]  <->  Part_UpperTeethArch [c=0.0,8.0,2.5 s=12.0x6.3x10.0]
+  OVERLAP 51 %  Part_UpperTeethArch [c=0.0,8.0,2.5 s=12.0x6.3x10.0]  <->  Part_LowerTeethArch [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  OVERLAP 34 %  Part_Tongue [c=0.0,2.4,3.0 s=4.5x5.2x10.0]  <->  Part_LowerTeethArch [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  OVERLAP 6 %  Part_Tongue [c=0.0,2.4,3.0 s=4.5x5.2x10.0]  <->  Prop_SalivaGland [c=2.8,3.4,-0.6 s=1.1x0.9x0.7]
+  OVERLAP 6 %  Part_Tongue [c=0.0,2.4,3.0 s=4.5x5.2x10.0]  <->  Prop_SalivaGland [c=-2.8,3.4,-0.6 s=1.1x0.9x0.7]
+  NEAR-SPAWN Part_UpperTeethArch: 플레이어 눈 위치와 겹침/35cm 이내  [c=0.0,8.0,2.5 s=12.0x6.3x10.0]
+  NEAR-SPAWN Part_LowerTeethArch: 플레이어 눈 위치와 겹침/35cm 이내  [c=0.0,4.9,2.5 s=12.0x3.4x9.9]
+  (13 parts, 9 overlaps)
+===== 02_Esophagus
+  [tunnel axis=(0.00, -1.00, 0.00) radius=2.75 start=(0.00, -1.74, 0.00)]
+  NEAR-SPAWN Prop_ExplorerCapsule: 플레이어 눈 위치와 겹침/35cm 이내  [c=0.0,-3.0,0.1 s=2.2x1.7x1.7]
+  (3 parts, 0 overlaps)
+===== 03_Stomach
+  OUTSIDE-SHELL Part_RugaeWallPanel: 타원 반경 비 1.46  [c=5.8,3.5,8.9 s=6.9x5.1x6.4]
+  OUTSIDE-SHELL Part_RugaeWallPanel: 타원 반경 비 1.46  [c=-5.8,3.5,-4.9 s=6.9x5.1x6.4]
+  OUTSIDE-SHELL Part_RugaeWallPanel: 타원 반경 비 1.46  [c=-5.8,3.5,8.9 s=6.9x5.1x6.4]
+  OUTSIDE-SHELL Part_RugaeWallPanel: 타원 반경 비 1.46  [c=5.8,3.5,-4.9 s=6.9x5.1x6.4]
+  OUTSIDE-SHELL Part_Sphincter: 타원 반경 비 1.03  [c=0.0,1.8,9.5 s=4.0x2.3x4.0]
+  (19 parts, 0 overlaps)
+===== 04_SmallIntestine
+  OVERLAP 100 %  Part_VillusCrossSection [c=1.5,0.4,36.1 s=1.1x3.2x1.1]  <->  Part_LactealTube [c=1.3,0.2,36.0 s=0.3x1.4x0.3]
+  OVERLAP 100 %  Part_LactealTube [c=1.3,0.2,36.0 s=0.3x1.4x0.3]  <->  Part_CapillaryTube [c=1.3,0.2,36.0 s=0.9x2.3x0.9]
+  OVERLAP 77 %  Part_VillusCrossSection [c=1.5,0.4,36.1 s=1.1x3.2x1.1]  <->  Part_CapillaryTube [c=1.3,0.2,36.0 s=0.9x2.3x0.9]
+  [tunnel axis=(0.00, 0.00, 1.00) radius=2.75 start=(0.00, 1.40, 3.79)]
+  OUTSIDE-TUBE Part_VillusCrossSection: 바운즈 최대 반경 3.33 > 관 반경 2.75  [c=1.5,0.4,36.1 s=1.1x3.2x1.1]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.85 > 관 반경 2.75  [c=1.4,-0.5,15.0 s=2.2x2.0x1.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.72 > 관 반경 2.75  [c=-2.3,2.3,26.0 s=1.8x2.1x1.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.62 > 관 반경 2.75  [c=2.3,2.1,9.5 s=1.7x2.1x1.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.89 > 관 반경 2.75  [c=-1.5,-0.4,20.5 s=2.2x2.1x1.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.10 > 관 반경 2.75  [c=0.0,3.8,4.0 s=1.8x1.2x1.5]
+  OUTSIDE-TUBE Part_CapillaryTube: 바운즈 최대 반경 2.90 > 관 반경 2.75  [c=1.3,0.2,36.0 s=0.9x2.3x0.9]
+  OUTSIDE-TUBE Part_DuodenumJunction: 바운즈 최대 반경 3.72 > 관 반경 2.75  [c=-2.2,1.5,6.0 s=2.0x3.5x3.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.79 > 관 반경 2.75  [c=1.2,-0.7,42.5 s=2.2x2.0x1.5]
+  OUTSIDE-TUBE Part_VillusCluster: 바운즈 최대 반경 3.25 > 관 반경 2.75  [c=0.2,3.7,31.5 s=1.9x1.4x1.5]
+  NEAR-SPAWN Prop_ExplorerCapsule: 플레이어 눈 위치와 겹침/35cm 이내  [c=0.0,1.1,3.1 s=2.2x1.7x1.7]
+  (12 parts, 3 overlaps)
+===== 05_LargeIntestine
+  OVERLAP 100 %  Prop_WasteSoft [c=-1.2,1.2,5.5 s=0.9x0.3x1.0]  <->  Prop_WasteSolid [c=-1.2,1.2,5.5 s=1.1x0.5x1.1]
+  OVERLAP 100 %  Prop_WasteSolid [c=-1.2,1.2,5.5 s=1.1x0.5x1.1]  <->  Prop_WasteLiquid [c=-1.2,1.2,5.5 s=1.0x0.2x1.0]
+  OVERLAP 92 %  Prop_WasteSoft [c=-1.2,1.2,5.5 s=0.9x0.3x1.0]  <->  Prop_WasteLiquid [c=-1.2,1.2,5.5 s=1.0x0.2x1.0]
+  [tunnel axis=(0.00, 0.00, 1.00) radius=3.25 start=(0.00, 1.60, 2.06)]
+  OUTSIDE-TUBE Part_Appendix: 바운즈 최대 반경 3.77 > 관 반경 3.25  [c=-2.3,0.6,7.5 s=1.8x2.0x1.3]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 4.77 > 관 반경 3.25  [c=-0.5,-1.3,50.0 s=3.2x2.9x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.37 > 관 반경 3.25  [c=2.8,2.8,40.0 s=3.3x3.5x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 4.51 > 관 반경 3.25  [c=-0.2,-1.3,20.0 s=2.9x2.6x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.39 > 관 반경 3.25  [c=-2.7,0.4,25.0 s=3.4x3.6x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.51 > 관 반경 3.25  [c=2.7,3.1,10.0 s=3.5x3.6x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 4.46 > 관 반경 3.25  [c=0.0,4.6,5.0 s=2.8x2.5x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 4.73 > 관 반경 3.25  [c=0.3,4.6,35.0 s=3.1x2.8x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.50 > 관 반경 3.25  [c=2.6,0.1,15.0 s=3.6x3.7x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.61 > 관 반경 3.25  [c=-2.5,3.3,30.0 s=3.6x3.7x0.8]
+  OUTSIDE-TUBE Part_HaustraWallPanel: 바운즈 최대 반경 5.57 > 관 반경 3.25  [c=2.4,-0.2,45.0 s=3.7x3.7x0.8]
+  NEAR-SPAWN Prop_ExplorerCapsule: 플레이어 눈 위치와 겹침/35cm 이내  [c=-0.3,1.3,4.1 s=2.9x1.7x3.9]
+  (15 parts, 3 overlaps)
+===== 06_Theater
+  (2 parts, 0 overlaps)

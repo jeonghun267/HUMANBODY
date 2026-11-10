@@ -1,0 +1,52 @@
+통과: 새 자막과 음성 연결: Esophagus_intro_1
+통과: 새 자막과 음성 연결: LargeIntestine_intro_1
+통과: 새 자막과 음성 연결: LargeIntestine_outro_1
+통과: 새 자막과 음성 연결: Lobby_intro_1
+통과: 새 자막과 음성 연결: Lobby_outro_1
+통과: 새 자막과 음성 연결: Mouth_intro_1
+통과: 새 자막과 음성 연결: Mouth_outro_1
+통과: 새 자막과 음성 연결: SmallIntestine_intro_1
+통과: 새 자막과 음성 연결: SmallIntestine_outro_1
+통과: 새 자막과 음성 연결: Stomach_intro_1
+통과: 새 자막과 음성 연결: Stomach_outro_1
+통과: 새 자막과 음성 연결: Theater_intro_1
+통과: 새 자막과 음성 연결: Theater_outro_1
+통과: 00_Lobby 환경 배경 유지
+통과: 새 자막과 음성 연결: Mouth_chew_1
+통과: 음식 삼킴 관찰 뒤 탐험가를 끌어당기지 않고 다음 장소로 전환
+통과: 기존 음식 씹기·삼킴 진행 연결 유지
+통과: 01_Mouth 환경 배경 유지
+통과: 새 자막과 음성 연결: Esophagus_ride_1
+통과: 02_Esophagus 환경 배경 유지
+통과: 새 자막과 음성 연결: Stomach_churn_1
+통과: 위산 효과 연결 유지
+통과: 03_Stomach 환경 배경 유지
+통과: 새 자막과 음성 연결: SmallIntestine_complete_1
+통과: 새 자막과 음성 연결: SmallIntestine_game_1
+통과: 영양소 흡수 효과 연결 유지
+통과: 04_SmallIntestine 환경 배경 유지
+통과: 수분 파문 효과 연결 유지
+통과: 05_LargeIntestine 환경 배경 유지
+통과: 새 자막과 음성 연결: Theater_part_Hologram
+통과: 06_Theater 환경 배경 유지
+통과: 실제 장면·단계 자료에 새 안내 존재: Lobby_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Lobby_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Mouth_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Mouth_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Esophagus_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Stomach_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Stomach_churn_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Stomach_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: SmallIntestine_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: SmallIntestine_game_1
+통과: 실제 장면·단계 자료에 새 안내 존재: SmallIntestine_complete_1
+통과: 실제 장면·단계 자료에 새 안내 존재: SmallIntestine_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: LargeIntestine_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: LargeIntestine_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Theater_intro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Theater_outro_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Theater_part_Hologram
+통과: 실제 장면·단계 자료에 새 안내 존재: Mouth_chew_1
+통과: 실제 장면·단계 자료에 새 안내 존재: Esophagus_ride_1
+통과: 실제 장면·단계 자료에 새 안내 존재: 흡수 진행 문구
+실패 수: 0

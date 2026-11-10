@@ -1,23 +1,24 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using OscJack;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì›ê²© ëª¸ë™ì‘ í†µì‹ ") ]
 public class OSCBodyManager : MonoBehaviour
 {
     public static OSCBodyManager Instance;
 
-    // ¸ŞÀÎ ½º·¹µå¿¡¼­ ½ÇÇàÇÒ Çàµ¿À» ´ã´Â Å¥
+    // ë©”ì¸ ìŠ¤ë ˆë“œì—ì„œ ì‹¤í–‰í•  í–‰ë™ì„ ë‹´ëŠ” í
     private Queue<System.Action> mainThreadActions = new Queue<System.Action>();
     private readonly object queueLock = new object();
 
-    [Header("Network Settings")]
-    [Tooltip("»ó´ë¹æ(BÀ¯Àú)ÀÇ IP ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ³» IP(127.0.0.1)¸¦ ÀûÀ¸¸é ¹«ÇÑ ·çÇÁ¿¡ ºüÁú ¼ö ÀÖ½À´Ï´Ù.")]
+    [Header("ë„¤íŠ¸ì›Œí¬ ì„¤ì •")]
+    [Tooltip("ìƒëŒ€ë°©ì˜ ë„¤íŠ¸ì›Œí¬ ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”. ìì‹ ì˜ ì£¼ì†Œë¥¼ ì…ë ¥í•˜ë©´ í†µì‹ ì´ ë°˜ë³µë  ìˆ˜ ìˆìŠµë‹ˆë‹¤.")]
     public string targetIP = "192.168.0.218";
     public int sendPort = 7600;
     public int receivePort = 7500;
 
-    [Header("Button Events (Receiver Only)")]
-    // »ó´ë¹æÀÌ ¹öÆ°À» ´­·¶À» ¶§ ½ÇÇàµÉ ÀÌº¥Æ®
+    [Header("ì›ê²© ë²„íŠ¼ ë™ì‘ (ìˆ˜ì‹  ì „ìš©)")]
+    // ìƒëŒ€ë°©ì´ ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ ì‹¤í–‰ë  ì´ë²¤íŠ¸
     public UnityEngine.Events.UnityEvent onRemotePressA;
     public UnityEngine.Events.UnityEvent onRemotePressB;
 
@@ -26,7 +27,7 @@ public class OSCBodyManager : MonoBehaviour
 
     void Awake()
     {
-        // ½Ì±ÛÅæ ÃÊ±âÈ­
+        // ì‹±ê¸€í†¤ ì´ˆê¸°í™”
         if (Instance == null)
             Instance = this;
         else
@@ -35,11 +36,11 @@ public class OSCBodyManager : MonoBehaviour
 
     void Start()
     {
-        // 1. OSC Åë½Å ÃÊ±âÈ­
+        // 1. OSC í†µì‹  ì´ˆê¸°í™”
         client = new OscClient(targetIP, sendPort);
         server = new OscServer(receivePort);
 
-        // 2. ¸Ş½ÃÁö ¼ö½Å ´ë±â
+        // 2. ë©”ì‹œì§€ ìˆ˜ì‹  ëŒ€ê¸°
         server.MessageDispatcher.AddCallback("/input/a", OnReceiveButtonA);
         server.MessageDispatcher.AddCallback("/input/b", OnReceiveButtonB);
     }
@@ -47,12 +48,12 @@ public class OSCBodyManager : MonoBehaviour
     void Update()
     {
         // =================================================================
-        // [¼öÁ¤µÈ ºÎºĞ] ¾ÈÀüÀåÄ¡ Ãß°¡: ÇÑ ÇÁ·¹ÀÓ¿¡ ÃÖ´ë 50°³±îÁö¸¸ Ã³¸®
-        // ¸Ş½ÃÁö°¡ ÆøÁÖÇØµµ ¿¡µğÅÍ°¡ ¸ØÃßÁö ¾Ê°Ô ¹æ¾îÇÕ´Ï´Ù.
+        // [ìˆ˜ì •ëœ ë¶€ë¶„] ì•ˆì „ì¥ì¹˜ ì¶”ê°€: í•œ í”„ë ˆì„ì— ìµœëŒ€ 50ê°œê¹Œì§€ë§Œ ì²˜ë¦¬
+        // ë©”ì‹œì§€ê°€ í­ì£¼í•´ë„ ì—ë””í„°ê°€ ë©ˆì¶”ì§€ ì•Šê²Œ ë°©ì–´í•©ë‹ˆë‹¤.
         // =================================================================
         lock (queueLock)
         {
-            int processLimit = 50; // ÇÑ ÇÁ·¹ÀÓ´ç Ã³¸® ÇÑµµ
+            int processLimit = 50; // í•œ í”„ë ˆì„ë‹¹ ì²˜ë¦¬ í•œë„
 
             while (mainThreadActions.Count > 0 && processLimit > 0)
             {
@@ -62,26 +63,26 @@ public class OSCBodyManager : MonoBehaviour
         }
 
         // =================================================================
-        // 2. ³» ÀÔ·Â °¨Áö ¹× Àü¼Û (º¸³»´Â ·ÎÁ÷)
+        // 2. ë‚´ ì…ë ¥ ê°ì§€ ë° ì „ì†¡ (ë³´ë‚´ëŠ” ë¡œì§)
         // =================================================================
 
-        // A ¹öÆ°
+        // A ë²„íŠ¼
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             client.Send("/input/a", 1);
-            Debug.Log("[OSC] ³»(A)°¡ A¹öÆ°À» ´­·¯ Àü¼ÛÇÔ");
+            Debug.Log("[OSC] ë‚´(A)ê°€ Aë²„íŠ¼ì„ ëˆŒëŸ¬ ì „ì†¡í•¨");
         }
 
-        // B ¹öÆ°
+        // B ë²„íŠ¼
         if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             client.Send("/input/b", 1);
-            Debug.Log("[OSC] ³»(A)°¡ B¹öÆ°À» ´­·¯ Àü¼ÛÇÔ");
+            Debug.Log("[OSC] ë‚´(A)ê°€ Bë²„íŠ¼ì„ ëˆŒëŸ¬ ì „ì†¡í•¨");
         }
     }
 
     // ==========================================
-    // [¼ö½ÅºÎ] ¹é±×¶ó¿îµå ½º·¹µå¿¡¼­ ½ÇÇàµÊ
+    // [ìˆ˜ì‹ ë¶€] ë°±ê·¸ë¼ìš´ë“œ ìŠ¤ë ˆë“œì—ì„œ ì‹¤í–‰ë¨
     // ==========================================
     private void OnReceiveButtonA(string address, OscDataHandle data)
     {
@@ -91,7 +92,7 @@ public class OSCBodyManager : MonoBehaviour
             {
                 mainThreadActions.Enqueue(() =>
                 {
-                    Debug.Log("[OSC] »ó´ë¹æÀÌ A ¹öÆ°À» ´­·¶À½");
+                    Debug.Log("[OSC] ìƒëŒ€ë°©ì´ A ë²„íŠ¼ì„ ëˆŒë €ìŒ");
                     onRemotePressA.Invoke();
                 });
             }
@@ -106,7 +107,7 @@ public class OSCBodyManager : MonoBehaviour
             {
                 mainThreadActions.Enqueue(() =>
                 {
-                    Debug.Log("[OSC] »ó´ë¹æÀÌ B ¹öÆ°À» ´­·¶À½");
+                    Debug.Log("[OSC] ìƒëŒ€ë°©ì´ B ë²„íŠ¼ì„ ëˆŒë €ìŒ");
                     onRemotePressB.Invoke();
                 });
             }

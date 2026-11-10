@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1aa7e2a222a6da4ea51d68c0ab9aa66, type: 3}
+  m_Name: Stage_Stomach
+  m_EditorClassIdentifier: Assembly-CSharp::OrganStage
+  stageId: Stomach
+  displayName: "\uC704"
+  sceneName: 03_Stomach
+  introLines:
+  - text: "\uC5EC\uAE30\uB294 \uC704! \uC8FC\uBCC0\uC744 \uB458\uB7EC\uBCF4\uBA70
+      \uC704\uC0B0\uACFC \uC18C\uD654 \uD6A8\uC18C\uAC00 \uC74C\uC2DD\uC744 \uBD84\uD574\uD558\uB294
+      \uBAA8\uC2B5\uC744 \uAD00\uCC30\uD574 \uBCF4\uC790."
+    voice: {fileID: 8300000, guid: 9158eb65e2ec7614bba064d9bfcb1f8d, type: 3}
+    holdSeconds: 6.1099997
+  - text: "\uC704 \uBCBD \uAC00\uAE4C\uC774\uC5D0 \uB098\uC120 \uBAA8\uC591 \uC138\uADE0\uC774
+      \uBCF4\uC774\uBA74 \uADF8\uAC8C \uD5EC\uB9AC\uCF54\uBC15\uD130\uADE0\uC774\uC57C.
+      \uC704\uAC00 \uC4F0\uB9B0 \uC6D0\uC778\uC774\uB2C8 \uBAA8\uB450 \uBB3C\uB9AC\uCE58\uC790!"
+    voice: {fileID: 8300000, guid: 33104324a55ae39479372555ff3fa302, type: 3}
+    holdSeconds: 7.1499996
+  outroLines:
+  - text: "\uBBF8\uC999\uC740 \uC704 \uC544\uB798\uCABD \uCD9C\uAD6C\uC778 '\uC720\uBB38'\uC744
+      \uD1B5\uD574 \uC870\uAE08\uC529 \uC18C\uC7A5\uC73C\uB85C \uB118\uC5B4\uAC00.
+      \uD0D0\uD5D8\uAC00\uC778 \uC6B0\uB9AC\uB3C4 \uADF8 \uAE38\uC744 \uB530\uB77C
+      \uC18C\uC7A5\uC73C\uB85C \uC774\uB3D9\uD558\uC790!"
+    voice: {fileID: 8300000, guid: a29df2cbdb3c49247b72e731815947b6, type: 3}
+    holdSeconds: 8.32
+  summary: "\uC704\uB294 \uC74C\uC2DD\uC744 \uC7A0\uC2DC \uC800\uC7A5\uD558\uACE0,
+    \uC704\uC0B0\uACFC \uD3A9\uC2E0\uC774\uB77C\uB294 \uD6A8\uC18C\uB85C \uB2E8\uBC31\uC9C8\uC744
+    \uBD84\uD574\uD574\uC694. \uADFC\uC721\uC774 \uC74C\uC2DD\uC744 \uB4A4\uC11E\uC5B4
+    \uC8FD \uAC19\uC740 \uBBF8\uC999\uC73C\uB85C \uB9CC\uB4E4\uC5B4\uC694."
+  funFacts:
+  - "\uC704\uB294 1.5\uB9AC\uD130\uAE4C\uC9C0 \uB298\uC5B4\uB0A0 \uC218 \uC788\uC5B4\uC694."
+  - "\uC704 \uC810\uB9C9\uC740 3~4\uC77C\uB9C8\uB2E4 \uC0C8\uAC83\uC73C\uB85C \uBC14\uB00C\uC5B4\uC694."
+  - "\uC704\uC0B0\uC740 \uC74C\uC2DD\uC5D0 \uC11E\uC778 \uC138\uADE0\uC744 \uC8FD\uC774\uB294
+    \uC5ED\uD560\uB3C4 \uD574\uC694."
+  fadeColor: {r: 0.2901961, g: 0.07058824, b: 0.09411765, a: 1}
+  ridesCapsule: 1

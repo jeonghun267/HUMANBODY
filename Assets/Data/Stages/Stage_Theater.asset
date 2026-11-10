@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1aa7e2a222a6da4ea51d68c0ab9aa66, type: 3}
+  m_Name: Stage_Theater
+  m_EditorClassIdentifier: Assembly-CSharp::OrganStage
+  stageId: Theater
+  displayName: "\uCE58\uB8CC \uACB0\uACFC"
+  sceneName: 06_Theater
+  introLines:
+  - text: "\uCE58\uB8CC\uB97C \uB9C8\uCE58\uACE0 \uBCD1\uC6D0\uC73C\uB85C \uB3CC\uC544\uC654\uC5B4!
+      \uC758\uC0AC \uC120\uC0DD\uB2D8\uC774 \uCE58\uB8CC \uBCF4\uACE0\uC11C\uB97C
+      \uBCF4\uC5EC \uC8FC\uC2E4 \uAC70\uC57C."
+    voice: {fileID: 8300000, guid: 9e1b8d694428aec4c9e001ab08a617f0, type: 3}
+    holdSeconds: 5.72
+  outroLines:
+  - text: "\uC774\uC81C \uC774\uB3C4 \uBC30\uB3C4 \uC548 \uC544\uD50C \uAC70\uC57C.
+      \uB2E8 \uC74C\uC2DD\uC744 \uBA39\uACE0 \uB098\uBA74 \uC774\uB97C \uB2E6\uACE0,
+      \uCC44\uC18C\uB97C \uACE8\uACE0\uB8E8 \uBA39\uC790. \uB2E4\uC74C\uC5D0 \uB610
+      \uB9CC\uB098!"
+    voice: {fileID: 8300000, guid: 0e10a15095f2bc94b87926e326d52e20, type: 3}
+    holdSeconds: 7.54
+  summary: "\uC785 \u2192 \uC2DD\uB3C4 \u2192 \uC704 \u2192 \uC18C\uC7A5 \u2192 \uB300\uC7A5.
+    \uC74C\uC2DD\uC740 \uC798\uAC8C \uCABC\uAC1C\uC9C0\uACE0, \uC601\uC591\uC18C\uB294
+    \uD761\uC218\uB418\uACE0, \uCC0C\uAEBC\uAE30\uB294 \uBC16\uC73C\uB85C \uB098\uAC00\uC694."
+  funFacts:
+  - "\uACE8\uACE0\uB8E8 \uBA39\uACE0 \uAF2D\uAF2D \uC539\uC73C\uBA74 \uC18C\uD654\uAE30\uAD00\uC774
+    \uD3B8\uD574\uC838\uC694."
+  - "\uBB3C\uC744 \uCDA9\uBD84\uD788 \uB9C8\uC2DC\uBA74 \uB300\uC7A5\uC774 \uC77C\uD558\uAE30
+    \uC26C\uC6CC\uC694."
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  ridesCapsule: 0

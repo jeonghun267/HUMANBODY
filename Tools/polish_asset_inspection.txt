@@ -1,0 +1,226 @@
+침샘 여섯 개 통합 연결과 개별 중복 시작 연결 제거 완료
+
+Char_ChickDoctor / 내부 동작 수: 0
+메시: Char_ChickDoctor / 점 수 17973 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (1.05, 1.90, 0.93)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_Enzyme / 내부 동작 수: 0
+메시: Char_Enzyme / 점 수 6159 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (1.04, 1.90, 0.81)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_Pepsin / 내부 동작 수: 0
+메시: Char_Pepsin / 점 수 8788 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (1.51, 1.90, 0.80)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_Probiotic / 내부 동작 수: 0
+메시: Char_Probiotic / 점 수 8980 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (0.93, 1.90, 0.58)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_HarmfulBacteria / 내부 동작 수: 0
+메시: Char_HarmfulBacteria / 점 수 9443 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (0.90, 1.90, 0.89)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_Virus / 내부 동작 수: 0
+메시: Char_Virus / 점 수 10331 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (1.90, 1.76, 1.90)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+Char_RedBloodCell / 내부 동작 수: 0
+메시: Char_RedBloodCell / 점 수 5018 / 읽기 True / 중심 (0.00, 0.00, 0.00) / 크기 (1.90, 1.46, 1.90)
+재질:  / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: image_0
+텍스처 normalTexture: image_2
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: image_1
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+
+cute_chick / 내부 동작 수: 1
+메시: Object_4 / 점 수 1732 / 읽기 True / 중심 (0.06, 0.02, 0.00) / 크기 (1.86, 1.51, 1.82)
+메시: Object_6 / 점 수 5432 / 읽기 True / 중심 (0.00, 0.19, -1.53) / 크기 (1.70, 8.06, 4.79)
+메시: Object_8 / 점 수 5346 / 읽기 True / 중심 (-1.50, -0.10, -0.22) / 크기 (3.50, 2.76, 5.51)
+메시: Object_10 / 점 수 441 / 읽기 True / 중심 (-0.81, -0.23, 0.05) / 크기 (1.68, 1.68, 1.68)
+메시: Object_12 / 점 수 441 / 읽기 True / 중심 (-0.69, 0.51, 0.03) / 크기 (1.68, 1.68, 1.68)
+메시: Object_15 / 점 수 900 / 읽기 True / 중심 (0.19, -1.22, -2.46) / 크기 (2.16, 3.05, 6.72)
+메시: Object_17 / 점 수 900 / 읽기 True / 중심 (0.31, -1.99, -2.88) / 크기 (2.42, 4.58, 7.57)
+메시: Object_19 / 점 수 1732 / 읽기 True / 중심 (-0.05, -0.01, 0.00) / 크기 (1.71, 1.63, 1.79)
+메시: Object_21 / 점 수 614 / 읽기 True / 중심 (-0.04, 0.00, 0.00) / 크기 (0.32, 0.34, 0.57)
+메시: Object_23 / 점 수 10502 / 읽기 True / 중심 (-0.04, 0.46, 0.02) / 크기 (2.54, 0.79, 2.36)
+메시: Object_25 / 점 수 5479 / 읽기 True / 중심 (-0.02, -0.19, -0.03) / 크기 (0.15, 1.47, 2.14)
+메시: Object_27 / 점 수 585 / 읽기 True / 중심 (-0.09, 0.10, 0.05) / 크기 (1.87, 0.44, 1.95)
+재질: Material / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.001 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.001 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.001 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.003 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.004 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.008 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.002 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.002 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음
+재질: Material.008 / Shader Graphs/glTF-pbrMetallicRoughness
+텍스처 unity_Lightmaps: 없음
+텍스처 unity_LightmapsInd: 없음
+텍스처 unity_ShadowMasks: 없음
+텍스처 baseColorTexture: 없음
+텍스처 normalTexture: 없음
+텍스처 occlusionTexture: 없음
+텍스처 metallicRoughnessTexture: 없음
+텍스처 emissiveTexture: 없음
+텍스처 transmissionTexture: 없음

@@ -1,7 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì¥ë©´ ì´ë™") ]
 public class SceneController : MonoBehaviour
 {
     public void LoadScene(string sceneName)
@@ -11,29 +12,29 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneProcess(string sceneName)
     {
-        // 1. ¾À ÀüÈ¯ È¿°ú ½ÃÀÛ (¿¹: ÆäÀÌµå ¾Æ¿ô)
+        // 1. ì”¬ ì „í™˜ íš¨ê³¼ ì‹œì‘ (ì˜ˆ: í˜ì´ë“œ ì•„ì›ƒ)
         // yield return StartCoroutine(FadeOut()); 
 
-        // 2. ºñµ¿±â ¾À ·Îµå ½ÃÀÛ
+        // 2. ë¹„ë™ê¸° ì”¬ ë¡œë“œ ì‹œì‘
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
-        op.allowSceneActivation = false; // ·Îµå ¿Ï·á ÈÄ ¹Ù·Î ³Ñ¾î°¡Áö ¾Ê°Ô ´ë±â
+        op.allowSceneActivation = false; // ë¡œë“œ ì™„ë£Œ í›„ ë°”ë¡œ ë„˜ì–´ê°€ì§€ ì•Šê²Œ ëŒ€ê¸°
 
-        // 3. ·ÎµùÀÌ 90% µÉ ¶§±îÁö ´ë±â (¾À ·Îµå Áß)
+        // 3. ë¡œë”©ì´ 90% ë  ë•Œê¹Œì§€ ëŒ€ê¸° (ì”¬ ë¡œë“œ ì¤‘)
         while (op.progress < 0.9f)
         {
             yield return null;
         }
 
-        // 4. ·Îµå ¿Ï·á, ¾À È°¼ºÈ­
+        // 4. ë¡œë“œ ì™„ë£Œ, ì”¬ í™œì„±í™”
         op.allowSceneActivation = true;
 
-        // 5. ¾ÀÀÌ ¿ÏÀüÈ÷ ¹Ù²ğ ¶§±îÁö ÇÑ ÇÁ·¹ÀÓ ´ë±â (¾ÈÀüÀåÄ¡)
+        // 5. ì”¬ì´ ì™„ì „íˆ ë°”ë€” ë•Œê¹Œì§€ í•œ í”„ë ˆì„ ëŒ€ê¸° (ì•ˆì „ì¥ì¹˜)
         yield return null;
 
-        // 6. ÀüÈ¯ È¿°ú ¸¶¹«¸® (¿¹: ÆäÀÌµå ÀÎ)
+        // 6. ì „í™˜ íš¨ê³¼ ë§ˆë¬´ë¦¬ (ì˜ˆ: í˜ì´ë“œ ì¸)
         // yield return StartCoroutine(FadeIn());
 
-        // 7. ¡Ú ¿©±â¼­ »èÁ¦ÇØ¾ß ÇÔ (ÇÒ ÀÏ ´Ù ³¡³²)
+        // 7. â˜… ì—¬ê¸°ì„œ ì‚­ì œí•´ì•¼ í•¨ (í•  ì¼ ë‹¤ ëë‚¨)
         Destroy(gameObject);
     }
 }

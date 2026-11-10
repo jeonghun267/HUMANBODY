@@ -1,40 +1,41 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ë– ë‹¤ë‹ˆë©° ë”°ë¼ì˜¤ê¸°") ]
 public class FloatingFollower : MonoBehaviour
 {
-    [Header("Å¸°Ù ¼³Á¤")]
-    public Transform player;        // CenterEyeAnchor (ÀÚµ¿À¸·Î Ã£À½)
+    [Header("íƒ€ê²Ÿ ì„¤ì •")]
+    public Transform player;        // CenterEyeAnchor (ìë™ìœ¼ë¡œ ì°¾ìŒ)
 
-    [Header("À§Ä¡ ¼³Á¤")]
-    public float distance = 3.0f;   // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®
-    public float height = -0.2f;    // ÇÃ·¹ÀÌ¾î ´« ³ôÀÌ ±âÁØ ³ô³·ÀÌ
-    public float angleBias = 30f;   // ÇÃ·¹ÀÌ¾î ½Ã¾ß¿¡¼­ ¿À¸¥ÂÊ(+) or ¿ŞÂÊ(-)À¸·Î Ä¡¿ìÄ¥ °¢µµ
+    [Header("ìœ„ì¹˜ ì„¤ì •")]
+    public float distance = 3.0f;   // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬
+    public float height = -0.2f;    // í”Œë ˆì´ì–´ ëˆˆ ë†’ì´ ê¸°ì¤€ ë†’ë‚®ì´
+    public float angleBias = 30f;   // í”Œë ˆì´ì–´ ì‹œì•¼ì—ì„œ ì˜¤ë¥¸ìª½(+) or ì™¼ìª½(-)ìœ¼ë¡œ ì¹˜ìš°ì¹  ê°ë„
 
-    [Header("¿òÁ÷ÀÓ ¼³Á¤")]
-    public float followSpeed = 5f;  // ¹İÀÀ ¼Óµµ
+    [Header("ì›€ì§ì„ ì„¤ì •")]
+    public float followSpeed = 5f;  // ë°˜ì‘ ì†ë„
     public float rotateSpeed = 10f;
 
-    [Header("µÕµÕ ¶ß´Â È¿°ú")]
+    [Header("ë‘¥ë‘¥ ëœ¨ëŠ” íš¨ê³¼")]
     public float floatAmplitude = 0.5f;
     public float floatFrequency = 1f;
 
-    [Header("È¸Àü º¸Á¤")]
+    [Header("íšŒì „ ë³´ì •")]
     public float rotationOffset = -90f;
 
-    // [Áß¿ä] ¾ÀÀÌ ½ÃÀÛµÉ ¶§ ÇÃ·¹ÀÌ¾î¸¦ ÀÚµ¿À¸·Î Ã£´Â ·ÎÁ÷ Ãß°¡
+    // [ì¤‘ìš”] ì”¬ì´ ì‹œì‘ë  ë•Œ í”Œë ˆì´ì–´ë¥¼ ìë™ìœ¼ë¡œ ì°¾ëŠ” ë¡œì§ ì¶”ê°€
     void Start()
     {
-        // 1. ¸¸¾à ÀÎ½ºÆåÅÍ¿¡ ÀÌ¹Ì ¿¬°áµÇ¾î ÀÖ´Ù¸é Åë°ú
+        // 1. ë§Œì•½ ì¸ìŠ¤í™í„°ì— ì´ë¯¸ ì—°ê²°ë˜ì–´ ìˆë‹¤ë©´ í†µê³¼
         if (player != null) return;
 
-        // 2. ¿¬°áÀÌ ¾È µÇ¾î ÀÖ´Ù¸é(¾À ÀüÈ¯À¸·Î ²÷±è), 'Player' ÅÂ±×·Î Ã£±â ½Ãµµ
+        // 2. ì—°ê²°ì´ ì•ˆ ë˜ì–´ ìˆë‹¤ë©´(ì”¬ ì „í™˜ìœ¼ë¡œ ëŠê¹€), 'Player' íƒœê·¸ë¡œ ì°¾ê¸° ì‹œë„
         GameObject foundPlayer = GameObject.FindWithTag("Player");
 
         if (foundPlayer != null)
         {
-            // 3. OVRPlayerController ³»ºÎÀÇ ÁøÂ¥ ´«(Camera) À§Ä¡ÀÎ CenterEyeAnchor¸¦ Ã£¾Æ¾ß ÇÔ
-            // º¸Åë ±¸Á¶: OVRPlayerController -> OVRCameraRig -> TrackingSpace -> CenterEyeAnchor
-            // (Find´Â ÀÚ½Ä ¿ÀºêÁ§Æ® ÀÌ¸§À» °æ·Î·Î Ã£À» ¼ö ÀÖÀ½)
+            // 3. OVRPlayerController ë‚´ë¶€ì˜ ì§„ì§œ ëˆˆ(Camera) ìœ„ì¹˜ì¸ CenterEyeAnchorë¥¼ ì°¾ì•„ì•¼ í•¨
+            // ë³´í†µ êµ¬ì¡°: OVRPlayerController -> OVRCameraRig -> TrackingSpace -> CenterEyeAnchor
+            // (FindëŠ” ìì‹ ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì„ ê²½ë¡œë¡œ ì°¾ì„ ìˆ˜ ìˆìŒ)
             Transform centerEye = foundPlayer.transform.Find("OVRCameraRig/TrackingSpace/CenterEyeAnchor");
 
             if (centerEye != null)
@@ -43,44 +44,44 @@ public class FloatingFollower : MonoBehaviour
             }
             else
             {
-                // CenterEyeAnchor¸¦ ¸ø Ã£¾Ò´Ù¸é, ¾Æ½¬¿î ´ë·Î ÇÃ·¹ÀÌ¾î ¸öÅëÀ» Å¸°ÙÀ¸·Î ÀâÀ½
+                // CenterEyeAnchorë¥¼ ëª» ì°¾ì•˜ë‹¤ë©´, ì•„ì‰¬ìš´ ëŒ€ë¡œ í”Œë ˆì´ì–´ ëª¸í†µì„ íƒ€ê²Ÿìœ¼ë¡œ ì¡ìŒ
                 player = foundPlayer.transform;
-                Debug.LogWarning("[FloatingFollower] CenterEyeAnchor¸¦ Ã£Áö ¸øÇØ Player ¸öÅëÀ» µû¶ó°©´Ï´Ù.");
+                Debug.LogWarning("[FloatingFollower] CenterEyeAnchorë¥¼ ì°¾ì§€ ëª»í•´ Player ëª¸í†µì„ ë”°ë¼ê°‘ë‹ˆë‹¤.");
             }
         }
         else
         {
-            Debug.LogError("[FloatingFollower] ¾À¿¡¼­ 'Player' ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù! OVRPlayerControllerÀÇ ÅÂ±×¸¦ È®ÀÎÇÏ¼¼¿ä.");
+            Debug.LogError("[FloatingFollower] ì”¬ì—ì„œ 'Player' íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤! OVRPlayerControllerì˜ íƒœê·¸ë¥¼ í™•ì¸í•˜ì„¸ìš”.");
         }
     }
 
-    // Update ´ë½Å LateUpdate »ç¿ë (¶³¸² ¹æÁö ÇÙ½É)
+    // Update ëŒ€ì‹  LateUpdate ì‚¬ìš© (ë–¨ë¦¼ ë°©ì§€ í•µì‹¬)
     void LateUpdate()
     {
         if (player == null) return;
 
-        // --- 1. ¸ñÇ¥ À§Ä¡ °è»ê (ÇÃ·¹ÀÌ¾îÀÇ '¼öÆò' ½Ã¼± ±âÁØ) ---
+        // --- 1. ëª©í‘œ ìœ„ì¹˜ ê³„ì‚° (í”Œë ˆì´ì–´ì˜ 'ìˆ˜í‰' ì‹œì„  ê¸°ì¤€) ---
 
-        // ÇÃ·¹ÀÌ¾î°¡ º¸´Â ¹æÇâ¿¡¼­ YÃà(°í°³ µé±â/¼÷ÀÌ±â)À» Á¦°ÅÇÔ
+        // í”Œë ˆì´ì–´ê°€ ë³´ëŠ” ë°©í–¥ì—ì„œ Yì¶•(ê³ ê°œ ë“¤ê¸°/ìˆ™ì´ê¸°)ì„ ì œê±°í•¨
         Vector3 playerLookDir = player.forward;
         playerLookDir.y = 0;
         playerLookDir.Normalize();
 
-        // ÇÃ·¹ÀÌ¾î À§Ä¡ + (¹æÇâ * °Å¸®) Àû¿ë
-        // Quaternion.Euler(0, angleBias, 0)À» °öÇØ¼­ ½Ã¼± Á¤¸éÀÌ ¾Æ´Ï¶ó »ìÂ¦ ¿·¿¡ À§Ä¡½ÃÅ´
+        // í”Œë ˆì´ì–´ ìœ„ì¹˜ + (ë°©í–¥ * ê±°ë¦¬) ì ìš©
+        // Quaternion.Euler(0, angleBias, 0)ì„ ê³±í•´ì„œ ì‹œì„  ì •ë©´ì´ ì•„ë‹ˆë¼ ì‚´ì§ ì˜†ì— ìœ„ì¹˜ì‹œí‚´
         Vector3 targetPos = player.position + (Quaternion.Euler(0, angleBias, 0) * playerLookDir * distance);
 
-        // ³ôÀÌ ¼³Á¤ (ÇÃ·¹ÀÌ¾î ´«³ôÀÌ + ¼³Á¤ÇÑ ³ôÀÌ + µÕµÕ È¿°ú)
+        // ë†’ì´ ì„¤ì • (í”Œë ˆì´ì–´ ëˆˆë†’ì´ + ì„¤ì •í•œ ë†’ì´ + ë‘¥ë‘¥ íš¨ê³¼)
         float finalY = player.position.y + height + Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
         targetPos.y = finalY;
 
-        // ºÎµå·´°Ô ÀÌµ¿
+        // ë¶€ë“œëŸ½ê²Œ ì´ë™
         transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * followSpeed);
 
 
-        // --- 2. È¸Àü (Ç×»ó ÇÃ·¹ÀÌ¾î ÃÄ´Ùº¸±â) ---
+        // --- 2. íšŒì „ (í•­ìƒ í”Œë ˆì´ì–´ ì³ë‹¤ë³´ê¸°) ---
         Vector3 directionToPlayer = player.position - transform.position;
-        directionToPlayer.y = 0; // º´¾Æ¸®°¡ °í°³¸¦ ÃÄµé°Å³ª ¼÷ÀÌÁö ¾Ê°Ô ¼öÆò À¯Áö
+        directionToPlayer.y = 0; // ë³‘ì•„ë¦¬ê°€ ê³ ê°œë¥¼ ì³ë“¤ê±°ë‚˜ ìˆ™ì´ì§€ ì•Šê²Œ ìˆ˜í‰ ìœ ì§€
 
         if (directionToPlayer != Vector3.zero)
         {

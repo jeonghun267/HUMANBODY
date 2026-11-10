@@ -1,10 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ê±°ë¦¬ë³„ ì•ˆë‚´ í™”ë©´") ]
 public class NPCUILook : MonoBehaviour
 {
     public GameObject NPC_UI;
-    public Transform player; // ÇÃ·¹ÀÌ¾î Transform (Inspector¿¡¼­ ÇÒ´ç)
-    public float activeDistance = 2.0f; // È°¼ºÈ­ °Å¸® (Inspector¿¡¼­ Á¶Àı)
+    public Transform player; // í”Œë ˆì´ì–´ Transform (Inspectorì—ì„œ í• ë‹¹)
+    public float activeDistance = 2.0f; // í™œì„±í™” ê±°ë¦¬ (Inspectorì—ì„œ ì¡°ì ˆ)
 
     private bool isActive = false;
 

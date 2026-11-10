@@ -1,46 +1,47 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ê°€ìƒí˜„ì‹¤ ì‹œì„  ìƒí˜¸ì‘ìš©") ]
 public class VRGazeInteractor : MonoBehaviour
 {
-    [Tooltip("·¹ÀÌÄ³½ºÆ®ÀÇ ÃÖ´ë °Å¸®")]
+    [Tooltip("ë ˆì´ìºìŠ¤íŠ¸ì˜ ìµœëŒ€ ê±°ë¦¬")]
     public float maxGazeDistance = 50f;
 
-    // ÀÌÀü¿¡ ¹Ù¶óº¸´ø NPC (½Ã¼±ÀÌ ¹ş¾î³µÀ» ¶§ StopInteractionÀ» È£ÃâÇÏ±â À§ÇØ ÇÊ¿ä)
+    // ì´ì „ì— ë°”ë¼ë³´ë˜ NPC (ì‹œì„ ì´ ë²—ì–´ë‚¬ì„ ë•Œ StopInteractionì„ í˜¸ì¶œí•˜ê¸° ìœ„í•´ í•„ìš”)
     private NPCController lastLookedNPC = null;
 
     void Update()
     {
-        // VR Ä«¸Ş¶óÀÇ À§Ä¡¿Í ¹æÇâÀ» ±âÁØÀ¸·Î Ray¸¦ ¹ß»çÇÕ´Ï´Ù.
+        // VR ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ì™€ ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ Rayë¥¼ ë°œì‚¬í•©ë‹ˆë‹¤.
         Ray gazeRay = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        // ·¹ÀÌÄ³½ºÆ®¸¦ ¹ß»çÇÏ¿© Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ ÀÖ´ÂÁö È®ÀÎÇÕ´Ï´Ù.
+        // ë ˆì´ìºìŠ¤íŠ¸ë¥¼ ë°œì‚¬í•˜ì—¬ ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ê°€ ìˆëŠ”ì§€ í™•ì¸í•©ë‹ˆë‹¤.
         if (Physics.Raycast(gazeRay, out hit, maxGazeDistance))
         {
-            // Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®¿¡¼­ NPCController ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿É´Ï´Ù.
+            // ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ì—ì„œ NPCController ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
             NPCController currentNPC = hit.collider.GetComponent<NPCController>();
 
             if (currentNPC != null)
             {
-                // 1. NPC¸¦ ¹Ù¶óº¸´Â °æ¿ì: »óÈ£ÀÛ¿ë ½ÃÀÛ!
+                // 1. NPCë¥¼ ë°”ë¼ë³´ëŠ” ê²½ìš°: ìƒí˜¸ì‘ìš© ì‹œì‘!
                 if (lastLookedNPC == null)
                 {
-                    // ÀÌÀü¿¡ ¾Æ¹«µµ ¾È º¸°í ÀÖ´Ù°¡ NPC¸¦ Ã³À½ º¸±â ½ÃÀÛÇßÀ» ¶§
+                    // ì´ì „ì— ì•„ë¬´ë„ ì•ˆ ë³´ê³  ìˆë‹¤ê°€ NPCë¥¼ ì²˜ìŒ ë³´ê¸° ì‹œì‘í–ˆì„ ë•Œ
                     currentNPC.StartInteraction();
                     lastLookedNPC = currentNPC;
                 }
                 else if (lastLookedNPC != currentNPC)
                 {
-                    // ´Ù¸¥ NPC¸¦ ¹Ù¶óº¸¾Ò´Ù¸é, ÀÌÀü NPC´Â ¸ØÃß°í »õ·Î¿î NPC ½ÃÀÛ
+                    // ë‹¤ë¥¸ NPCë¥¼ ë°”ë¼ë³´ì•˜ë‹¤ë©´, ì´ì „ NPCëŠ” ë©ˆì¶”ê³  ìƒˆë¡œìš´ NPC ì‹œì‘
                     lastLookedNPC.StopInteraction();
                     currentNPC.StartInteraction();
                     lastLookedNPC = currentNPC;
                 }
-                // (ÀÌ¹Ì º¸°í ÀÖ´ø NPC¶ó¸é ¾Æ¹«°Íµµ ÇÏÁö ¾ÊÀ½)
+                // (ì´ë¯¸ ë³´ê³  ìˆë˜ NPCë¼ë©´ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•ŠìŒ)
             }
             else
             {
-                // 2. ´Ù¸¥ ¿ÀºêÁ§Æ®¸¦ ¹Ù¶óº¸´Â °æ¿ì: »óÈ£ÀÛ¿ë Á¾·á!
+                // 2. ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ë¥¼ ë°”ë¼ë³´ëŠ” ê²½ìš°: ìƒí˜¸ì‘ìš© ì¢…ë£Œ!
                 if (lastLookedNPC != null)
                 {
                     lastLookedNPC.StopInteraction();
@@ -50,7 +51,7 @@ public class VRGazeInteractor : MonoBehaviour
         }
         else
         {
-            // 3. ¾Æ¹«°Íµµ ¹Ù¶óº¸Áö ¾Ê´Â °æ¿ì: »óÈ£ÀÛ¿ë Á¾·á!
+            // 3. ì•„ë¬´ê²ƒë„ ë°”ë¼ë³´ì§€ ì•ŠëŠ” ê²½ìš°: ìƒí˜¸ì‘ìš© ì¢…ë£Œ!
             if (lastLookedNPC != null)
             {
                 lastLookedNPC.StopInteraction();

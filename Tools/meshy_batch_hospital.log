@@ -1,0 +1,7 @@
+5개 항목, 동시 3개. 시작 잔액: 280
+==> 실패 Hospital_DoctorDesk HTTP 402 /openapi/v2/text-to-3d: {"message":"Task creation on the free plan is no longer supported. To continue creating tasks, please upgrade your plan. You can manage your plan at https://www.meshy.ai/settings/subscription"}
+==> 실패 Hospital_ExamBed HTTP 402 /openapi/v2/text-to-3d: {"message":"Task creation on the free plan is no longer supported. To continue creating tasks, please upgrade your plan. You can manage your plan at https://www.meshy.ai/settings/subscription"}
+==> 실패 Hospital_MedicalCabinet HTTP 402 /openapi/v2/text-to-3d: {"message":"Task creation on the free plan is no longer supported. To continue creating tasks, please upgrade your plan. You can manage your plan at https://www.meshy.ai/settings/subscription"}
+==> 실패 Hospital_PatientMonitor HTTP 402 /openapi/v2/text-to-3d: {"message":"Task creation on the free plan is no longer supported. To continue creating tasks, please upgrade your plan. You can manage your plan at https://www.meshy.ai/settings/subscription"}
+==> 실패 Char_HPylori HTTP 402 /openapi/v2/text-to-3d: {"message":"Task creation on the free plan is no longer supported. To continue creating tasks, please upgrade your plan. You can manage your plan at https://www.meshy.ai/settings/subscription"}
+종료 잔액: 280

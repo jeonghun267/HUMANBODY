@@ -1,0 +1,40 @@
+Mode: polish
+UTC: 2026-09-21T23:44:35.7811891Z
+PASS 위아래 치열의 앞뒤 방향 일치, 치관이 서로 마주봄
+PASS 혀 표면이 탐험자의 눈높이를 가리지 않음
+PASS 실제 입 장면의 침샘 여섯 개를 한 연출에 연결
+PASS 씹기 전 침샘 자동 재생 없음
+PASS 침샘의 개별 중복 시작 연결 제거
+PASS 씹기 시작 시 여섯 침샘이 함께 분비
+PASS 중복 시작에도 완료 한 번, 모든 침샘 방출 종료
+PASS 정상 종료 시 턱을 닫힌 자세로 복원
+PASS 종료 후 남은 침 입자는 수명에 따라 소멸
+PASS 중도 비활성화 시 모든 침샘 즉시 정리
+PASS 중단은 완료를 알리지 않고 음식 크기와 턱 자세 복원
+PASS 침 연출 중단 후 다시 시작하고 정상 종료
+PASS 모든 침샘에 접촉 물방울과 충돌 알림 연결
+PASS 한 화면 갱신에 과도한 접촉 입자가 쌓이지 않도록 제한
+PASS 액체 입자가 표면에 충돌해 물방울을 방출
+PASS 실제 위 장면의 음식 전체에 표면 분해 연결
+PASS 음식 형태를 유지하며 표면 분해 진행
+PASS 분해 중단 시 음식 표면과 크기 복원
+PASS 분해 완료 후 음식이 사라지고 미즙 표시
+PASS 괄약근 중앙 구멍이 실제로 열리고 통과 가능
+PASS 괄약근 닫힘과 통과 차단 복원
+PASS 펩신 관절 동작과 절단 순간 조각 효과 연결
+PASS 절단 타이밍에 펩신 팔 관절 동작 실행
+PASS 단백질 절단 순간 조각 입자 방출
+PASS 절단 후 펩신 기본 동작으로 복귀
+PASS 효소 연출 중단 시 잔여 효과 정리
+PASS 안내 시작에 부리와 머리 말하기 동작 연결
+PASS 안내 건너뛰기에도 말하기 동작 종료
+PASS 부위 설명에 안내자의 시선과 손짓 연결
+PASS 관절 모형 준비: Char_ChickDoctor
+PASS 관절 모형 준비: Char_Enzyme
+PASS 관절 모형 준비: Char_Pepsin
+PASS 관절 모형 준비: Char_Probiotic
+PASS 관절 모형 준비: Char_HarmfulBacteria
+PASS 관절 모형 준비: Char_Virus
+PASS 관절 모형 준비: Char_RedBloodCell
+Failures: 0
+Limit: accelerated desktop logic checks; no headset/input/audio/visual performance verification.

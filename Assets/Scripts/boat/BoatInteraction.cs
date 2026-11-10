@@ -1,26 +1,27 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using Unity.Cinemachine;
 using UnityEngine.InputSystem;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ë³´íŠ¸ íƒ‘ìŠ¹") ]
 public class BoatInteraction : MonoBehaviour
 {
-    [Header("ÇÊ¼ö ¿¬°á (ÀÚµ¿À¸·Î ¸ø Ã£À» °æ¿ì¸¦ ´ëºñÇØ ³öµÎÁö¸¸, ºñ¿öµµ µÊ)")]
+    [Header("í•„ìˆ˜ ì—°ê²° (ìë™ìœ¼ë¡œ ëª» ì°¾ì„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ ë†”ë‘ì§€ë§Œ, ë¹„ì›Œë„ ë¨)")]
     public GameObject player;       // OVRPlayerController
-    public GameObject chickNPC;     // º´¾Æ¸®
+    public GameObject chickNPC;     // ë³‘ì•„ë¦¬
 
-    [Header("À§Ä¡ ¼³Á¤ (ÀÌ°Ç ²À ¿¬°áÇØ¾ß ÇÔ!)")]
-    public Transform seatPoint;     // ÇÃ·¹ÀÌ¾î ¾ÉÀ» ÀÚ¸®
-    public Transform getOffPoint;   // ³»¸± À§Ä¡
-    public Transform chickSeatPoint; // º´¾Æ¸® ¾ÉÀ» ÀÚ¸®
+    [Header("ìœ„ì¹˜ ì„¤ì • (ì´ê±´ ê¼­ ì—°ê²°í•´ì•¼ í•¨!)")]
+    public Transform seatPoint;     // í”Œë ˆì´ì–´ ì•‰ì„ ìë¦¬
+    public Transform getOffPoint;   // ë‚´ë¦´ ìœ„ì¹˜
+    public Transform chickSeatPoint; // ë³‘ì•„ë¦¬ ì•‰ì„ ìë¦¬
 
-    [Header("ÀÌµ¿ °æ·Î")]
+    [Header("ì´ë™ ê²½ë¡œ")]
     public CinemachineSplineCart splineCart;
 
-    [Header("¼³Á¤")]
+    [Header("ì„¤ì •")]
     public float interactionDistance = 15.0f;
     public float boatSpeed = 5.0f;
 
-    // ³»ºÎ º¯¼ö
+    // ë‚´ë¶€ ë³€ìˆ˜
     private bool isRiding = false;
     private CharacterController playerCC;
     private OVRPlayerController ovrScript;
@@ -31,149 +32,149 @@ public class BoatInteraction : MonoBehaviour
 
     void Start()
     {
-        // [µğ¹ö±×] OVRManager È®ÀÎ (ÀÌ°Ô ¾øÀ¸¸é VR ÀÔ·ÂÀÌ ¾È ¸ÔÈû)
+        // [ë””ë²„ê·¸] OVRManager í™•ì¸ (ì´ê²Œ ì—†ìœ¼ë©´ VR ì…ë ¥ì´ ì•ˆ ë¨¹í˜)
         if (FindObjectOfType<OVRManager>() == null)
         {
-            Debug.LogError("[BoatDebug] ¾À¿¡ 'OVRManager'°¡ ¾ø½À´Ï´Ù! ÀÔ·ÂÀÌ ÀÛµ¿ÇÏÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù.");
+            Debug.LogError("[BoatDebug] ì”¬ì— 'OVRManager'ê°€ ì—†ìŠµë‹ˆë‹¤! ì…ë ¥ì´ ì‘ë™í•˜ì§€ ì•Šì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
         }
         else
         {
-            Debug.Log("[BoatDebug] OVRManager °¨ÁöµÊ. ÀÔ·Â ÁØºñ ¿Ï·á.");
+            Debug.Log("[BoatDebug] OVRManager ê°ì§€ë¨. ì…ë ¥ ì¤€ë¹„ ì™„ë£Œ.");
         }
 
-        // 1. ÇÃ·¹ÀÌ¾î ÀÚµ¿ Ã£±â
+        // 1. í”Œë ˆì´ì–´ ìë™ ì°¾ê¸°
         if (player == null)
         {
             GameObject foundPlayer = GameObject.FindWithTag("Player");
             if (foundPlayer != null)
             {
                 player = foundPlayer;
-                Debug.Log($"[BoatDebug] ÅÂ±×·Î ÇÃ·¹ÀÌ¾î Ã£À½: {player.name}");
+                Debug.Log($"[BoatDebug] íƒœê·¸ë¡œ í”Œë ˆì´ì–´ ì°¾ìŒ: {player.name}");
             }
             else
             {
-                Debug.LogError("[BoatDebug] 'Player' ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+                Debug.LogError("[BoatDebug] 'Player' íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
             }
         }
 
-        // ÇÃ·¹ÀÌ¾î ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        // í”Œë ˆì´ì–´ ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
         if (player != null)
         {
             playerCC = player.GetComponent<CharacterController>();
             ovrScript = player.GetComponent<OVRPlayerController>();
         }
 
-        // 2. º´¾Æ¸® ÀÚµ¿ Ã£±â
+        // 2. ë³‘ì•„ë¦¬ ìë™ ì°¾ê¸°
         if (chickNPC == null)
         {
-            // ¾À¿¡ ÀÖ´Â º´¾Æ¸® ½ºÅ©¸³Æ®¸¦ Ã£¾Æ¼­ ±× ÁÖÀÎÀ» µ¥·Á¿È
+            // ì”¬ì— ìˆëŠ” ë³‘ì•„ë¦¬ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¾ì•„ì„œ ê·¸ ì£¼ì¸ì„ ë°ë ¤ì˜´
             FloatingFollower foundChickScript = FindObjectOfType<FloatingFollower>();
             if (foundChickScript != null)
             {
                 chickNPC = foundChickScript.gameObject;
                 chickFollower = foundChickScript;
-                Debug.Log($"[BoatDebug] º´¾Æ¸® Ã£À½: {chickNPC.name}");
+                Debug.Log($"[BoatDebug] ë³‘ì•„ë¦¬ ì°¾ìŒ: {chickNPC.name}");
             }
             else
             {
-                Debug.LogWarning("[BoatDebug] º´¾Æ¸®(FloatingFollower)¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+                Debug.LogWarning("[BoatDebug] ë³‘ì•„ë¦¬(FloatingFollower)ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             }
         }
         else
         {
-            // ¼öµ¿À¸·Î ¿¬°áÇß´Ù¸é ÄÄÆ÷³ÍÆ®¸¸ °¡Á®¿È
+            // ìˆ˜ë™ìœ¼ë¡œ ì—°ê²°í–ˆë‹¤ë©´ ì»´í¬ë„ŒíŠ¸ë§Œ ê°€ì ¸ì˜´
             chickFollower = chickNPC.GetComponent<FloatingFollower>();
         }
     }
 
     void Update()
     {
-        if (player == null) return; // ÇÃ·¹ÀÌ¾î ¾øÀ¸¸é ÀÛµ¿ ÁßÁö
+        if (player == null) return; // í”Œë ˆì´ì–´ ì—†ìœ¼ë©´ ì‘ë™ ì¤‘ì§€
 
-        // --- [µğ¹ö±× Ãß°¡] ÄÁÆ®·Ñ·¯ ¿¬°á »óÅÂ ¹× ¾Æ¹« ¹öÆ°ÀÌ³ª ´­¸®´ÂÁö È®ÀÎ ---
-        // ÀÌ ·Î±×°¡ ¾È ¶ß¸é ÇÏµå¿ş¾î ¿¬°áÀÌ³ª OVRManager ¹®Á¦ÀÓ
+        // --- [ë””ë²„ê·¸ ì¶”ê°€] ì»¨íŠ¸ë¡¤ëŸ¬ ì—°ê²° ìƒíƒœ ë° ì•„ë¬´ ë²„íŠ¼ì´ë‚˜ ëˆŒë¦¬ëŠ”ì§€ í™•ì¸ ---
+        // ì´ ë¡œê·¸ê°€ ì•ˆ ëœ¨ë©´ í•˜ë“œì›¨ì–´ ì—°ê²°ì´ë‚˜ OVRManager ë¬¸ì œì„
         if (OVRInput.GetDown(OVRInput.Button.Any))
         {
-            Debug.Log("[BoatDebug] VR ÄÁÆ®·Ñ·¯ÀÇ ¹«¾ğ°¡(Any)°¡ ´­·È½À´Ï´Ù!");
+            Debug.Log("[BoatDebug] VR ì»¨íŠ¸ë¡¤ëŸ¬ì˜ ë¬´ì–¸ê°€(Any)ê°€ ëˆŒë ¸ìŠµë‹ˆë‹¤!");
         }
         // -------------------------------------------------------------
 
-        // --- 1. ÀÔ·Â Ã³¸® ---
+        // --- 1. ì…ë ¥ ì²˜ë¦¬ ---
         bool ridePressed = false;
 
-        // [VR] A¹öÆ° ¶Ç´Â X¹öÆ°
+        // [VR] Aë²„íŠ¼ ë˜ëŠ” Xë²„íŠ¼
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.All))
         {
-            Debug.Log("[BoatDebug] VR ÀÔ·Â °¨ÁöµÊ (Button.One)");
+            Debug.Log("[BoatDebug] VR ì…ë ¥ ê°ì§€ë¨ (Button.One)");
             ridePressed = true;
         }
 
-        // [PC] EÅ°
+        // [PC] Eí‚¤
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log("[BoatDebug] PC Å°º¸µå ÀÔ·Â °¨ÁöµÊ (E Key)");
+            Debug.Log("[BoatDebug] PC í‚¤ë³´ë“œ ì…ë ¥ ê°ì§€ë¨ (E Key)");
             ridePressed = true;
         }
 
         if (DebugStart == true)
         {
-            Debug.Log("[BoatDebug] Inspector °­Á¦ ½ÇÇà");
+            Debug.Log("[BoatDebug] Inspector ê°•ì œ ì‹¤í–‰");
             ridePressed = true;
-            DebugStart = false; // °è¼Ó ½ÇÇà ¹æÁö
+            DebugStart = false; // ê³„ì† ì‹¤í–‰ ë°©ì§€
         }
 
         if (ridePressed)
         {
-            // Å¾½Â/ÇÏÂ÷ ½Ã °Å¸® Ã¼Å© (Å¸°í ÀÖÀ» ¶© °Å¸® »ó°ü¾øÀÌ ÇÏÂ÷ °¡´É)
-            Debug.Log("[BoatDebug] Test01 - ridePressed ÁøÀÔ");
+            // íƒ‘ìŠ¹/í•˜ì°¨ ì‹œ ê±°ë¦¬ ì²´í¬ (íƒ€ê³  ìˆì„ ë• ê±°ë¦¬ ìƒê´€ì—†ì´ í•˜ì°¨ ê°€ëŠ¥)
+            Debug.Log("[BoatDebug] Test01 - ridePressed ì§„ì…");
 
             if (isRiding)
             {
-                Debug.Log("[BoatDebug] ÇöÀç Å¾½Â Áß -> ÇÏÂ÷ ½Ãµµ");
+                Debug.Log("[BoatDebug] í˜„ì¬ íƒ‘ìŠ¹ ì¤‘ -> í•˜ì°¨ ì‹œë„");
                 TryGetOff();
             }
             else
             {
-                // Å» ¶§´Â °Å¸®°¡ °¡±î¿ö¾ß ÇÔ
+                // íƒˆ ë•ŒëŠ” ê±°ë¦¬ê°€ ê°€ê¹Œì›Œì•¼ í•¨
                 float dist = Vector3.Distance(player.transform.position, transform.position);
 
-                Debug.Log($"[BoatDebug] ÇöÀç °Å¸®: {dist} / ¼³Á¤µÈ °Å¸®: {interactionDistance}");
+                Debug.Log($"[BoatDebug] í˜„ì¬ ê±°ë¦¬: {dist} / ì„¤ì •ëœ ê±°ë¦¬: {interactionDistance}");
 
                 if (dist <= interactionDistance)
                 {
-                    Debug.Log("[BoatDebug] Test02 - °Å¸® Åë°ú! Å¾½Â ½Ãµµ");
+                    Debug.Log("[BoatDebug] Test02 - ê±°ë¦¬ í†µê³¼! íƒ‘ìŠ¹ ì‹œë„");
                     TryGetOn();
                 }
                 else
                 {
-                    Debug.LogWarning("[BoatDebug] °Å¸®°¡ ³Ê¹« ¸Ù´Ï´Ù!");
+                    Debug.LogWarning("[BoatDebug] ê±°ë¦¬ê°€ ë„ˆë¬´ ë©‰ë‹ˆë‹¤!");
                 }
             }
         }
 
-        // --- 2. ¹è ÀÌµ¿ ---
+        // --- 2. ë°° ì´ë™ ---
         if (isRiding && splineCart != null)
         {
-            // ·Î±×°¡ ³Ê¹« ¸¹ÀÌ ¶ã ¼ö ÀÖÀ¸´Ï ÀÌµ¿ Áß¿¡´Â °¡²û ¶ß°Ô ÇÏ°Å³ª ÁÖ¼® Ã³¸®
-            // Debug.Log("Test03 - ÀÌµ¿ Áß"); 
+            // ë¡œê·¸ê°€ ë„ˆë¬´ ë§ì´ ëœ° ìˆ˜ ìˆìœ¼ë‹ˆ ì´ë™ ì¤‘ì—ëŠ” ê°€ë” ëœ¨ê²Œ í•˜ê±°ë‚˜ ì£¼ì„ ì²˜ë¦¬
+            // Debug.Log("Test03 - ì´ë™ ì¤‘"); 
             splineCart.SplinePosition += boatSpeed * Time.deltaTime;
         }
     }
 
-    // ¾Õ¿¡ publicÀ» ºÙ¿©¾ß ÀÎ½ºÆåÅÍ Ã¢¿¡¼­ º¸ÀÔ´Ï´Ù!
+    // ì•ì— publicì„ ë¶™ì—¬ì•¼ ì¸ìŠ¤í™í„° ì°½ì—ì„œ ë³´ì…ë‹ˆë‹¤!
     public void TryGetOn()
     {
-        Debug.Log("[BoatDebug] GetOn() È£ÃâµÊ");
+        Debug.Log("[BoatDebug] GetOn() í˜¸ì¶œë¨");
         GetOn();
     }
 
     public void TryGetOff()
     {
-        Debug.Log("[BoatDebug] GetOff() È£ÃâµÊ");
+        Debug.Log("[BoatDebug] GetOff() í˜¸ì¶œë¨");
         GetOff();
     }
 
-    // --- Å¾½Â ·ÎÁ÷ ---
+    // --- íƒ‘ìŠ¹ ë¡œì§ ---
     void GetOn()
     {
         if (player == null) return;
@@ -181,25 +182,25 @@ public class BoatInteraction : MonoBehaviour
         isRiding = true;
         originalParent = player.transform.parent;
 
-        // 1. ¹°¸®/ÀÌµ¿ ¹«·ÂÈ­
+        // 1. ë¬¼ë¦¬/ì´ë™ ë¬´ë ¥í™”
         if (ovrScript != null) ovrScript.enabled = false;
         if (playerCC != null) playerCC.enabled = false;
 
-        // 2. ¹è¿¡ ÅÂ¿ì±â (ÀÚ½ÄÈ­)
+        // 2. ë°°ì— íƒœìš°ê¸° (ìì‹í™”)
         player.transform.SetParent(transform);
 
-        // 3. ÀÚ¸® Àâ±â
+        // 3. ìë¦¬ ì¡ê¸°
         if (seatPoint != null)
         {
             player.transform.position = seatPoint.position;
             player.transform.rotation = seatPoint.rotation;
         }
 
-        // 4. º´¾Æ¸® ÅÂ¿ì±â
+        // 4. ë³‘ì•„ë¦¬ íƒœìš°ê¸°
         if (chickNPC != null)
         {
             chickNPC.transform.SetParent(transform);
-            if (chickFollower != null) chickFollower.enabled = false; // µû¶ó´Ù´Ï±â ²ô±â
+            if (chickFollower != null) chickFollower.enabled = false; // ë”°ë¼ë‹¤ë‹ˆê¸° ë„ê¸°
 
             if (chickSeatPoint != null)
             {
@@ -207,52 +208,52 @@ public class BoatInteraction : MonoBehaviour
                 chickNPC.transform.rotation = chickSeatPoint.rotation;
             }
         }
-        Debug.Log("[BoatDebug] Å¾½Â ¿Ï·á Ã³¸® ³¡");
+        Debug.Log("[BoatDebug] íƒ‘ìŠ¹ ì™„ë£Œ ì²˜ë¦¬ ë");
     }
 
-    // --- ÇÏÂ÷ ·ÎÁ÷ ---
+    // --- í•˜ì°¨ ë¡œì§ ---
     void GetOff()
     {
         if (player == null) return;
 
         isRiding = false;
 
-        // 1. ºÎ¸ğ °ü°è ²÷±â (¿ø·¡ ºÎ¸ğ°¡ ÀÖÀ¸¸é °Å±â·Î, ¾øÀ¸¸é null)
+        // 1. ë¶€ëª¨ ê´€ê³„ ëŠê¸° (ì›ë˜ ë¶€ëª¨ê°€ ìˆìœ¼ë©´ ê±°ê¸°ë¡œ, ì—†ìœ¼ë©´ null)
         player.transform.SetParent(originalParent);
 
-        // 2. ÇÏÂ÷ À§Ä¡·Î ÀÌµ¿
+        // 2. í•˜ì°¨ ìœ„ì¹˜ë¡œ ì´ë™
         if (getOffPoint != null)
         {
             player.transform.position = getOffPoint.position;
 
-            // ½Ã¼± Á¤·Ä
+            // ì‹œì„  ì •ë ¬
             Vector3 rot = getOffPoint.rotation.eulerAngles;
-            // VR¿¡¼­´Â °í°³(XÃà)´Â °Çµå¸®Áö ¾Ê°í ¸öÅë(YÃà)¸¸ µ¹·ÁÁÖ´Â °Ô ÀÚ¿¬½º·¯¿ò
+            // VRì—ì„œëŠ” ê³ ê°œ(Xì¶•)ëŠ” ê±´ë“œë¦¬ì§€ ì•Šê³  ëª¸í†µ(Yì¶•)ë§Œ ëŒë ¤ì£¼ëŠ” ê²Œ ìì—°ìŠ¤ëŸ¬ì›€
             player.transform.rotation = Quaternion.Euler(0, rot.y, 0);
         }
 
-        // 3. ¹°¸®/ÀÌµ¿ º¹±¸ (¹İµå½Ã À§Ä¡ ÀÌµ¿ ÈÄ¿¡ ÄÑ¾ß ÇÔ)
+        // 3. ë¬¼ë¦¬/ì´ë™ ë³µêµ¬ (ë°˜ë“œì‹œ ìœ„ì¹˜ ì´ë™ í›„ì— ì¼œì•¼ í•¨)
         if (playerCC != null) playerCC.enabled = true;
         if (ovrScript != null) ovrScript.enabled = true;
 
-        // 4. º´¾Æ¸® ÇÏÂ÷
+        // 4. ë³‘ì•„ë¦¬ í•˜ì°¨
         if (chickNPC != null)
         {
-            chickNPC.transform.SetParent(null); // ´Ù½Ã ÀÚÀ¯ÀÇ ¸öÀ¸·Î
+            chickNPC.transform.SetParent(null); // ë‹¤ì‹œ ììœ ì˜ ëª¸ìœ¼ë¡œ
 
-            // ÇÏÂ÷ À§Ä¡ ¿·¿¡ º´¾Æ¸® ¹èÄ¡
+            // í•˜ì°¨ ìœ„ì¹˜ ì˜†ì— ë³‘ì•„ë¦¬ ë°°ì¹˜
             if (getOffPoint != null)
                 chickNPC.transform.position = getOffPoint.position + (transform.right * 1.0f);
 
-            // µû¶ó´Ù´Ï±â ´Ù½Ã ÄÑ±â
+            // ë”°ë¼ë‹¤ë‹ˆê¸° ë‹¤ì‹œ ì¼œê¸°
             if (chickFollower != null)
             {
                 chickFollower.enabled = true;
-                // [Áß¿ä] º´¾Æ¸®°¡ ´Ù½Ã ÄÑÁú ¶§ 'ÁÖÀÎ'À» ³õÄ¡Áö ¾Ê°Ô Àç¼³Á¤ (¾ÈÀüÀåÄ¡)
+                // [ì¤‘ìš”] ë³‘ì•„ë¦¬ê°€ ë‹¤ì‹œ ì¼œì§ˆ ë•Œ 'ì£¼ì¸'ì„ ë†“ì¹˜ì§€ ì•Šê²Œ ì¬ì„¤ì • (ì•ˆì „ì¥ì¹˜)
                 chickFollower.player = player.transform.Find("OVRCameraRig/TrackingSpace/CenterEyeAnchor");
                 if (chickFollower.player == null) chickFollower.player = player.transform;
             }
         }
-        Debug.Log("[BoatDebug] ÇÏÂ÷ ¿Ï·á Ã³¸® ³¡");
+        Debug.Log("[BoatDebug] í•˜ì°¨ ì™„ë£Œ ì²˜ë¦¬ ë");
     }
 }

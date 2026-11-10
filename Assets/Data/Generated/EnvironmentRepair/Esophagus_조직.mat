@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: "Esophagus_\uC870\uC9C1"
+  m_Shader: {fileID: 4800000, guid: c690e00e0de0a1749b16e813329ca39b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DetailMap:
+        m_Texture: {fileID: 2800000, guid: fb01448523bfa5b4b8e12a370a026c27, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Cavity: 0.4
+    - _CoatSmoothness: 0.93
+    - _CoatStrength: 1.1
+    - _DebugView: 0
+    - _Detail: 0.3
+    - _DetailScale: 1.5
+    - _EnvReflection: 0.3
+    - _FlowSpeed: 0.1
+    - _FlowStrength: 0.35
+    - _GumThreshold: 0.3
+    - _LargeVesselStrength: 0.2
+    - _MacroNormalStrength: 0.55
+    - _MacroScale: 0.25
+    - _Mottle: 0.18
+    - _NearLampLimit: 0.45
+    - _NormalStrength: 0.5
+    - _Smoothness: 0.62
+    - _Teeth: 0
+    - _Velvet: 0
+    - _VesselStrength: 0.3
+    - _Wetness: 0.18
+    - _Wrap: 0.45
+    m_Colors:
+    - _BaseColor: {r: 0.8392157, g: 0.6039216, b: 0.57254905, a: 1}
+    - _DeepColor: {r: 0.47843137, g: 0.22745098, b: 0.2509804, a: 1}
+    - _EnamelColor: {r: 0.93, g: 0.9, b: 0.83, a: 1}
+    - _FlowDir: {r: 0, g: -1, b: 0, a: 0}
+    - _LightColor: {r: 0.7156863, g: 0.39803922, b: 0.44509804, a: 1}
+    - _ScatterColor: {r: 0.9411765, g: 0.3529412, b: 0.28235295, a: 1}
+    - _VesselColor: {r: 0.6901961, g: 0.25490198, b: 0.2901961, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

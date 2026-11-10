@@ -1,0 +1,471 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.1f1 (55300504c302) revision 5582853'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14" at "2026-10-16T17:16:54.877284Z"
+OS: 'Windows 11  (10.0.26200) 64bit Enterprise' Language: 'ko' Physical Memory: 65459 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-10-16T17:16:54Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:\Users\admin_14\HUMANBODY
+-executeMethod
+JourneyMouthAnatomy.ApplyBatch
+-logFile
+C:\Users\admin_14\HUMANBODY\Tools\mouth_anatomy_unity.log
+Successfully changed project path to: C:\Users\admin_14\HUMANBODY
+C:/Users/admin_14/HUMANBODY
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 32684, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+[Licensing::Module] LicensingClient has failed validation; ignoring
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              b7c104a912a14e43848b7753f44e2c28
+  Correlation Id:          11be00add5259870fb52af051b1526f0
+  External correlation Id: 2696034033565953545
+  Machine Id:              sZiFEiLtuJXVTSby0EaVHmUV8j0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-admin_14" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-admin_14-notifications" at "2026-10-16T17:16:54.9246554Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14569622076545-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.05s
+Player connection [49376]  Target information:
+
+Player connection [49376]  * "[IP] 172.16.42.14 [Port] 55505 [Flags] 2 [Guid] 3358453397 [EditorId] 3358453397 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [49376]  * "[IP] 192.168.95.1 [Port] 55505 [Flags] 2 [Guid] 3358453397 [EditorId] 3358453397 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [49376]  * "[IP] 192.168.111.1 [Port] 55505 [Flags] 2 [Guid] 3358453397 [EditorId] 3358453397 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IES4687) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [49376] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [49376] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-54688" after 0.2 seconds.
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Successfully resolved entitlement details
+Refreshing native plugins compatible for Editor in 6.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.2.1f1 (55300504c302)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Vendor:   NVIDIA
+    VRAM:     10053 MB
+    Driver:   32.0.16.1088
+Shader 'Meta/MRUK/Scene/HighlightsAndShadows': fallback shader 'Off' not found
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.006539 seconds.
+- Loaded All Assemblies, in  0.384 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2303 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.610 seconds
+Domain Reload Profiling: 2990ms
+	BeginReloadAssembly (129ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (151ms)
+		LoadAssemblies (125ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (147ms)
+			TypeCache.Refresh (145ms)
+				TypeCache.ScanAssembly (134ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (2610ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2578ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2385ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (50ms)
+			ProcessInitializeOnLoadAttributes (93ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 89 packages:
+  Packages from [https://packages.unity.com]:
+    com.meta.xr.sdk.all@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.all@883c474f681a)
+    com.unity.ai.inference@2.3.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.inference@4ac711cab9a3)
+    com.unity.ai.navigation@2.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ai.navigation@eb5635ad590d)
+    com.unity.cinemachine@3.1.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cinemachine@5342685532bb)
+    com.unity.cloud.gltfast@6.14.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.cloud.gltfast@0847aee0f6da)
+    com.unity.collab-proxy@2.10.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collab-proxy@1e5e48aff19d)
+    com.unity.ide.rider@3.0.36 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.inputsystem@1.14.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5)
+    com.unity.mobile.android-logcat@1.4.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mobile.android-logcat@1552651bf770)
+    com.unity.netcode.gameobjects@2.7.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.netcode.gameobjects@bd2a018756ed)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0)
+    com.unity.probuilder@6.0.8 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.probuilder@2e7e30b1490d)
+    com.unity.timeline@1.8.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.timeline@6b9e48457ddb)
+    com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602)
+    com.unity.visualscripting@1.9.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualscripting@6279e2b7c485)
+    com.unity.xr.interaction.toolkit@3.2.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.interaction.toolkit@7faefd988174)
+    com.unity.xr.management@4.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.management@f589c7ba49ff)
+    com.unity.xr.openxr@1.15.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1)
+    com.unity.xr.core-utils@2.5.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.core-utils@5b282bc7378d)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+    com.unity.mathematics@1.3.2 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.mathematics@8017b507cc74)
+    com.unity.sysroot@2.0.10 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot@7bbbb9339c14)
+    com.unity.sysroot.linux-x86_64@2.0.9 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.sysroot.linux-x86_64@1998d1c7730e)
+    com.unity.settings-manager@2.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.settings-manager@41738c275190)
+    com.unity.transport@2.6.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.transport@6e74a0e6481d)
+    com.unity.nuget.mono-cecil@1.11.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb)
+    com.unity.burst@1.8.24 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.burst@f7a407abf4d5)
+    com.unity.collections@2.5.7 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.collections@d49facba0036)
+    com.unity.splines@2.8.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.splines@b909627b5095)
+    com.unity.dt.app-ui@1.3.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.dt.app-ui@7b87c8225c06)
+    com.meta.xr.sdk.core@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.core@af732d25d6c8)
+    com.meta.xr.sdk.audio@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.audio@58b82318d501)
+    com.meta.xr.sdk.voice@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.voice@9dd3073fdc91)
+    com.meta.xr.sdk.haptics@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.haptics@21986bccc9cf)
+    com.meta.xr.mrutilitykit@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.mrutilitykit@671a38697dfa)
+    com.meta.xr.sdk.platform@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.platform@93335bcbfd8a)
+    com.meta.xr.sdk.interaction@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction@cfebb22563eb)
+    com.meta.xr.sdk.interaction.ovr@83.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.meta.xr.sdk.interaction.ovr@88f940ca47bd)
+    com.unity.searcher@4.9.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.searcher@1e17ce91558d)
+    com.unity.test-framework.performance@3.1.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework.performance@92d1d09a72ed)
+  Packages from [https://registry.npmjs.com]:
+    jp.keijiro.klak.ndi@2.1.6 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.klak.ndi@512c9805903e)
+    jp.keijiro.osc-jack@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\jp.keijiro.osc-jack@fcb7d07b8a9b)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.2d.sprite@4ac596689b15)
+    com.unity.multiplayer.center@1.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.render-pipelines.universal@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal@facf525283ae)
+    com.unity.test-framework@1.5.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.test-framework@a6f5be5f149c)
+    com.unity.ugui@2.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ugui@80da3b035d6b)
+    com.unity.visualeffectgraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.visualeffectgraph@892d901f7a66)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore)
+    com.unity.shadergraph@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.shadergraph@844e9247af82)
+    com.unity.render-pipelines.core@17.2.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.core@609b19816fd2)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.ext.nunit@031a54704bff)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+    com.unity.rendering.light-transport@1.0.1 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.rendering.light-transport@2c9279f90d7c)
+    com.unity.textmeshpro@5.0.0 (location: C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.textmeshpro@53f43edfd2e0)
+[Subsystems] Looking for new subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] Novel subsystem found at Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin_14/HUMANBODY/Assets
+[Subsystems] Discovering subsystems at path C:\Users\admin_14\HUMANBODY\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
+[Subsystems] No descriptors matched for  examples in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1/Runtime/UnitySubsystemsManifest.json.
+[Package Manager] Done registering packages in 0.03 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.2.1f1\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/admin_14/HUMANBODY
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 3s63ms
+[1829/2482  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[2478/2482  1s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+warning CS8785: Generator 'AttributeBasedFieldGenerator' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'IndexOutOfRangeException' with message 'Index was outside the bounds of the array.'
+[2479/2482  0s] ILPostProcess Library/Bee/artifacts/1300b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll, with 145 defines and 465 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, Unity.Netcode.Editor.CodeGen.INetworkMessageILPP, Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP, Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP, Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running Unity.Netcode.Editor.CodeGen.INetworkMessageILPP
+
+running Unity.Netcode.Editor.CodeGen.INetworkSerializableILPP
+
+running Unity.Netcode.Editor.CodeGen.NetworkBehaviourILPP
+
+running Unity.Netcode.Editor.CodeGen.RuntimeAccessModifiersILPP
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[2480/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[2481/2482  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.01 seconds), 5 items updated, 2482 evaluated
+AssetDatabase: script compilation time: 3.634531s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.428 seconds
+Script 'CharacterController' has the same name as built-in Unity component.
+AddComponent and GetComponent will not work with this script.
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowCollectionsPageExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindowDetailsExtension.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.meta.xr.sdk.core/Editor/BuildingBlocks/BlocksWindow.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 26.71 ms, found 18 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Refreshing native plugins compatible for Editor in 23.41 ms, found 18 plugins.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HUMANBODY
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.997 seconds
+Domain Reload Profiling: 7406ms
+	BeginReloadAssembly (357ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (58ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (150ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (970ms)
+		LoadAssemblies (643ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (434ms)
+			TypeCache.Refresh (301ms)
+				TypeCache.ScanAssembly (281ms)
+			BuildScriptInfoCaches (106ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (5998ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (5717ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (36ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (283ms)
+			ProcessInitializeOnLoadAttributes (4891ms)
+			ProcessInitializeOnLoadMethodAttributes (487ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 39.75 ms, found 18 plugins.
+Unity memory allocator detected: MetaXRAudio native memory allocations will be tracked.
+Preloading 3 native plugins for Editor in 4.93 ms.
+Asset Pipeline Refresh (id=d2da005f894d1bc4dbf80c88a0cf60fc): Total: 14.458 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=7428 ms
+		Asset DB Callback time: managed=1687 ms, native=105 ms
+		Scripting: domain reloads=1, domain reload time=1429 ms, compile time=3636 ms, other=171 ms
+		Project Asset Count: scripts=3528, non-scripts=6725
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 40.569ms
+	ApplyChangesToAssetFolders: 0.866ms
+	Scan: 561.132ms
+	OnSourceAssetsModified: 0.820ms
+	CategorizeAssetsWithTransientArtifact: 118.569ms
+	ProcessAssetsWithTransientArtifactChanges: 198.782ms
+	CategorizeAssets: 153.116ms
+	ImportOutOfDateAssets: 6081.475ms (2439.704ms without children)
+		CompileScripts: 3635.937ms
+		ReloadNativeAssets: 0.046ms
+		UnloadImportedAssets: 1.932ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.884ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.971ms
+	PostProcessAllAssets: 1703.727ms
+	Hotreload: 50.065ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.003ms
+	UnloadStreamsBegin: 4.473ms
+	PersistCurrentRevisions: 0.284ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 17.600ms
+	Untracked: 5543.981ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Scanning for USB devices : 9.986ms
+Initializing Unity extensions:
+Unloading 86 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13275 unused Assets / (23.5 MB). Loaded Objects now: 14296.
+Memory consumption went from 339.0 MB to 315.6 MB.
+Total: 26.440500 ms (FindLiveObjects: 1.357700 ms CreateObjectMapping: 0.707300 ms MarkObjects: 16.508200 ms  DeleteObjects: 7.866500 ms)
+
+Opening scene 'Assets/Scenes/Journey/01_Mouth.unity'
+Unloading 41 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Journey/01_Mouth.unity'
+	Deserialize:            195.521 ms
+	Integration:            508.741 ms
+	Integration of assets:  19.869 ms
+	Thread Wait Time:       -0.002 ms
+	Total Operation Time:   724.128 ms
+Unloading 3 unused Assets / (1.8 KB). Loaded Objects now: 14785.
+Memory consumption went from 324.6 MB to 324.6 MB.
+Total: 21.923200 ms (FindLiveObjects: 1.138500 ms CreateObjectMapping: 1.069400 ms MarkObjects: 19.642100 ms  DeleteObjects: 0.072300 ms)
+
+Asset Pipeline Refresh (id=7d1f2c52cd4acc8429c11aac85c931b2): Total: 0.127 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=415cc9aee58b8cd4bb7a25783942ea19): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=adf1ca1960ed00e44bb3078c7556e11e): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=55282985f353f67489d58f12b80039f6): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=e4fc99c6f9776d6409dffb22f9676a9b): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=977e95dd62f21f64d8dd21a97f7fa2a0): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=094f28a4ad75792418c4cbe623d900d1): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=4eecd30d756146a489bd2d3fd71c9401): Total: 0.013 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=4c92c6c2a5543e341af0b7982c02d274): Total: 0.015 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=393d70a4bc9b5f348b5e7ad92c18cd82): Total: 0.015 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'b9da6e05ece687db4da188f1c0178ddb') in 0.0085981 seconds
+Start importing Assets/Data/Generated/EnvironmentRepair/Mouth_조직.mat using Guid(00cce9f3014096c4788c1e63da27d3d1) (NativeFormatImporter) -> (artifact id: '9ad64fd8823826d467413359d9614903') in 0.0024087 seconds
+Start importing Assets/Data/Generated/MouthAnatomy/윗니_잇몸_다듬음.asset using Guid(e47066b6270168145882d00b2b641547) (NativeFormatImporter)Main Object Name '_잇몸다듬음' does not match filename '윗니_잇몸_다듬음'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyMouthAnatomy:ApplyToScene () (at Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs:81)
+JourneyMouthAnatomy:ApplyBatch () (at Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs:68)
+
+[Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs line 81]
+
+ -> (artifact id: '180d2647dc2ac80139d58723d5d47d8f') in 0.0046566 seconds
+Start importing Assets/Data/Generated/MouthAnatomy/입천장_잇몸연결형.asset using Guid(974c0f5f74264ca46b78fab4526e4a72) (NativeFormatImporter) -> (artifact id: '1bcf329c0e0ad06ddaf549b4a35adf79') in 0.0023399 seconds
+Start importing Assets/Data/Generated/MouthAnatomy/혀_가장자리_보호벽.asset using Guid(48ecb7447bf976e47a9700b453110a37) (NativeFormatImporter)Main Object Name '혀 가장자리 보호벽' does not match filename '혀_가장자리_보호벽'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene)
+JourneyMouthAnatomy:ApplyToScene () (at Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs:81)
+JourneyMouthAnatomy:ApplyBatch () (at Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs:68)
+
+[Assets/Scripts/Journey/Editor/JourneyMouthAnatomy.cs line 81]
+
+ -> (artifact id: '0edad5286e11fcf6537087d88593715d') in 0.0020943 seconds
+Start importing Assets/Data/Generated/MouthAnatomy/혀_해부형.asset using Guid(8d11fa2fc72ed364ea6879bb3e00f961) (NativeFormatImporter) -> (artifact id: 'b532e34848b740c54e615e34278cb530') in 0.0019964 seconds
+Refreshing native plugins compatible for Editor in 29.07 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.31 ms.
+Asset Pipeline Refresh (id=cc3874aa84f326248a912fca899f2606): Total: 0.160 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Journey/01_Mouth.unity using Guid(92611f9a929aedf4d9ef34d9d9f89863) (DefaultImporter) -> (artifact id: '2c2eb54ec5d020e834e6098244612f0f') in 0.0012028 seconds
+Refreshing native plugins compatible for Editor in 25.25 ms, found 18 plugins.
+Preloading 3 native plugins for Editor in 0.24 ms.
+Asset Pipeline Refresh (id=0d740a1c2a4672a4c9341cdc90cf4639): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Killing ADB server in 0.0627609 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-admin_14-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-admin_14 channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792171041638,"processId":54688,"allocatedMemory":24678729,"memoryLabels":[{"Default":26401},{"Permanent":15468},{"NewDelete":66249},{"Thread":4230344},{"Manager":821978},{"VertexData":824},{"Geometry":816},{"VFX":-104},{"Texture":160},{"Shader":78821},{"Material":24},{"GfxDevice":55712},{"Animation":392},{"Audio":4040},{"FontEngine":256},{"Physics":1210},{"Serialization":496},{"Input":14824},{"JobScheduler":47568},{"TextLib":160},{"Mono":32},{"MonoCode":64},{"ScriptingNativeRuntime":155060},{"BaseObject":1620272},{"Resource":1304},{"Renderer":2928},{"Transform":4646},{"File":9779},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":12224},{"DynamicArray":239570},{"HashMap":4119766},{"Utility":2661590},{"Curl":48},{"PoolAlloc":2824},{"AI":40},{"TypeTree":5005},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7824},{"Director":8240},{"CloudService":7360},{"WebRequest":808},{"VR":46258},{"SceneManager":496},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":3169},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":192},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"NativePlugin":8},{"Analytics":560},{"Hierarchy":272},{"CoreStats":12424},{"Identifiers":12384},{"Gui":80},{"EditorUtility":141333},{"VersionControl":4},{"Undo":947},{"AssetDatabase":9808024},{"EditorGi":328},{"UnityConnect":24528},{"Upm":1896},{"DrivenProperties":72},{"LocalIPC":214},{"ProfilerEditor":9746},{"CoreBusinessMetrics":14940},{"TLS":13756},{"Licensing":792},{"AssetReference":32},{"IPCStream":32}]}

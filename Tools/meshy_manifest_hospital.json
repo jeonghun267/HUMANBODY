@@ -1,0 +1,7 @@
+[
+  {"name": "Hospital_ExamBed", "polycount": 15000, "prompt": "hospital medical examination bed with white padded mattress, paper sheet roll at the head end, brushed steel frame, realistic clinic furniture, isolated on plain background"},
+  {"name": "Hospital_DoctorDesk", "polycount": 18000, "prompt": "modern doctor's office desk with a computer monitor, keyboard, stethoscope and medical papers on top, white and light wood, realistic, isolated on plain background"},
+  {"name": "Hospital_MedicalCabinet", "polycount": 15000, "prompt": "white medical supply cabinet with glass doors and shelves of medicine bottles and boxes, realistic hospital furniture, isolated on plain background"},
+  {"name": "Hospital_PatientMonitor", "polycount": 12000, "prompt": "medical patient monitor on a rolling stand with a screen showing green heart rate lines, realistic hospital equipment, isolated on plain background"},
+  {"name": "Char_HPylori", "polycount": 10000, "prompt": "helicobacter pylori bacterium, curved spiral rod-shaped body with several long whip-like flagella at one end, greenish purple, cute educational 3D microbe model, isolated"}
+]

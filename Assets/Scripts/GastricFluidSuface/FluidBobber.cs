@@ -1,50 +1,51 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ì†Œí™”ì•¡ ì›€ì§ì„") ]
 public class FluidBobber : MonoBehaviour
 {
-    // [Inspector¿¡¼­ Á¶ÀıÇÒ ¼ö ÀÖ´Â ¼³Á¤ º¯¼öµé]
+    // [Inspectorì—ì„œ ì¡°ì ˆí•  ìˆ˜ ìˆëŠ” ì„¤ì • ë³€ìˆ˜ë“¤]
 
-    [Header("Movement Settings")]
-    [Tooltip("»óÇÏ·Î ¿òÁ÷ÀÌ´Â ¼ÓµµÀÔ´Ï´Ù. °ªÀÌ ³·À»¼ö·Ï ´À¸®°í ²öÀûÇÕ´Ï´Ù.")]
+    [Header("ì›€ì§ì„ ì„¤ì •")]
+    [Tooltip("ìƒí•˜ë¡œ ì›€ì§ì´ëŠ” ì†ë„ì…ë‹ˆë‹¤. ê°’ì´ ë‚®ì„ìˆ˜ë¡ ëŠë¦¬ê³  ëˆì í•©ë‹ˆë‹¤.")]
     public float bobSpeed = 0.5f;
 
-    [Tooltip("ÃÖ´ë ¿òÁ÷ÀÌ´Â ÆøÀÔ´Ï´Ù. À§¾Æ·¡·Î ¿òÁ÷ÀÌ´Â °Å¸®ÀÔ´Ï´Ù.")]
+    [Tooltip("ìµœëŒ€ ì›€ì§ì´ëŠ” í­ì…ë‹ˆë‹¤. ìœ„ì•„ë˜ë¡œ ì›€ì§ì´ëŠ” ê±°ë¦¬ì…ë‹ˆë‹¤.")]
     public float bobHeight = 0.005f;
 
-    [Header("Flow Settings")]
-    [Tooltip("ÅØ½ºÃ³°¡ Èå¸£´Â ¼Óµµ (X, Y ¹æÇâ) ÀÔ´Ï´Ù.")]
+    [Header("íë¦„ ì„¤ì •")]
+    [Tooltip("í…ìŠ¤ì²˜ê°€ íë¥´ëŠ” ì†ë„ (ê°€ë¡œ, ì„¸ë¡œ ë°©í–¥) ì…ë‹ˆë‹¤.")]
     public Vector2 flowSpeed = new Vector2(0.01f, 0.01f);
 
-    // [³»ºÎ º¯¼ö]
+    // [ë‚´ë¶€ ë³€ìˆ˜]
     private float initialY;
-    private Renderer rend; // MaterialÀ» °¡Á®¿À±â À§ÇÑ º¯¼ö
+    private Renderer rend; // Materialì„ ê°€ì ¸ì˜¤ê¸° ìœ„í•œ ë³€ìˆ˜
     private float currentXOffset;
     private float currentYOffset;
 
-    // Start´Â ¿ÀºêÁ§Æ®°¡ ½ÃÀÛµÉ ¶§ ÇÑ ¹ø È£ÃâµË´Ï´Ù.
+    // StartëŠ” ì˜¤ë¸Œì íŠ¸ê°€ ì‹œì‘ë  ë•Œ í•œ ë²ˆ í˜¸ì¶œë©ë‹ˆë‹¤.
     void Start()
     {
-        // ¿ÀºêÁ§Æ®ÀÇ ÃÊ±â Y À§Ä¡¸¦ ÀúÀåÇÕ´Ï´Ù.
+        // ì˜¤ë¸Œì íŠ¸ì˜ ì´ˆê¸° Y ìœ„ì¹˜ë¥¼ ì €ì¥í•©ë‹ˆë‹¤.
         initialY = transform.localPosition.y;
-        rend = GetComponent<Renderer>(); // ·»´õ·¯ ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿É´Ï´Ù.
+        rend = GetComponent<Renderer>(); // ë Œë”ëŸ¬ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
 
-        // MaterialÀÌ ÀÖ´ÂÁö È®ÀÎ
+        // Materialì´ ìˆëŠ”ì§€ í™•ì¸
         if (rend == null || rend.material == null)
         {
-            Debug.LogError("Renderer ¶Ç´Â MaterialÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù! Èå¸£´Â È¿°ú¸¦ Àû¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.");
-            enabled = false; // ½ºÅ©¸³Æ® ºñÈ°¼ºÈ­
+            Debug.LogError("Renderer ë˜ëŠ” Materialì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤! íë¥´ëŠ” íš¨ê³¼ë¥¼ ì ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+            enabled = false; // ìŠ¤í¬ë¦½íŠ¸ ë¹„í™œì„±í™”
         }
     }
 
-    // Update´Â ¸Å ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµË´Ï´Ù.
+    // UpdateëŠ” ë§¤ í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë©ë‹ˆë‹¤.
     void Update()
     {
-        // 1. ½Ã°£ ±â¹İ °ª °è»ê (»çÀÎ °î¼±À» »ç¿ëÇÏ¿© ºÎµå·¯¿î ¿Õº¹ ¿îµ¿À» ¸¸µì´Ï´Ù.)
-        // Time.time * bobSpeed¸¦ ÅëÇØ ½Ã°£ÀÌ Èå¸£´Â ¼Óµµ¸¦ Á¶ÀıÇÕ´Ï´Ù.
+        // 1. ì‹œê°„ ê¸°ë°˜ ê°’ ê³„ì‚° (ì‚¬ì¸ ê³¡ì„ ì„ ì‚¬ìš©í•˜ì—¬ ë¶€ë“œëŸ¬ìš´ ì™•ë³µ ìš´ë™ì„ ë§Œë“­ë‹ˆë‹¤.)
+        // Time.time * bobSpeedë¥¼ í†µí•´ ì‹œê°„ì´ íë¥´ëŠ” ì†ë„ë¥¼ ì¡°ì ˆí•©ë‹ˆë‹¤.
         float offset = Mathf.Sin(Time.time * bobSpeed) * bobHeight;
 
-        // 2. ¿ÀºêÁ§Æ®ÀÇ À§Ä¡¸¦ ¾÷µ¥ÀÌÆ®ÇÕ´Ï´Ù.
-        // ÃÊ±â À§Ä¡¿¡¼­ °è»êµÈ ¿ÀÇÁ¼Â¸¸Å­ À§¾Æ·¡·Î ¿òÁ÷ÀÔ´Ï´Ù.
+        // 2. ì˜¤ë¸Œì íŠ¸ì˜ ìœ„ì¹˜ë¥¼ ì—…ë°ì´íŠ¸í•©ë‹ˆë‹¤.
+        // ì´ˆê¸° ìœ„ì¹˜ì—ì„œ ê³„ì‚°ëœ ì˜¤í”„ì…‹ë§Œí¼ ìœ„ì•„ë˜ë¡œ ì›€ì§ì…ë‹ˆë‹¤.
         Vector3 newPosition = new Vector3(
             transform.localPosition.x,
             initialY + offset,
@@ -55,14 +56,14 @@ public class FluidBobber : MonoBehaviour
 
         if (rend != null && rend.material != null)
         {
-            // ½Ã°£¿¡ µû¶ó Offset °ªÀ» ´©ÀûÇÏ¿© °è»êÇÕ´Ï´Ù.
+            // ì‹œê°„ì— ë”°ë¼ Offset ê°’ì„ ëˆ„ì í•˜ì—¬ ê³„ì‚°í•©ë‹ˆë‹¤.
             currentXOffset += flowSpeed.x * Time.deltaTime;
             currentYOffset += flowSpeed.y * Time.deltaTime;
 
-            // MaterialÀÇ _MainTex_ST (³ë¸Ö ¸Ê¿¡ ÁÖ·Î »ç¿ëµÊ) OffsetÀ» ¼³Á¤ÇÕ´Ï´Ù.
-            // URP Lit ¼ÎÀÌ´õ ±âÁØ _BaseMap »ç¿ë
+            // Materialì˜ _MainTex_ST (ë…¸ë©€ ë§µì— ì£¼ë¡œ ì‚¬ìš©ë¨) Offsetì„ ì„¤ì •í•©ë‹ˆë‹¤.
+            // URP Lit ì…°ì´ë” ê¸°ì¤€ _BaseMap ì‚¬ìš©
             rend.material.SetTextureOffset("_BaseMap", new Vector2(currentXOffset, currentYOffset));
-            // ¸¸¾à BaseMapÀ¸·Î ¾ÈµÇ¸é _BumpMap ¶Ç´Â _NormalMap ÅØ½ºÃ³¿¡ ´ëÇÑ OffsetÀ» »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.
+            // ë§Œì•½ BaseMapìœ¼ë¡œ ì•ˆë˜ë©´ _BumpMap ë˜ëŠ” _NormalMap í…ìŠ¤ì²˜ì— ëŒ€í•œ Offsetì„ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.
             rend.material.SetTextureOffset("_BumpMap", new Vector2(currentXOffset, currentYOffset));
         }
     }

@@ -1,6 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
+[AddComponentMenu("ì¸ì²´íƒí—˜/ë¯¸ìƒë¬¼ ë¬´ë¦¬ ì œì–´") ]
 public class VirusGroupController : MonoBehaviour
 {
     [System.Serializable]
@@ -12,16 +13,16 @@ public class VirusGroupController : MonoBehaviour
         [HideInInspector] public float randomOffset;
         [HideInInspector] public float individualSpeed;
         [HideInInspector] public float individualRange;
-        [HideInInspector] public float individualRotateSpeed; // °³º° È¸Àü ¼Óµµ Ãß°¡
+        [HideInInspector] public float individualRotateSpeed; // ê°œë³„ íšŒì „ ì†ë„ ì¶”ê°€
     }
 
-    [Header("¹ÙÀÌ·¯½º ¸®½ºÆ®")]
+    [Header("ë°”ì´ëŸ¬ìŠ¤ ë¦¬ìŠ¤íŠ¸")]
     public List<VirusData> virusModels = new List<VirusData>();
 
-    [Header("ÀüÃ¼ÀûÀÎ ±âÁØ ¼³Á¤")]
+    [Header("ì „ì²´ì ì¸ ê¸°ì¤€ ì„¤ì •")]
     public float baseMoveRange = 0.15f;
     public float baseMoveSpeed = 0.8f;
-    public float baseRotateSpeed = 20.0f; // ±âÁØ È¸Àü ¼Óµµ
+    public float baseRotateSpeed = 20.0f; // ê¸°ì¤€ íšŒì „ ì†ë„
 
     void Start()
     {
@@ -31,18 +32,18 @@ public class VirusGroupController : MonoBehaviour
             {
                 virus.initialLocalPos = virus.transform.localPosition;
 
-                // 1. Å¸ÀÌ¹Ö ·£´ıÈ­
+                // 1. íƒ€ì´ë° ëœë¤í™”
                 virus.randomOffset = Random.Range(0f, 10f);
 
-                // 2. È¸ÀüÃàÀ» ¿ÏÀüÈ÷ ·£´ıÇÏ°Ô (¾î¶² ¹æÇâÀ¸·Î µ¹Áö °áÁ¤)
+                // 2. íšŒì „ì¶•ì„ ì™„ì „íˆ ëœë¤í•˜ê²Œ (ì–´ë–¤ ë°©í–¥ìœ¼ë¡œ ëŒì§€ ê²°ì •)
                 virus.randomAxis = Random.insideUnitSphere.normalized;
 
-                // 3. ÀÌµ¿ ¼Óµµ¿Í Æø ·£´ıÈ­
+                // 3. ì´ë™ ì†ë„ì™€ í­ ëœë¤í™”
                 virus.individualSpeed = Random.Range(0.7f, 1.3f);
                 virus.individualRange = Random.Range(0.7f, 1.3f);
 
-                // 4. [ÇÙ½É] È¸Àü ¼Óµµ ·£´ıÈ­ (À½¼ö °ªÀ» ¼¯¾î¼­ ¹İ´ë ¹æÇâ È¸Àü Ãß°¡)
-                // -1.5¹è ~ 1.5¹è »çÀÌ·Î ¼³Á¤ÇÏ¿© ¼Óµµ¿Í ¹æÇâÀ» ¸ğµÎ ´Ù¸£°Ô ÇÔ
+                // 4. [í•µì‹¬] íšŒì „ ì†ë„ ëœë¤í™” (ìŒìˆ˜ ê°’ì„ ì„ì–´ì„œ ë°˜ëŒ€ ë°©í–¥ íšŒì „ ì¶”ê°€)
+                // -1.5ë°° ~ 1.5ë°° ì‚¬ì´ë¡œ ì„¤ì •í•˜ì—¬ ì†ë„ì™€ ë°©í–¥ì„ ëª¨ë‘ ë‹¤ë¥´ê²Œ í•¨
                 virus.individualRotateSpeed = Random.Range(-1.5f, 1.5f);
             }
         }
@@ -65,8 +66,8 @@ public class VirusGroupController : MonoBehaviour
 
             virus.transform.localPosition = virus.initialLocalPos + new Vector3(x, y, z);
 
-            // 5. [ÇÙ½É] °³º° È¸Àü ¼Óµµ¿Í °³º° ÃàÀ» »ç¿ëÇÏ¿© È¸Àü
-            // ÀÌÁ¦ ¾î¶² ³ğÀº ½Ã°è¹æÇâ, ¾î¶² ³ğÀº ¹İ½Ã°è¹æÇâÀ¸·Î °¢ÀÚ µ½´Ï´Ù.
+            // 5. [í•µì‹¬] ê°œë³„ íšŒì „ ì†ë„ì™€ ê°œë³„ ì¶•ì„ ì‚¬ìš©í•˜ì—¬ íšŒì „
+            // ì´ì œ ì–´ë–¤ ë†ˆì€ ì‹œê³„ë°©í–¥, ì–´ë–¤ ë†ˆì€ ë°˜ì‹œê³„ë°©í–¥ìœ¼ë¡œ ê°ì ë•ë‹ˆë‹¤.
             virus.transform.Rotate(virus.randomAxis * (baseRotateSpeed * virus.individualRotateSpeed) * Time.deltaTime);
         }
     }

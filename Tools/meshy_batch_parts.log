@@ -1,0 +1,281 @@
+26°³ Ç×¸ñ, µ¿½Ã 3°³. ½ÃÀÛ ÀÜ¾×: 935
+  [01a0c2cb] IN_PROGRESS 18%
+  [01a0c2cb] IN_PROGRESS 18%
+  [01a0c2cb] IN_PROGRESS 18%
+  [01a0c2cb] IN_PROGRESS 55%
+  [01a0c2cb] IN_PROGRESS 55%
+  [01a0c2cb] IN_PROGRESS 55%
+  [01a0c2cb] IN_PROGRESS 99%
+  [01a0c2cb] SUCCEEDED 100%
+  [01a0c2cb] SUCCEEDED 100%
+  [01a0c2cc] IN_PROGRESS 0%
+  [01a0c2cc] IN_PROGRESS 0%
+  [01a0c2cb] SUCCEEDED 100%
+  [01a0c2cc] IN_PROGRESS 0%
+  [01a0c2cc] IN_PROGRESS 39%
+  [01a0c2cc] IN_PROGRESS 47%
+  [01a0c2cc] IN_PROGRESS 0%
+  [01a0c2cc] IN_PROGRESS 47%
+  [01a0c2cc] IN_PROGRESS 84%
+  [01a0c2cc] IN_PROGRESS 47%
+  [01a0c2cc] IN_PROGRESS 67%
+  [01a0c2cc] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_Tongue.glb (4425 KB)
+==> Part_Tongue: ¿Ï·á (preview=01a0c2cb-b434-75a4-b481-23a0742233fe, refine=01a0c2cc-36bd-775d-a36e-ccac543f38da)
+  [01a0c2cc] IN_PROGRESS 18%
+  [01a0c2cc] IN_PROGRESS 84%
+  [01a0c2cc] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_UpperTeethArch.glb (5195 KB)
+==> Part_UpperTeethArch: ¿Ï·á (preview=01a0c2cb-b442-7580-b171-fb36461759a0, refine=01a0c2cc-365d-7313-bc36-293cd48b2e3e)
+  [01a0c2cd] IN_PROGRESS 18%
+  [01a0c2cc] IN_PROGRESS 55%
+  [01a0c2cc] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Env_MouthCutaway.glb (6271 KB)
+==> Env_MouthCutaway: ¿Ï·á (preview=01a0c2cb-b433-7271-aec0-9d76849401bd, refine=01a0c2cc-71d2-71c3-8da9-05a64d2193b6)
+  [01a0c2cd] IN_PROGRESS 55%
+  [01a0c2cd] IN_PROGRESS 18%
+  [01a0c2cc] IN_PROGRESS 99%
+  [01a0c2cd] IN_PROGRESS 99%
+  [01a0c2cd] IN_PROGRESS 55%
+  [01a0c2cc] SUCCEEDED 100%
+  [01a0c2cd] IN_PROGRESS 0%
+  [01a0c2cd] SUCCEEDED 100%
+  [01a0c2cd] SUCCEEDED 100%
+  [01a0c2cd] IN_PROGRESS 0%
+  [01a0c2cd] IN_PROGRESS 0%
+  [01a0c2cd] IN_PROGRESS 47%
+  [01a0c2cd] IN_PROGRESS 47%
+  [01a0c2cd] IN_PROGRESS 47%
+  [01a0c2cd] IN_PROGRESS 99%
+  [01a0c2cd] IN_PROGRESS 67%
+  [01a0c2cd] IN_PROGRESS 67%
+  [01a0c2cd] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_LowerTeethArch.glb (4789 KB)
+==> Part_LowerTeethArch: ¿Ï·á (preview=01a0c2cc-efd2-76a6-8d8f-6616092c2929, refine=01a0c2cd-ad95-72e8-9a7c-ccb3eb29e171)
+  [01a0c2ce] IN_PROGRESS 18%
+  [01a0c2cd] SUCCEEDED 100%
+  [01a0c2cd] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_Uvula.glb (3199 KB)
+==> Part_Uvula: ¿Ï·á (preview=01a0c2cd-2b78-750e-8460-549ac61e5859, refine=01a0c2cd-e825-7384-b11f-9fae4f69513a)
+ÀúÀåµÊ: Assets\Models\Meshy\Part_Epiglottis.glb (3460 KB)
+==> Part_Epiglottis: ¿Ï·á (preview=01a0c2cd-670f-7053-a234-7e258f7919b5, refine=01a0c2cd-e87d-719c-8862-5a999a583e01)
+  [01a0c2ce] IN_PROGRESS 18%
+  [01a0c2ce] IN_PROGRESS 18%
+  [01a0c2ce] IN_PROGRESS 55%
+  [01a0c2ce] IN_PROGRESS 55%
+  [01a0c2ce] IN_PROGRESS 55%
+  [01a0c2ce] IN_PROGRESS 88%
+  [01a0c2ce] SUCCEEDED 100%
+  [01a0c2ce] SUCCEEDED 100%
+  [01a0c2cf] IN_PROGRESS 0%
+  [01a0c2ce] SUCCEEDED 100%
+  [01a0c2cf] IN_PROGRESS 0%
+  [01a0c2cf] IN_PROGRESS 0%
+  [01a0c2cf] IN_PROGRESS 39%
+  [01a0c2cf] IN_PROGRESS 47%
+  [01a0c2cf] IN_PROGRESS 39%
+  [01a0c2cf] IN_PROGRESS 47%
+  [01a0c2cf] IN_PROGRESS 67%
+  [01a0c2cf] IN_PROGRESS 47%
+  [01a0c2cf] IN_PROGRESS 91%
+  [01a0c2cf] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_MuscleRing.glb (5896 KB)
+==> Part_MuscleRing: ¿Ï·á (preview=01a0c2ce-a09c-769b-8d75-fc47ed205e02, refine=01a0c2cf-23d9-711d-acfc-dd7d77ef8769)
+  [01a0c2cf] IN_PROGRESS 67%
+  [01a0c2cf] IN_PROGRESS 18%
+  [01a0c2cf] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_RugaeWallPanel.glb (5511 KB)
+==> Part_RugaeWallPanel: ¿Ï·á (preview=01a0c2ce-a13f-7693-926f-2939922ec7dc, refine=01a0c2cf-22f4-72e5-a712-0b5b836f1827)
+  [01a0c2cf] IN_PROGRESS 99%
+  [01a0c2d0] IN_PROGRESS 18%
+  [01a0c2cf] IN_PROGRESS 55%
+  [01a0c2cf] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_Sphincter.glb (5454 KB)
+==> Part_Sphincter: ¿Ï·á (preview=01a0c2ce-67e6-763e-81a5-371c768715bf, refine=01a0c2cf-262b-7087-80d1-8278c6ad83e4)
+  [01a0c2d0] IN_PROGRESS 55%
+  [01a0c2d0] IN_PROGRESS 18%
+  [01a0c2cf] SUCCEEDED 100%
+  [01a0c2d0] IN_PROGRESS 0%
+  [01a0c2d0] IN_PROGRESS 99%
+  [01a0c2d0] IN_PROGRESS 55%
+  [01a0c2d0] IN_PROGRESS 0%
+  [01a0c2d0] SUCCEEDED 100%
+  [01a0c2d0] IN_PROGRESS 0%
+  [01a0c2d0] SUCCEEDED 100%
+  [01a0c2d0] IN_PROGRESS 0%
+  [01a0c2d0] IN_PROGRESS 67%
+  [01a0c2d0] IN_PROGRESS 47%
+  [01a0c2d0] IN_PROGRESS 47%
+  [01a0c2d0] IN_PROGRESS 99%
+  [01a0c2d0] IN_PROGRESS 47%
+  [01a0c2d0] IN_PROGRESS 47%
+  [01a0c2d0] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_GastricGland.glb (4367 KB)
+==> Part_GastricGland: ¿Ï·á (preview=01a0c2cf-dcb9-73c8-835a-b9a65a6bb77f, refine=01a0c2d0-615c-71fc-b326-0a44c3de4eef)
+  [01a0c2d1] IN_PROGRESS 18%
+  [01a0c2d0] IN_PROGRESS 67%
+  [01a0c2d0] IN_PROGRESS 99%
+  [01a0c2d1] IN_PROGRESS 55%
+  [01a0c2d0] IN_PROGRESS 99%
+  [01a0c2d0] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_ProteinChain.glb (5098 KB)
+==> Part_ProteinChain: ¿Ï·á (preview=01a0c2d0-574f-76f9-bf56-d1c2e2eed871, refine=01a0c2d0-d956-7711-bdb3-c9bb621c532f)
+  [01a0c2d1] IN_PROGRESS 18%
+  [01a0c2d1] IN_PROGRESS 99%
+  [01a0c2d0] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Char_Pepsin.glb (3825 KB)
+==> Char_Pepsin: ¿Ï·á (preview=01a0c2d0-1800-7640-a86b-87ae3e7d192b, refine=01a0c2d0-d62f-77a8-b2be-387f550eca43)
+  [01a0c2d2] IN_PROGRESS 18%
+  [01a0c2d1] IN_PROGRESS 55%
+  [01a0c2d1] SUCCEEDED 100%
+  [01a0c2d2] IN_PROGRESS 0%
+  [01a0c2d2] IN_PROGRESS 55%
+  [01a0c2d1] IN_PROGRESS 72%
+  [01a0c2d2] IN_PROGRESS 47%
+  [01a0c2d2] SUCCEEDED 100%
+  [01a0c2d1] SUCCEEDED 100%
+  [01a0c2d2] IN_PROGRESS 0%
+  [01a0c2d2] IN_PROGRESS 0%
+  [01a0c2d2] IN_PROGRESS 67%
+  [01a0c2d2] IN_PROGRESS 39%
+  [01a0c2d2] IN_PROGRESS 39%
+  [01a0c2d2] IN_PROGRESS 99%
+  [01a0c2d2] IN_PROGRESS 67%
+  [01a0c2d2] IN_PROGRESS 47%
+  [01a0c2d2] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_DuodenumJunction.glb (5107 KB)
+==> Part_DuodenumJunction: ¿Ï·á (preview=01a0c2d1-55f0-706a-b1f9-8985ec6c286e, refine=01a0c2d2-1390-769a-924d-a24514d64c9f)
+  [01a0c2d3] IN_PROGRESS 18%
+  [01a0c2d2] SUCCEEDED 100%
+  [01a0c2d2] IN_PROGRESS 84%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_CapillaryTube.glb (2728 KB)
+==> Part_CapillaryTube: ¿Ï·á (preview=01a0c2d2-06c6-71f8-9929-1adbb286fbf7, refine=01a0c2d2-8ac9-704a-a4c6-17b7d1564ce4)
+  [01a0c2d3] IN_PROGRESS 18%
+  [01a0c2d3] IN_PROGRESS 55%
+  [01a0c2d2] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_VillusCrossSection.glb (5507 KB)
+==> Part_VillusCrossSection: ¿Ï·á (preview=01a0c2d1-cde2-7579-a6ca-9d9e1167415e, refine=01a0c2d2-8b45-7001-b8c2-cfa0c0a8084f)
+  [01a0c2d3] IN_PROGRESS 55%
+  [01a0c2d3] IN_PROGRESS 18%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] IN_PROGRESS 55%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] SUCCEEDED 100%
+  [01a0c2d4] IN_PROGRESS 0%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d3] IN_PROGRESS 99%
+  [01a0c2d4] IN_PROGRESS 47%
+  [01a0c2d3] SUCCEEDED 100%
+  [01a0c2d3] SUCCEEDED 100%
+  [01a0c2d4] IN_PROGRESS 0%
+  [01a0c2d4] IN_PROGRESS 0%
+  [01a0c2d4] IN_PROGRESS 67%
+  [01a0c2d4] IN_PROGRESS 47%
+  [01a0c2d4] IN_PROGRESS 47%
+  [01a0c2d4] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_LactealTube.glb (2976 KB)
+==> Part_LactealTube: ¿Ï·á (preview=01a0c2d3-0881-742d-a694-090b3342b176, refine=01a0c2d4-0522-73d2-9250-c9e596eb982a)
+  [01a0c2d4] IN_PROGRESS 18%
+  [01a0c2d4] IN_PROGRESS 67%
+  [01a0c2d4] IN_PROGRESS 67%
+  [01a0c2d4] IN_PROGRESS 55%
+  [01a0c2d4] IN_PROGRESS 99%
+  [01a0c2d4] IN_PROGRESS 67%
+  [01a0c2d4] IN_PROGRESS 99%
+  [01a0c2d4] SUCCEEDED 100%
+  [01a0c2d4] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_HaustraWallPanel.glb (5483 KB)
+ÀúÀåµÊ: Assets\Models\Meshy\Part_VillusCluster.glb (6249 KB)
+==> Part_HaustraWallPanel: ¿Ï·á (preview=01a0c2d3-8011-77bc-9e76-bcce56ee01fa, refine=01a0c2d4-79ae-73e2-a361-a6937d4b8d51)
+==> Part_VillusCluster: ¿Ï·á (preview=01a0c2d3-42be-72e7-bf9d-505b25bf488d, refine=01a0c2d4-79b2-737f-9778-df95a70f7ee9)
+  [01a0c2d5] IN_PROGRESS 18%
+  [01a0c2d4] IN_PROGRESS 99%
+  [01a0c2d5] IN_PROGRESS 18%
+  [01a0c2d5] IN_PROGRESS 55%
+  [01a0c2d4] SUCCEEDED 100%
+  [01a0c2d5] IN_PROGRESS 55%
+  [01a0c2d5] IN_PROGRESS 0%
+  [01a0c2d5] IN_PROGRESS 82%
+  [01a0c2d5] SUCCEEDED 100%
+  [01a0c2d5] IN_PROGRESS 0%
+  [01a0c2d5] IN_PROGRESS 0%
+  [01a0c2d5] SUCCEEDED 100%
+  [01a0c2d6] IN_PROGRESS 0%
+  [01a0c2d5] IN_PROGRESS 47%
+  [01a0c2d5] IN_PROGRESS 47%
+  [01a0c2d6] IN_PROGRESS 47%
+  [01a0c2d5] IN_PROGRESS 91%
+  [01a0c2d5] IN_PROGRESS 67%
+  [01a0c2d6] IN_PROGRESS 67%
+  [01a0c2d5] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_FiberStrand.glb (3108 KB)
+==> Part_FiberStrand: ¿Ï·á (preview=01a0c2d4-bd36-7553-baac-d3fc9331b633, refine=01a0c2d5-b694-7077-b90e-a1e31fa8c194)
+  [01a0c2d5] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Prop_WasteLiquid.glb (3293 KB)
+==> Prop_WasteLiquid: ¿Ï·á (preview=01a0c2d5-6ecb-7721-9362-4b784e22c664, refine=01a0c2d5-f4a7-712a-bf6a-b5457d61d96d)
+  [01a0c2d6] IN_PROGRESS 18%
+  [01a0c2d6] IN_PROGRESS 18%
+  [01a0c2d6] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Prop_WasteSoft.glb (6145 KB)
+==> Prop_WasteSoft: ¿Ï·á (preview=01a0c2d5-6ecf-72ca-b226-9a692cb49f05, refine=01a0c2d6-2d20-7412-aae3-8e6a87ac2da5)
+  [01a0c2d6] IN_PROGRESS 18%
+  [01a0c2d6] IN_PROGRESS 55%
+  [01a0c2d6] IN_PROGRESS 55%
+  [01a0c2d6] IN_PROGRESS 55%
+  [01a0c2d6] IN_PROGRESS 88%
+  [01a0c2d6] SUCCEEDED 100%
+  [01a0c2d7] IN_PROGRESS 0%
+  [01a0c2d6] SUCCEEDED 100%
+  [01a0c2d6] SUCCEEDED 100%
+  [01a0c2d7] IN_PROGRESS 0%
+  [01a0c2d7] IN_PROGRESS 0%
+  [01a0c2d7] IN_PROGRESS 47%
+  [01a0c2d7] IN_PROGRESS 39%
+  [01a0c2d7] IN_PROGRESS 39%
+  [01a0c2d7] IN_PROGRESS 67%
+  [01a0c2d7] IN_PROGRESS 67%
+  [01a0c2d7] IN_PROGRESS 47%
+  [01a0c2d7] IN_PROGRESS 99%
+  [01a0c2d7] IN_PROGRESS 84%
+  [01a0c2d7] IN_PROGRESS 67%
+  [01a0c2d7] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Part_Appendix.glb (4549 KB)
+==> Part_Appendix: ¿Ï·á (preview=01a0c2d6-add1-77b0-ae7f-f52c0df0f9a2, refine=01a0c2d7-2ef9-717a-b6af-9da26bec9c7c)
+  [01a0c2d8] IN_PROGRESS 18%
+  [01a0c2d7] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Env_LargeIntestineTube.glb (4964 KB)
+==> Env_LargeIntestineTube: ¿Ï·á (preview=01a0c2d6-e5f3-7289-a118-ec782ddaba2c, refine=01a0c2d7-6827-7225-9e32-886f42c82912)
+  [01a0c2d7] IN_PROGRESS 84%
+  [01a0c2d8] IN_PROGRESS 18%
+  [01a0c2d8] IN_PROGRESS 55%
+  [01a0c2d7] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Prop_WasteSolid.glb (5576 KB)
+==> Prop_WasteSolid: ¿Ï·á (preview=01a0c2d6-abcb-763d-bdb8-7336fc657224, refine=01a0c2d7-6990-726a-92bc-311be0b8f492)
+  [01a0c2d8] IN_PROGRESS 55%
+  [01a0c2d8] IN_PROGRESS 99%
+  [01a0c2d8] IN_PROGRESS 99%
+  [01a0c2d8] SUCCEEDED 100%
+  [01a0c2d8] IN_PROGRESS 0%
+  [01a0c2d8] IN_PROGRESS 99%
+  [01a0c2d8] IN_PROGRESS 0%
+  [01a0c2d8] SUCCEEDED 100%
+  [01a0c2d9] IN_PROGRESS 0%
+  [01a0c2d8] IN_PROGRESS 47%
+  [01a0c2d9] IN_PROGRESS 0%
+  [01a0c2d8] IN_PROGRESS 67%
+  [01a0c2d9] IN_PROGRESS 47%
+  [01a0c2d8] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Lobby_Pedestal.glb (3566 KB)
+==> Lobby_Pedestal: ¿Ï·á (preview=01a0c2d8-23fe-72d4-b91c-e4af837fcc00, refine=01a0c2d8-e295-77c6-92e6-4523dccbeb22)
+  [01a0c2d9] IN_PROGRESS 47%
+  [01a0c2d9] IN_PROGRESS 47%
+  [01a0c2d9] IN_PROGRESS 84%
+  [01a0c2d9] IN_PROGRESS 99%
+  [01a0c2d9] IN_PROGRESS 99%
+  [01a0c2d9] SUCCEEDED 100%
+ÀúÀåµÊ: Assets\Models\Meshy\Lobby_MouthArch.glb (5163 KB)
+==> Lobby_MouthArch: ¿Ï·á (preview=01a0c2d8-5ccf-709c-9ba4-80179687c53a, refine=01a0c2d9-5729-72bd-aad4-c8d2ade36b84)
+Á¾·á ÀÜ¾×: 545

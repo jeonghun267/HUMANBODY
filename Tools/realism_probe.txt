@@ -1,0 +1,20 @@
+﻿
+[뒤벽_입] (-3.06, 1.72, 5.00) → (-3.06, 1.72, 6.50)
+  1.50m 병원_진료실/뒤_벽 (MeshRenderer, 재질 진료실_벽/Universal Render Pipeline/Lit, 크기 (10.00, 3.20, 0.10))
+  -10.50m 병원_진료실/진료실_장식 (MeshRenderer, 재질 진료실_그림/Universal Render Pipeline/Lit, 크기 (10.01, 3.20, 12.00))
+
+[왼벽_습관] (-3.50, 1.72, -0.98) → (-5.00, 1.72, -0.98)
+  -8.51m 병원_진료실/진료실_장식 (MeshRenderer, 재질 진료실_그림/Universal Render Pipeline/Lit, 크기 (10.01, 3.20, 12.00))
+  -8.45m 병원_진료실/진료실_장식_금속 (MeshRenderer, 재질 진료실_금속/Universal Render Pipeline/Lit, 크기 (9.95, 3.20, 7.77))
+  1.50m 병원_진료실/왼쪽_벽 (MeshRenderer, 재질 진료실_벽/Universal Render Pipeline/Lit, 크기 (0.10, 3.20, 12.00))
+
+[오른벽_대장] (3.50, 1.72, 3.00) → (5.00, 1.72, 3.00)
+  -8.50m 병원_진료실/진료실_장식 (MeshRenderer, 재질 진료실_그림/Universal Render Pipeline/Lit, 크기 (10.01, 3.20, 12.00))
+  1.50m 병원_진료실/오른쪽_벽 (MeshRenderer, 재질 진료실_벽/Universal Render Pipeline/Lit, 크기 (0.10, 3.20, 12.00))
+
+[오른벽_시력표] (3.50, 1.55, -0.38) → (5.00, 1.55, -0.38)
+  -8.50m 병원_진료실/진료실_장식 (MeshRenderer, 재질 진료실_그림/Universal Render Pipeline/Lit, 크기 (10.01, 3.20, 12.00))
+  -8.50m 병원_진료실/진료실_장식_금속 (MeshRenderer, 재질 진료실_금속/Universal Render Pipeline/Lit, 크기 (9.95, 3.20, 7.77))
+  1.50m 병원_진료실/오른쪽_벽 (MeshRenderer, 재질 진료실_벽/Universal Render Pipeline/Lit, 크기 (0.10, 3.20, 12.00))
+
+장식 렌더러: Center: (0.01, 1.60, 0.50), Extents: (5.01, 1.60, 6.00), 그림 2048x2048 밉 12 ASTC_6x6 스트리밍 False

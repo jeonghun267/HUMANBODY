@@ -1,0 +1,16 @@
+Mode: regression
+UTC: 2026-09-21T19:55:26.7716504Z
+FAIL Boarding keeps the persistent root outside the capsule
+FAIL Only the guide boards the guide seat
+FAIL Guide following pauses while riding
+PASS Player movement is locked while riding
+PASS Disembarking restores player and guide parents
+FAIL Disembarking preserves previously disabled components
+FAIL Replacing prior speech does not finish the new zone early
+PASS Zone completes exactly once after its own speech
+FAIL Disabled zones cannot receive stale speech completion
+PASS Empty zone narration still completes once
+FAIL Teleport marker survives scene changes with the persistent player
+FAIL Player and narrator remain alive after unloading the scene
+Failures: 8
+Limit: accelerated desktop logic checks; no headset/input/audio/visual performance verification.
