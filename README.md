@@ -9,6 +9,10 @@
 ![Meta XR SDK](https://img.shields.io/badge/Meta%20XR%20SDK-83.0-0467DF)
 ![C#](https://img.shields.io/badge/C%23-.NET-512BD4?logo=csharp)
 
+[![시연 영상 미리보기 — 진찰 · 충치 치료 · 세균 물리치기 (누르면 하이라이트 영상)](docs/video/preview.webp)](docs/video/humanbody_highlight.mp4)
+
+▶ **[하이라이트 영상 (1분 24초 · 소리 있음)](docs/video/humanbody_highlight.mp4)** · [전체 플레이 영상 (14분 36초)](https://github.com/jeonghun267/HUMANBODY/releases/tag/demo-2026-11)
+
 ![병원 진료실 — 홀로그램 몸, 진찰 모니터, 잠수정 탑승구, 의사 선생님](docs/images/00_cover.jpg)
 
 - **대상**: 체험관 어린이 관람객 (아이 눈높이 대사, 앉아서 체험 · 왼손잡이 설정 지원)
@@ -213,7 +217,12 @@ HUMANBODY/
 
 ## 시연 영상
 
-- 지금 버전 영상은 헤드셋 확인이 끝나면 올릴 예정입니다.
+| 영상 | 길이 | 내용 |
+|---|---|---|
+| [하이라이트](docs/video/humanbody_highlight.mp4) | 1분 24초 | 병원 진찰 → 입 · 식도 · 위 · 소장 · 대장 치료 → 마지막 진료실을 장면별로 짧게 |
+| [전체 플레이](https://github.com/jeonghun267/HUMANBODY/releases/tag/demo-2026-11) | 14분 36초 | 처음부터 끝까지 한 바퀴 (릴리스 첨부 파일 · 720p) |
+
+두 영상 모두 2026-11-23에 헤드셋 없이 에디터에서 **자동 플레이**로 녹화했습니다. 스크립트가 걸어가 말을 걸고, 표적을 겨눠 방아쇠를 당기며 임무를 실제 판정대로 통과하고, 그동안 관람객 화면(`SpectatorView`)과 소리를 그대로 담았습니다. Quest 헤드셋으로 찍은 영상은 실기기 확인 뒤 추가할 예정입니다.
 
 <details>
 <summary><b>개발 기록</b></summary>
