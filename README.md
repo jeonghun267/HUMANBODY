@@ -213,7 +213,6 @@ HUMANBODY/
 
 ## 시연 영상
 
-- 예전 버전(병아리 의사 · 보트) 전체 시연: [YouTube](https://www.youtube.com/watch?v=oTahLEX3NXo)
 - 지금 버전 영상은 헤드셋 확인이 끝나면 올릴 예정입니다.
 
 <details>
